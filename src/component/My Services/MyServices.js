@@ -1,7 +1,7 @@
 import AddService from "../Services/Add service/AddServices";
 import {Link} from 'react-router-dom'
 import { useSelector,useDispatch } from "react-redux";
-import { getMyServices } from "../../store/services";
+import { getMyServices,deleteOneService } from "../../store/services";
 import { useEffect } from "react";
 import './MyServices.css'
 export default function MyServices(props) {
@@ -11,11 +11,12 @@ useEffect(()=>{
     dispatch(getMyServices())
 },[dispatch])
 
+
 return(
     <>
     <AddService/>
             <section className='myservice-container container-com'>
-    {myServices.map(ele=>
+    {myServices.map((ele,idx)=>
               <div className='t' key={ele.id}>
         <div className='myservice-card'>
                 <div className="image-myservice">
@@ -32,12 +33,12 @@ return(
             }
         <div className="btns-myService">
             <div className="edit-myservice common-edi-del">
-            <button>Edit</button>
-              <i class="fa-regular fa-pen-to-square icon-mysevice"></i>
+            <button><i class="fa-regular fa-pen-to-square icon-mysevice"></i>Edit</button>
+              
             </div>
             <div className="delete-myservice common-edi-del">
-            <button>Delete</button>
-                <i class="fa-regular fa-trash-can icon-mysevice"></i>
+            <button onClick={()=> dispatch(deleteOneService(ele.id))} ><i class="fa-regular fa-trash-can icon-mysevice"></i>Delete</button>
+                
             </div>
              
                

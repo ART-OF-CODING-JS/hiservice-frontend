@@ -68,8 +68,8 @@ export default function Signup(props) {
 
               </div>
               <MDBInput wrapperClass='mb-4' label='Gender' id='formControlLg' type='text' size="lg" />
-              <MDBInput wrapperClass='mb-4' label='City' id='formControlLg' type='text' size="lg" />
-              <MDBInput wrapperClass='mb-4' label='Birthday' id='formControlLg' type='data' size="lg" />
+              <MDBInput wrapperClass='mb-4' label='city' id='formControlLg' type='text' size="lg" />
+              <MDBInput wrapperClass='mb-4' label='birthday' id='formControlLg' type='data' size="lg" />
               <MDBInput wrapperClass='mb-4' label='professions' id='formControlLg' type='text' size="lg" />
               <MDBInput wrapperClass='mb-4' label='Your number' id='formControlLg' type='text' size="lg" />
               <MDBInput wrapperClass='mb-4' label='Password' id='formControlLg' type='password' size="lg" inputRef={passwordRef} />
