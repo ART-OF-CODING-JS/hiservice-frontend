@@ -1,0 +1,54 @@
+.main-service-item {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 3rem;
+    padding: 1.5rem;
+    border: 1px solid #dee2e6;
+}
+.tit-img .title-main-service {
+    font-size: 2rem;
+    font-weight: 600;
+}
+.tit-img img {
+    width: 70rem;
+}
+.disc-main-service {
+    font-size: 1.3rem;
+    margin-top: 3rem;
+}
+
+.about-service {
+    justify-self: center;
+}
+.about-service p {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.btn-main-service button {
+    border: 0;
+    font-size: 1.3rem;
+    padding: 1.2rem;
+    transition: all 0.3s ease;
+}
+.btn-main-service button:hover {
+    background-color: var(--primary-color);
+}
+.block-report button {
+    border: 0;
+    font-size: 1rem;
+    padding: 1rem;
+    transition: all 0.3s ease;
+}
+.block-report button:hover {
+    background-color:#dc3545;
+    color: aliceblue;
+}
+.block-report,.btn-main-service{
+    display: flex;
+    gap: 1rem;
+
+}
+.btn-main-service {
+    margin-bottom: 4rem;
+}
