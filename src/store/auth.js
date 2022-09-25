@@ -23,6 +23,7 @@ export const signin = createAsyncThunk('auth/signin',async (data,thunkApi)=>{
     }
 
 })
+//// sign up //////
 export const signup = createAsyncThunk('auth/signup',async (data,thunkApi)=>{
     const {rejectWithValue} = thunkApi
     try{
