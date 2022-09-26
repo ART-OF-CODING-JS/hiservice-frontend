@@ -2,6 +2,7 @@
 import './App.css';
 import Signin from './component/Auth/Signin/Signin';
 import Header from './Header/Header';
+import Footer from './component/footer/footer';
 import { Routes, Route } from "react-router-dom"
 import {useSelector} from 'react-redux'
 import Services from './component/Services/Services/Services';
@@ -29,6 +30,7 @@ function App() {
       <Route path='/Reports' element={<h1>Mohamamd</h1>}/>
       <Route path='/Settings' element={<h1>Mohamamd</h1>}/>
     </Routes>
+    <Footer/>
       </>
       :<Signin/>
       

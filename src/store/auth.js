@@ -5,6 +5,7 @@ import axios from 'axios'
 import cookie from 'react-cookies';
 console.log(process.env,"111111111")
 const url = process.env.REACT_APP_URL
+console.log(process.env);
 
 //******signin****//
 export const signin = createAsyncThunk('auth/signin',async (data,thunkApi)=>{

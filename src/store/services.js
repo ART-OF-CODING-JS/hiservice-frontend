@@ -3,7 +3,7 @@ import { createSlice,createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 import cookie from 'react-cookies';
 import { toast } from 'react-toastify';
-// import {Navigate} from 'react-router-dom'
+// import {N'avigate} from 'react-router-dom'
 const url = process.env.REACT_APP_URL
 
 // get all
