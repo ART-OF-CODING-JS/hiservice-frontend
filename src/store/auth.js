@@ -4,6 +4,7 @@ import axios from 'axios'
  import base64 from 'base-64';
 import cookie from 'react-cookies';
 const url = process.env.REACT_APP_URL
+console.log(process.env);
 
 //******signin****//
 export const signin = createAsyncThunk('auth/signin',async (data,thunkApi)=>{
