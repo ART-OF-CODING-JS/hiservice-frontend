@@ -45,10 +45,7 @@ const EditMyServices = (props) => {
 
   return (
     <>
-      <Button variant="primary" size="lg" onClick={handleShow} className="ms-4 mt-3 add-btn">
-        Edit <i className="fa-regular fa-pen-to-square"></i>
-      </Button>
-
+      Edit <i className="fa-regular fa-pen-to-square"></i>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Edit Service</Modal.Title>

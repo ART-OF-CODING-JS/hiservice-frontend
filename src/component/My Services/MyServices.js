@@ -33,7 +33,7 @@ export default function MyServices(props) {
                 {ele.status === null ? <p className="inProgress stateus-myservice">inProgress</p> : ele.status === "reject" ? <p className="reject stateus-myservice">Rejected</p> : <p className="confirm stateus-myservice">Active</p>}
                 <div className="btns-myService">
                   <div className="edit-myservice common-edi-del">
-                    <button>
+                    <button >
                       <EditMyServices id={ele.id} />
                     </button>
                   </div>
