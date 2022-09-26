@@ -39,6 +39,22 @@ export const getOneService = createAsyncThunk('services/getOneService',async (da
   }
 }
 )
+//// delete selected service
+export const deleteOneService = createAsyncThunk('services/deleteOneService',async (id,thunkApi)=>{
+  const { rejectWithValue } = thunkApi;
+  try {
+    let response = await axios.delete(`${url}/service/${id}`, {
+      headers: {
+        authorization: `Bearer ${cookie.load("token")}`,
+      },
+    });
+    console.log('response.data',response)
+    return id
+  } catch (error) {
+    return rejectWithValue(error.response);
+  }
+}
+)
 
 
 
@@ -128,6 +144,24 @@ const servicesSlice = createSlice({
     state.error = null
   },
   [getOneService.rejected]: (state, action) => {
+    state.error = action.payload;
+    state.isLoading = false;
+    // state.allServices = []
+  },
+
+
+  //************************* delete service///////////////*/
+  [deleteOneService.fulfilled]: (state, action) => {
+    state.myServices = state.myServices.filter((element)=>element.id !==action.payload);
+    console.log(action.payload,"25252525")
+    state.isLoading = false;
+    state.error = null
+  },
+  [deleteOneService.pending]: (state, action) => {
+    state.isLoading = true;
+    state.error = null
+  },
+  [deleteOneService.rejected]: (state, action) => {
     state.error = action.payload;
     state.isLoading = false;
     // state.allServices = []

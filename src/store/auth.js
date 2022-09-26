@@ -3,6 +3,7 @@ import { createSlice,createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
  import base64 from 'base-64';
 import cookie from 'react-cookies';
+console.log(process.env,"111111111")
 const url = process.env.REACT_APP_URL
 console.log(process.env);
 
@@ -23,6 +24,19 @@ export const signin = createAsyncThunk('auth/signin',async (data,thunkApi)=>{
     }
 
 })
+//// sign up //////
+export const signup = createAsyncThunk('auth/signup',async (data,thunkApi)=>{
+    const {rejectWithValue} = thunkApi
+    try{
+        const request = await axios.post(`${url}/users/signup`,data)
+        console.log(request.data)
+        return request.data
+
+    }catch(err){
+        return rejectWithValue(err.message)
+    }
+
+})
 
 
 
@@ -30,8 +44,10 @@ export const signin = createAsyncThunk('auth/signin',async (data,thunkApi)=>{
 
 const initialState ={
 isSignin:cookie.load('token')?true:false,//add cook
-isLoading:false,
-error:null
+isLoadingSignIn:false,
+errorSignIn:null,
+isLoadingSignUp:false,
+errorSignUp:null,
 }
 const authSlice = createSlice({
     name:'auth',
@@ -44,18 +60,34 @@ const authSlice = createSlice({
              cookie.save('userAccess',action.payload.role)
              cookie.save('userID',action.payload.id)
             state.actions = cookie.load('actions')
-         state.isLoading = false
-         state.errorSingin = null
+         state.isLoadingSignIn = false
+         state.errorSignIn = null
       
         },
         [signin.pending]:(state,action)=>{
-            state.isLoading = true
-            state.errorSingin = null
+            state.isLoadingSignIn = true
+            state.errorSignIn = null
 
         },
         [signin.rejected]:(state,action)=>{
-            state.isLoading = false
-            state.errorSingin = action.payload
+            state.isLoadingSignIn = false
+            state.errorSignIn = action.payload
+        },
+        /// Sign up  /////
+        [signup.fulfilled]:(state,action)=>{
+            
+         state.isLoadingSignUp = false
+         state.errorSignUp = null
+      
+        },
+        [signup.pending]:(state,action)=>{
+            state.isLoadingSignUp = true
+            state.errorSignUp = null
+
+        },
+        [signup.rejected]:(state,action)=>{
+            state.isLoadingSignUp = false
+            state.errorSignUp = action.payload
         },
     }
 })
