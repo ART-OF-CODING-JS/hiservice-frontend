@@ -36,6 +36,22 @@ export const getOneService = createAsyncThunk("services/getOneService", async (d
   }
 });
 
+//// delete selected service
+export const deleteOneService = createAsyncThunk("services/deleteOneService", async (id, thunkApi) => {
+  const { rejectWithValue } = thunkApi;
+  try {
+    let response = await axios.delete(`${url}/service/${id}`, {
+      headers: {
+        authorization: `Bearer ${cookie.load("token")}`,
+      },
+    });
+    console.log("response.data", response);
+    return id;
+  } catch (error) {
+    return rejectWithValue(error.response);
+  }
+});
+
 // Add service
 export const addService = createAsyncThunk("services/addService", async (arg, thunkApi) => {
   const { rejectWithValue } = thunkApi;
@@ -177,6 +193,41 @@ const servicesSlice = createSlice({
       state.error = action.payload;
       state.isLoading = false;
       // state.allServices = []
+    },
+
+    //************************* delete service///////////////*/
+    [deleteOneService.fulfilled]: (state, action) => {
+      state.myServices = state.myServices.filter((element) => element.id !== action.payload);
+      console.log(action.payload, "25252525");
+      state.isLoading = false;
+      state.error = null;
+    },
+    [deleteOneService.pending]: (state, action) => {
+      state.isLoading = true;
+      state.error = null;
+    },
+    [deleteOneService.rejected]: (state, action) => {
+      state.error = action.payload;
+      state.isLoading = false;
+      // state.allServices = []
+    },
+
+    //****************post****************
+    [addService.fulfilled]: (state, action) => {
+      if (action.payload.status === "confirm") {
+        state.allServices.push(action.payload);
+      }
+      state.isLoading = false;
+      console.log(action.payload.status);
+      toast.error(`${action.payload.status}`, { autoClose: false });
+    },
+    [addService.pending]: (state, action) => {
+      state.isLoading = true;
+    },
+    [addService.rejected]: (state, action) => {
+      toast.error(`${action.payload}`);
+
+      state.error = action.payload;
     },
   },
 });

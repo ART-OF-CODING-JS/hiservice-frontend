@@ -1,7 +1,7 @@
 import AddService from "../Services/Add service/AddServices";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { getMyServices } from "../../store/services";
+import { getMyServices, deleteOneService } from "../../store/services";
 import { useEffect } from "react";
 import "./MyServices.css";
 
@@ -38,8 +38,9 @@ export default function MyServices(props) {
                     </button>
                   </div>
                   <div className="delete-myservice common-edi-del">
-                    <button>Delete</button>
-                    <i class="fa-regular fa-trash-can icon-mysevice"></i>
+                    <button onClick={() => dispatch(deleteOneService(ele.id))}>
+                      <i class="fa-regular fa-trash-can icon-mysevice"></i>Delete
+                    </button>
                   </div>
                 </div>
               </div>

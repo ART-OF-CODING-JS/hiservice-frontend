@@ -3,7 +3,7 @@ import axios from 'axios'
 import { toast } from 'react-toastify';
 
 import cookie from 'react-cookies';
-const url = process.env.REACT_APP_URL
+const url =process.env.REACT_APP_URL
 
 export const sendReport = createAsyncThunk(
     "reports/sendReport",
