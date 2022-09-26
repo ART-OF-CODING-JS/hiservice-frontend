@@ -19,6 +19,7 @@
     "react-router-dom": "^6.4.1",
     "react-scripts": "5.0.1",
     "react-toastify": "^9.0.8",
+    "scss": "^0.2.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -44,5 +45,21 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "sass": "^1.55.0"
+  },
+  "description": "* This is the frontend project for HiService app that we will build using react Js , react-redux and redux ToolKit",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ART-OF-CODING-JS/hiservice-frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ART-OF-CODING-JS/hiservice-frontend/issues"
+  },
+  "homepage": "https://github.com/ART-OF-CODING-JS/hiservice-frontend#readme"
 }

@@ -1,17 +1,22 @@
+import "./edit-my-services.style.css";
+
 import React, { useState, useRef } from "react";
 import { Button } from "react-bootstrap";
-// import Button from 'react-bootstrap/Button';
+
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
-// import Access from '../Access/Access';
-import cookie from "react-cookies";
-// import jwt from 'jsonwebtoken';
-import "./AddServices.css";
-import { useSelector, useDispatch } from "react-redux";
-import { addService } from "../../../store/services";
 
-export default function AddService({ postData }) {
+import cookie from "react-cookies";
+
+import { useDispatch } from "react-redux";
+import { updateService } from "../../../store/services";
+
+const EditMyServices = (props) => {
+  // console.log();
+  // console.log("----", props.id);
+
   const dispatch = useDispatch();
+
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -25,6 +30,7 @@ export default function AddService({ postData }) {
 
   const handleSubmit = () => {
     const sendData = {
+      id: props.id,
       title: titleRef.current.value,
       department: departmentRef.current.value,
       description: discRef.current.value,
@@ -34,27 +40,18 @@ export default function AddService({ postData }) {
       userID: cookie.load("userID"),
     };
 
-    dispatch(addService(sendData));
+    dispatch(updateService(sendData));
   };
-  let role = cookie.load("userAccess");
-  //     let token = cookie.load('token')
-  //     const userFromToken = jwt.decode(token);
-  //  console.log(userFromToken)
+
   return (
     <>
-      {/* <Access action="delete"> */}
       <Button variant="primary" size="lg" onClick={handleShow} className="ms-4 mt-3 add-btn">
-        Add Service
+        Edit <i className="fa-regular fa-pen-to-square"></i>
       </Button>
 
-      {/* <Button variant="primary" style={{padding:'1px'}}>
-       
-        </Button> */}
-      {/* </Access> */}
-      <p className="ms-4 access">{`${role} dashboard`}</p>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Add New Service</Modal.Title>
+          <Modal.Title>Edit Service</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
@@ -62,27 +59,26 @@ export default function AddService({ postData }) {
               <Form.Label>Title</Form.Label>
               <Form.Control type="text" placeholder="Title" autoFocus ref={titleRef} />
             </Form.Group>
-            {/* *****************  */}
+
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>department</Form.Label>
               <Form.Control type="text" placeholder="home, ..." ref={departmentRef} />
             </Form.Group>
-            {/* *****************  */}
+
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>City</Form.Label>
               <Form.Control type="text" placeholder="amman" ref={cityRef} />
             </Form.Group>
-            {/* *****************  */}
+
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Phone number</Form.Label>
               <Form.Control type="text" placeholder="07" ref={phoneRef} />
             </Form.Group>
-            {/* *****************  */}
+
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Add Image</Form.Label>
               <Form.Control type="text" placeholder="http//" ref={imageRef} />
             </Form.Group>
-            {/* *****************  */}
 
             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
               <Form.Label>Disruption</Form.Label>
@@ -102,10 +98,12 @@ export default function AddService({ postData }) {
             }}
             className="add-btn"
           >
-            Add Product
+            Save Edit
           </Button>
         </Modal.Footer>
       </Modal>
     </>
   );
-}
+};
+
+export default EditMyServices;
