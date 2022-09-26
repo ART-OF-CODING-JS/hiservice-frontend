@@ -5,14 +5,16 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import cookie from 'react-cookies';
-import {sendReport} from '../../../store/reports'
-export default function Reports(props) {
+import {sendReserve} from '../../../store/reservations'
+export default function Reservation({serviceId}) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   const discRef = useRef(null)
+  const timeRef = useRef(null)
+  const dateRef = useRef(null)
 
  
   const dispatch = useDispatch()
@@ -21,38 +23,46 @@ export default function Reports(props) {
   const handleSubmit = ()=>{
       const sendData ={
           description:discRef.current.value,
-          serviceID:props.id,
+          time:timeRef.current.value,
+          date:dateRef.current.value,
+          serviceID:serviceId,
           userID:cookie.load('userID')
               }
-          dispatch(sendReport(sendData))
+              // console.log('SendData',sendData)
+     dispatch(sendReserve(sendData))
   }
 
   return (
   <>
-      {/* <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
-      </Button> */}
-      <button onClick={handleShow} className="report btn-card" >Reports</button>
+    
+      <div onClick={handleShow} >Reserve Service</div>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Send Report</Modal.Title>
+          <Modal.Title>Send Reservation</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              {/* <Form.Label>Email address</Form.Label>
+              <Form.Label>Date</Form.Label>
               <Form.Control
-                type="email"
-                placeholder="name@example.com"
+                type="date"
                 autoFocus
-              /> */}
+                ref={dateRef}
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Label>Time</Form.Label>
+              <Form.Control
+                type="time"
+                ref={timeRef}
+              />
             </Form.Group>
             <Form.Group
               className="mb-3"
               controlId="exampleForm.ControlTextarea1"
             >
-              <Form.Label>Disruption issue</Form.Label>
+              <Form.Label>Add Notes</Form.Label>
               <Form.Control as="textarea" rows={3} ref={discRef}/>
             </Form.Group>
           </Form>

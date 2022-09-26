@@ -1,5 +1,7 @@
 
 
+import Reservation from '../../Reservation/SendReservation/Reservation';
+import ServiceProviderInfo from '../ServiceProviderInfo/ProviderInfo';
 import './MainService.css'
 
 export default function MainService(props) {
@@ -23,10 +25,10 @@ export default function MainService(props) {
         <div className="btn-main-service">
             <button className="callNum">Call Number</button>
             <button className="chat"> Chat</button>
-            <button className="reserve">Reserve Service</button>
+            <button className="reserve"><Reservation serviceId={ele.id}/></button>
            
         </div>
-        
+        <ServiceProviderInfo ServiceProviderId ={ele.userID} />
         <div className="block-report">
             <button className="block">Block Service provider</button>
             <button className="report">Report Service</button>

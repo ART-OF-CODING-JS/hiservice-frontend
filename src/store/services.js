@@ -24,10 +24,10 @@ export const getAllServices = createAsyncThunk('services/getAllServices',async (
 
 // get service by id
 
-export const getOneService = createAsyncThunk('services/getOneService',async (data,thunkApi)=>{
+export const getOneService = createAsyncThunk('services/getOneService',async (id,thunkApi)=>{
   const { rejectWithValue } = thunkApi;
   try {
-    let response = await axios.get(`${url}/service/${data}`, {
+    let response = await axios.get(`${url}/service/${id}`, {
       headers: {
         authorization: `Bearer ${cookie.load("token")}`,
       },
