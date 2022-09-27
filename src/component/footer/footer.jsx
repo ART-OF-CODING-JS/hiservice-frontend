@@ -1,8 +1,10 @@
 import React from 'react';
+
 import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
 import "./footer.css"
 export default function Footer() {
   return (
+   
     <MDBFooter bgColor='light'  className='text-center text-lg-start text-muted '>
       <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
         <div className='me-5 d-none d-lg-block'>
@@ -120,6 +122,8 @@ export default function Footer() {
         © 2022 Copyright: Hi service
         
       </div>
+     
     </MDBFooter>
+    
   );
 }
