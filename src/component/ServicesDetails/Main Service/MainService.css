@@ -41,6 +41,7 @@
     padding: 1rem;
     transition: all 0.3s ease;
 }
+
 .block-report button:hover {
     background-color:#dc3545;
     color: aliceblue;
@@ -52,4 +53,7 @@
 }
 .btn-main-service {
     margin-bottom: 4rem;
+}
+.c {
+    font-size: 1.3rem !important;
 }

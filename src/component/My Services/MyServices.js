@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import "./MyServices.css";
 
 import EditMyServices from "./edit-my-services/edit-my-services.component";
+import DeleteMyService from "./DeleteMyService/DeleteMyService";
 
 export default function MyServices(props) {
   const { myServices } = useSelector((state) => state.servicesSlice);
@@ -38,9 +39,10 @@ export default function MyServices(props) {
                     </button>
                   </div>
                   <div className="delete-myservice common-edi-del">
-                    <button onClick={() => dispatch(deleteOneService(ele.id))}>
-                      <i class="fa-regular fa-trash-can icon-mysevice"></i>Delete
-                    </button>
+                 
+                      <DeleteMyService serviceId={ele.id}/>
+              
+            
                   </div>
                 </div>
               </div>

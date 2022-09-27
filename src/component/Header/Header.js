@@ -21,26 +21,45 @@ export default function Header(props) {
               {" "}
               <li>My services</li>
             </Link>
+            {/* *************Reservation************ */}
+            <div className="dropdown">
+              <button className="dropbtn">Reservation</button>
+              <div className="dropdown-content">
+                <Link className="Link" to={"/My-Reservation"}>
+                  {" "}
+                  <li href="#">My Reservation</li>{" "}
+                </Link>
+                <Link className="Link" to={"/reserve/myService"}>
+                  {" "}
+                  <li href="#">Reserve my Service</li>{" "}
+                </Link>
+              </div>
+            </div>
 
-            
-            <div class="dropdown">
-  <button class="dropbtn">Reservation</button>
-  <div class="dropdown-content">
-  <Link className="Link" to={"/My-Reservation"} > <li href="#">My Reservation</li>     </Link>
-  <Link className="Link" to={"/reserve/myService"} >  <li href="#">Reserve my Service</li>     </Link>
-  </div>
-</div>
-       
-
-            <Link className="Link" to={"/Reports"}>
-              <li>Reports</li>
-            </Link>
             <Link className="Link" to={"/Contact-us"}>
               <li>Contact us</li>
             </Link>
-            <Link className="Link" to={"/Setting"}>
-              <li>Setting</li>
-            </Link>
+            {/* **************Setting********** */}
+            <div className="dropdown">
+              <button className="dropbtn">Setting</button>
+              <div className="dropdown-content">
+                <Link className="Link" to={"/Settings"}>
+                  {" "}
+                  <li href="#">Profile Setting</li>{" "}
+                </Link>
+                <Link className="Link" to={"/reserve/myService"}>
+                  {" "}
+                  <li href="#">Favorite List</li>{" "}
+                </Link>
+                <Link className="Link" to={"/blockList-user"}>
+                  {" "}
+                  <li href="#">Block List</li>{" "}
+                </Link>
+                <Link className="Link" to={"/Reports"}>
+                  <li>Reports</li>
+                </Link>
+              </div>
+            </div>
           </ul>
         </nav>
         <div>

@@ -46,7 +46,6 @@ export const deleteOneService = createAsyncThunk("services/deleteOneService", as
         authorization: `Bearer ${cookie.load("token")}`,
       },
     });
-    console.log("response.data", response);
     return id;
   } catch (error) {
     return rejectWithValue(error.response);

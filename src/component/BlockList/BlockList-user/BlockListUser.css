@@ -1,0 +1,13 @@
+.block-list-user-cards {
+    display: grid;
+    grid-template-columns: repeat(4,15rem);
+    align-items: start;
+    padding: 1rem;
+    border: 1px solid black;
+    gap: 3rem;
+}
+
+.tit-blo {
+    font-size: 1.3rem;
+    font-weight: 600;
+}

@@ -11,6 +11,9 @@ import ServiceDetails from "./component/ServicesDetails/ServicesDetails";
 import MyServices from "./component/My Services/MyServices";
 import Footer from "./component/footer/footer";
 import MyReservation from './component/Reservation/MyReservation/MyReservation';
+import BlockListUser from "./component/BlockList/BlockList-user/BlockListUser";
+import ReserveMyService from "./component/Reservation/Reserve my service/ReserveMyService";
+import Setting from "./component/Setting/Setting";
 
 
 function App() {
@@ -29,10 +32,11 @@ function App() {
       <Route path='/Services/:id' element={<ServiceDetails/>}/>
       <Route path='/My-Services' element={<MyServices/>}/>
       <Route path='/My-Reservation' element={<MyReservation/>}/>
-      <Route path='/reserve/myService' element={<h1>Mohamamd</h1>}/>
+      <Route path='/reserve/myService' element={<ReserveMyService/>}/>
       <Route path='/Contact-us' element={<h1>Mohamamd</h1>}/>
       <Route path='/Reports' element={<h1>Mohamamd</h1>}/>
-      <Route path='/Settings' element={<h1>Mohamamd</h1>}/>
+      <Route path='/Settings' element={<Setting/>}/>
+      <Route path='/blockList-user' element={<BlockListUser/>}/>
     </Routes>
     <Footer />
       </>

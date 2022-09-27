@@ -3,6 +3,7 @@ import { useDispatch,useSelector } from 'react-redux'
 import { getMyReserve } from '../../../store/reservations'
 import ServiceInfo from './ServiceInfo-left/ServiceInfo'
 import './MyReservation.css'
+import DeleteReservation from './DeleteReservation/DeleteReservation'
 export default function MyReservation(props) {
     const dispatch = useDispatch()
 
@@ -25,9 +26,10 @@ export default function MyReservation(props) {
                 { 
               ele.status===null? <p className="inProgress stateus-myservice">inProgress</p>
               :ele.status ==='reject'?<p className="reject stateus-myservice">Rejected</p>
-              :<p className="confirm stateus-myservice">Active</p>
+              :<p className="confirm stateus-myservice">confirmed</p>
             }
             </div>
+            <div><DeleteReservation reserveId={ele.id}/></div>
             </div>
             )}
         </section>
