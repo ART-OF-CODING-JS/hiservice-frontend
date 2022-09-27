@@ -1,0 +1,15 @@
+.container-serviceProvider {
+    margin: 1.9rem 0 ;
+}
+.userprovider-item {
+    display: grid;
+    grid-template-columns: fit-content(1px) 1fr;
+    gap: .5rem;
+}
+.service-provider-info p{
+font-size: 1rem !important;
+}
+.service-pro-image {
+    width: 10rem;
+    border-radius: 50%;
+}
