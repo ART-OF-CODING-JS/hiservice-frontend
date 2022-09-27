@@ -1,20 +1,20 @@
 
 import { useEffect } from 'react'
 import { useDispatch,useSelector } from 'react-redux'
-import { getUserByID } from '../../../store/users'
+import { getAllUser } from '../../../store/users'
 import './ProviderInfo.css'
 export default function ServiceProviderInfo({ServiceProviderId}) {
     const dispatch = useDispatch()
     const {userInfo} = useSelector(state=>state.usersSlice)
 
     useEffect(()=>{
-        dispatch(getUserByID(ServiceProviderId))
+        dispatch(getAllUser())
     },[ServiceProviderId, dispatch])
 
-    console.log('userInfo state',userInfo)
+
     return(
         <section className='container-serviceProvider'>
-       {userInfo.map((ele,idx)=>
+       {userInfo.filter(ele=>ele.id===ServiceProviderId).map((ele,idx)=>
         <div className='userprovider-item' key={idx}>
             <div className='image-service-provider'>
                 {

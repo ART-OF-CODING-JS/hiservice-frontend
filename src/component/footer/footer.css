@@ -12,8 +12,11 @@ h6 {
     color: #262626;  
     font-size: 15px;
 }
-/* footer {
-    position: fixed-bottom;
-    bottom: 0;
-    width: 100%;
-} */
+
+footer {
+    position:sticky;
+    /* bottom: 0;
+    height:5px;
+    width: 100%; */
+  top: 100%;
+}

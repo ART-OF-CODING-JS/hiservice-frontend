@@ -2,6 +2,7 @@
 
 import Reservation from '../../Reservation/SendReservation/Reservation';
 import ServiceProviderInfo from '../ServiceProviderInfo/ProviderInfo';
+import BlockProvider from './Block service provider/BlockProvider';
 import './MainService.css'
 
 export default function MainService(props) {
@@ -31,7 +32,8 @@ export default function MainService(props) {
         </div>
         <ServiceProviderInfo ServiceProviderId ={ele.userID} />
         <div className="block-report">
-            <button className="block">Block Service provider</button>
+            {/* <button className="block">Block Service provider</button> */}
+            <BlockProvider providerID={ele.userID}/>
             <button className="report">Report Service</button>
         </div>
         </div>
