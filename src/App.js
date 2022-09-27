@@ -11,6 +11,7 @@ import ServiceDetails from "./component/ServicesDetails/ServicesDetails";
 import MyServices from "./component/My Services/MyServices";
 import Footer from "./component/footer/footer";
 import MyReservation from './component/Reservation/MyReservation/MyReservation';
+import SearchService from "./component/Services/search servics/SearchService";
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
       <Route path='/Contact-us' element={<h1>Mohamamd</h1>}/>
       <Route path='/Reports' element={<h1>Mohamamd</h1>}/>
       <Route path='/Settings' element={<h1>Mohamamd</h1>}/>
+      <Route path='/search' element={<SearchService/>}/>
     </Routes>
     <Footer />
       </>
