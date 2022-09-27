@@ -5,6 +5,7 @@ import reportsSlice from './reports'
 import contactSlice from './contact'
 import usersSlice from './users'
 import reserveSlice from './reservations'
+import blockSlice from './block'
 const store = configureStore({
     reducer:{
         authSlice:auth,
@@ -13,6 +14,7 @@ const store = configureStore({
         contactSlice,
         usersSlice,
         reserveSlice,
+        blockSlice,
     }
 })
 
