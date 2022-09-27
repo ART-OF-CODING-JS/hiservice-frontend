@@ -8,6 +8,7 @@ const url = process.env.REACT_APP_URL;
 // get all
 export const getAllServices = createAsyncThunk("services/getAllServices", async (data, thunkApi) => {
   const { rejectWithValue } = thunkApi;
+  
   try {
     let response = await axios.get(`${url}/service`, {
       headers: {
@@ -67,6 +68,21 @@ export const addService = createAsyncThunk("services/addService", async (arg, th
     return rejectWithValue(error.response.data);
   }
 });
+///// Search service 
+export const searchService = createAsyncThunk("services/searchService", async (data, thunkApi) => {
+  const { rejectWithValue } = thunkApi;
+  try {
+    const req = await axios.post(`${url}/search/byName`, data, {
+      headers: {
+        authorization: `Bearer ${cookie.load("token")}`,
+      },
+    });
+    console.log(req.data,"this is the search title");
+    return req.data;
+  } catch (error) {
+    return rejectWithValue(error.response.data);
+  }
+});
 
 // Edit Service
 export const updateService = createAsyncThunk("services/updateService", async (data, thunkApi) => {
@@ -105,6 +121,7 @@ const initialState = {
   allServices: [],
   oneService: [],
   myServices: [],
+  searchedServices: [],
   isLoading: false,
   error: null,
 };
@@ -126,6 +143,21 @@ const servicesSlice = createSlice({
       state.error = null;
     },
     [getAllServices.rejected]: (state, action) => {
+      state.error = action.payload;
+      state.isLoading = false;
+      // state.allServices = []
+    },
+    //// Searched services
+    [searchService.fulfilled]: (state, action) => {
+      state.searchedServices = action.payload;
+      state.isLoading = false;
+      state.error = null;
+    },
+    [searchService.pending]: (state, action) => {
+      state.isLoading = true;
+      state.error = null;
+    },
+    [searchService.rejected]: (state, action) => {
       state.error = action.payload;
       state.isLoading = false;
       // state.allServices = []

@@ -1,39 +1,19 @@
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
-// import { useNavigate } from "react-router-dom";
-import "./Services.css";
-import { getAllServices } from "../../../store/services";
+import { useSelector } from "react-redux";
 import AddService from "../Add service/AddServices";
 import Reports from "../../Reports/sendReports/Reports";
-export default function Services(props) {
-  const { allServices } = useSelector((state) => state.servicesSlice);
-  // const [show, setShow] = useState(false);
+import { Link } from "react-router-dom";
+import "./SearchService.css";
 
-  const dispatch = useDispatch();
-  // const navigate = useNavigate();
-  // const [search,setSearch]= useState('')
+export default function SearchService(props) {
+  const {searchedServices } = useSelector((state) => state.servicesSlice);
+
  
-  // function handleSubmit(e){
-  //   e.preventDefault();
-  //   console.log(search);
-  //   dispatch(searchService({title:search}))
-  //   setSearch('')
-  // }
-  useEffect(() => {
-
-    dispatch(getAllServices());
-    // dispatch(searchService());
-  }, [dispatch]);
-  console.log(allServices);
-  // console.log(searchedServices,"this we I will render the searched service");
+  console.log(searchedServices,"this we I will render the searched service");
   return (
     <>
-     
       <AddService />
-     
       <section className="service-container container-com">
-        {allServices.map((ele) => (
+        {searchedServices.map((ele) => (
           <div className="t" key={ele.id}>
             <div className="service-card">
               <div className="image-card">

@@ -9,6 +9,8 @@ import cookie from "react-cookies";
 import "./AddServices.css";
 import { useSelector, useDispatch } from "react-redux";
 import { addService } from "../../../store/services";
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 
 export default function AddService({ postData }) {
   const dispatch = useDispatch();
@@ -68,6 +70,7 @@ export default function AddService({ postData }) {
               <Form.Control type="text" placeholder="home, ..." ref={departmentRef} />
             </Form.Group>
             {/* *****************  */}
+           
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>City</Form.Label>
               <Form.Control type="text" placeholder="amman" ref={cityRef} />
