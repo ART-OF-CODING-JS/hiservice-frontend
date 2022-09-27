@@ -1,0 +1,9 @@
+.userInfo {
+    display: grid;
+    justify-items: center;
+}
+.username-setting {
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
