@@ -1,4 +1,6 @@
 import AddService from "../Services/Add service/AddServices";
+import Pagination from "../pagenation/Pagination";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getMyServices, deleteOneService } from "../../store/services";
@@ -15,11 +17,18 @@ export default function MyServices(props) {
     dispatch(getMyServices());
   }, [dispatch]);
 
+     ///////////pagination/////
+     const [currentPage, setCurrentPage] = useState(1);
+     const [postsPerPage,setPerPage] = useState(4);
+   
+     const indexOfLastRecord = currentPage * postsPerPage;
+     const indexOfFirstRecord = indexOfLastRecord - postsPerPage;
+     const currentRecords = myServices.slice(indexOfFirstRecord, indexOfLastRecord);
   return (
     <>
       <AddService />
       <section className="myservice-container container-com">
-        {myServices.map((ele) => (
+        {currentRecords.map((ele) => (
           <div className="t" key={ele.id}>
             <div className="myservice-card">
               <div className="image-myservice">
@@ -50,6 +59,11 @@ export default function MyServices(props) {
           </div>
         ))}
       </section>
+      <Pagination 
+      recordsPerPage={postsPerPage}
+      totalPosts={myServices.length}
+      setCurrentPage={setCurrentPage}
+      />
     </>
   );
 }

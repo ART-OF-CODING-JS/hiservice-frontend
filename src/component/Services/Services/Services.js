@@ -1,11 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import { Link } from "react-router-dom";
 // import { useNavigate } from "react-router-dom";
 import "./Services.css";
 import { getAllServices } from "../../../store/services";
 import AddService from "../Add service/AddServices";
 import Reports from "../../Reports/sendReports/Reports";
+import Pagination from "../../pagenation/Pagination"
 export default function Services(props) {
   const { allServices } = useSelector((state) => state.servicesSlice);
   // const [show, setShow] = useState(false);
@@ -27,13 +28,23 @@ export default function Services(props) {
   }, [dispatch]);
   console.log(allServices);
   // console.log(searchedServices,"this we I will render the searched service");
+  
+  ///////////pagination/////
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage,setPerPage] = useState(4);
+
+  const indexOfLastRecord = currentPage * postsPerPage;
+  const indexOfFirstRecord = indexOfLastRecord - postsPerPage;
+  const currentRecords = allServices.slice(indexOfFirstRecord, indexOfLastRecord);
+
+//////////////
   return (
     <>
      
       <AddService />
      
       <section className="service-container container-com">
-        {allServices.map((ele) => (
+        {currentRecords.map((ele) => (
           <div className="t" key={ele.id}>
             <div className="service-card">
               <div className="image-card">
@@ -56,6 +67,11 @@ export default function Services(props) {
           </div>
         ))}
       </section>
+      <Pagination 
+      recordsPerPage={postsPerPage}
+      totalPosts={allServices.length}
+      setCurrentPage={setCurrentPage}
+      />
     </>
   );
 }
