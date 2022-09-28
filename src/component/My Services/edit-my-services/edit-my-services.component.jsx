@@ -11,7 +11,7 @@ import cookie from "react-cookies";
 import { useDispatch } from "react-redux";
 import { updateService } from "../../../store/services";
 
-const EditMyServices = (props) => {
+const EditServices = (props) => {
   // console.log();
   // console.log("----", props.id);
 
@@ -106,4 +106,4 @@ const EditMyServices = (props) => {
   );
 };
 
-export default EditMyServices;
+export default EditServices;
