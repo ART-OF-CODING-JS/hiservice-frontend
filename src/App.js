@@ -55,14 +55,19 @@ function App() {
 
             <Route path="/reserve/myService" element={<ReserveMyService />} />
             <Route path="//reports-admin" element={<ReportAdmin />} />
+
             <Route path="/Contact-us" element={<Contact />} />
             <Route path="/Reports" element={<h1>Mohamamd</h1>} />
-            <Route path="/Settings" element={<h1>Mohamamd</h1>} />
+
+            <Route path="/Settings" element={<Setting />} />
             <Route path="/search" element={<SearchService />} />
+
             <Route path="/searchCity" element={<SearchByCity />} />
             <Route path="/lastNew" element={<LastNewService />} />
+
             <Route path="/mostRated" element={<MostRatedService />} />
             <Route path="/blockList-user" element={<BlockListUser />} />
+
             <Route path="/services/confirmation" element={<BlockListUser />} />
           </Routes>
 
