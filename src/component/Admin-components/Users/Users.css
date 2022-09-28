@@ -1,0 +1,44 @@
+.tit-user-ad {
+    display: grid;
+    grid-template-columns: 25rem repeat(6,1fr);
+    font-size: 2rem;
+    font-weight: 600;
+    border-bottom: 2px solid black;
+    justify-self: center;
+}
+.tit-user-ad p:not(.photo-co-1) {
+    justify-self: center;
+}
+.user-cards {
+    display: grid;
+    grid-template-columns: 25rem repeat(6,1fr);
+    align-items: center;
+    border-bottom: 1px solid #ced4da;
+    padding: 1rem;
+    font-size: 1.3rem;
+
+}
+.back-red {
+    background-color: #fcebec;
+}
+.user-cards div:not(.img-emi-na) {
+    justify-self: center;
+}
+
+/*  */
+.user-image-admin {
+    width: 5rem;
+    border-radius:50% ;
+}
+.img-emi-na {
+    display: flex;
+    gap: .5rem;
+}
+.photo-id {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.name-email-us {
+    align-self: flex-end;
+}

@@ -7,8 +7,8 @@ import { getMyServices, deleteOneService } from "../../store/services";
 import { useEffect } from "react";
 import "./MyServices.css";
 
-import EditMyServices from "./edit-my-services/edit-my-services.component";
-import DeleteMyService from "./DeleteMyService/DeleteMyService";
+import EditServices from "./edit-my-services/edit-my-services.component";
+import DeleteService from "./DeleteMyService/DeleteMyService";
 
 export default function MyServices(props) {
   const { myServices } = useSelector((state) => state.servicesSlice);
@@ -44,12 +44,12 @@ export default function MyServices(props) {
                 <div className="btns-myService">
                   <div className="edit-myservice common-edi-del">
                     <button >
-                      <EditMyServices id={ele.id} />
+                      <EditServices id={ele.id} />
                     </button>
                   </div>
                   <div className="delete-myservice common-edi-del">
                  
-                      <DeleteMyService serviceId={ele.id}/>
+                      <DeleteService serviceId={ele.id}/>
               
             
                   </div>

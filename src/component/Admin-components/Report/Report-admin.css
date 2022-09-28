@@ -1,0 +1,31 @@
+.report-admin-cards {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    border-bottom: 1px solid #ced4da;
+    padding: 1rem;
+    font-size: 1.3rem;
+    gap: 1.2rem;
+}
+
+
+.title-report-admin {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    font-size: 2rem;
+    font-weight: 600;
+    border-bottom: 2px solid black;
+    justify-self: center;
+}
+.title-report-admin:first-child {
+    justify-self: center;
+}
+.report-admin-cards :nth-child(2) {
+
+    align-self: start;
+}
+.btn-report {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}

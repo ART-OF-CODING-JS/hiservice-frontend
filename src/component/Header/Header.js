@@ -4,27 +4,28 @@ import React from "react";
 import Logout from "../Auth/Logout/Logout";
 import "./Header.css";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getAllServices,searchService } from "../../store/services";
+import { getAllServices, searchService } from "../../store/services";
 // import AddService from "../Add service/AddServices";
 // import Reports from "../../Reports/sendReports/Reports";
 import { Link } from "react-router-dom";
+import Access from "../Access/Access";
 
 export default function Header(props) {
-
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const [search,setSearch]= useState('')
- 
-  function handleSubmit(e){
-    e.preventDefault();
-    console.log(search);
-    dispatch(searchService({title:search}))
-    setSearch('')
-  }
-  useEffect(() => {
 
+  // const navigate = useNavigate();
+  // const [search,setSearch]= useState('')
+ 
+  // function handleSubmit(e){
+  //   e.preventDefault();
+  //   console.log(search);
+  //   dispatch(searchService({title:search}))
+  //   setSearch('')
+  // }
+
+  useEffect(() => {
     dispatch(getAllServices());
     // dispatch(searchService());
   }, [dispatch]);
@@ -37,14 +38,49 @@ export default function Header(props) {
             <p className="logo">Hi service</p>
           </div>
           <ul>
+           <Access role={'admin'}> 
+           <Link className="Link" to={"/users"}>
+              {" "}
+              <li>Users</li>
+            </Link>
+            </Access>
+            {/* *************************************** */}
+            <Access role="user">
             <Link className="Link" to={"/Services"}>
               {" "}
               <li>Services</li>
             </Link>
+            </Access>
+            {/* ======================================== */}
+            <Access role='admin'> 
+            <div className="dropdown">
+              <button className="dropbtn">Service</button>
+              <div className="dropdown-content">
+                <Link className="Link" to={"/Services"}>
+                  {" "}
+                  <li href="#">All Services</li>{" "}
+                </Link>
+                <Link className="Link" to={"/services/confirmation"}>
+                  {" "}
+                  <li href="#">Services Confirmation</li>{" "}
+                </Link>
+              </div>
+            </div>
+            </Access>
+            {/* ******************************************* */}
+            <Access role='admin'>
+            <Link className="Link" to={"/reports-admin"}>
+              {" "}
+              <li>Reports</li>
+            </Link>
+            </Access>
+            {/* ********************************** */}
+            <Access role='user'>
             <Link className="Link" to={"/My-Services"}>
               {" "}
               <li>My services</li>
             </Link>
+            </Access>
             {/* *************Reservation************ */}
        
             <div class="dropdown">
@@ -55,6 +91,9 @@ export default function Header(props) {
               </div>
             </div>
 
+
+
+    
 
             <Link className="Link" to={"/Reports"}>
               <li>Reports</li>
@@ -87,17 +126,18 @@ export default function Header(props) {
           </ul>
         </nav>
         <div>
-       
           <Logout />
         </div>
       </div>
-      <div className="search">
+
+      {/* <div className="search">
       <form onSubmit={handleSubmit}>
       
         <input type="text" placeholder="Search....." name="user" value={search} onChange={(e)=> setSearch(e.target.value)} />
         <button type="submit" onClick={()=>navigate('/search')}> Search</button>
         </form>
-        </div>
+        </div> */}
+
     </div>
   );
 }

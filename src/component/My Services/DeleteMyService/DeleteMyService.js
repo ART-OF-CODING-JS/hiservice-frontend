@@ -3,7 +3,7 @@ import { Button, Modal } from "react-bootstrap";
 import { useSelector,useDispatch } from "react-redux";
 import { deleteOneService } from "../../../store/services";
 
-export default function DeleteMyService({serviceId}) {
+export default function DeleteService({serviceId}) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);

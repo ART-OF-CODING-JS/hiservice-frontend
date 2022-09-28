@@ -1,5 +1,6 @@
 
 
+import Access from '../../Access/Access';
 import Reservation from '../../Reservation/SendReservation/Reservation';
 import ServiceProviderInfo from '../ServiceProviderInfo/ProviderInfo';
 import BlockProvider from './Block service provider/BlockProvider';
@@ -33,8 +34,8 @@ export default function MainService(props) {
         <ServiceProviderInfo ServiceProviderId ={ele.userID} />
         <div className="block-report">
             {/* <button className="block">Block Service provider</button> */}
-            <BlockProvider providerID={ele.userID}/>
-            <button className="report">Report Service</button>
+            <Access role={'user'}><BlockProvider providerID={ele.userID}/></Access>
+            <Access role={'user'}> <button className="report">Report Service</button></Access>
         </div>
         </div>
     </div>

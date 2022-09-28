@@ -1,4 +1,4 @@
-.userInfo {
+.userInfo-container {
     display: grid;
     justify-items: center;
 }
@@ -6,4 +6,10 @@
     font-size: 2.5rem;
     font-weight: 600;
     letter-spacing: 1px;
+}
+.user-info {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
