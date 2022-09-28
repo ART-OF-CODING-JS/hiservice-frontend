@@ -84,6 +84,52 @@ export const searchService = createAsyncThunk("services/searchService", async (d
   }
 });
 
+///// Search by City
+export const searchByCity = createAsyncThunk("services/searchByCity", async (data, thunkApi) => {
+  const { rejectWithValue } = thunkApi;
+  try {
+    const req = await axios.post(`${url}/search/byCity`, data, {
+      headers: {
+        authorization: `Bearer ${cookie.load("token")}`,
+      },
+    });
+    console.log(req.data,"this is the search by city  title");
+    return req.data;
+  } catch (error) {
+    return rejectWithValue(error.response.data);
+  }
+});
+// Last new service
+export const lastNewService = createAsyncThunk("services/lastNewService", async (data, thunkApi) => {
+  const { rejectWithValue } = thunkApi;
+  
+  try {
+    let response = await axios.get(`${url}/lastnews`, {
+      headers: {
+        authorization: `Bearer ${cookie.load("token")}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    return rejectWithValue(error.response.data.message);
+  }
+});
+//// most rated service 
+export const mostRatedService = createAsyncThunk("services/mostRatedService", async (data, thunkApi) => {
+  const { rejectWithValue } = thunkApi;
+  
+  try {
+    let response = await axios.get(`${url}/mostrated`, {
+      headers: {
+        authorization: `Bearer ${cookie.load("token")}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    return rejectWithValue(error.response.data.message);
+  }
+});
+
 // Edit Service
 export const updateService = createAsyncThunk("services/updateService", async (data, thunkApi) => {
   const { rejectWithValue, dispatch } = thunkApi;
@@ -122,6 +168,8 @@ const initialState = {
   oneService: [],
   myServices: [],
   searchedServices: [],
+  newServices: [],
+  mostRated: [],
   isLoading: false,
   error: null,
 };
@@ -147,6 +195,36 @@ const servicesSlice = createSlice({
       state.isLoading = false;
       // state.allServices = []
     },
+    ///// last new service 
+    [lastNewService.fulfilled]: (state, action) => {
+      state.newServices = action.payload;
+      state.isLoading = false;
+      state.error = null;
+    },
+    [lastNewService.pending]: (state, action) => {
+      state.isLoading = true;
+      state.error = null;
+    },
+    [lastNewService.rejected]: (state, action) => {
+      state.error = action.payload;
+      state.isLoading = false;
+      // state.allServices = []
+    },
+    ///// most rated service
+    [mostRatedService.fulfilled]: (state, action) => {
+      state.mostRated = action.payload;
+      state.isLoading = false;
+      state.error = null;
+    },
+    [mostRatedService.pending]: (state, action) => {
+      state.isLoading = true;
+      state.error = null;
+    },
+    [mostRatedService.rejected]: (state, action) => {
+      state.error = action.payload;
+      state.isLoading = false;
+      // state.allServices = []
+    },
     //// Searched services
     [searchService.fulfilled]: (state, action) => {
       state.searchedServices = action.payload;
@@ -158,6 +236,21 @@ const servicesSlice = createSlice({
       state.error = null;
     },
     [searchService.rejected]: (state, action) => {
+      state.error = action.payload;
+      state.isLoading = false;
+      // state.allServices = []
+    },
+    //// Searched By City services
+    [searchByCity.fulfilled]: (state, action) => {
+      state.searchedServices = action.payload;
+      state.isLoading = false;
+      state.error = null;
+    },
+    [searchByCity.pending]: (state, action) => {
+      state.isLoading = true;
+      state.error = null;
+    },
+    [searchByCity.rejected]: (state, action) => {
       state.error = action.payload;
       state.isLoading = false;
       // state.allServices = []
