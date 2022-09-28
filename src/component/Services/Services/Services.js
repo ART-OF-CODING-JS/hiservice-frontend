@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Services.css";
 import { getAllServices } from "../../../store/services";
@@ -8,9 +8,10 @@ import Reports from "../../Reports/sendReports/Reports";
 import Access from "../../Access/Access";
 import DeleteService from "../../My Services/DeleteMyService/DeleteMyService";
 import EditServices from "../../My Services/edit-my-services/edit-my-services.component";
+import Search from "../../searchBar/Search";
 export default function Services(props) {
-  const { allServices, isLoading, error } = useSelector((state) => state.servicesSlice);
-  const [show, setShow] = useState(false);
+  const { allServices } = useSelector((state) => state.servicesSlice);
+  // const [show, setShow] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -18,9 +19,12 @@ export default function Services(props) {
     dispatch(getAllServices());
   }, [dispatch]);
   console.log(allServices);
+  
   return (
     <>
      <Access role='user'> <AddService /></Access>
+     <Search/>
+     
       <section className="service-container container-com">
         {allServices.map((ele) => (
           <div className="t" key={ele.id}>
