@@ -85,7 +85,9 @@ export default function Header(props) {
 
             <div class="dropdown">
               <button class="dropbtn">Reservation</button>
+              <Access role="user">
               <div class="dropdown-content">
+
                 <Link className="Link" to={"/My-Reservation"}>
                   {" "}
                   <li href="#">My Reservation</li>{" "}
@@ -95,6 +97,7 @@ export default function Header(props) {
                   <li href="#">Reserve my Service</li>{" "}
                 </Link>
               </div>
+              </Access>
             </div>
 
             <Link className="Link" to={"/Reports"}>

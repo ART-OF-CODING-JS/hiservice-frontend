@@ -57,7 +57,7 @@ function App() {
             <Route path="//reports-admin" element={<ReportAdmin />} />
             <Route path="/Contact-us" element={<Contact />} />
             <Route path="/Reports" element={<h1>Mohamamd</h1>} />
-            <Route path="/Settings" element={<h1>Mohamamd</h1>} />
+            <Route path="/Settings" element={<Setting/>} />
             <Route path="/search" element={<SearchService />} />
             <Route path="/searchCity" element={<SearchByCity />} />
             <Route path="/lastNew" element={<LastNewService />} />
