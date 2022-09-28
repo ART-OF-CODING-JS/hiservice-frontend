@@ -82,20 +82,18 @@ export default function Header(props) {
             </Link>
             </Access>
             {/* *************Reservation************ */}
-
+       
             <div class="dropdown">
               <button class="dropbtn">Reservation</button>
               <div class="dropdown-content">
-                <Link className="Link" to={"/My-Reservation"}>
-                  {" "}
-                  <li href="#">My Reservation</li>{" "}
-                </Link>
-                <Link className="Link" to={"/reserve/myService"}>
-                  {" "}
-                  <li href="#">Reserve my Service</li>{" "}
-                </Link>
+                <Link className="Link" to={"/My-Reservation"} > <li href="#">My Reservation</li>     </Link>
+                <Link className="Link" to={"/reserve/myService"} >  <li href="#">Reserve my Service</li>     </Link>
               </div>
             </div>
+
+
+
+    
 
             <Link className="Link" to={"/Reports"}>
               <li>Reports</li>
