@@ -3,7 +3,7 @@ import AddService from "../Add service/AddServices";
 import Reports from "../../Reports/sendReports/Reports";
 import { Link } from "react-router-dom";
 import "./SearchService.css";
-
+import Search from "../../searchBar/Search";
 export default function SearchService(props) {
   const {searchedServices } = useSelector((state) => state.servicesSlice);
 
@@ -11,6 +11,7 @@ export default function SearchService(props) {
   console.log(searchedServices,"this we I will render the searched service");
   return (
     <>
+    <Search/>
       <AddService />
       <section className="service-container container-com">
         {searchedServices.map((ele) => (

@@ -14,15 +14,15 @@ import { Link } from "react-router-dom";
 export default function Header(props) {
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const [search,setSearch]= useState('')
+  // const navigate = useNavigate();
+  // const [search,setSearch]= useState('')
  
-  function handleSubmit(e){
-    e.preventDefault();
-    console.log(search);
-    dispatch(searchService({title:search}))
-    setSearch('')
-  }
+  // function handleSubmit(e){
+  //   e.preventDefault();
+  //   console.log(search);
+  //   dispatch(searchService({title:search}))
+  //   setSearch('')
+  // }
   useEffect(() => {
 
     dispatch(getAllServices());
@@ -46,21 +46,7 @@ export default function Header(props) {
               <li>My services</li>
             </Link>
             {/* *************Reservation************ */}
-            <div className="dropdown">
-              <button className="dropbtn">Reservation</button>
-              <div className="dropdown-content">
-                <Link className="Link" to={"/My-Reservation"}>
-                  {" "}
-                  <li href="#">My Reservation</li>{" "}
-                </Link>
-                <Link className="Link" to={"/reserve/myService"}>
-                  {" "}
-                  <li href="#">Reserve my Service</li>{" "}
-                </Link>
-              </div>
-            </div>
-
-
+      
             <div class="dropdown">
               <button class="dropbtn">Reservation</button>
               <div class="dropdown-content">
@@ -104,13 +90,13 @@ export default function Header(props) {
           <Logout />
         </div>
       </div>
-      <div className="search">
+      {/* <div className="search">
       <form onSubmit={handleSubmit}>
       
         <input type="text" placeholder="Search....." name="user" value={search} onChange={(e)=> setSearch(e.target.value)} />
         <button type="submit" onClick={()=>navigate('/search')}> Search</button>
         </form>
-        </div>
+        </div> */}
     </div>
   );
 }

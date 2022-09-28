@@ -16,8 +16,9 @@ import SearchService from "./component/Services/search servics/SearchService";
 import BlockListUser from "./component/BlockList/BlockList-user/BlockListUser";
 import ReserveMyService from "./component/Reservation/Reserve my service/ReserveMyService";
 import Setting from "./component/Setting/Setting";
-
-
+import SearchByCity from "./component/Services/search servics/serachByCity";
+import LastNewService from "./component/Services/search servics/LastNewService";
+import MostRatedService from "./component/Services/search servics/MostRated";
 
 function App() {
   const { isSignin } = useSelector((state) => state.authSlice);
@@ -41,6 +42,9 @@ function App() {
       <Route path='/Reports' element={<h1>Mohamamd</h1>}/>
       <Route path='/Settings' element={<h1>Mohamamd</h1>}/>
       <Route path='/search' element={<SearchService/>}/>
+      <Route path='/searchCity' element={<SearchByCity/>}/>
+      <Route path='/lastNew' element={<LastNewService/>}/>
+      <Route path='/mostRated' element={<MostRatedService/>}/>
       <Route path='/blockList-user' element={<BlockListUser/>}/>
     </Routes>
    
