@@ -4,16 +4,16 @@ import React from "react";
 import Logout from "../Auth/Logout/Logout";
 import "./Header.css";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getAllServices,searchService } from "../../store/services";
+import { getAllServices, searchService } from "../../store/services";
 // import AddService from "../Add service/AddServices";
 // import Reports from "../../Reports/sendReports/Reports";
 import { Link } from "react-router-dom";
 
 export default function Header(props) {
-
   const dispatch = useDispatch();
+
   // const navigate = useNavigate();
   // const [search,setSearch]= useState('')
  
@@ -23,8 +23,8 @@ export default function Header(props) {
   //   dispatch(searchService({title:search}))
   //   setSearch('')
   // }
-  useEffect(() => {
 
+  useEffect(() => {
     dispatch(getAllServices());
     // dispatch(searchService());
   }, [dispatch]);
@@ -46,19 +46,25 @@ export default function Header(props) {
               <li>My services</li>
             </Link>
             {/* *************Reservation************ */}
-      
+
             <div class="dropdown">
               <button class="dropbtn">Reservation</button>
               <div class="dropdown-content">
-                <Link className="Link" to={"/My-Reservation"} > <li href="#">My Reservation</li>     </Link>
-                <Link className="Link" to={"/reserve/myService"} >  <li href="#">Reserve my Service</li>     </Link>
+                <Link className="Link" to={"/My-Reservation"}>
+                  {" "}
+                  <li href="#">My Reservation</li>{" "}
+                </Link>
+                <Link className="Link" to={"/reserve/myService"}>
+                  {" "}
+                  <li href="#">Reserve my Service</li>{" "}
+                </Link>
               </div>
             </div>
-
 
             <Link className="Link" to={"/Reports"}>
               <li>Reports</li>
             </Link>
+
             <Link className="Link" to={"/Contact-us"}>
               <li>Contact us</li>
             </Link>
@@ -86,10 +92,10 @@ export default function Header(props) {
           </ul>
         </nav>
         <div>
-       
           <Logout />
         </div>
       </div>
+
       {/* <div className="search">
       <form onSubmit={handleSubmit}>
       
@@ -97,6 +103,7 @@ export default function Header(props) {
         <button type="submit" onClick={()=>navigate('/search')}> Search</button>
         </form>
         </div> */}
+
     </div>
   );
 }
