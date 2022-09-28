@@ -10,6 +10,7 @@ import { getAllServices, searchService } from "../../store/services";
 // import AddService from "../Add service/AddServices";
 // import Reports from "../../Reports/sendReports/Reports";
 import { Link } from "react-router-dom";
+import Access from "../Access/Access";
 
 export default function Header(props) {
   const dispatch = useDispatch();
@@ -37,14 +38,49 @@ export default function Header(props) {
             <p className="logo">Hi service</p>
           </div>
           <ul>
+           <Access role={'admin'}> 
+           <Link className="Link" to={"/users"}>
+              {" "}
+              <li>Users</li>
+            </Link>
+            </Access>
+            {/* *************************************** */}
+            <Access role="user">
             <Link className="Link" to={"/Services"}>
               {" "}
               <li>Services</li>
             </Link>
+            </Access>
+            {/* ======================================== */}
+            <Access role='admin'> 
+            <div className="dropdown">
+              <button className="dropbtn">Service</button>
+              <div className="dropdown-content">
+                <Link className="Link" to={"/Services"}>
+                  {" "}
+                  <li href="#">All Services</li>{" "}
+                </Link>
+                <Link className="Link" to={"/services/confirmation"}>
+                  {" "}
+                  <li href="#">Services Confirmation</li>{" "}
+                </Link>
+              </div>
+            </div>
+            </Access>
+            {/* ******************************************* */}
+            <Access role='admin'>
+            <Link className="Link" to={"/reports-admin"}>
+              {" "}
+              <li>Reports</li>
+            </Link>
+            </Access>
+            {/* ********************************** */}
+            <Access role='user'>
             <Link className="Link" to={"/My-Services"}>
               {" "}
               <li>My services</li>
             </Link>
+            </Access>
             {/* *************Reservation************ */}
 
             <div class="dropdown">
