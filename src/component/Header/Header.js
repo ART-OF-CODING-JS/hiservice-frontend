@@ -10,18 +10,21 @@ import { getAllServices, searchService } from "../../store/services";
 // import AddService from "../Add service/AddServices";
 // import Reports from "../../Reports/sendReports/Reports";
 import { Link } from "react-router-dom";
+import Access from "../Access/Access";
 
 export default function Header(props) {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const [search, setSearch] = useState("");
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    console.log(search);
-    dispatch(searchService({ title: search }));
-    setSearch("");
-  }
+  // const navigate = useNavigate();
+  // const [search,setSearch]= useState('')
+ 
+  // function handleSubmit(e){
+  //   e.preventDefault();
+  //   console.log(search);
+  //   dispatch(searchService({title:search}))
+  //   setSearch('')
+  // }
+
   useEffect(() => {
     dispatch(getAllServices());
     // dispatch(searchService());
@@ -35,42 +38,62 @@ export default function Header(props) {
             <p className="logo">Hi service</p>
           </div>
           <ul>
+           <Access role={'admin'}> 
+           <Link className="Link" to={"/users"}>
+              {" "}
+              <li>Users</li>
+            </Link>
+            </Access>
+            {/* *************************************** */}
+            <Access role="user">
             <Link className="Link" to={"/Services"}>
               {" "}
               <li>Services</li>
             </Link>
+            </Access>
+            {/* ======================================== */}
+            <Access role='admin'> 
+            <div className="dropdown">
+              <button className="dropbtn">Service</button>
+              <div className="dropdown-content">
+                <Link className="Link" to={"/Services"}>
+                  {" "}
+                  <li href="#">All Services</li>{" "}
+                </Link>
+                <Link className="Link" to={"/services/confirmation"}>
+                  {" "}
+                  <li href="#">Services Confirmation</li>{" "}
+                </Link>
+              </div>
+            </div>
+            </Access>
+            {/* ******************************************* */}
+            <Access role='admin'>
+            <Link className="Link" to={"/reports-admin"}>
+              {" "}
+              <li>Reports</li>
+            </Link>
+            </Access>
+            {/* ********************************** */}
+            <Access role='user'>
             <Link className="Link" to={"/My-Services"}>
               {" "}
               <li>My services</li>
             </Link>
+            </Access>
             {/* *************Reservation************ */}
-            <div className="dropdown">
-              <button className="dropbtn">Reservation</button>
-              <div className="dropdown-content">
-                <Link className="Link" to={"/My-Reservation"}>
-                  {" "}
-                  <li href="#">My Reservation</li>{" "}
-                </Link>
-                <Link className="Link" to={"/reserve/myService"}>
-                  {" "}
-                  <li href="#">Reserve my Service</li>{" "}
-                </Link>
-              </div>
-            </div>
-
+       
             <div class="dropdown">
               <button class="dropbtn">Reservation</button>
               <div class="dropdown-content">
-                <Link className="Link" to={"/My-Reservation"}>
-                  {" "}
-                  <li href="#">My Reservation</li>{" "}
-                </Link>
-                <Link className="Link" to={"/reserve/myService"}>
-                  {" "}
-                  <li href="#">Reserve my Service</li>{" "}
-                </Link>
+                <Link className="Link" to={"/My-Reservation"} > <li href="#">My Reservation</li>     </Link>
+                <Link className="Link" to={"/reserve/myService"} >  <li href="#">Reserve my Service</li>     </Link>
               </div>
             </div>
+
+
+
+    
 
             <Link className="Link" to={"/Reports"}>
               <li>Reports</li>
@@ -106,15 +129,15 @@ export default function Header(props) {
           <Logout />
         </div>
       </div>
-      <div className="search">
-        <form onSubmit={handleSubmit}>
-          <input type="text" placeholder="Search....." name="user" value={search} onChange={(e) => setSearch(e.target.value)} />
-          <button type="submit" onClick={() => navigate("/search")}>
-            {" "}
-            Search
-          </button>
+
+      {/* <div className="search">
+      <form onSubmit={handleSubmit}>
+      
+        <input type="text" placeholder="Search....." name="user" value={search} onChange={(e)=> setSearch(e.target.value)} />
+        <button type="submit" onClick={()=>navigate('/search')}> Search</button>
         </form>
-      </div>
+        </div> */}
+
     </div>
   );
 }

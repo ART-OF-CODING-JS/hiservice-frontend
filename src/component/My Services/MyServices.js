@@ -1,12 +1,14 @@
 import AddService from "../Services/Add service/AddServices";
+import Pagination from "../pagenation/Pagination";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getMyServices, deleteOneService } from "../../store/services";
 import { useEffect } from "react";
 import "./MyServices.css";
 
-import EditMyServices from "./edit-my-services/edit-my-services.component";
-import DeleteMyService from "./DeleteMyService/DeleteMyService";
+import EditServices from "./edit-my-services/edit-my-services.component";
+import DeleteService from "./DeleteMyService/DeleteMyService";
 
 export default function MyServices(props) {
   const { myServices } = useSelector((state) => state.servicesSlice);
@@ -15,11 +17,18 @@ export default function MyServices(props) {
     dispatch(getMyServices());
   }, [dispatch]);
 
+     ///////////pagination/////
+     const [currentPage, setCurrentPage] = useState(1);
+     const [postsPerPage,setPerPage] = useState(4);
+   
+     const indexOfLastRecord = currentPage * postsPerPage;
+     const indexOfFirstRecord = indexOfLastRecord - postsPerPage;
+     const currentRecords = myServices.slice(indexOfFirstRecord, indexOfLastRecord);
   return (
     <>
       <AddService />
       <section className="myservice-container container-com">
-        {myServices.map((ele) => (
+        {currentRecords.map((ele) => (
           <div className="t" key={ele.id}>
             <div className="myservice-card">
               <div className="image-myservice">
@@ -35,12 +44,12 @@ export default function MyServices(props) {
                 <div className="btns-myService">
                   <div className="edit-myservice common-edi-del">
                     <button >
-                      <EditMyServices id={ele.id} />
+                      <EditServices id={ele.id} />
                     </button>
                   </div>
                   <div className="delete-myservice common-edi-del">
                  
-                      <DeleteMyService serviceId={ele.id}/>
+                      <DeleteService serviceId={ele.id}/>
               
             
                   </div>
@@ -50,6 +59,11 @@ export default function MyServices(props) {
           </div>
         ))}
       </section>
+      <Pagination 
+      recordsPerPage={postsPerPage}
+      totalPosts={myServices.length}
+      setCurrentPage={setCurrentPage}
+      />
     </>
   );
 }
