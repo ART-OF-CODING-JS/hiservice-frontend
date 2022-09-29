@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import { useSelector,useDispatch } from "react-redux";
-import { deleteReservation } from "../../../../store/reservations";
+import { deleteReservation, getAllReservation } from "../../../../store/reservations";
 import './DeleteReservation.css'
 export default function DeleteReservation({reserveId}) {
   const [show, setShow] = useState(false);
@@ -11,6 +11,7 @@ export default function DeleteReservation({reserveId}) {
   const dispatch = useDispatch()
 const handleDelete = ()=>{
   dispatch(deleteReservation(reserveId))
+  dispatch(getAllReservation())  
 }
 
   return (
@@ -28,7 +29,7 @@ const handleDelete = ()=>{
           <Modal.Title>Delete Reservation</Modal.Title>
         </Modal.Header>
         <Modal.Body className="c">
-          <p> Are you sure want to delete Your service?</p>
+          <p> Are you sure want to delete Reservation?</p>
         </Modal.Body>
         <Modal.Footer>
           <Button className="py-3" variant="secondary" onClick={handleClose}>
