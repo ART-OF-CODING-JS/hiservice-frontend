@@ -1,0 +1,67 @@
+.img-myservice {
+    width: 350px;
+    height:250px;
+}
+.myservice-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 0.5rem;
+    border: 1px solid #dee2e6;
+    transition: all 0.4s ease;
+    padding: 0.5rem;
+}
+
+.stateus-myservice {
+    display: inline-block;
+    border: 1px solid black;
+    padding: 0.8rem 4rem;
+    font-weight: 600;
+    font-size: 1.4rem;
+    letter-spacing: 0.8px;
+}
+.inProgress {
+color: #868e96;
+}
+.reject {
+   color: #dc3545;
+}
+.confirm {
+    color: #9bb662;
+  
+}
+
+
+.btns-myService {
+    display: flex;
+    gap: 3rem;
+}
+.common-edi-del {
+    display: flex;
+    flex-direction: column-reverse;
+   align-items: center;
+   font-size: 1.3rem;
+}
+.common-edi-del button {
+    width: 160px;
+    height: 50px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    background-color: rgb(186, 176, 176);
+}
+.icon-mysevice {
+    font-size: 2rem;
+}
+
+.edit-myservice:hover,.edit-myservice button:hover {
+    color: var(--primary-color);
+}
+
+.delete-myservice:hover  {
+    color:#dc3545;
+}
+.delete-myservice button:hover {
+    color:#dc3545;
+
+}

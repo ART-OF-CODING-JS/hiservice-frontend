@@ -3,10 +3,10 @@ import React from "react";
 // import DropdownButton from "react-bootstrap/DropdownButton";
 import Logout from "../Auth/Logout/Logout";
 import "./Header.css";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { getAllServices, searchService } from "../../store/services";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+
+import { getAllServices } from "../../store/services";
 // import AddService from "../Add service/AddServices";
 // import Reports from "../../Reports/sendReports/Reports";
 import { Link } from "react-router-dom";
@@ -15,21 +15,13 @@ import Access from "../Access/Access";
 export default function Header(props) {
   const dispatch = useDispatch();
 
-  // const navigate = useNavigate();
-  // const [search,setSearch]= useState('')
- 
-  // function handleSubmit(e){
-  //   e.preventDefault();
-  //   console.log(search);
-  //   dispatch(searchService({title:search}))
-  //   setSearch('')
-  // }
+  
 
   useEffect(() => {
     dispatch(getAllServices());
-    // dispatch(searchService());
+    
   }, [dispatch]);
-  // console.log(allServices);
+ 
   return (
     <div className="headers container-com">
       <div className="head-header">
@@ -110,9 +102,9 @@ export default function Header(props) {
                   {" "}
                   <li href="#">Profile Setting</li>{" "}
                 </Link>
-                <Link className="Link" to={"/reserve/myService"}>
+                <Link className="Link" to={"/favList"}>
                   {" "}
-                  <li href="#">Favorite List</li>{" "}
+                  <li href="#">Favorite List </li>{" "}
                 </Link>
                 <Link className="Link" to={"/blockList-user"}>
                   {" "}
@@ -129,14 +121,6 @@ export default function Header(props) {
           <Logout />
         </div>
       </div>
-
-      {/* <div className="search">
-      <form onSubmit={handleSubmit}>
-      
-        <input type="text" placeholder="Search....." name="user" value={search} onChange={(e)=> setSearch(e.target.value)} />
-        <button type="submit" onClick={()=>navigate('/search')}> Search</button>
-        </form>
-        </div> */}
 
     </div>
   );
