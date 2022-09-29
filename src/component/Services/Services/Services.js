@@ -10,6 +10,8 @@ import Access from "../../Access/Access";
 import DeleteService from "../../My Services/DeleteMyService/DeleteMyService";
 import EditServices from "../../My Services/edit-my-services/edit-my-services.component";
 import Search from "../../searchBar/Search";
+import cookie from "react-cookies";
+import { addToFavorite } from "../../../store/favorite";
 export default function Services(props) {
   const { allServices } = useSelector((state) => state.servicesSlice);
   // const [show, setShow] = useState(false);
@@ -31,6 +33,17 @@ export default function Services(props) {
   const currentRecords = allServices.slice(indexOfFirstRecord, indexOfLastRecord);
 
 //////////////
+function handleClick(id){
+  const sendData = {
+  addToFavorite:true,
+  comments:"",
+  rate:1,
+  userID:cookie.load("userID"),
+  serviceID:id
+  }
+  dispatch(addToFavorite(sendData))
+  
+}
   
   return (
     <>
@@ -52,7 +65,7 @@ export default function Services(props) {
                 <p className="department">{ele.department}</p>
                 <Access role={'user'}>
                 <div className="">
-                  <button className="add-fav btn-card">
+                  <button className="add-fav btn-card"  onClick={()=> handleClick(ele.id)}>
                     Add to Favorite <i className="fa-regular fa-heart"></i>
                   </button>
                   <Reports id={ele.id} />

@@ -25,6 +25,7 @@ import SearchByCity from "./component/Services/search servics/serachByCity";
 import LastNewService from "./component/Services/search servics/LastNewService";
 import MostRatedService from "./component/Services/search servics/MostRated";
 import ForgetPassword from "./component/Auth/forget-password/forget-password.component";
+import Favorite from './component/Favorite/Favorite'
 
 function App() {
   const { isSignin } = useSelector((state) => state.authSlice);
@@ -69,6 +70,7 @@ function App() {
             <Route path="/blockList-user" element={<BlockListUser />} />
 
             <Route path="/services/confirmation" element={<BlockListUser />} />
+            <Route path="/favList" element={<Favorite />} />
           </Routes>
 
           <Footer />

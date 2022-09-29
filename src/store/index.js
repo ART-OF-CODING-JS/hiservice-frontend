@@ -6,6 +6,7 @@ import contactSlice from './contact'
 import usersSlice from './users'
 import reserveSlice from './reservations'
 import blockSlice from './block'
+import favSlice from './favorite'
 const store = configureStore({
     reducer:{
         authSlice:auth,
@@ -15,6 +16,7 @@ const store = configureStore({
         usersSlice,
         reserveSlice,
         blockSlice,
+        favSlice,
     }
 })
 
