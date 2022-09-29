@@ -49,6 +49,7 @@ export default function SearchService(props) {
       recordsPerPage={postsPerPage}
       totalPosts={searchedServices.length}
       setCurrentPage={setCurrentPage}
+      
       />
     </>
   );

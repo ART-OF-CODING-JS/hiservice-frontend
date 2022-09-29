@@ -85,23 +85,29 @@ export default function Header(props) {
        
             <div class="dropdown">
               <button class="dropbtn">Reservation</button>
+              
               <div class="dropdown-content">
+              <Link className="Link" to={"/Reservation-Admin"} > <li href="#">All Reservation</li>     </Link>
+              <Access role='user'>
                 <Link className="Link" to={"/My-Reservation"} > <li href="#">My Reservation</li>     </Link>
-                <Link className="Link" to={"/reserve/myService"} >  <li href="#">Reserve my Service</li>     </Link>
+
+                <Link className="Link" to={"/reserve/myService"} >  <li href="#">Reserve my Service</li></Link>
+                </Access>
               </div>
             </div>
-
-
-
-    
-
+            {/************************************/}
             <Link className="Link" to={"/Reports"}>
               <li>Reports</li>
             </Link>
-
-            <Link className="Link" to={"/Contact-us"}>
-              <li>Contact us</li>
-            </Link>
+            {/****************AllContactAdmin********************/}
+            <div class="dropdown">
+              <button class="dropbtn"> <Link className="Link" to={"/Contact-us"}> <li>Contact us</li></Link></button>
+              <div class="dropdown-content">
+              <Access role={'admin'}> 
+            <Link className="Link" to={"/Contact-Admin"}><li href="#">All Contact</li></Link>
+            </Access>
+            </div>
+            </div>
             {/* **************Setting********** */}
             <div className="dropdown">
               <button className="dropbtn">Setting</button>
