@@ -28,7 +28,7 @@ import ForgetPassword from "./component/Auth/forget-password/forget-password.com
 import Reservation from "./component/Admin-components/reservation/Reservation";
 import ContactUs from "./component/Admin-components/contact/ContactUs";
 import Favorite from './component/Favorite/Favorite'
-
+import HomePage from './component/homePage/HomePage'
 function App() {
   const { isSignin } = useSelector((state) => state.authSlice);
   console.log(isSignin);
@@ -39,7 +39,7 @@ function App() {
           <Header />
           <ToastContainer />
           <Routes>
-            <Route path="/" element={<h1>Mohamamd</h1>} />
+            
             <Route
               path="/users"
               element={
@@ -48,7 +48,7 @@ function App() {
                 </Access>
               }
             ></Route>
-
+  
             <Route path="/Services" element={<Services />} />
             <Route path="/Services/:id" element={<ServiceDetails />} />
             <Route path="/My-Services" element={<MyServices />} />
@@ -81,7 +81,8 @@ function App() {
       ) : (
         <>
           <Routes>
-            <Route path="/" element={<Signin />} />
+            <Route path="/" element={<HomePage/>} />
+            <Route path="/signin" element={<Signin />} />
             <Route path="/forgetpassword" element={<ForgetPassword />} />
           </Routes>
         </>
