@@ -28,8 +28,8 @@ import ForgetPassword from "./component/Auth/forget-password/forget-password.com
 import ServicesConfirmation from "./component/Admin-components/ServicesConfirmation/ServicesConfirmation";
 import Reservation from "./component/Admin-components/reservation/Reservation";
 import ContactUs from "./component/Admin-components/contact/ContactUs";
-import Favorite from './component/Favorite/Favorite'
-import HomePage from './component/homePage/HomePage'
+import Favorite from "./component/Favorite/Favorite";
+import HomePage from "./component/homePage/HomePage";
 function App() {
   const { isSignin } = useSelector((state) => state.authSlice);
   console.log(isSignin);
@@ -40,7 +40,6 @@ function App() {
           <Header />
           <ToastContainer />
           <Routes>
-            
             <Route
               path="/users"
               element={
@@ -49,7 +48,7 @@ function App() {
                 </Access>
               }
             ></Route>
-  
+
             <Route path="/Services" element={<Services />} />
             <Route path="/Services/:id" element={<ServiceDetails />} />
             <Route path="/My-Services" element={<MyServices />} />
@@ -64,7 +63,7 @@ function App() {
             <Route path="/Contact-us" element={<Contact />} />
             <Route path="/Contact-Admin" element={<ContactUs />} />
             <Route path="/Reports" element={<h1>Mohamamd</h1>} />
-            <Route path="/Settings" element={<Setting/>} />
+            <Route path="/Settings" element={<Setting />} />
 
             <Route path="/Settings" element={<Setting />} />
             <Route path="/search" element={<SearchService />} />
@@ -84,7 +83,7 @@ function App() {
       ) : (
         <>
           <Routes>
-            <Route path="/" element={<HomePage/>} />
+            <Route path="/" element={<HomePage />} />
             <Route path="/signin" element={<Signin />} />
             <Route path="/forgetpassword" element={<ForgetPassword />} />
           </Routes>
