@@ -1,14 +1,27 @@
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 import { useState } from "react";
 import AddService from "../Add service/AddServices";
 import Reports from "../../Reports/sendReports/Reports";
 import { Link } from "react-router-dom";
 import "./SearchService.css";
+import cookie from "react-cookies";
 import Pagination from "../../pagenation/Pagination"
 import Search from "../../searchBar/Search";
+import { addToFavorite } from "../../../store/favorite";
 export default function SearchService(props) {
+  const dispatch = useDispatch()
   const {searchedServices } = useSelector((state) => state.servicesSlice);
-
+  function handleClick(id){
+    const sendData = {
+    addToFavorite:true,
+    comments:"",
+    rate:5,
+    userID:cookie.load("userID"),
+    serviceID:id
+    }
+    dispatch(addToFavorite(sendData))
+    
+  }
   console.log(searchedServices,"this we I will render the searched service");
    ///////////pagination/////
    const [currentPage, setCurrentPage] = useState(1);
@@ -35,7 +48,7 @@ export default function SearchService(props) {
                 <p className="city">{ele.city}</p>
                 <p className="department">{ele.department}</p>
                 <div className="">
-                  <button className="add-fav btn-card">
+                  <button className="add-fav btn-card" onClick={()=> handleClick(ele.id)}>
                     Add to Favorite <i className="fa-regular fa-heart"></i>
                   </button>
                   <Reports id={ele.id} />
@@ -49,6 +62,7 @@ export default function SearchService(props) {
       recordsPerPage={postsPerPage}
       totalPosts={searchedServices.length}
       setCurrentPage={setCurrentPage}
+      
       />
     </>
   );

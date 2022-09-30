@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getAllServices,searchByCity,searchService,lastNewService,mostRatedService } from "../../store/services";
+
+
 import { Link } from "react-router-dom";
 import Access from "../Access/Access";
 
@@ -41,9 +43,9 @@ export default function Header(props) {
   }
   useEffect(() => {
     dispatch(getAllServices());
-    // dispatch(searchService());
+    
   }, [dispatch]);
-  // console.log(allServices);
+ 
   return (
    
     // <div className="headers container-com">
@@ -369,30 +371,33 @@ export default function Header(props) {
               <button className="dropbtn">Reservation</button>
               <Access role="user">
               <div className="dropdown-content">
-
+              <Link className="Link" to={"/Reservation-Admin"} > 
+              <li href="#">All Reservation</li> 
+                  </Link>
                 <Link className="Link" to={"/My-Reservation"}>
-                  {" "}
-                  <li href="#">My Reservation</li>{" "}
+  
+                  <li href="#">My Reservation</li>
                 </Link>
                 <Link className="Link" to={"/reserve/myService"}>
-                  {" "}
-                  <li href="#">Reserve my Service</li>{" "}
+           
+                  <li href="#">Reserve my Service</li>
                 </Link>
               </div>
               </Access>
             </div>
-
-
-
-    
-
+            {/************************************/}
             <Link className="Link" to={"/Reports"}>
               <li>Reports</li>
             </Link>
-
-            <Link className="Link" to={"/Contact-us"}>
-              <li>Contact us</li>
-            </Link>
+            {/****************AllContactAdmin********************/}
+            <div class="dropdown">
+              <button class="dropbtn"> <Link className="Link" to={"/Contact-us"}> <li>Contact us</li></Link></button>
+              <div class="dropdown-content">
+              <Access role={'admin'}> 
+            <Link className="Link" to={"/Contact-Admin"}><li href="#">All Contact</li></Link>
+            </Access>
+            </div>
+            </div>
             {/* **************Setting********** */}
             <div className="dropdown">
               <button className="dropbtn">Setting</button>
@@ -401,9 +406,9 @@ export default function Header(props) {
                   {" "}
                   <li href="#">Profile Setting</li>{" "}
                 </Link>
-                <Link className="Link" to={"/reserve/myService"}>
+                <Link className="Link" to={"/favList"}>
                   {" "}
-                  <li href="#">Favorite List</li>{" "}
+                  <li href="#">Favorite List </li>{" "}
                 </Link>
                 <Link className="Link" to={"/blockList-user"}>
                   {" "}

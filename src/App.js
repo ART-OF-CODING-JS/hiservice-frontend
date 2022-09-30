@@ -26,6 +26,10 @@ import LastNewService from "./component/Services/search servics/LastNewService";
 import MostRatedService from "./component/Services/search servics/MostRated";
 import ForgetPassword from "./component/Auth/forget-password/forget-password.component";
 import ServicesConfirmation from "./component/Admin-components/ServicesConfirmation/ServicesConfirmation";
+import Reservation from "./component/Admin-components/reservation/Reservation";
+import ContactUs from "./component/Admin-components/contact/ContactUs";
+import Favorite from './component/Favorite/Favorite'
+import HomePage from './component/homePage/HomePage'
 function App() {
   const { isSignin } = useSelector((state) => state.authSlice);
   console.log(isSignin);
@@ -36,7 +40,7 @@ function App() {
           <Header />
           <ToastContainer />
           <Routes>
-            <Route path="/" element={<h1>Mohamamd</h1>} />
+            
             <Route
               path="/users"
               element={
@@ -45,12 +49,12 @@ function App() {
                 </Access>
               }
             ></Route>
-
+  
             <Route path="/Services" element={<Services />} />
             <Route path="/Services/:id" element={<ServiceDetails />} />
             <Route path="/My-Services" element={<MyServices />} />
 
-            <Route path="/Reservation" element={<h1>Mohamamd</h1>} />
+            <Route path="/Reservation-Admin" element={<Reservation />} />
             <Route path="/My-Reservation" element={<MyReservation />} />
 
             <Route path="/Services/confirmation" element={<ServicesConfirmation />} />
@@ -58,6 +62,7 @@ function App() {
             <Route path="/reports-admin" element={<ReportAdmin />} />
 
             <Route path="/Contact-us" element={<Contact />} />
+            <Route path="/Contact-Admin" element={<ContactUs />} />
             <Route path="/Reports" element={<h1>Mohamamd</h1>} />
             <Route path="/Settings" element={<Setting/>} />
 
@@ -71,6 +76,7 @@ function App() {
             <Route path="/blockList-user" element={<BlockListUser />} />
 
             <Route path="/services/confirmation" element={<BlockListUser />} />
+            <Route path="/favList" element={<Favorite />} />
           </Routes>
 
           <Footer />
@@ -78,7 +84,8 @@ function App() {
       ) : (
         <>
           <Routes>
-            <Route path="/" element={<Signin />} />
+            <Route path="/" element={<HomePage/>} />
+            <Route path="/signin" element={<Signin />} />
             <Route path="/forgetpassword" element={<ForgetPassword />} />
           </Routes>
         </>

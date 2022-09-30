@@ -63,6 +63,7 @@ export default function MyServices(props) {
       recordsPerPage={postsPerPage}
       totalPosts={myServices.length}
       setCurrentPage={setCurrentPage}
+    
       />
     </>
   );

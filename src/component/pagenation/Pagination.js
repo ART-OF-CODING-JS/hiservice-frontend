@@ -1,5 +1,5 @@
 import React from 'react';
-import "./pagination.scss"
+import "./pagination.css"
 const Pagination = ({ recordsPerPage, totalPosts, setCurrentPage}) => {
   const pageNumbers = [];
 
@@ -8,8 +8,9 @@ const Pagination = ({ recordsPerPage, totalPosts, setCurrentPage}) => {
 }
 
 return (
+  <div className="pagination container-com">
   <nav aria-label="Page navigation example">
-    <ul className='pagination'>
+    <ul className='pagination pagination-lg'>
       {pageNumbers.map(number => (
         <li key={number} className='page-item'>
           <button onClick={() => setCurrentPage(number)} className='page-link'>{number}</button>
@@ -17,6 +18,7 @@ return (
       ))}
     </ul>
   </nav>
+  </div>
 );
 };
 
