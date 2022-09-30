@@ -1,19 +1,20 @@
 
 import cookie from 'react-cookies'
 import { Button } from "react-bootstrap";
-
+import { useNavigate } from "react-router-dom";
 
 
 
 export default function Logout(props) {
 
-
+    const navigate = useNavigate();
     const handleSignout = ()=>{
        cookie.remove('token')
        cookie.remove('actions')
        cookie.remove('userAccess')
        cookie.remove('userID')
-       window.location.reload()
+       navigate('/')
+  window.location.reload()
     }
     return(
         <>

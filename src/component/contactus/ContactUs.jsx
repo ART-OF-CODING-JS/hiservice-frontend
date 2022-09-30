@@ -30,7 +30,7 @@ const Contact = () => {
       <div className="container contact__container">
         <div className="contact__options">
         </div>
-        <form onSubmit={sendMessage} className="form">
+        <form onSubmit={sendMessage} className="form-contact">
           <input ref={nameRef} type='text' name='name' placeholder="Your Full Name" required/>
           <input ref={emailRef} type='email' name='email' placeholder="Your Email" required/>
           <textarea ref={msgRef} name="message" rows="7" placeholder="Your Message" required></textarea>

@@ -1,20 +1,28 @@
 import { useSelector } from "react-redux";
+import { useState } from "react";
 import AddService from "../Add service/AddServices";
 import Reports from "../../Reports/sendReports/Reports";
 import { Link } from "react-router-dom";
 import "./SearchService.css";
+import Pagination from "../../pagenation/Pagination"
 import Search from "../../searchBar/Search";
 export default function SearchService(props) {
   const {searchedServices } = useSelector((state) => state.servicesSlice);
 
- 
   console.log(searchedServices,"this we I will render the searched service");
+   ///////////pagination/////
+   const [currentPage, setCurrentPage] = useState(1);
+   const [postsPerPage,setPerPage] = useState(4);
+ 
+   const indexOfLastRecord = currentPage * postsPerPage;
+   const indexOfFirstRecord = indexOfLastRecord - postsPerPage;
+   const currentRecords = searchedServices.slice(indexOfFirstRecord, indexOfLastRecord);
   return (
     <>
     <Search/>
       <AddService />
       <section className="service-container container-com">
-        {searchedServices.map((ele) => (
+        {currentRecords.map((ele) => (
           <div className="t" key={ele.id}>
             <div className="service-card">
               <div className="image-card">
@@ -37,6 +45,11 @@ export default function SearchService(props) {
           </div>
         ))}
       </section>
+      <Pagination 
+      recordsPerPage={postsPerPage}
+      totalPosts={searchedServices.length}
+      setCurrentPage={setCurrentPage}
+      />
     </>
   );
 }

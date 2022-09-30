@@ -1,10 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import { Link } from "react-router-dom";
 import "./Services.css";
 import { getAllServices } from "../../../store/services";
 import AddService from "../Add service/AddServices";
 import Reports from "../../Reports/sendReports/Reports";
+import Pagination from "../../pagenation/Pagination"
 import Access from "../../Access/Access";
 import DeleteService from "../../My Services/DeleteMyService/DeleteMyService";
 import EditServices from "../../My Services/edit-my-services/edit-my-services.component";
@@ -19,6 +20,17 @@ export default function Services(props) {
     dispatch(getAllServices());
   }, [dispatch]);
   console.log(allServices);
+  // console.log(searchedServices,"this we I will render the searched service");
+  
+  ///////////pagination/////
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage,setPerPage] = useState(9);
+
+  const indexOfLastRecord = currentPage * postsPerPage;
+  const indexOfFirstRecord = indexOfLastRecord - postsPerPage;
+  const currentRecords = allServices.slice(indexOfFirstRecord, indexOfLastRecord);
+
+//////////////
   
   return (
     <>
@@ -26,10 +38,10 @@ export default function Services(props) {
      <Search/>
      
       <section className="service-container container-com">
-        {allServices.map((ele) => (
-          <div className="t" key={ele.id}>
-            <div className="service-card">
-              <div className="image-card">
+        {currentRecords.map((ele) => (
+          <div className="ser" key={ele.id}>
+            <div className="service-card card">
+              <div className="image-card card-images">
                 <Link to={`/Services/${ele.id}`}>
                   <img className="img" alt="service" src={ele.image} />
                 </Link>
@@ -37,7 +49,7 @@ export default function Services(props) {
               <div className="card-info">
                 <p className="title">{ele.title}</p>
                 <p className="city">{ele.city}</p>
-                <p className="department">{ele.department}</p>
+                <p className="department details">{ele.department}<h2>Hello</h2></p>
                 <Access role={'user'}>
                 <div className="">
                   <button className="add-fav btn-card">
@@ -64,6 +76,11 @@ export default function Services(props) {
           </div>
         ))}
       </section>
+      <Pagination 
+      recordsPerPage={postsPerPage}
+      totalPosts={allServices.length}
+      setCurrentPage={setCurrentPage}
+      />
     </>
   );
 }

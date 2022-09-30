@@ -4,7 +4,7 @@
 .userprovider-item {
     display: grid;
     grid-template-columns: fit-content(1px) 1fr;
-    gap: .5rem;
+    gap: 1rem;
 }
 .service-provider-info p{
 font-size: 1rem !important;

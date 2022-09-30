@@ -21,6 +21,43 @@ export const getAllServices = createAsyncThunk("services/getAllServices", async 
   }
 });
 
+// get all services >> admin >> to confirmation 
+
+export const getServicesConfirmation = createAsyncThunk("services/getServicesConfirmation",
+ async (data, thunkApi) => {
+  const { rejectWithValue } = thunkApi;
+  
+  try {
+    let response = await axios.get(`${url}/allServiceAdmin`, {
+      headers: {
+        authorization: `Bearer ${cookie.load("token")}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    return rejectWithValue(error.response.data.message);
+  }
+});
+
+// confirmation service >>> admin
+export const updateStatusService = createAsyncThunk("services/updateStatusService",
+ async (data, thunkApi) => {
+  const { rejectWithValue, dispatch } = thunkApi;
+  try {
+    const res = await axios.put(`${url}/allServiceAdmin/${data.id}`, {status:data.status}, {
+      headers: {
+        authorization: `Bearer ${cookie.load("token")}`,
+      },
+    });
+    console.log(res.data);
+    dispatch(getServicesConfirmation());
+    return res.data;
+  } catch (error) {
+    return rejectWithValue(error.response.data);
+  }
+});
+
+
 // get service by id
 
 export const getOneService = createAsyncThunk('services/getOneService',async (id,thunkApi)=>{
@@ -166,6 +203,7 @@ export const getMyServices = createAsyncThunk("services/myServices", async (data
 
 const initialState = {
   allServices: [],
+  allServicesAdmin: [],
   oneService: [],
   myServices: [],
   searchedServices: [],
@@ -195,6 +233,32 @@ const servicesSlice = createSlice({
       state.error = action.payload;
       state.isLoading = false;
       // state.allServices = []
+    },
+    // **********getAllServices>> admin   **********
+    [getServicesConfirmation.fulfilled]: (state, action) => {
+      state.allServicesAdmin = action.payload;
+      state.isLoading = false;
+    },
+    [getServicesConfirmation.pending]: (state, action) => {
+      state.isLoading = true;
+      state.error = null;
+    },
+    [getServicesConfirmation.rejected]: (state, action) => {
+      state.error = action.payload;
+      state.isLoading = false;
+    },
+    // **********confirm service>> admin   **********
+    [updateStatusService.fulfilled]: (state, action) => {
+      state.isLoading = false;
+      toast.success(`${action.payload}`)
+    },
+    [updateStatusService.pending]: (state, action) => {
+      state.isLoading = true;
+      state.error = null;
+    },
+    [updateStatusService.rejected]: (state, action) => {
+      state.error = action.payload;
+      state.isLoading = false;
     },
     ///// last new service 
     [lastNewService.fulfilled]: (state, action) => {
