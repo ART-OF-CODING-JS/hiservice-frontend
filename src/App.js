@@ -25,6 +25,8 @@ import SearchByCity from "./component/Services/search servics/serachByCity";
 import LastNewService from "./component/Services/search servics/LastNewService";
 import MostRatedService from "./component/Services/search servics/MostRated";
 import ForgetPassword from "./component/Auth/forget-password/forget-password.component";
+import Reservation from "./component/Admin-components/reservation/Reservation";
+import ContactUs from "./component/Admin-components/contact/ContactUs";
 import Favorite from './component/Favorite/Favorite'
 import HomePage from './component/homePage/HomePage'
 function App() {
@@ -51,13 +53,14 @@ function App() {
             <Route path="/Services/:id" element={<ServiceDetails />} />
             <Route path="/My-Services" element={<MyServices />} />
 
-            <Route path="/Reservation" element={<h1>Mohamamd</h1>} />
+            <Route path="/Reservation-Admin" element={<Reservation />} />
             <Route path="/My-Reservation" element={<MyReservation />} />
 
             <Route path="/reserve/myService" element={<ReserveMyService />} />
             <Route path="//reports-admin" element={<ReportAdmin />} />
 
             <Route path="/Contact-us" element={<Contact />} />
+            <Route path="/Contact-Admin" element={<ContactUs />} />
             <Route path="/Reports" element={<h1>Mohamamd</h1>} />
 
             <Route path="/Settings" element={<Setting />} />

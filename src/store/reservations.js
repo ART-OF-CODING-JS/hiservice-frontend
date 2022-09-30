@@ -1,7 +1,7 @@
 import { createSlice,createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 import { toast } from 'react-toastify';
-
+// import {getMyReserve} from './reservation.js'
 import cookie from 'react-cookies';
 const url = process.env.REACT_APP_URL
 
@@ -114,10 +114,42 @@ export const updateReject = createAsyncThunk(
     }
   }
 );
+  // admin: get all Reservation//
+  export const getAllReservation = createAsyncThunk("reserve/getAllReservation", async (data, thunkApi) => {
+    const { rejectWithValue } = thunkApi;
+    
+    try {
+      let response = await axios.get(`${url}/admin/allReservation`, {
+        headers: {
+          authorization: `Bearer ${cookie.load("token")}`,
+        },
+      });
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response.data.message);
+    }
+  });
+  ///admin update reeservation///
+  export const updateReservation= createAsyncThunk("reserve/updateReservation", async (data, thunkApi) => {
+    const { rejectWithValue, dispatch } = thunkApi;
+    try {
+      const res = await axios.put(`${url}/admin/userReservations/${data.id}`, data, {
+        headers: {
+          authorization: `Bearer ${cookie.load("token")}`,
+        },
+      });
+      console.log(res.data);
+      dispatch(getAllReservation());
+      return res.data;
+    } catch (error) {
+      return rejectWithValue(error.response.data);
+    }
+  });
 
 
 const initialState = {
 myReservation:[],
+allReservation:[],
 ProviderReservations:[],
 isLoading:false,
 error:null,
@@ -208,7 +240,35 @@ extraReducers:{
   state.error = action.payload;
   state.isLoading = false;
 },
+ // **********getAllReservation Admin**********
+ [getAllReservation .fulfilled]: (state, action) => {
+  state.allReservation = action.payload;
+  state.isLoading = false;
+  state.error = null;
+},
+[getAllReservation .pending]: (state, action) => {
+  state.isLoading = true;
+  state.error = null;
+},
+[getAllReservation .rejected]: (state, action) => {
+  state.error = action.payload;
+  state.isLoading = false;
 
+},
+
+ // **********updateReservation Admin**********
+ [updateReservation.fulfilled]: (state, action) => {
+  state.isLoading = false;
+  console.log(action.payload.status);
+  toast.success(`Edit Successfully`, { autoClose: false });
+},
+[updateReservation.pending]: (state, action) => {
+  state.isLoading = true;
+},
+[updateReservation.rejected]: (state, action) => {
+  toast.error(`${action.payload}`);
+  state.error = action.payload;
+},
     }
 })
 
