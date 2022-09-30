@@ -25,7 +25,7 @@ export const sendReserve = createAsyncThunk(
     }
   );
 
-  //Get my reservation
+  //Get my reservation >> user 
   export const getMyReserve = createAsyncThunk('reserve/getMyReserve',async (data,thunkApi)=>{
     const { rejectWithValue } = thunkApi;
     try {

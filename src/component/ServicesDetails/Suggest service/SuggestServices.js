@@ -7,7 +7,7 @@ export default function SuggestServices(props) {
   return props.SuggestServ[1] ? (
     <>
       <p className="similar-services">Similar Services</p>
-      <div className="suggest-service-card">
+      <div className="suggest-service-card container-com">
         {props.SuggestServ[1].map((ele) => (
           <div className="t" key={ele.id}>
             <div className="image-card">

@@ -1,6 +1,6 @@
 .suggest-service-card {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(3,1fr);
  gap: 1.7rem;
  margin-bottom: 2rem;
  border: 1px solid #dee2e6;

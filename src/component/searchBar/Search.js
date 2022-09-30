@@ -40,16 +40,18 @@ export default function Search(props) {
 return (
 
 <div className="container-search">
-<div className="search">
+{/* <div className="search">
       <form className="form1" onSubmit={handleSubmit}>
-        <input type="text" className="search-field1" placeholder="Search ByName  ....."  onChange={(e)=> setSearch(e.target.value)} />
+        <input type="text" className="search-field1" 
+        placeholder="Search ByName  ....." 
+         onChange={(e)=> setSearch(e.target.value)} />
         <button type="submit" className="btn1">
           
           🔍search</button>
         </form>
-        </div>
+        </div> */}
         
-<div className="search-city">
+{/* <div className="search-city">
       <form className="form2" onSubmit={handleSubmit1} >
       
       <select type="submit" value={searchCity}  className="search-field1" onChange={(e)=>setSearchCity(e.target.value)}>
@@ -62,14 +64,14 @@ return (
       </select>
         <button type="submit" >🔍search</button>
         </form>
-        </div>
+        </div> */}
         
-        <div className="new">
+        {/* <div className="new">
           <button onClick={handleNew} > ✨Last New services </button> 
         </div>
         <div className="most">
           <button onClick={handleMostRated} > ✨Most rated services </button> 
-        </div>
+        </div> */}
         
         </div>
         

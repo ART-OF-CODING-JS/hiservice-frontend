@@ -12,18 +12,15 @@ export default function MainService(props) {
       {props.oneService.slice(0, 1).map(ele=> 
         <div className="main-service-item" key={ele.id}>
           <div className="tit-img">
-            <p className="title-main-service">{ele.title}</p>
             <p className="time">{ele.createdAt}</p>
-            <img alt="images" src={ele.image} />
-            <p className="disc-main-service">
-              <div>description</div>
-              {ele.description}
-            </p>
+            <img className='img-main' alt="images" src={ele.image} />
+       
           </div>
 
         <div className="about-service">
-        <p className="address">Address {ele.city}</p>
-        <p className="category">Category {ele.department}</p>
+        <p className="title-main-service">{ele.title}</p>
+        {/* <p className="address">Address {ele.city}</p>
+        <p className="category">Category {ele.department}</p> */}
         
         <div className="btn-main-service">
             <button className="callNum">Call Number</button>
@@ -32,6 +29,10 @@ export default function MainService(props) {
            
         </div>
         <ServiceProviderInfo ServiceProviderId ={ele.userID} />
+        <p className="disc-main-service">
+             <div> <strong>Description</strong></div>
+              {ele.description}
+            </p>
         <div className="block-report">
             {/* <button className="block">Block Service provider</button> */}
             <Access role={'user'}><BlockProvider providerID={ele.userID}/></Access>

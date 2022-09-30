@@ -24,10 +24,10 @@ export default function ServiceProviderInfo({ServiceProviderId}) {
 
             </div>
             <div className='service-provider-info'>
-                <p>Name: {ele.username}</p>
-                <p>Profession: {ele.professions}</p>
-                <p>Email: {ele.email}</p>
-                <p>Gender: {ele.gender}</p>
+                <p><strong>Name:</strong> {ele.username}</p>
+                <p><strong>Profession:</strong> {ele.professions}</p>
+                <p><strong>Email:</strong> {ele.email}</p>
+                <p><strong>Gender:</strong> {ele.gender}</p>
              
             </div>
 
