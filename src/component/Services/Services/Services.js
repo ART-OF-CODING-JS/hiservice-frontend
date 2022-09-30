@@ -37,12 +37,11 @@ function handleClick(id){
   const sendData = {
   addToFavorite:true,
   comments:"",
-  rate:1,
+  rate:5,
   userID:cookie.load("userID"),
   serviceID:id
   }
-  dispatch(addToFavorite(sendData))
-  
+    dispatch(addToFavorite(sendData))
 }
   
   return (

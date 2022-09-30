@@ -14,7 +14,6 @@ export default function Favorite (props) {
     dispatch(getAllFav());
   }, [dispatch]);
   
-  console.log(fav ,"this wewhat in fave table");
   return (
     <>
       
