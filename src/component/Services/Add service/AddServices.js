@@ -15,6 +15,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 export default function AddService({ postData }) {
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
+  const [city,setCity]=useState('city')
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -30,12 +31,12 @@ export default function AddService({ postData }) {
       title: titleRef.current.value,
       department: departmentRef.current.value,
       description: discRef.current.value,
-      city: cityRef.current.value,
+      city: city,
       phoneNumber: phoneRef.current.value,
       image: imageRef.current.value,
       userID: cookie.load("userID"),
     };
-
+console.log(sendData,"add service updated datat")
     dispatch(addService(sendData));
   };
   let role = cookie.load("userAccess");
@@ -71,10 +72,20 @@ export default function AddService({ postData }) {
             </Form.Group>
             {/* *****************  */}
            
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            {/* <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>City</Form.Label>
               <Form.Control type="text" placeholder="amman" ref={cityRef} />
-            </Form.Group>
+            </Form.Group> */}
+
+<select   className="search-field1 ttt"  id='city' value={city} onChange={(e)=> setCity(e.target.value)}>
+        
+        <option value="amman">Amman</option>
+        <option value="jarash">Jerash</option>
+        <option value="Irbid">Irbid</option>
+        <option value="zarqa">Zarqa</option>
+        <option value="Aqaba">Aqaba</option>
+        <option value="Madaba">Madaba</option>
+      </select>
             {/* *****************  */}
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Phone number</Form.Label>
