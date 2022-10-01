@@ -7,10 +7,10 @@ import Modal from "react-bootstrap/Modal";
 import cookie from "react-cookies";
 // import jwt from 'jsonwebtoken';
 import "./AddServices.css";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addService } from "../../../store/services";
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
+// import Dropdown from 'react-bootstrap/Dropdown';
+// import DropdownButton from 'react-bootstrap/DropdownButton';
 
 export default function AddService({ postData }) {
   const dispatch = useDispatch();
@@ -20,7 +20,7 @@ export default function AddService({ postData }) {
   const handleShow = () => setShow(true);
 
   const titleRef = useRef(null);
-  const cityRef = useRef(null);
+  // const cityRef = useRef(null);
   const phoneRef = useRef(null);
   const discRef = useRef(null);
   const departmentRef = useRef(null);
@@ -79,10 +79,10 @@ console.log(sendData,"add service updated datat")
 
 <select   className="search-field1 ttt"  id='city' value={city} onChange={(e)=> setCity(e.target.value)}>
         
-        <option value="amman">Amman</option>
-        <option value="jarash">Jerash</option>
+        <option value="Aamman">Amman</option>
+        <option value="Jarash">Jerash</option>
         <option value="Irbid">Irbid</option>
-        <option value="zarqa">Zarqa</option>
+        <option value="Zarqa">Zarqa</option>
         <option value="Aqaba">Aqaba</option>
         <option value="Madaba">Madaba</option>
       </select>
