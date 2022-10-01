@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import cookie from "react-cookies";
 import { toast } from "react-toastify";
-// import {Navigate} from 'react-router-dom'
+import { redirect } from "react-router-dom";// import {Navigate} from 'react-router-dom'
 const url = process.env.REACT_APP_URL;
 
 // get all
@@ -339,20 +339,28 @@ const servicesSlice = createSlice({
 
     //****************post****************
     [addService.fulfilled]: (state, action) => {
+      console.log(!action.payload === "You should pay !!")
       if (action.payload.status === "confirm") {
         state.allServices.push(action.payload);
       }
       state.isLoading = false;
       console.log(action.payload.status);
       toast.error(`${action.payload.status}`, { autoClose: false });
+  
     },
     [addService.pending]: (state, action) => {
       state.isLoading = true;
     },
     [addService.rejected]: (state, action) => {
-      toast.error(`${action.payload}`);
 
-      state.error = action.payload;
+      if(!action.payload === "You should pay !!"){
+        toast.error(`${action.payload}`);
+  
+        state.error = action.payload;
+      }
+        else {
+          window.location.href = '/payment'
+        }
     },
 
     //****************Edit****************
@@ -403,22 +411,23 @@ const servicesSlice = createSlice({
     },
 
     //****************post****************
-    [addService.fulfilled]: (state, action) => {
-      if (action.payload.status === "confirm") {
-        state.allServices.push(action.payload);
-      }
-      state.isLoading = false;
-      console.log(action.payload.status);
-      toast.error(`${action.payload.status}`, { autoClose: false });
-    },
-    [addService.pending]: (state, action) => {
-      state.isLoading = true;
-    },
-    [addService.rejected]: (state, action) => {
-      toast.error(`${action.payload}`);
+    // [addService.fulfilled]: (state, action) => {
+    //   console.log(action.payload,'new')
+    //   if (action.payload.status === "confirm") {
+    //     state.allServices.push(action.payload);
+    //   }
+    //   state.isLoading = false;
+    //   console.log(action.payload.status);
+    //   toast.error(`${action.payload.status}`, { autoClose: false });
+    // },
+    // [addService.pending]: (state, action) => {
+    //   state.isLoading = true;
+    // },
+    // [addService.rejected]: (state, action) => {
+    //   toast.error(`${action.payload}`);
 
-      state.error = action.payload;
-    },
+    //   state.error = action.payload;
+    // },
   },
 });
 

@@ -28,8 +28,9 @@ import ForgetPassword from "./component/Auth/forget-password/forget-password.com
 import ServicesConfirmation from "./component/Admin-components/ServicesConfirmation/ServicesConfirmation";
 import Reservation from "./component/Admin-components/reservation/Reservation";
 import ContactUs from "./component/Admin-components/contact/ContactUs";
-import Favorite from "./component/Favorite/Favorite";
-import HomePage from "./component/homePage/HomePage";
+import Favorite from './component/Favorite/Favorite'
+import HomePage from './component/homePage/HomePage'
+import Payment from "./component/Payment/Payment";
 function App() {
   const { isSignin } = useSelector((state) => state.authSlice);
   console.log(isSignin);
@@ -76,6 +77,8 @@ function App() {
 
             <Route path="/services/confirmation" element={<BlockListUser />} />
             <Route path="/favList" element={<Favorite />} />
+
+            <Route path="/payment" element={<Payment />} />
           </Routes>
 
           <Footer />
