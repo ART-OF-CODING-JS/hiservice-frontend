@@ -1,94 +1,190 @@
-// import { Alert, CircularProgress } from "@mui/material";
-import {
-  MDBBtn, MDBInput, MDBCard, MDBContainer, MDBRow, MDBCol, MDBCardImage, MDBCardBody
-  , MDBIcon
-} from "mdb-react-ui-kit";
-import React, { useRef } from "react";
+import "./Signup.css";
 
-import { useDispatch, useSelector } from "react-redux";
-import './Signup.css'
+import { MDBCard, MDBContainer } from "mdb-react-ui-kit";
+
+import React, { useRef } from "react";
+import { useDispatch } from "react-redux";
+
 import { signup } from "../../../store/auth";
+import Logo from "../../../assets/logo.png";
+
 export default function Signup(props) {
   const dispatch = useDispatch();
 
-  // const {errorSignup,isLoading} = useSelector(state=>state.auth)
   const usernameRef = useRef(null);
+  const emailRef = useRef(null);
+  const genderRef = useRef(null);
+  const cityRef = useRef(null);
+  const birthdayRef = useRef(null);
+  const phoneNumberRef = useRef(null);
+  const professionsRef = useRef(null);
   const passwordRef = useRef(null);
-  // const emailAddressRef = useRef(null);
-  // const professionsRef = useRef(null);
-  // const phoneNumberRef = useRef(null);
-  // const genderRef = useRef(null);
-  // const cityRef = useRef(null);
-  // const birthdayRef = useRef(null);
+  const confirmPasswordRef = useRef(null);
 
   const handleSignup = () => {
     const data = {
       username: usernameRef.current.value,
+      email: emailRef.current.value,
       password: passwordRef.current.value,
-      // email:emailAddressRef.current.value,
-      // city: cityRef.current.value,
-      // gender: genderRef.current.value,
-      // birthday: birthdayRef.current.value,
-      // phoneNumber: phoneNumberRef.current.value,
-      // professions: professionsRef.current.value,
-      // role: roleRef.current.value,
+      gender: genderRef.current.value,
+      city: cityRef.current.value,
+      birthday: birthdayRef.current.value,
+      phoneNumber: phoneNumberRef.current.value,
+      professions: professionsRef.current.value,
     };
-    console.log(data, "dataaaaaaaaaa")
-    dispatch(signup(data));
+    if (passwordRef.current.value === confirmPasswordRef.current.value) {
+      dispatch(signup(data));
+    } else {
+      alert("Passwords dos not matches!");
+    }
     usernameRef.current.value = null;
+    emailRef.current.value = null;
     passwordRef.current.value = null;
-    // emailAddressRef.current.value = null;
-    // professionsRef.current.value = null;
-    // phoneNumberRef.current.value = null;
-    // genderRef.current.value = null;
-    // cityRef.current.value = null;
-    // birthdayRef.current.value = null;
-    // roleRef.current.value = null;
+    genderRef.current.value = null;
+    cityRef.current.value = null;
+    birthdayRef.current.value = null;
+    phoneNumberRef.current.value = null;
+    professionsRef.current.value = null;
   };
   return (
-    <MDBContainer className="my-5">
+    <MDBContainer className="container py-5 h-100">
+      <MDBCard style={{ borderRadius: "1rem" }}>
+        <div className="card bg-dark text-white" style={{ borderRadius: "1rem" }}>
+          <div className="card-body p-5 text-center">
+            <div className="mb-md-5 mt-md-4 pb-5">
+              <img src={Logo} width="175px" alt="" />
 
-      <MDBCard>
-        <MDBRow className='g-0'>
+              <h5 className="fw-normal my-4 pb-3" style={{ letterSpacing: "1px" }}>
+                Create new account
+              </h5>
 
+              <p className="fw-normal my-4 pb-3" style={{ letterSpacing: "1px" }}>
+                Please fill all filed!
+              </p>
 
+              <div className="d-flex gap-5" style={{ borderRadius: "1rem", margin: "25px" }}>
+                <div className="form-outline form-white mb-4">
+                  <input
+                    type="text"
+                    className="form-control form-control-lg"
+                    placeholder="username"
+                    ref={usernameRef}
+                  />
+                  <label className="form-label">Username</label>
+                </div>
 
-          <MDBCol md='10'>
-            <MDBCardBody className='d-flex flex-column'>
-
-              <div className='d-flex flex-row mt-2'>
-                <MDBIcon fas icon="cubes fa-3x me-3" style={{ color: '#ff6219' }} />
-                <span className="h1 fw-bold mb-0">Logo</span>
+                <div className="form-outline form-white mb-4">
+                  <input
+                    type="email"
+                    className="form-control form-control-lg"
+                    placeholder="email"
+                    ref={emailRef}
+                  />
+                  <label className="form-label">Email</label>
+                </div>
               </div>
 
-              <h5 className="fw-normal my-4 pb-3" style={{ letterSpacing: '1px' }}>Sign into your account</h5>
-              <div className="d-flex gap-5">
-                <MDBInput className="" wrapperClass='mb-4' label='Username' id='formControlLg' type='text' size="lg" inputRef={usernameRef} />
-                <MDBInput wrapperClass='mb-4' label='Email address' id='formControlLg' type='email' size="lg" />
+              <div className="d-flex gap-5" style={{ borderRadius: "1rem" }}>
+                <div className="form-outline form-white mb-4" style={{ width: "16rem" }}>
+                  <select
+                    name="gender"
+                    className="form-control form-control-lg"
+                    selected
+                    style={{ fontSize: "1rem" }}
+                    ref={genderRef}
+                  >
+                    <option value="none">Select gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">other</option>
+                  </select>
 
+                  <label className="form-label">Gender</label>
+                </div>
+
+                <div className="form-outline form-white mb-4" style={{ width: "16rem" }}>
+                  <input
+                    type="text"
+                    placeholder="city"
+                    className="form-control form-control-lg"
+                    ref={cityRef}
+                  />
+                  <label className="form-label">City</label>
+                </div>
+
+                <div className="form-outline form-white mb-4">
+                  <input
+                    type="date"
+                    placeholder="dd-mm-yyyy"
+                    className="form-control form-control-lg"
+                    ref={birthdayRef}
+                  />
+                  <label className="form-label">Birthday</label>
+                </div>
               </div>
-              <MDBInput wrapperClass='mb-4' label='Gender' id='formControlLg' type='text' size="lg" />
-              <MDBInput wrapperClass='mb-4' label='city' id='formControlLg' type='text' size="lg" />
-              <MDBInput wrapperClass='mb-4' label='birthday' id='formControlLg' type='data' size="lg" />
-              <MDBInput wrapperClass='mb-4' label='professions' id='formControlLg' type='text' size="lg" />
-              <MDBInput wrapperClass='mb-4' label='Your number' id='formControlLg' type='text' size="lg" />
-              <MDBInput wrapperClass='mb-4' label='Password' id='formControlLg' type='password' size="lg" inputRef={passwordRef} />
 
-              <MDBBtn className="mb-4 px-5 btn-com" color='dark' size='lg' onClick={handleSignup}>Singup</MDBBtn>
-              <a className="small text-muted" href="#!">Forgot password?</a>
-              <p className="mb-5 pb-lg-2" style={{ color: '#393f81' }}>Don't have an account? <a href="#!" style={{ color: '#393f81' }}>Register here</a></p>
+              <div className="d-flex gap-5" style={{ borderRadius: "1rem", margin: "25px" }}>
+                <div className="form-outline form-white mb-4">
+                  <input
+                    type="tel"
+                    className="form-control form-control-lg"
+                    placeholder="07********"
+                    ref={phoneNumberRef}
+                  />
+                  <label className="form-label">Phone number</label>
+                </div>
 
-              <div className='d-flex flex-row justify-content-start'>
-                <a href="#!" className="small text-muted me-1">Terms of use.</a>
-                <a href="#!" className="small text-muted">Privacy policy</a>
+                <div className="form-outline form-white mb-4">
+                  <input
+                    type="text"
+                    className="form-control form-control-lg"
+                    placeholder="professions"
+                    ref={professionsRef}
+                  />
+                  <label className="form-label">Professions</label>
+                </div>
               </div>
 
-            </MDBCardBody>
-          </MDBCol>
+              <div className="d-flex gap-5" style={{ borderRadius: "1rem", margin: "25px" }}>
+                <div className="form-outline form-white mb-4">
+                  <input
+                    type="password"
+                    className="form-control form-control-lg"
+                    placeholder="password"
+                    ref={passwordRef}
+                  />
+                  <label className="form-label">Password</label>
+                </div>
 
-        </MDBRow>
+                <div className="form-outline form-white mb-4">
+                  <input
+                    type="password"
+                    className="form-control form-control-lg"
+                    placeholder="confirm password"
+                    ref={confirmPasswordRef}
+                  />
+                  <label className="form-label">Confirm password</label>
+                </div>
+              </div>
+
+              <div>
+                <button className="btn btn-outline-light btn-lg px-5" onClick={handleSignup}>
+                  Register
+                </button>
+              </div>
+
+              <div className="">
+                <a href="#!" className="small text-muted me-1">
+                  Terms of use.
+                </a>
+                <a href="#!" className="small text-muted">
+                  Privacy policy
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </MDBCard>
-
     </MDBContainer>
   );
 }

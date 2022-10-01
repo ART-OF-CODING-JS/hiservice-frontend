@@ -2,7 +2,6 @@ import "./forget-password.style.scss";
 import React, { useRef } from "react";
 import { forgetPassword } from "../../../store/auth";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 
 const ForgetPassword = () => {
   const dispatch = useDispatch();
@@ -10,8 +9,6 @@ const ForgetPassword = () => {
   const emailRef = useRef(null);
   const usernameRef = useRef(null);
   const newPasswordRef = useRef(null);
-
-  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,17 +29,37 @@ const ForgetPassword = () => {
           <h2>Reset Password</h2>
           <div className="form-group">
             <label>Email</label>
-            <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" autoFocus ref={emailRef} />
+            <input
+              type="email"
+              className="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+              autoFocus
+              ref={emailRef}
+            />
           </div>
 
           <div className="form-group">
             <label>User Name</label>
-            <input type="text" className="form-control" id="exampleInputUsername" placeholder="Username" ref={usernameRef} />
+            <input
+              type="text"
+              className="form-control"
+              id="exampleInputUsername"
+              placeholder="Username"
+              ref={usernameRef}
+            />
           </div>
 
           <div className="form-group">
             <label>New Password</label>
-            <input type="password" className="form-control" id="exampleInputPassword" placeholder="Password" ref={newPasswordRef} />
+            <input
+              type="password"
+              className="form-control"
+              id="exampleInputPassword"
+              placeholder="Password"
+              ref={newPasswordRef}
+            />
             <small id="passwordHelpInline" className="text-muted">
               Must be 8-20 characters long.
             </small>

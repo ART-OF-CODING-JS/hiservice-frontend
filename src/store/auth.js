@@ -40,20 +40,23 @@ export const signup = createAsyncThunk("auth/signup", async (data, thunkApi) => 
 });
 
 // Forget Password
-export const forgetPassword = createAsyncThunk("services/forgetPassword", async (data, thunkApi) => {
-  const { rejectWithValue } = thunkApi;
-  console.log(data);
-  try {
-    const res = await axios.put(`${url}/api/v2/resetpassword`, data, {
-      headers: {
-        authorization: `Bearer ${cookie.load("token")}`,
-      },
-    });
-    return res.data;
-  } catch (error) {
-    return rejectWithValue(error.response.data);
+export const forgetPassword = createAsyncThunk(
+  "services/forgetPassword",
+  async (data, thunkApi) => {
+    const { rejectWithValue } = thunkApi;
+    console.log(data);
+    try {
+      const res = await axios.put(`${url}/api/v2/resetpassword`, data, {
+        headers: {
+          authorization: `Bearer ${cookie.load("token")}`,
+        },
+      });
+      return res.data;
+    } catch (error) {
+      return rejectWithValue(error.response.data);
+    }
   }
-});
+);
 
 const initialState = {
   isSignin: cookie.load("token") ? true : false, //add cook

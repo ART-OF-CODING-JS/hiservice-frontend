@@ -1,9 +1,9 @@
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-    /* color: var(--bs-nav-pills-link-active-color); */
-    background-color: #fff2c0 !important;
-    color: black !important;
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  /* color: var(--bs-nav-pills-link-active-color); */
+  background-color: #fff2c0 !important;
+  color: black !important;
 }
-
-.signin-container {
-
+.loginSignUpForm {
+  width: 100%;
 }
