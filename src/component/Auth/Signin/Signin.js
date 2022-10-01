@@ -30,7 +30,7 @@ export default function Signin() {
     passwordRef.current.value = null;
   };
   return (
-    <>
+    <div className="signin-container">
       {/* {errorSingin &&(<Alert severity="error">The username or password is incorrect</Alert>)} */}
       {
         //    !isSingin?
@@ -106,6 +106,6 @@ export default function Signin() {
           </MDBTabsContent>
         </MDBContainer>
       }
-    </>
+    </div>
   );
 }

@@ -584,7 +584,7 @@ pre code {
     margin-left: auto
 }
 
-@media (min-width:576px) {
+/* @media (min-width:576px) {
     .container {
         max-width: 540px
     }
@@ -606,7 +606,7 @@ pre code {
     .container {
         max-width: 1140px
     }
-}
+} */
 
 .container-fluid {
     width: 100%;
@@ -11100,7 +11100,8 @@ a.text-dark:hover {
     }
 
     .container {
-        min-width: 992px !important
+        min-width: 992px !important;
+        background-color: #19171733;
     }
 
     .navbar {

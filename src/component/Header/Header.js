@@ -369,11 +369,13 @@ export default function Header(props) {
        
             <div className="dropdown">
               <button className="dropbtn">Reservation</button>
-              <Access role="user">
               <div className="dropdown-content">
+                <Access role={'admin'}>
               <Link className="Link" to={"/Reservation-Admin"} > 
               <li href="#">All Reservation</li> 
                   </Link>
+                  </Access>
+              <Access role="user">
                 <Link className="Link" to={"/My-Reservation"}>
   
                   <li href="#">My Reservation</li>
@@ -382,8 +384,9 @@ export default function Header(props) {
            
                   <li href="#">Reserve my Service</li>
                 </Link>
-              </div>
               </Access>
+
+              </div>
             </div>
             {/************************************/}
             <Link className="Link" to={"/Reports"}>

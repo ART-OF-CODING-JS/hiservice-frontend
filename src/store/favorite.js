@@ -24,24 +24,29 @@ export const addToFavorite = createAsyncThunk(
       }
     }
   );
-// export const keepInFav = createAsyncThunk(
-//     "favorite/keepInFav",
-//     async (data, thunkApi) => {
-//       const { rejectWithValue } = thunkApi;
-//       console.log(data.serviceID,'this is my add to favorite')
-//       try {
-//         const req = await axios.get(`${url}/service/${data.serviceID}`,  {
-//           headers: {
-//             authorization: `Bearer ${cookie.load("token")}`,
-//           },
-//         });
-//         console.log( req.data,"1000000001")
-//         return req.data;
-//       } catch (error) {
-//         return rejectWithValue(error.response.data);
-//       }
-//     }
-//   );
+// Payment >>>
+
+export const addPayment = createAsyncThunk(
+  "favorite/addPayment",
+  async (data, thunkApi) => {
+    const { rejectWithValue,dispatch } = thunkApi;
+    console.log(data,'this is my add to favorite')
+    try {
+      const req = await axios.post(`${url}/payment`, data , {
+        headers: {
+          authorization: `Bearer ${cookie.load("token")}`,
+        },
+      });
+      return req.data;
+    } catch (error) {
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
+
+
+
+
 export const getAllFav = createAsyncThunk(
     "favorite/getAllFav",
     async (data, thunkApi) => {
@@ -102,21 +107,6 @@ export const getAllFav = createAsyncThunk(
     state.isLoading = false;
     state.error = action.payload;
   },
-  //  [keepInFav.fulfilled]: (state, action) => {
-  //   state.favServices=action.payload
-  //   state.isLoading = false;
-  //   toast.success(`Service added to favorite successfully`,{autoClose: false},)
-  // },
-  // [keepInFav.pending]: (state, action) => {
-  //   state.isLoading = true;
-  //   state.error=null;
-  // },
-  // [keepInFav.rejected]: (state, action) => {
-  
-  //   toast.error(`${action.payload}`)
-  //   state.isLoading = false;
-  //   state.error = action.payload;
-  // },
    [getAllFav.fulfilled]: (state, action) => {
     state.fav=action.payload
     state.isLoading = false;
@@ -148,6 +138,24 @@ export const getAllFav = createAsyncThunk(
     state.error = action.payload;
     state.isLoading = false;
     // state.allServices = []
+  },
+
+  // Payment
+
+   [addPayment.fulfilled]: (state, action) => {
+    state.isLoading = false;
+    state.error = null;
+    toast.success(`Payment progress successfully`);
+    window.location.href = '/Services'
+  },
+  [addPayment.pending]: (state, action) => {
+    state.isLoading = true;
+    state.error = null;
+  },
+  [addPayment.rejected]: (state, action) => {
+    state.error = action.payload;
+    state.isLoading = false;
+ 
   },
 
         }

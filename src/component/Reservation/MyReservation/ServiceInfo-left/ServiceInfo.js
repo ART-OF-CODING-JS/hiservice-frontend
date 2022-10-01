@@ -12,14 +12,15 @@ useEffect(()=>{
     return(
        <>{
         allServices.filter(ele=>ele.id===serviceId).map(ele=>
-            
-            <div className='ServiceInfo-'>
-                <div className='img-title-myrserv'>
-            <Link className='Link' to={`/Services/${ele.id}`}><img className='img-myservice' alt='service Images' src={ele.image}/></Link>
-            <p>{ele.title}</p>
-            </div>
-            {/* <div><ProviderInfo useProviderId={ele.userID}/></div> */}
-            </div>
+            <div className=''>
+            <div className='service_cards'>
+            <div class="cards_my_service">
+            <h2 class="card_title_service">Title</h2>
+            <img src={ele.image} alt=""/>
+            <p class="card-desc">{ele.title}</p>
+          </div>
+          </div>
+          </div>
             )
        }</>
       
