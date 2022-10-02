@@ -703,7 +703,7 @@ const HomePage = () => {
             <div className="col-lg-12 text-center">
               <h2 className="section-heading text-uppercase">Contact Us</h2>
               <h3 className="section-subheading text-muted">
-                Lorem ipsum dolor sit amet consectetur.
+                We are glad to hear and read your opinion.
               </h3>
             </div>
           </div>
@@ -731,17 +731,6 @@ const HomePage = () => {
                         placeholder="Your Email *"
                         required="required"
                         data-validation-required-message="Please enter your email address."
-                      />
-                      <p className="help-block text-danger"></p>
-                    </div>
-                    <div className="form-group">
-                      <input
-                        className="form-control"
-                        id="phone"
-                        type="tel"
-                        placeholder="Your Phone *"
-                        required="required"
-                        data-validation-required-message="Please enter your phone number."
                       />
                       <p className="help-block text-danger"></p>
                     </div>

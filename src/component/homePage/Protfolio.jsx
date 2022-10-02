@@ -1,6 +1,6 @@
 import React from "react";
 
-export default ({ portfolioLinks }) => {
+const PortfolioLinks = ({ portfolioLinks }) => {
   return (
     <>
       <section className="bg-light page-section" id="portfolio">
@@ -37,3 +37,5 @@ export default ({ portfolioLinks }) => {
     </>
   );
 };
+
+export default PortfolioLinks;
