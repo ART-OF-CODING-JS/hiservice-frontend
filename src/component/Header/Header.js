@@ -188,18 +188,19 @@ export default function Header(props) {
           {/* <!-- responsive-nav --> */}
           <div id="responsive-nav">
     {/* <!-- SEARCH BAR --> */}
-     <div className="se-he">
-     <div className="header-search">
+    <div className="se-he">
+                <div className="header-search">
                   <form onSubmit={handleSubmit}>
                     <input
-                      className="search-data"
-                      placeholder="Search"
+                      className="input"
+                      placeholder="Search here"
                       onChange={(e) => setSearch(e.target.value)}
                     />
-                    <button type="submit" className="fas fa-search">
+                    <button type="submit" className="search-btn">
+                      Search
                     </button>
                   </form>
-</div>
+                </div>
      <div className="input-select">
                   <div className="nav-item dropdown">
                     <p className="filter">filter</p>
@@ -402,6 +403,7 @@ export default function Header(props) {
 //               {/* <!-- /LOGO --> */}
 
               {/* <!-- SEARCH BAR --> */}
+
               // <div className="se-he">
               //   <div className="header-search">
               //     <form onSubmit={handleSubmit}>
@@ -441,6 +443,7 @@ export default function Header(props) {
               //   </div>
               // </div>
 //               {/* <!-- /SEARCH BAR --> */}
+
 
 //               {/* <!-- ACCOUNT --> */}
 //               <div className="clearfix">
