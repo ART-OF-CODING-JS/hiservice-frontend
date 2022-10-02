@@ -31,6 +31,7 @@ import ContactUs from "./component/Admin-components/contact/ContactUs";
 import Favorite from "./component/Favorite/Favorite";
 import HomePage from "./component/homePage/HomePage";
 import Payment from "./component/Payment/Payment";
+import NotFoundPage from "./component/NotFound/NotFoundPage";
 import Signup from "./component/Auth/Signup/Signup";
 import Reports from "./component/Reports/sendReports/Reports";
 
@@ -52,8 +53,9 @@ function App() {
                 </Access>
               }
             ></Route>
-
-            <Route path="/" element={<Services />} />
+            <Route path="*" element={<NotFoundPage />} />
+            <Route path="/signin" />
+            <Route path="/" />
             <Route path="/Services" element={<Services />} />
             <Route path="/Services/:id" element={<ServiceDetails />} />
             <Route path="/My-Services" element={<MyServices />} />
@@ -83,9 +85,10 @@ function App() {
             <Route path="/favList" element={<Favorite />} />
 
             <Route path="/payment" element={<Payment />} />
-          </Routes>
 
+          </Routes>
           <Footer />
+          
         </>
       ) : (
         <>

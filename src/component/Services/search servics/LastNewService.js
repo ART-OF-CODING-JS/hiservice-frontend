@@ -6,8 +6,9 @@ import cookie from "react-cookies";
 import "./SearchService.css";
 import Search from "../../searchBar/Search";
 import { addToFavorite } from "../../../store/favorite";
+import { Spinner } from "react-bootstrap";
 export default function LastNewService(props) {
-  const {newServices } = useSelector((state) => state.servicesSlice);
+  const {newServices ,isLoading} = useSelector((state) => state.servicesSlice);
 const dispatch = useDispatch();
   function handleClick(id){
     const sendData = {
@@ -22,7 +23,7 @@ const dispatch = useDispatch();
   }
   console.log(newServices,"this we I will render the searched service");
   return (
-    <>
+    isLoading?<div className="spinner-service" ><Spinner animation="border" variant="dark" /></div>:   <>
     <Search/>
       <AddService />
       <section className="service-container container-com">

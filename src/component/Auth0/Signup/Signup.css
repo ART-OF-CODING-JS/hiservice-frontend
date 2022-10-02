@@ -1,0 +1,16 @@
+.btn-com {
+    background-color: #fff2c0;
+    color: black;
+}
+
+.grid-container{
+    display: grid;
+    display: inline-grid;
+
+}
+.regis-form{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}

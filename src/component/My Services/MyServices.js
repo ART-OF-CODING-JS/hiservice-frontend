@@ -9,9 +9,10 @@ import "./MyServices.css";
 
 import EditServices from "./edit-my-services/edit-my-services.component";
 import DeleteService from "./DeleteMyService/DeleteMyService";
+import { Spinner } from "react-bootstrap";
 
 export default function MyServices(props) {
-  const { myServices } = useSelector((state) => state.servicesSlice);
+  const { myServices,isLoading } = useSelector((state) => state.servicesSlice);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getMyServices());
@@ -25,39 +26,13 @@ export default function MyServices(props) {
      const indexOfFirstRecord = indexOfLastRecord - postsPerPage;
      const currentRecords = myServices.slice(indexOfFirstRecord, indexOfLastRecord);
   return (
-    <>
+    isLoading?<div className="spinner-service" ><Spinner animation="border" variant="dark" /></div>:  <>
+      <div className="image-all-section"><img alt="h" src="https://i.postimg.cc/Zq3VYG1j/pexels-pixabay-280014.jpg"/>
+      <p>My services </p></div>
       <AddService />
       <section className="myservice-container container-com">
         {currentRecords.map((ele) => (
           <div className="t" key={ele.id}>
-            {/* <div className="myservice-card">
-              <div className="image-myservice">
-                <Link to={`/Services/${ele.id}`}>
-                  <img className="img-myservice" alt="service" src={ele.image} />
-                </Link>
-              </div>
-              <div className="card-info-myservice">
-                <p className="title">{ele.title}</p>
-                <p className="city">{ele.city}</p>
-                <p className="department">{ele.department}</p>
-                {ele.status === null ? <p className="inProgress stateus-myservice">inProgress</p> : ele.status === "reject" ? <p className="reject stateus-myservice">Rejected</p> : <p className="confirm stateus-myservice">Active</p>}
-                <div className="btns-myService">
-                  <div className="edit-myservice common-edi-del">
-                    <button >
-                      <EditServices id={ele.id} />
-                    </button>
-                  </div>
-                  <div className="delete-myservice common-edi-del">
-                 
-                      <DeleteService serviceId={ele.id}/>
-              
-            
-                  </div>
-                </div>
-              </div>
-            </div> */}
-
-               {/* ********************************************************************** */}
       <div className="my_services_body">
       <div className="container-my-services">
         <div className="card_img">
