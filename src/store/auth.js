@@ -40,13 +40,28 @@ export const signup = createAsyncThunk("auth/signup", async (data, thunkApi) => 
 });
 
 // Forget Password
-export const forgetPassword = createAsyncThunk(
-  "services/forgetPassword",
+export const forgetPassword = createAsyncThunk("auth/forgetPassword", async (data, thunkApi) => {
+  const { rejectWithValue } = thunkApi;
+  console.log(data);
+  try {
+    const res = await axios.put(`${url}/api/v2/resetpassword`, data, {
+      headers: {
+        authorization: `Bearer ${cookie.load("token")}`,
+      },
+    });
+    return res.data;
+  } catch (error) {
+    return rejectWithValue(error.response.data);
+  }
+});
+
+// Forget Password
+export const sendEmailVerification = createAsyncThunk(
+  "auth/sendPasswordLink",
   async (data, thunkApi) => {
     const { rejectWithValue } = thunkApi;
-    console.log(data);
     try {
-      const res = await axios.put(`${url}/api/v2/resetpassword`, data, {
+      const res = await axios.put(`${url}/sendpasswordlink`, data, {
         headers: {
           authorization: `Bearer ${cookie.load("token")}`,
         },
@@ -110,6 +125,16 @@ const authSlice = createSlice({
       toast.success(`Password Reset Successfully`, { autoClose: false });
     },
     [forgetPassword.rejected]: (state, action) => {
+      toast.error(`${action.payload}`);
+      state.error = action.payload;
+    },
+
+    //**************** send Email Verification ****************
+    [sendEmailVerification.fulfilled]: (state) => {
+      state.isLoading = false;
+      toast.success(`Email Sent Successfully`, { autoClose: false });
+    },
+    [sendEmailVerification.rejected]: (state, action) => {
       toast.error(`${action.payload}`);
       state.error = action.payload;
     },

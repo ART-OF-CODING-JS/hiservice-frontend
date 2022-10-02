@@ -19,7 +19,6 @@ const ForgetPassword = () => {
     };
     console.log(sendData);
     dispatch(forgetPassword(sendData));
-    // navigate("/");
   };
 
   return (
