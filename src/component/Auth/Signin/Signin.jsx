@@ -4,13 +4,14 @@ import { useDispatch } from "react-redux";
 
 import { signin, sendEmailVerification } from "../../../store/auth";
 import Logo from "../../../assets/logo.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Signin() {
   const dispatch = useDispatch();
   const usernameRef = useRef(null);
   const passwordRef = useRef(null);
 
+  const navigate = useNavigate();
   const handleSignin = (event) => {
     event.preventDefault();
 
@@ -19,6 +20,7 @@ export default function Signin() {
       password: passwordRef.current.value,
     };
     dispatch(signin(data));
+    navigate("/services");
     usernameRef.current.value = null;
     passwordRef.current.value = null;
   };
@@ -50,7 +52,7 @@ export default function Signin() {
 
           <div className="input-group">
             <input required type="text" id="loginUser" ref={usernameRef} />
-            <label >User Name</label>
+            <label>User Name</label>
           </div>
 
           <div className="input-group">

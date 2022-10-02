@@ -53,6 +53,7 @@ function App() {
               }
             ></Route>
 
+            <Route path="/" element={<Services />} />
             <Route path="/Services" element={<Services />} />
             <Route path="/Services/:id" element={<ServiceDetails />} />
             <Route path="/My-Services" element={<MyServices />} />

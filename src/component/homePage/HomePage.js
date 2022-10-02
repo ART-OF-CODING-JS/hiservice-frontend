@@ -94,9 +94,9 @@ const HomePage = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link js-scroll-trigger" href="/signin">
+                <Link className="nav-link js-scroll-trigger" to="/signin">
                   login
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
