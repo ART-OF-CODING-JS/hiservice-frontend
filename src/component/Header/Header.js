@@ -349,11 +349,11 @@ export default function Header(props) {
       {/* // <!-- NAVIGATION --> */}
       <nav id="navigation">
         {/* <!-- container --> */}
-        <div class="container">
+        <div className="container">
           {/* <!-- responsive-nav --> */}
           <div id="responsive-nav">
             {/* <!-- NAV --> */}
-            <ul class="main-nav nav justify-content-center">
+            <ul className="main-nav nav justify-content-center">
               <Access role={"admin"}>
                 <Link className="Link" to={"/users"}>
                   {" "}
@@ -373,11 +373,9 @@ export default function Header(props) {
                   <button className="dropbtn">Service</button>
                   <div className="dropdown-content">
                     <Link className="Link" to={"/Services"}>
-                      {" "}
                       <li href="#">All Services</li>{" "}
                     </Link>
                     <Link className="Link" to={"/Services/confirmation"}>
-                      {" "}
                       <li href="#">Services Confirmation</li>{" "}
                     </Link>
                   </div>
@@ -386,14 +384,12 @@ export default function Header(props) {
               {/* ******************************************* */}
               <Access role="admin">
                 <Link className="Link" to={"/reports-admin"}>
-                  {" "}
                   <li>Reports</li>
                 </Link>
               </Access>
               {/* ********************************** */}
               <Access role="user">
                 <Link className="Link" to={"/My-Services"}>
-                  {" "}
                   <li>My services</li>
                 </Link>
               </Access>
@@ -420,15 +416,13 @@ export default function Header(props) {
                 <li>Reports</li>
               </Link>
               {/****************AllContactAdmin********************/}
-              <div class="dropdown">
-                <button class="dropbtn">
-                  {" "}
+              <div className="dropdown">
+                <button className="dropbtn">
                   <Link className="Link" to={"/Contact-us"}>
-                    {" "}
                     <li>Contact us</li>
                   </Link>
                 </button>
-                <div class="dropdown-content">
+                <div className="dropdown-content">
                   <Access role={"admin"}>
                     <Link className="Link" to={"/Contact-Admin"}>
                       <li href="#">All Contact</li>

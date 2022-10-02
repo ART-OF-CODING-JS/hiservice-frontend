@@ -1,61 +1,60 @@
 import React from "react";
 import "./contact.css";
-import { useRef } from 'react';
-import { useDispatch } from 'react-redux';
-import{addContact} from '../../store/contact';
+import { useRef } from "react";
+import { useDispatch } from "react-redux";
+import { addContact } from "../../store/contact";
 
 const Contact = () => {
-  const dispatch=useDispatch();
+  const dispatch = useDispatch();
 
   const nameRef = useRef(null);
   const emailRef = useRef(null);
   const msgRef = useRef(null);
 
-  const sendMessage=(e)=>{
+  const sendMessage = (e) => {
     e.preventDefault();
-    const sendData ={
+    const sendData = {
       username: nameRef.current.value,
       email: emailRef.current.value,
       description: msgRef.current.value,
-          }
-          console.log("dddddddddddd",sendData);
-        dispatch(addContact(sendData))
-        nameRef.current.value=null;
-        emailRef.current.value=null;
-        msgRef.current.value=null;
-  }
+    };
+    console.log("dddddddddddd", sendData);
+    dispatch(addContact(sendData));
+    nameRef.current.value = null;
+    emailRef.current.value = null;
+    msgRef.current.value = null;
+  };
   return (
     <section id="contact">
       <h2>Contact Me</h2>
       <div className="container contact__container">
-        <div className="contact__options">
-        </div>
+        <div className="contact__options"></div>
         <form onSubmit={sendMessage} className="form-contact">
-          <input ref={nameRef} type='text' name='name' placeholder="Your Full Name" required/>
-          <input ref={emailRef} type='email' name='email' placeholder="Your Email" required/>
-          <textarea ref={msgRef} name="message" rows="7" placeholder="Your Message" required></textarea>
-          <button type="submit" className="btn btn-primary" >Send Message</button>
+          <input ref={nameRef} type="text" name="name" placeholder="Your Full Name" required />
+          <input ref={emailRef} type="email" name="email" placeholder="Your Email" required />
+          <textarea
+            ref={msgRef}
+            name="message"
+            rows="7"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <button type="submit" className="btn btn-primary">
+            Send Message
+          </button>
         </form>
       </div>
     </section>
-
   );
 };
 
 export default Contact;
 
-
- 
-    // <div className="form-group">
-    //   <label htmlFor="exampleFormControlTextarea1">Basic textarea</label>
-    //   <textarea
-    //     className="form-control"
-    //     id="exampleFormControlTextarea1"
-    //     rows="5"
-    //   />
-    // </div>
- 
-
-
-    
-   
+// <div className="form-group">
+//   <label htmlFor="exampleFormControlTextarea1">Basic textarea</label>
+//   <textarea
+//     className="form-control"
+//     id="exampleFormControlTextarea1"
+//     rows="5"
+//   />
+// </div>

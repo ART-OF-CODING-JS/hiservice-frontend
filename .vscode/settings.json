@@ -1,3 +1,12 @@
 {
-  "cSpell.words": ["forgetpassword", "inputref", "myservice", "sendpasswordlink", "Signin"]
+  "cSpell.words": [
+    "clearfix",
+    "forgetpassword",
+    "inputref",
+    "myservice",
+    "quicklinks",
+    "sendpasswordlink",
+    "Signin",
+    "userprovider"
+  ]
 }

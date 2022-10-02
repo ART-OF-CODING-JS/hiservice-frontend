@@ -2,7 +2,7 @@ import "./Signup.css";
 
 import React, { useRef } from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { signup } from "../../../store/auth";
 import Logo from "../../../assets/logo.png";
@@ -37,16 +37,16 @@ export default function Signup(props) {
     cityRef.current.value = null;
     phoneNumberRef.current.value = null;
     professionsRef.current.value = null;
-    // navigate("/signin");
+    navigate("/signin");
   };
   return (
     <>
       <div className="login-wrapper">
-        <form action="" className="form">
+        <form action="" className="form" onSubmit={handleSignup}>
           <div className="d-flex flex-row justify-content-start">
-            <a href="/signin">
+            <Link to="/signin">
               <i className="fa-solid fa-arrow-left"></i>
-            </a>
+            </Link>
           </div>
 
           <a href="/">
@@ -56,17 +56,17 @@ export default function Signup(props) {
           <h3>Create new account</h3>
 
           <div className="input-group">
-            <input type="text" name="loginUser" id="loginUser" ref={usernameRef} />
+            <input type="text" name="loginUser" id="loginUser" ref={usernameRef} required />
             <label>Username</label>
           </div>
 
           <div className="input-group">
-            <input type="email" name="loginUser" id="loginUser" ref={emailRef} />
+            <input type="email" name="loginUser" id="loginUser" ref={emailRef} required />
             <label>Email</label>
           </div>
 
           <div className="input-group">
-            <input type="text" name="loginUser" id="loginUser" ref={cityRef} />
+            <input type="text" name="loginUser" id="loginUser" ref={cityRef} required />
             <label>City</label>
           </div>
 
@@ -85,14 +85,14 @@ export default function Signup(props) {
             <label>Password</label>
           </div>
 
-          <input type="submit" value="Register" className="submit-btn" onClick={handleSignup} />
+          <input type="submit" value="Register" className="submit-btn" />
 
           <div className="forgot-pw">
             <p href="" className="text-white-50 fw-bold">
               Already have an account?
-              <a href="/signin" className="forgot-pw">
+              <Link to="/signin" className="forgot-pw">
                 Login here
-              </a>
+              </Link>
             </p>
           </div>
           <div className="d-flex flex-row justify-content-start">

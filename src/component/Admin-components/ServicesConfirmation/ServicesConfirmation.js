@@ -65,13 +65,13 @@ const handleReject = (id)=>{
                   <div className="edit-myservice common-edi-del">
                   <button className="" onClick={()=>handleReject(ele.id)}>
                    Reject
-                   <i class="fa-solid fa-circle-xmark"></i>
+                   <i cclassNamelass="fa-solid fa-circle-xmark"></i>
                      </button>
                   </div>
                   <div className="delete-myservice common-edi-del">
                   <button className="" onClick={()=>handleConfirm(ele.id)}>
                    Confirm
-                   <i class="fa-solid fa-circle-check"></i>
+                   <i className="fa-solid fa-circle-check"></i>
                      </button>
                   </div>
                 </div>
