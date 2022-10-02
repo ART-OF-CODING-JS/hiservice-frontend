@@ -58,10 +58,10 @@ h6 {
     "Noto Color Emoji";
 }
 
-@media (min-width: 768px) {
-  section {
-    padding: 10px 0;
-  }
+@media (min-width:768px) {
+    section {
+        padding: 10px 0
+    }
 }
 
 ::-moz-selection {
