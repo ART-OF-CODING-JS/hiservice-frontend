@@ -8,16 +8,20 @@ import {
   MDBTabsPane,
   MDBCard,
 } from "mdb-react-ui-kit";
-import { useDispatch } from "react-redux";
+import { useDispatch ,useSelector} from "react-redux";
 import { signin } from "../../../store/auth";
 import Signup from "../Signup/Signup";
 import "./Signin.css";
 import Logo from "../../../assets/logo.png";
 import Footer from "../../footer/footer";
+import { Spinner } from "react-bootstrap";
 
 export default function Signin() {
   const [justifyActive, setJustifyActive] = useState("tab1");
   const dispatch = useDispatch();
+  const { isLoadingSignIn } = useSelector(
+    (state) => state.authSlice
+  );
   const handleJustifyClick = (value) => {
     if (value === justifyActive) {
       return;
@@ -40,7 +44,9 @@ export default function Signin() {
     passwordRef.current.value = null;
   };
   return (
-    <>
+    isLoadingSignIn?  <div className="spinner-service">
+      <Spinner animation="border" variant="dark" />
+    </div> : <>
       <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
         <MDBTabs pills justify className="mb-3 d-flex flex-row justify-content-between">
           <MDBTabsItem>

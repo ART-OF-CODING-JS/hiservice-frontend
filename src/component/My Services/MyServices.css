@@ -111,6 +111,7 @@ color: #868e96;
   }
   .container-my-services .ra {
     background-color: #868e96;
+    transition: all 0.3s ease;
   }
   .container-my-services .con {
     background-color:#9bb662;
@@ -124,6 +125,7 @@ color: #868e96;
   } */
   
   .container__text {
+    min-height: 26rem;
     padding: 40px 40px 0;
   }
   .container__text h1 {
@@ -234,3 +236,27 @@ color: #868e96;
     opacity: 1;
     transform: translateY(0px);
   }
+
+  .image-all-section {
+    width: 100%;
+  height: 50%;
+  position: relative;
+  margin:6rem 0;
+  }
+  .image-all-section img{
+    width: 100%;
+    height: 350px;
+    filter: brightness(35%);
+    position: relative;
+  }
+  
+  .image-all-section p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: rgba(255, 255, 255, 0.621);
+    font-size: 4rem;
+    font-weight: 500;
+  }
+  

@@ -16,7 +16,8 @@ export default function Favorite (props) {
   
   return (
     <>
-      
+      <div className="image-all-section"><img alt="h" src="https://i.postimg.cc/B6459fVF/pexels-ann-h-1989821.jpg"/>
+      <p>Favorite List </p></div>
         { fav.map((ele) => (
 
     <div key={ele.id}> <FavoriteList favId={ele.id} serviceId={ele.serviceID}/>

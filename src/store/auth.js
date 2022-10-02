@@ -59,10 +59,9 @@ export const forgetPassword = createAsyncThunk(
 );
 
 const initialState = {
-  isSignin: cookie.load("token") ? true : false, //add cook
-  isLoadingSignIn: false,
+  isSignin: cookie.load("token") ? true : false, 
   errorSignIn: null,
-  isLoadingSignUp: false,
+  isLoadingSignIn: false,
   errorSignUp: null,
 };
 
@@ -72,18 +71,21 @@ const authSlice = createSlice({
   extraReducers: {
     [signin.fulfilled]: (state, action) => {
       state.isSignin = true;
+      window.location.href = '/Services'
       cookie.save("token", action.payload.token);
       cookie.save("actions", action.payload.actions);
       cookie.save("userAccess", action.payload.role);
       cookie.save("userID", action.payload.id);
       state.actions = cookie.load("actions");
-      state.isLoadingSignIn = false;
       state.errorSignIn = null;
+   
+      state.isLoadingSignIn = false;
     },
     /// Sign in  /////
     [signin.pending]: (state, action) => {
       state.isLoadingSignIn = true;
       state.errorSignIn = null;
+   
     },
     [signin.rejected]: (state, action) => {
       state.isLoadingSignIn = false;

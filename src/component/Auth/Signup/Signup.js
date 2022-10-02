@@ -62,7 +62,8 @@ export default function Signup(props) {
                 Please fill all filed!
               </p>
 
-              <div className="d-flex gap-5" style={{ borderRadius: "1rem", margin: "25px" }}>
+              {/* <div className="d-flex gap-5" style={{ borderRadius: "1rem", margin: "25px" }}> */}
+              <div className="regis-form">
                 <div className="form-outline form-white mb-4">
                   <input
                     type="text"
@@ -82,10 +83,10 @@ export default function Signup(props) {
                   />
                   <label className="form-label">Email</label>
                 </div>
-              </div>
+              {/* </div> */}
 
-              <div className="d-flex gap-5" style={{ borderRadius: "1rem" }}>
-                <div className="form-outline form-white mb-4" style={{ width: "16rem" }}>
+              {/* <div className="d-flex gap-5" style={{ borderRadius: "1rem" }}> */}
+                <div className="form-outline form-white mb-4">
                   <select
                     name="gender"
                     className="form-control form-control-lg"
@@ -102,7 +103,7 @@ export default function Signup(props) {
                   <label className="form-label">Gender</label>
                 </div>
 
-                <div className="form-outline form-white mb-4" style={{ width: "16rem" }}>
+                <div className="form-outline form-white mb-4">
                   <input
                     type="text"
                     placeholder="city"
@@ -121,9 +122,9 @@ export default function Signup(props) {
                   />
                   <label className="form-label">Birthday</label>
                 </div>
-              </div>
+              {/* </div> */}
 
-              <div className="d-flex gap-5" style={{ borderRadius: "1rem", margin: "25px" }}>
+              {/* <div className="d-flex gap-5" style={{ borderRadius: "1rem", margin: "25px" }}> */}
                 <div className="form-outline form-white mb-4">
                   <input
                     type="tel"
@@ -143,9 +144,9 @@ export default function Signup(props) {
                   />
                   <label className="form-label">Professions</label>
                 </div>
-              </div>
+              {/* </div> */}
 
-              <div className="d-flex gap-5" style={{ borderRadius: "1rem", margin: "25px" }}>
+              {/* <div className="d-flex gap-5" style={{ borderRadius: "1rem", margin: "25px" }}> */}
                 <div className="form-outline form-white mb-4">
                   <input
                     type="password"
@@ -165,14 +166,14 @@ export default function Signup(props) {
                   />
                   <label className="form-label">Confirm password</label>
                 </div>
-              </div>
+              {/* </div> */}
+                </div>
 
               <div>
                 <button className="btn btn-outline-light btn-lg px-5" onClick={handleSignup}>
                   Register
                 </button>
               </div>
-
               <div className="">
                 <a href="#!" className="small text-muted me-1">
                   Terms of use.

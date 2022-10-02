@@ -251,7 +251,7 @@ export default function Header(props) {
                 <div className="search-city ">
                   <select className="search-field1 ttt" onChange={handleChange}>
                     <option>Search By city</option>
-                    <option value="Amman">Amman</option>
+                    <option value="Amman">amman</option>
                     <option value="Jarash">Jerash</option>
                     <option value="Irbid">Irbid</option>
                     <option value="Zarqa">Zarqa</option>

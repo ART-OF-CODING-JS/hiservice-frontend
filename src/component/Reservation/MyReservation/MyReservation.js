@@ -4,15 +4,20 @@ import { getMyReserve } from '../../../store/reservations'
 import ServiceInfo from './ServiceInfo-left/ServiceInfo'
 import './MyReservation.css'
 import DeleteReservation from './DeleteReservation/DeleteReservation'
+import { Spinner } from 'react-bootstrap'
 export default function MyReservation(props) {
     const dispatch = useDispatch()
 
     useEffect(()=>{
         dispatch(getMyReserve())  
     },[dispatch])
-    const{myReservation} =useSelector(state=>state.reserveSlice)
+    const{myReservation,isLoading} =useSelector(state=>state.reserveSlice)
     return(
-        <section className="my-reservation-container container-com">
+        isLoading?<div className="spinner-service" ><Spinner animation="border" variant="dark" /></div>:  
+        
+           <section className="my-reservation-container container-com">
+<div className="image-all-section"><img alt="h" src='https://i.postimg.cc/mrHFFMNy/pexels-cottonbro-4065889.jpg'/>
+      <p>My Reservation </p></div>
            {
                 myReservation.map((ele,idx)=>
             <div className='reservations-cards' key={idx}>
