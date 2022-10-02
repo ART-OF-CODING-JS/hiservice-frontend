@@ -1,8 +1,3 @@
 {
-  "cSpell.words": [
-    "forgetpassword",
-    "inputref",
-    "myservice",
-    "Signin"
-  ]
+  "cSpell.words": ["forgetpassword", "inputref", "myservice", "sendpasswordlink", "Signin"]
 }

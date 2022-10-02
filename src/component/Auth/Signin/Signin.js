@@ -1,35 +1,19 @@
-import React, { useState, useRef } from "react";
-import {
-  MDBContainer,
-  MDBTabs,
-  MDBTabsItem,
-  MDBTabsLink,
-  MDBTabsContent,
-  MDBTabsPane,
-  MDBCard,
-} from "mdb-react-ui-kit";
-import { useDispatch } from "react-redux";
-import { signin } from "../../../store/auth";
-import Signup from "../Signup/Signup";
 import "./Signin.css";
+import React, { useState, useRef } from "react";
+import { useDispatch } from "react-redux";
+
+import { signin, sendEmailVerification } from "../../../store/auth";
 import Logo from "../../../assets/logo.png";
-import Footer from "../../footer/footer";
 
 export default function Signin() {
-  const [justifyActive, setJustifyActive] = useState("tab1");
   const dispatch = useDispatch();
-  const handleJustifyClick = (value) => {
-    if (value === justifyActive) {
-      return;
-    }
-
-    setJustifyActive(value);
-  };
 
   const usernameRef = useRef(null);
   const passwordRef = useRef(null);
 
-  const handleSignin = () => {
+  const handleSignin = (event) => {
+    event.preventDefault();
+
     const data = {
       username: usernameRef.current.value,
       password: passwordRef.current.value,
@@ -39,111 +23,87 @@ export default function Signin() {
     usernameRef.current.value = null;
     passwordRef.current.value = null;
   };
+
+  const emailForgotPassRef = useRef(null);
+  const handleForgotPassword = () => {
+    const data = {
+      email: emailForgotPassRef.current.value,
+    };
+    dispatch(sendEmailVerification(data));
+  };
+
   return (
     <>
-      <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
-        <MDBTabs pills justify className="mb-3 d-flex flex-row justify-content-between">
-          <MDBTabsItem>
-            <MDBTabsLink
-              className="login-switch"
-              onClick={() => handleJustifyClick("tab1")}
-              active={justifyActive === "tab1"}
-            >
-              LogIn
-            </MDBTabsLink>
-          </MDBTabsItem>
-          <MDBTabsItem>
-            <MDBTabsLink
-              className="register-switch"
-              onClick={() => handleJustifyClick("tab2")}
-              active={justifyActive === "tab2"}
-            >
-              Register
-            </MDBTabsLink>
-          </MDBTabsItem>
-        </MDBTabs>
+      <div className="login-wrapper">
+        <form action="" id="form" className="form">
+          <div className="d-flex flex-row justify-content-start">
+            <a href="/">
+              <i className="fa-solid fa-arrow-left" href="/"></i>
+            </a>
+          </div>
 
-        <MDBTabsContent>
-          <MDBTabsPane show={justifyActive === "tab1"}>
-            <MDBContainer className="container py-5 h-100">
-              <MDBCard style={{ borderRadius: "1rem" }}>
-                <div className="card bg-dark text-white" style={{ borderRadius: "1rem" }}>
-                  <div className="card-body p-5 text-center">
-                    <div className="mb-md-5 mt-md-4 pb-5">
-                      <img src={Logo} width="175px" alt="" />
+          <a href="/">
+            <img src={Logo} width="175px" alt="" />
+          </a>
+          <br />
+          <br />
+          <h2>Login</h2>
 
-                      <h2 className="fw-bold mb-2 text-uppercase">LogIn</h2>
+          <div className="input-group">
+            <input type="text" name="loginUser" id="loginUser" required ref={usernameRef} />
+            <label>User Name</label>
+          </div>
+          <div className="input-group">
+            <input
+              type="password"
+              name="loginPassword"
+              id="loginPassword"
+              required
+              ref={passwordRef}
+            />
+            <label>Password</label>
+          </div>
+          <input type="submit" value="Login" className="submit-btn" onClick={handleSignin} />
+          <a href="#forgot-pw" className="forgot-pw">
+            Forgot Password?
+          </a>
+          <div className="forgot-pw">
+            <p href="" className="text-white-50 fw-bold">
+              Don't have an account?
+              <a href="/signup" className="forgot-pw">
+                Register here
+              </a>
+            </p>
+          </div>
+          <div className="d-flex flex-row justify-content-start">
+            <a href="#!" className="small text-muted me-1">
+              Terms of use.
+            </a>
+            <a href="#!" className="small text-muted">
+              Privacy policy
+            </a>
+          </div>
+        </form>
 
-                      <p className="text-white-50 mb-5">Please enter your Username and password!</p>
+        <div id="forgot-pw">
+          <div>
+            <form action="" className="form">
+              <div className="d-flex flex-row justify-content-start">
+                <a href="#form" className="forgot-pw">
+                  <i className="fa-solid fa-arrow-left" href="/"></i>
+                </a>
+              </div>
 
-                      <div className="form-outline form-white mb-4">
-                        <input
-                          type="email"
-                          id="typeEmailX"
-                          className="form-control form-control-lg"
-                          ref={usernameRef}
-                        />
-                        <label className="form-label">Username</label>
-                      </div>
-
-                      <div className="form-outline form-white mb-4">
-                        <input
-                          type="password"
-                          id="typePasswordX"
-                          className="form-control form-control-lg"
-                          ref={passwordRef}
-                        />
-                        <label className="form-label">Password</label>
-                      </div>
-
-                      <button
-                        className="btn btn-outline-light btn-lg px-5"
-                        type="submit"
-                        onClick={handleSignin}
-                      >
-                        LogIn
-                      </button>
-
-                      <p className="small mb-5 pb-lg-2">
-                        <a className="text-white-50" href="/forgetpassword">
-                          Forgot password?
-                        </a>
-                      </p>
-
-                      <div>
-                        <p className="mb-0">
-                          Don't have an account?
-                          <a
-                            href="#!"
-                            className="text-white-50 fw-bold"
-                            onClick={() => handleJustifyClick("tab2")}
-                          >
-                            Register here
-                          </a>
-                        </p>
-                        <div className="d-flex flex-row justify-content-start">
-                          <a href="#!" className="small text-muted me-1">
-                            Terms of use.
-                          </a>
-                          <a href="#!" className="small text-muted">
-                            Privacy policy
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </MDBCard>
-            </MDBContainer>
-          </MDBTabsPane>
-
-          <MDBTabsPane show={justifyActive === "tab2"}>
-            <Signup />
-          </MDBTabsPane>
-        </MDBTabsContent>
-      </MDBContainer>
-
-      <Footer />
+              <h2>Reset Password</h2>
+              <div className="input-group">
+                <input type="email" name="email" id="email" required ref={emailForgotPassRef} />
+                <label>Email</label>
+              </div>
+              <input type="submit" value="Submit" className="submit-btn" />
+            </form>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
