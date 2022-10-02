@@ -18,7 +18,7 @@ export default function Logout(props) {
     }
     return(
         <>
-         <Button className='mx-4' variant="danger" onClick={handleSignout} >Logout</Button>{' '}
+         <Button className='mx-4' variant="dark" onClick={handleSignout} >Logout</Button>{' '}
         </>
     )
 }

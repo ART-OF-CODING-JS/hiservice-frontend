@@ -150,7 +150,7 @@ const HomePage = () => {
   {/* <div className="container-how"> */}
     <div className="square-how">
       <img 
-        src="https://images.unsplash.com/photo-1651217467731-d3b230fba77e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=906&q=80"
+        src="https://images.unsplash.com/photo-1581094481644-f2ab64522498?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
         className="mask-how"
       />
       <div className="h1-how"> We'll match you with local service provider</div>
@@ -171,7 +171,7 @@ const HomePage = () => {
     </div>
     <div className="square-how">
       <img 
-        src="https://images.unsplash.com/photo-1597058557804-95ac4ee36e66?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+        src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80"
         className="mask-how"
       />
       <div className="h1-how">Hire a local pro & finish the job?</div>
@@ -250,53 +250,7 @@ const HomePage = () => {
           </div>
         </div>
       </div> */}
-      {/* <section class="mobile-app">
-        <div class="container">
-          <div class="content row">
-            <div class="col-md-6 col-sm-12">
-              <img
-                class="mobile-app__image img-responsive"
-                alt=" mobile app"
-                src="https://media.angi.com/s3fs-public/HP-Angi-App.png"
-              />
-            </div>
-            <div class="mobile-app__information col-md-5 col-md-push-1 col-sm-12">
-              <svg width="60" height="61" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <mask id="AppBadge_svg__a" x="0" y="0" width="60" height="61"></mask>
-                <g mask="url(#AppBadge_svg__a)">
-                  <path d="M60 0H0v60h60V0z" fill="#D6FFEC"></path>
-                </g>
-              </svg>
-              <h2>Hi Service best mobile app coming soon</h2>
-              <p>
-                Message and video chat with pros, securely pay for projects, and more — only in the
-                Hi Service app.
-              </p>
-              <div class="mobile-app__badges">
-                <a
-                  id="mobile-app--app-store-badge"
-                  href="https://xy59r.app.goo.gl/DXKa"
-                  rel="noreferrer noopener"
-                  target="_blank"
-                >
-                  <img
-                    src="https://media.angi.com/sites/all/themes/altheme/images/app-store-badge-60%402x.png"
-                    alt="App Store"
-                    class="mobile-app__button"
-                  />
-                </a>
-                <a id="mobile-app--google-play-badge" href="#/" target="_blank">
-                  <img
-                    src="https://media.angi.com/sites/all/themes/altheme/images/google-play-badge-60@2x.png"
-                    alt="Google Play"
-                    class="mobile-app__button mobile-app__button--android"
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
+     
       <Portfolio portfolioLinks={portfolioLinks}></Portfolio>
 
 
@@ -409,109 +363,59 @@ const HomePage = () => {
     </div>
   </div>
 </div>
-      {/* <section className="page-section" id="about">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12 text-center">
-              <h2 className="section-heading text-uppercase">How we are </h2>
-            
+    
+
+
+ {/* <section class="mobile-app">
+        <div class="container">
+          <div class="content row">
+            <div class="col-md-6 col-sm-12">
+              <img
+                class="mobile-app__image img-responsive"
+                alt=" mobile app"
+                src="https://media.angi.com/s3fs-public/HP-Angi-App.png"
+              />
             </div>
-          </div>
-          <div className="row">
-            <div className="col-lg-12">
-              <ul className="timeline">
-                <li>
-                  <div className="timeline-image">
-                    <img className="rounded-circle img-fluid" src="img/about/1.jpg" alt="" />
-                  </div>
-                  <div className="timeline-panel">
-                    <div className="timeline-heading">
-                      <h4>2022</h4>
-                      <h4 className="subheading">Hi service </h4>
-                    </div>
-                    <div className="timeline-body">
-                      <p className="text-muted">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum
-                        eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit
-                        vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
-                      </p>
-                    </div>
-                  </div>
-                </li>
-                <li className="timeline-inverted">
-                  <div className="timeline-image">
-                    <img className="rounded-circle img-fluid" src="img/about/2.jpg" alt="" />
-                  </div>
-                  <div className="timeline-panel">
-                    <div className="timeline-heading">
-                      <h4>March 2011</h4>
-                      <h4 className="subheading">An Agency is Born</h4>
-                    </div>
-                    <div className="timeline-body">
-                      <p className="text-muted">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum
-                        eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit
-                        vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
-                      </p>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div className="timeline-image">
-                    <img className="rounded-circle img-fluid" src="img/about/3.jpg" alt="" />
-                  </div>
-                  <div className="timeline-panel">
-                    <div className="timeline-heading">
-                      <h4>December 2012</h4>
-                      <h4 className="subheading">Transition to Full Service</h4>
-                    </div>
-                    <div className="timeline-body">
-                      <p className="text-muted">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum
-                        eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit
-                        vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
-                      </p>
-                    </div>
-                  </div>
-                </li>
-                <li className="timeline-inverted">
-                  <div className="timeline-image">
-                    <img
-                      className="rounded-circle img-fluid"
-                      src="./assets/img/murad.jpeg"
-                      alt=""
-                    />
-                  </div>
-                  <div className="timeline-panel">
-                    <div className="timeline-heading">
-                      <h4>July 2014</h4>
-                      <h4 className="subheading">Phase Two Expansion</h4>
-                    </div>
-                    <div className="timeline-body">
-                      <p className="text-muted">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum
-                        eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit
-                        vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
-                      </p>
-                    </div>
-                  </div>
-                </li>
-                <li className="timeline-inverted">
-                  <div className="timeline-image">
-                    <h4>
-                      Be Part
-                      <br />
-                      Of Our
-                      <br />
-                      Story!
-                    </h4>
-                  </div>
-                </li>
-              </ul>
+            <div class="mobile-app__information col-md-5 col-md-push-1 col-sm-12">
+              <svg width="60" height="61" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="AppBadge_svg__a" x="0" y="0" width="60" height="61"></mask>
+                <g mask="url(#AppBadge_svg__a)">
+                  <path d="M60 0H0v60h60V0z" fill="#D6FFEC"></path>
+                </g>
+              </svg>
+              <h2>Hi Service best mobile app coming soon</h2>
+              <p>
+                Message and video chat with pros, securely pay for projects, and more — only in the
+                Hi Service app.
+              </p>
+              <div class="mobile-app__badges">
+                <a
+                  id="mobile-app--app-store-badge"
+                  href="https://xy59r.app.goo.gl/DXKa"
+                  rel="noreferrer noopener"
+                  target="_blank"
+                >
+                  <img
+                    src="https://media.angi.com/sites/all/themes/altheme/images/app-store-badge-60%402x.png"
+                    alt="App Store"
+                    class="mobile-app__button"
+                  />
+                </a>
+                <a id="mobile-app--google-play-badge" href="#/" target="_blank">
+                  <img
+                    src="https://media.angi.com/sites/all/themes/altheme/images/google-play-badge-60@2x.png"
+                    alt="Google Play"
+                    class="mobile-app__button mobile-app__button--android"
+                  />
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </section> */}
+
+
+    
       <div className="bg-light page-section" id="team">
         <div className="container">
           <div className="row">
