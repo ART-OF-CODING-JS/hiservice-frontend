@@ -21,12 +21,12 @@ export const signin = createAsyncThunk("auth/signin", async (data, thunkApi) => 
         },
       }
     );
-    console.log(request.data);
     return request.data;
   } catch (err) {
     return rejectWithValue(err.message);
   }
 });
+
 //// sign up //////
 export const signup = createAsyncThunk("auth/signup", async (data, thunkApi) => {
   const { rejectWithValue } = thunkApi;

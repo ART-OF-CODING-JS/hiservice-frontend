@@ -1,6 +1,7 @@
 import React from "react";
 import Portfolio from "./Protfolio";
 import Logo from "../../assets/logo.png";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   const portfolioLinks = [
@@ -110,9 +111,9 @@ const HomePage = () => {
             </div>
             {/* <div className="intro-lead-in">Welcome To Our Website!</div> */}
             <div className="intro-heading text-uppercase">Welcome To Our Website!</div>
-            <a className="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/signin">
-              Join us{" "}
-            </a>
+            <Link className="btn btn-primary btn-xl text-uppercase js-scroll-trigger" to="/signin">
+              Join us
+            </Link>
           </div>
         </div>
       </header>
@@ -168,17 +169,17 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      <section class="mobile-app">
-        <div class="container">
-          <div class="content row">
-            <div class="col-md-6 col-sm-12">
+      <section className="mobile-app">
+        <div className="container">
+          <div className="content row">
+            <div className="col-md-6 col-sm-12">
               <img
-                class="mobile-app__image img-responsive"
+                className="mobile-app__image img-responsive"
                 alt=" mobile app"
                 src="https://media.angi.com/s3fs-public/HP-Angi-App.png"
               />
             </div>
-            <div class="mobile-app__information col-md-5 col-md-push-1 col-sm-12">
+            <div className="mobile-app__information col-md-5 col-md-push-1 col-sm-12">
               <svg width="60" height="61" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <mask id="AppBadge_svg__a" x="0" y="0" width="60" height="61"></mask>
                 <g mask="url(#AppBadge_svg__a)">
@@ -190,7 +191,7 @@ const HomePage = () => {
                 Message and video chat with pros, securely pay for projects, and more — only in the
                 Hi Service app.
               </p>
-              <div class="mobile-app__badges">
+              <div className="mobile-app__badges">
                 <a
                   id="mobile-app--app-store-badge"
                   href="https://xy59r.app.goo.gl/DXKa"
@@ -200,14 +201,14 @@ const HomePage = () => {
                   <img
                     src="https://media.angi.com/sites/all/themes/altheme/images/app-store-badge-60%402x.png"
                     alt="App Store"
-                    class="mobile-app__button"
+                    className="mobile-app__button"
                   />
                 </a>
                 <a id="mobile-app--google-play-badge" href="#/" target="_blank">
                   <img
                     src="https://media.angi.com/sites/all/themes/altheme/images/google-play-badge-60@2x.png"
                     alt="Google Play"
-                    class="mobile-app__button mobile-app__button--android"
+                    className="mobile-app__button mobile-app__button--android"
                   />
                 </a>
               </div>
@@ -217,208 +218,206 @@ const HomePage = () => {
       </section>
       <Portfolio portfolioLinks={portfolioLinks}></Portfolio>
 
+      <div className="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+        <div className="container feature px-lg-0">
+          <div className="row g-0 mx-lg-0">
+            <div
+              className="col-lg-6 feature-text py-5 wow fadeIn"
+              data-wow-delay="0.5s"
+              style={{
+                visibility: "visible",
+                animationDelay: "0.5s",
+                animationName: "fadeIn",
+              }}
+            >
+              <div className="p-lg-5 ps-lg-0">
+                <div className="bg-primary mb-3" style={{ width: 60, height: 2 }} />
+                <h1 className="display-5 mb-5">Why Choose Us</h1>
+                <p className="mb-4 pb-2">
+                  We are the only web site in Jordan that you can find all what you need to make
+                  your life easy, only on click you can solve all your house issue . one more thing,
+                  if you are professional you can join us
+                </p>
+                <div className="row g-4">
+                  <div className="col-6">
+                    <div className="d-flex align-items-center">
+                      <div
+                        className="btn-square bg-white rounded-circle"
+                        style={{ width: 64, height: 64 }}
+                      >
+                        <img
+                          className="img-fluid"
+                          src="https://technext.github.io/securex/img/icon/icon-10.png"
+                          alt="Icon"
+                        />
+                      </div>
+                      <div className="ms-4">
+                        <p className="text-primary mb-2">Trusted</p>
+                        <h5 className="mb-0">Security</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-6">
+                    <div className="d-flex align-items-center">
+                      <div
+                        className="btn-square bg-white rounded-circle"
+                        style={{ width: 64, height: 64 }}
+                      >
+                        <img
+                          className="img-fluid"
+                          src="https://technext.github.io/securex/img/icon/icon-7.png"
+                          alt="Icon"
+                        />
+                      </div>
+                      <div className="ms-4">
+                        <p className="text-primary mb-2">Quality</p>
+                        <h5 className="mb-0">Services</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-6">
+                    <div className="d-flex align-items-center">
+                      <div
+                        className="btn-square bg-white rounded-circle"
+                        style={{ width: 64, height: 64 }}
+                      >
+                        <img
+                          className="img-fluid"
+                          src="https://technext.github.io/securex/img/icon/icon-3.png"
+                          alt="Icon"
+                        />
+                      </div>
+                      <div className="ms-4">
+                        <p className="text-primary mb-2">Smart</p>
+                        <h5 className="mb-0">Systems</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-6">
+                    <div className="d-flex align-items-center">
+                      <div
+                        className="btn-square bg-white rounded-circle"
+                        style={{ width: 64, height: 64 }}
+                      >
+                        <img
+                          className="img-fluid"
+                          src="https://technext.github.io/securex/img/icon/icon-2.png"
+                          alt="Icon"
+                        />
+                      </div>
+                      <div className="ms-4">
+                        <p className="text-primary mb-2">24/7 Hours</p>
+                        <h5 className="mb-0">Support</h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-6 pe-lg-0" style={{ minHeight: 400 }}>
+              <div className="position-relative h-100">
+                <img
+                  className="position-absolute img-fluid w-100 h-100"
+                  src="./image/tech.jpg"
+                  style={{ objectFit: "cover" }}
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br />
 
       <div className="container-fluid bg-light overflow-hidden my-5 px-lg-0">
-  <div className="container feature px-lg-0">
-    <div className="row g-0 mx-lg-0">
-      <div
-        className="col-lg-6 feature-text py-5 wow fadeIn"
-        data-wow-delay="0.5s"
-        style={{
-          visibility: "visible",
-          animationDelay: "0.5s",
-          animationName: "fadeIn"
-        }}
-      >
-        <div className="p-lg-5 ps-lg-0">
-          <div className="bg-primary mb-3" style={{ width: 60, height: 2 }} />
-          <h1 className="display-5 mb-5">Why Choose Us</h1>
-          <p className="mb-4 pb-2">
-           We are the only web site in Jordan that you can find all what you need to make your life easy,
-            only on click you can solve all your house issue .
-            one more thing, if you are professional you can join us
-          </p>
-          <div className="row g-4">
-            <div className="col-6">
-              <div className="d-flex align-items-center">
-                <div
-                  className="btn-square bg-white rounded-circle"
-                  style={{ width: 64, height: 64 }}
-                >
-                  <img
-                    className="img-fluid"
-                    src="https://technext.github.io/securex/img/icon/icon-10.png"
-                    alt="Icon"
-                  />
-                </div>
-                <div className="ms-4">
-                  <p className="text-primary mb-2">Trusted</p>
-                  <h5 className="mb-0">Security</h5>
-                </div>
-              </div>
-            </div>
-            <div className="col-6">
-              <div className="d-flex align-items-center">
-                <div
-                  className="btn-square bg-white rounded-circle"
-                  style={{ width: 64, height: 64 }}
-                >
-                  <img
-                    className="img-fluid"
-                    src="https://technext.github.io/securex/img/icon/icon-7.png"
-                    alt="Icon"
-                  />
-                </div>
-                <div className="ms-4">
-                  <p className="text-primary mb-2">Quality</p>
-                  <h5 className="mb-0">Services</h5>
-                </div>
-              </div>
-            </div>
-            <div className="col-6">
-              <div className="d-flex align-items-center">
-                <div
-                  className="btn-square bg-white rounded-circle"
-                  style={{ width: 64, height: 64 }}
-                >
-                  <img
-                    className="img-fluid"
-                    src="https://technext.github.io/securex/img/icon/icon-3.png"
-                    alt="Icon"
-                  />
-                </div>
-                <div className="ms-4">
-                  <p className="text-primary mb-2">Smart</p>
-                  <h5 className="mb-0">Systems</h5>
-                </div>
-              </div>
-            </div>
-            <div className="col-6">
-              <div className="d-flex align-items-center">
-                <div
-                  className="btn-square bg-white rounded-circle"
-                  style={{ width: 64, height: 64 }}
-                >
-                  <img
-                    className="img-fluid"
-                    src="https://technext.github.io/securex/img/icon/icon-2.png"
-                    alt="Icon"
-                  />
-                </div>
-                <div className="ms-4">
-                  <p className="text-primary mb-2">24/7 Hours</p>
-                  <h5 className="mb-0">Support</h5>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="col-lg-6 pe-lg-0" style={{ minHeight: 400 }}>
-        <div className="position-relative h-100">
-          <img
-            className="position-absolute img-fluid w-100 h-100"
-            src="./image/tech.jpg"
-            style={{ objectFit: "cover" }}
-            alt=""
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<br/>
-
-<div className="container-fluid bg-light overflow-hidden my-5 px-lg-0">
-  <div className="container about px-lg-0">
-    <div className="row g-0 mx-lg-0">
-      <div className="col-lg-6 ps-lg-0" style={{ minHeight: 400 }}>
-        <div className="position-relative h-100">
-          <img
-            className="position-absolute img-fluid w-100 h-100"
-            src="./image/sevice.png"
-            style={{ objectFit: "cover" }}
-            alt=""
-          />
-        </div>
-      </div>
-      <div
-        className="col-lg-6 about-text py-5 wow fadeIn"
-        data-wow-delay="0.5s"
-        style={{
-          visibility: "visible",
-          animationDelay: "0.5s",
-          animationName: "fadeIn"
-        }}
-      >
-        <div className="p-lg-5 pe-lg-0">
-          <div className="section-title text-start">
-            <h1 className="display-5 mb-4">About Us</h1>
-          </div>
-          <p className="mb-4 pb-2">
-        We are 5 student from different majors, we start with ASAC, as software developers,
-        so for our graduation project we come with this big idea 
-          </p>
-          <div className="row g-4 mb-4 pb-2">
-            <div
-              className="col-sm-6 wow fadeIn"
-              data-wow-delay="0.1s"
-              style={{
-                visibility: "visible",
-                animationDelay: "0.1s",
-                animationName: "fadeIn"
-              }}
-            >
-              <div className="d-flex align-items-center">
-                <div
-                  className="d-flex flex-shrink-0 align-items-center justify-content-center bg-white"
-                  style={{ width: 60, height: 60 }}
-                >
-                  <i className="fa fa-users fa-2x text-primary" />
-                </div>
-                <div className="ms-3">
-                  <h2 className="text-primary mb-1" data-toggle="counter-up">
-                    5
-                  </h2>
-                  <p className="fw-medium mb-0">Happy Clients</p>
-                </div>
+        <div className="container about px-lg-0">
+          <div className="row g-0 mx-lg-0">
+            <div className="col-lg-6 ps-lg-0" style={{ minHeight: 400 }}>
+              <div className="position-relative h-100">
+                <img
+                  className="position-absolute img-fluid w-100 h-100"
+                  src="./image/sevice.png"
+                  style={{ objectFit: "cover" }}
+                  alt=""
+                />
               </div>
             </div>
             <div
-              className="col-sm-6 wow fadeIn"
-              data-wow-delay="0.3s"
+              className="col-lg-6 about-text py-5 wow fadeIn"
+              data-wow-delay="0.5s"
               style={{
                 visibility: "visible",
-                animationDelay: "0.3s",
-                animationName: "fadeIn"
+                animationDelay: "0.5s",
+                animationName: "fadeIn",
               }}
             >
-              <div className="d-flex align-items-center">
-                <div
-                  className="d-flex flex-shrink-0 align-items-center justify-content-center bg-white"
-                  style={{ width: 60, height: 60 }}
-                >
-                  <i className="fa fa-check fa-2x text-primary" />
+              <div className="p-lg-5 pe-lg-0">
+                <div className="section-title text-start">
+                  <h1 className="display-5 mb-4">About Us</h1>
                 </div>
-                <div className="ms-3">
-                  <h2 className="text-primary mb-1" data-toggle="counter-up">
-                    2
-                  </h2>
-                  <p className="fw-medium mb-0">Projects Done</p>
+                <p className="mb-4 pb-2">
+                  We are 5 student from different majors, we start with ASAC, as software
+                  developers, so for our graduation project we come with this big idea
+                </p>
+                <div className="row g-4 mb-4 pb-2">
+                  <div
+                    className="col-sm-6 wow fadeIn"
+                    data-wow-delay="0.1s"
+                    style={{
+                      visibility: "visible",
+                      animationDelay: "0.1s",
+                      animationName: "fadeIn",
+                    }}
+                  >
+                    <div className="d-flex align-items-center">
+                      <div
+                        className="d-flex flex-shrink-0 align-items-center justify-content-center bg-white"
+                        style={{ width: 60, height: 60 }}
+                      >
+                        <i className="fa fa-users fa-2x text-primary" />
+                      </div>
+                      <div className="ms-3">
+                        <h2 className="text-primary mb-1" data-toggle="counter-up">
+                          5
+                        </h2>
+                        <p className="fw-medium mb-0">Happy Clients</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="col-sm-6 wow fadeIn"
+                    data-wow-delay="0.3s"
+                    style={{
+                      visibility: "visible",
+                      animationDelay: "0.3s",
+                      animationName: "fadeIn",
+                    }}
+                  >
+                    <div className="d-flex align-items-center">
+                      <div
+                        className="d-flex flex-shrink-0 align-items-center justify-content-center bg-white"
+                        style={{ width: 60, height: 60 }}
+                      >
+                        <i className="fa fa-check fa-2x text-primary" />
+                      </div>
+                      <div className="ms-3">
+                        <h2 className="text-primary mb-1" data-toggle="counter-up">
+                          2
+                        </h2>
+                        <p className="fw-medium mb-0">Projects Done</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+                <a href="" className="btn btn-primary py-3 px-5">
+                  Explore More
+                </a>
               </div>
             </div>
           </div>
-          <a href="" className="btn btn-primary py-3 px-5">
-            Explore More
-          </a>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
 
       {/* <section className="page-section" id="about">
         <div className="container">
@@ -704,13 +703,13 @@ const HomePage = () => {
             <div className="col-lg-12 text-center">
               <h2 className="section-heading text-uppercase">Contact Us</h2>
               <h3 className="section-subheading text-muted">
-                Lorem ipsum dolor sit amet consectetur.
+                We are glad to hear and read your opinion.
               </h3>
             </div>
           </div>
           <div className="row">
             <div className="col-lg-12">
-              <form id="contactForm" name="sentMessage" novalidate="novalidate">
+              <form id="contactForm" name="sentMessage" noValidate="novalidate">
                 <div className="row">
                   <div className="col-md-6">
                     <div className="form-group">
@@ -732,17 +731,6 @@ const HomePage = () => {
                         placeholder="Your Email *"
                         required="required"
                         data-validation-required-message="Please enter your email address."
-                      />
-                      <p className="help-block text-danger"></p>
-                    </div>
-                    <div className="form-group">
-                      <input
-                        className="form-control"
-                        id="phone"
-                        type="tel"
-                        placeholder="Your Phone *"
-                        required="required"
-                        data-validation-required-message="Please enter your phone number."
                       />
                       <p className="help-block text-danger"></p>
                     </div>

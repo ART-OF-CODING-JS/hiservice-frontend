@@ -32,6 +32,7 @@ import Favorite from "./component/Favorite/Favorite";
 import HomePage from "./component/homePage/HomePage";
 import Payment from "./component/Payment/Payment";
 import Signup from "./component/Auth/Signup/Signup";
+import Reports from "./component/Reports/sendReports/Reports";
 
 function App() {
   const { isSignin } = useSelector((state) => state.authSlice);
@@ -65,7 +66,7 @@ function App() {
 
             <Route path="/Contact-us" element={<Contact />} />
             <Route path="/Contact-Admin" element={<ContactUs />} />
-            <Route path="/Reports" element={<h1>Mohamamd</h1>} />
+            <Route path="/Reports" element={<Reports />} />
             <Route path="/Settings" element={<Setting />} />
 
             <Route path="/Settings" element={<Setting />} />

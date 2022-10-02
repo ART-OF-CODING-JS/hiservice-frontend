@@ -4,10 +4,10 @@ import { useDispatch } from "react-redux";
 
 import { signin, sendEmailVerification } from "../../../store/auth";
 import Logo from "../../../assets/logo.png";
+import { Link } from "react-router-dom";
 
 export default function Signin() {
   const dispatch = useDispatch();
-
   const usernameRef = useRef(null);
   const passwordRef = useRef(null);
 
@@ -18,7 +18,6 @@ export default function Signin() {
       username: usernameRef.current.value,
       password: passwordRef.current.value,
     };
-    console.log(data);
     dispatch(signin(data));
     usernameRef.current.value = null;
     passwordRef.current.value = null;
@@ -35,11 +34,11 @@ export default function Signin() {
   return (
     <>
       <div className="login-wrapper">
-        <form action="" id="form" className="form">
+        <form action="" id="form" className="form" onSubmit={handleSignin}>
           <div className="d-flex flex-row justify-content-start">
-            <a href="/">
+            <Link to="/">
               <i className="fa-solid fa-arrow-left" href="/"></i>
-            </a>
+            </Link>
           </div>
 
           <a href="/">
@@ -50,29 +49,25 @@ export default function Signin() {
           <h2>Login</h2>
 
           <div className="input-group">
-            <input type="text" name="loginUser" id="loginUser" required ref={usernameRef} />
-            <label>User Name</label>
+            <input required type="text" id="loginUser" ref={usernameRef} />
+            <label >User Name</label>
           </div>
+
           <div className="input-group">
-            <input
-              type="password"
-              name="loginPassword"
-              id="loginPassword"
-              required
-              ref={passwordRef}
-            />
+            <input type="password" id="loginPassword" ref={passwordRef} required />
             <label>Password</label>
           </div>
-          <input type="submit" value="Login" className="submit-btn" onClick={handleSignin} />
+
+          <input type="submit" value="Login" className="submit-btn" />
           <a href="#forgot-pw" className="forgot-pw">
             Forgot Password?
           </a>
           <div className="forgot-pw">
             <p href="" className="text-white-50 fw-bold">
               Don't have an account?
-              <a href="/signup" className="forgot-pw">
+              <Link to="/signup" className="forgot-pw">
                 Register here
-              </a>
+              </Link>
             </p>
           </div>
           <div className="d-flex flex-row justify-content-start">
