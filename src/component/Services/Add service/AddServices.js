@@ -120,6 +120,8 @@ console.log(sendData,"add service updated datat")
           </Button>
         </Modal.Footer>
       </Modal>
+
+      
     </>
   );
 }
