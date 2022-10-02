@@ -30,7 +30,7 @@ export default function MyServices(props) {
       <section className="myservice-container container-com">
         {currentRecords.map((ele) => (
           <div className="t" key={ele.id}>
-            <div className="myservice-card">
+            {/* <div className="myservice-card">
               <div className="image-myservice">
                 <Link to={`/Services/${ele.id}`}>
                   <img className="img-myservice" alt="service" src={ele.image} />
@@ -55,8 +55,65 @@ export default function MyServices(props) {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
+
+               {/* ********************************************************************** */}
+      <div className="my_services_body">
+      <div className="container-my-services">
+        <div className="card_img">
+        <img
+    src={ele.image} 
+    alt="Pancake"
+  />
+  <div className="info">
+    <div className="edit-myservice common-edi-del">
+    <button><EditServices id={ele.id} /></button>
+    <button><DeleteService serviceId={ele.id}/></button>
+    </div>
+
+  </div>
+        </div>
+ 
+  <div className="container__text">
+    <h1>{ele.title}</h1>
+    <div className="container__text__star">
+      <span className="fa fa-star checked" />
+      <span className="fa fa-star checked" />
+      <span className="fa fa-star checked" />
+      <span className="fa fa-star checked" />
+      <span className="fa fa-star checked" />
+    </div>
+    <p>
+     {ele.description}
+    </p>
+    <div className="container__text__timing">
+      <div className="container__text__timing_time">
+        <h2>City</h2>
+        <p>{ele.city}</p>
+      </div>
+      <div className="container__text__timing_time">
+        <h2>Phone Number</h2>
+        <p>{ele.phoneNumber}</p>
+      </div>
+      <div className="container__text__timing_time">
+        <h2>department</h2>
+        <p>{ele.department}</p>
+      </div>
+    </div>
+    <button className={ele.status===null?"btn_my_services ra":
+    ele.status==='confirm'?"btn_my_services con":"btn_my_services rej"}>
+    {ele.status === null ? 'inProgress'
+     : ele.status === "reject" ? 'Rejected'
+      :'Active'}
+
+    </button>
+  </div>
+</div>
+</div>
+
           </div>
+
+          
         ))}
       </section>
       <Pagination 
@@ -65,6 +122,8 @@ export default function MyServices(props) {
       setCurrentPage={setCurrentPage}
     
       />
+   
     </>
+
   );
 }

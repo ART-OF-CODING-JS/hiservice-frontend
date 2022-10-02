@@ -7,19 +7,20 @@ import Modal from "react-bootstrap/Modal";
 import cookie from "react-cookies";
 // import jwt from 'jsonwebtoken';
 import "./AddServices.css";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addService } from "../../../store/services";
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
+// import Dropdown from 'react-bootstrap/Dropdown';
+// import DropdownButton from 'react-bootstrap/DropdownButton';
 
 export default function AddService({ postData }) {
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
+  const [city,setCity]=useState('city')
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   const titleRef = useRef(null);
-  const cityRef = useRef(null);
+  // const cityRef = useRef(null);
   const phoneRef = useRef(null);
   const discRef = useRef(null);
   const departmentRef = useRef(null);
@@ -30,12 +31,12 @@ export default function AddService({ postData }) {
       title: titleRef.current.value,
       department: departmentRef.current.value,
       description: discRef.current.value,
-      city: cityRef.current.value,
+      city: city,
       phoneNumber: phoneRef.current.value,
       image: imageRef.current.value,
       userID: cookie.load("userID"),
     };
-
+console.log(sendData,"add service updated datat")
     dispatch(addService(sendData));
   };
   let role = cookie.load("userAccess");
@@ -71,10 +72,20 @@ export default function AddService({ postData }) {
             </Form.Group>
             {/* *****************  */}
            
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            {/* <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>City</Form.Label>
               <Form.Control type="text" placeholder="amman" ref={cityRef} />
-            </Form.Group>
+            </Form.Group> */}
+
+<select   className="search-field1 ttt"  id='city' value={city} onChange={(e)=> setCity(e.target.value)}>
+        
+        <option value="Aamman">Amman</option>
+        <option value="Jarash">Jerash</option>
+        <option value="Irbid">Irbid</option>
+        <option value="Zarqa">Zarqa</option>
+        <option value="Aqaba">Aqaba</option>
+        <option value="Madaba">Madaba</option>
+      </select>
             {/* *****************  */}
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Phone number</Form.Label>
