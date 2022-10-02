@@ -20,7 +20,7 @@ const PortfolioLinks = ({ portfolioLinks }) => {
                   <a className="portfolio-link" data-toggle="modal" href="#portfolioModal1">
                     <div className="portfolio-hover">
                       <div className="portfolio-hover-content">
-                        <i className="fa fa-plus fa-3x"></i>
+                        {/* <i className="fa fa-plus fa-3x"></i> */}
                       </div>
                     </div>
                     <img className="img-fluid" src={image} alt="portfolio_img" />
@@ -33,6 +33,7 @@ const PortfolioLinks = ({ portfolioLinks }) => {
               ))}
           </div>
         </div>
+
       </section>
     </>
   );
