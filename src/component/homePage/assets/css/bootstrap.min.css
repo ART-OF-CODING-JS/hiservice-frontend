@@ -1173,6 +1173,7 @@ pre code {
     -ms-flex: 0 0 33.333333%;
     flex: 0 0 33.333333%;
     max-width: 33.333333%;
+    
   }
 
   .col-md-5 {
@@ -11166,6 +11167,14 @@ a.text-dark:hover {
     color: inherit;
     border-color: #dee2e6;
   }
+
+
+
+
+
+
+
+
 }
 
 /*# sourceMappingURL=bootstrap.min.css.map */

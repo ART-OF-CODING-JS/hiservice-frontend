@@ -1,129 +1,131 @@
 import React from 'react';
+import Logo from "../../assets/logo.png";
 
-import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
+import { Link } from "react-router-dom";
 import "./footer.css"
 export default function Footer() {
   return (
-   
-    <MDBFooter bgColor='light'  className='text-center text-lg-start text-muted '>
-      <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
-        <div className='me-5 d-none d-lg-block'>
-          <span>Get connected with us on social networks:</span>
-        </div>
+    <div className="container-fluid bg-dark footer mt-5 pt-5 wow fadeIn " data-wow-delay="0.1s">
+<div className="container py-5">
+    <div className="row g-5">
+        <div className="col-lg-3 col-md-6">
+        <h1 className="text-white mb-4 text-primary me-3">
+        <Link className="Link" to={"/"}>
+                        <img src={Logo} width="175px" />
+                      </Link>
+                      </h1>
+       <p>We provide different type of services that will make your life easy</p>
+  
+            <div className="d-flex pt-2 social">
+              <ul className="list-inline social-buttons">
+                <li className="list-inline-item">
+                  <a href="#something">
+                    <i className="fa fa-twitter"></i>
+                  </a>
+                </li>
+                <li className="list-inline-item">
+                  <a href="#something">
+                    <i className="fa fa-facebook-f"></i>
+                  </a>
+                </li>
+                <li className="list-inline-item">
+                  <a href="#something">
+                    <i className="fab fa-linkedin-in"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            </div>
 
-        <div className='icon'>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon fab  icon="facebook-f" />
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon fab icon="twitter" />
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon fab icon="google" />
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon fab icon="instagram" />
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon fab icon="linkedin" />
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon fab icon="github" />
-          </a>
-        </div>
-      </section>
 
-      <section className=''>
-        <MDBContainer className='text-center text-md-start mt-5'>
-          <MDBRow className='mt-3'>
-            <MDBCol md="3" lg="4" xl="3" className='mx-auto mb-4'>
-              <h6 className='text-uppercase fw-bold mb-4'>
-                <MDBIcon icon="gem" className="me-3" />
-                Hi service
-              </h6>
-             
-            </MDBCol>
 
-            <MDBCol md="2" lg="2" xl="2" className='mx-auto mb-4'>
-              <h6 className='text-uppercase fw-bold mb-4'>About Us</h6>
-              <p>
-                <a href='#!' className='text-reset'>
-                About HiService
+          <div className="col-lg-3 col-md-6">
+             <h4 className='text-light mb-4'>About Us</h4>
+             <p>
+                 <a href='#!' className='text-reset'>
+                 About HiService
                 </a>
-              </p>
-              <p>
+               </p>
+               <p>
                 <a href='#!' className='text-reset'>
-                Service status
+                 Service status
                 </a>
-              </p>
+             </p>
               <p>
                 <a href='#!' className='text-reset'>
                 Door To Door Service
                 </a>
-              </p>
+             </p>
               <p>
                 <a href='#!' className='text-reset'>
                 Book A Service
                 </a>
               </p>
-            </MDBCol>
+          </div>
 
-            <MDBCol md="3" lg="2" xl="2" className='mx-auto mb-4'>
-              <h6 className='text-uppercase fw-bold mb-4'>POPULAR SERVICES</h6>
-              <p>
-                <a href='#!' className='text-reset'>
+            <div className="col-lg-3 col-md-6">
+              <h4 className="text-light mb-4">POPULAR SERVICES</h4>
+               <p>
+                 <a href='#!' className='text-reset'>
                 Cleaning
                 </a>
-              </p>
+               </p>
+               <p>
+                 <a href='#!' className='text-reset'>
+                  Plumbing
+                 </a>
+               </p>
               <p>
-                <a href='#!' className='text-reset'>
-                 Plumbing
-                </a>
-              </p>
-              <p>
-                <a href='#!' className='text-reset'>
-                 Electrical
-                </a>
-              </p>
+                 <a href='#!' className='text-reset'>
+                  Electrical
+                 </a>
+               </p>
               <p>
                 <a href='#!' className='text-reset'>
                   Painting
-                </a>
+               </a>
               </p>
               <p>
                 <a href='#!' className='text-reset'>
                  See all services
                 </a>
-              </p>
-            </MDBCol>
+               </p>
+           </div>
 
-            <MDBCol md="4" lg="3" xl="3" className='mx-auto mb-md-0 mb-4'>
-              <h6 className='text-uppercase fw-bold mb-4'>Contact Us</h6>
-              <p>
-                <MDBIcon icon="home" className="me-2" />
-               Jordan, Amman
+            <div className="col-lg-3 col-md-6">
+               <h4 className="text-light mb-4">Address</h4>
+               <p><i className="fa fa-map-marker-alt me-3"></i>
+                Amman, Jordan
               </p>
-              <p>
-                <MDBIcon icon="envelope" className="me-3" />
-                info@example.com
-              </p>
-              <p>
-                <MDBIcon icon="phone" className="me-3" /> + 01 234 567 88
-              </p>
-              <p>
-                <MDBIcon icon="print" className="me-3" /> + 01 234 567 89
-              </p>
-            </MDBCol>
-          </MDBRow>
-        </MDBContainer>
-      </section>
+               <p><i className="fa fa-envelope me-3"></i>
+                 info@example.com
+               </p>
+               <p><i className="fa fa-phone-alt me-3"></i> + 01 234 567 88
+               </p>
+            </div>
 
-      <div className='text-center p-4' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' , color:"#262626" }}>
-        © 2022 Copyright: Hi service
-        
+            {/* <div className="col-lg-3 col-md-6">
+                    <h4 className="text-light mb-4">Newsletter</h4>
+                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                    <div className="position-relative mx-auto" style="max-width: 400px;">
+                        <input className="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email"/>
+                        <button type="button" className="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div>
+                </div> */}
+
+</div>
+    </div>
+      <div className="container-fluid copyright">
+      <div className="container">
+          <div className="row">
+              <div className="col-md-6 text-md-start mb-3 mb-md-0">
+              Copyright © 2022 HiService
+              </div>
+       
+          </div>
       </div>
-     
-    </MDBFooter>
-    
+  </div>
+     </div>
+ 
   );
 }
