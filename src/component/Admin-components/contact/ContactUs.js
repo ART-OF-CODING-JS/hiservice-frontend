@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {getAllContact} from '../../../store/contact'
 import "./contact.css";
+import './con.css'
 import Pagination from '../../pagenation/Pagination';
 
 export default function ContactUs(props) {
@@ -23,21 +24,24 @@ export default function ContactUs(props) {
      const currentRecords = allContact.slice(indexOfFirstRecord, indexOfLastRecord);
   return (
     <>
-    <section className="my-contact-container container-com">
+   
+    {currentRecords.map((ele ,idx) => (
+<div class="main-container">
+  
+  <div class="cards">
+    <div class="card card-1">
+      <div class="card__icon"><i class="fas fa-bolt"></i></div>
+      <div class="heading">
+    <h1 class="heading__title">{ele.username}</h1>
+    <p class="heading__credits">{ele.email}</p>
+  </div>
+      <h2 class="card__title">{ele.description}</h2>
     
-      {currentRecords.map((ele ,idx) => (
-            <>
-        <Card className="cardClass" style={{width:"65%", height:"60%"}}>
-        <Card.Body>
-          <Card.Title>{ele.username}</Card.Title>
-          <Card.Subtitle className="mb-2 text-muted">{ele.email}</Card.Subtitle>
-          <Card.Text>{ele.description}</Card.Text>
-        </Card.Body>
-      </Card>
-    <br/>
-      </>
-      ))}
-    </section>
+    </div>
+   
+  </div>
+</div>
+ ))}
     <Pagination 
       recordsPerPage={postsPerPage}
       totalPosts={allContact.length}
@@ -46,3 +50,4 @@ export default function ContactUs(props) {
     </>
   );
 }
+
