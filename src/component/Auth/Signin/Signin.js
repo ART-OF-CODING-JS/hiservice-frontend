@@ -11,13 +11,17 @@ export default function Signin() {
   const usernameRef = useRef(null);
   const passwordRef = useRef(null);
 
-  const handleSignin = () => {
+  const handleSignin = (event) => {
+    event.preventDefault();
+
     const data = {
       username: usernameRef.current.value,
       password: passwordRef.current.value,
     };
     console.log(data);
     dispatch(signin(data));
+    usernameRef.current.value = null;
+    passwordRef.current.value = null;
   };
 
   const emailForgotPassRef = useRef(null);

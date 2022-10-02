@@ -18,7 +18,9 @@ export default function Signup(props) {
   const professionsRef = useRef(null);
   const passwordRef = useRef(null);
 
-  const handleSignup = () => {
+  const handleSignup = (event) => {
+    event.preventDefault();
+
     const data = {
       username: usernameRef.current.value,
       email: emailRef.current.value,
@@ -29,7 +31,13 @@ export default function Signup(props) {
     };
 
     dispatch(signup(data));
-    navigate("/signin");
+    usernameRef.current.value = null;
+    emailRef.current.value = null;
+    passwordRef.current.value = null;
+    cityRef.current.value = null;
+    phoneNumberRef.current.value = null;
+    professionsRef.current.value = null;
+    // navigate("/signin");
   };
   return (
     <>
@@ -48,32 +56,32 @@ export default function Signup(props) {
           <h3>Create new account</h3>
 
           <div className="input-group">
-            <input type="text" name="loginUser" id="loginUser" required ref={usernameRef} />
+            <input type="text" name="loginUser" id="loginUser" ref={usernameRef} />
             <label>Username</label>
           </div>
 
           <div className="input-group">
-            <input type="text" name="loginUser" id="loginUser" required ref={emailRef} />
+            <input type="email" name="loginUser" id="loginUser" ref={emailRef} />
             <label>Email</label>
           </div>
 
           <div className="input-group">
-            <input type="text" name="loginUser" id="loginUser" required ref={cityRef} />
+            <input type="text" name="loginUser" id="loginUser" ref={cityRef} />
             <label>City</label>
           </div>
 
           <div className="input-group">
-            <input type="text" name="loginUser" id="loginUser" required ref={phoneNumberRef} />
+            <input type="tel" name="loginUser" id="loginUser" ref={phoneNumberRef} required />
             <label>Phone number</label>
           </div>
 
           <div className="input-group">
-            <input type="text" name="loginUser" id="loginUser" required ref={professionsRef} />
+            <input type="text" name="loginUser" id="loginUser" ref={professionsRef} required />
             <label>Professions</label>
           </div>
 
           <div className="input-group">
-            <input type="text" name="loginUser" id="loginUser" required ref={passwordRef} />
+            <input type="password" name="loginUser" id="loginUser" ref={passwordRef} required />
             <label>Password</label>
           </div>
 
