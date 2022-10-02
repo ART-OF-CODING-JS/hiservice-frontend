@@ -54,10 +54,10 @@ export default function Header(props) {
 
   return (
     <>
-      <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0">
-        <a href="index.html" class="navbar-brand d-flex align-items-center">
-          <h1 class="m-0">
-            <i class="text-primary me-3"></i>
+      <nav className="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0">
+        <a href="index.html" className="navbar-brand d-flex align-items-center">
+          <h1 className="m-0">
+            <i className="text-primary me-3"></i>
             <Link className="Link" to={"/"}>
               <img src={Logo} width="150px" />
             </Link>
@@ -65,14 +65,14 @@ export default function Header(props) {
         </a>
         <button
           type="button"
-          class="navbar-toggler"
+          className="navbar-toggler"
           data-bs-toggle="collapse"
           data-bs-target="#navbarCollapse"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <div class="navbar-nav ms-auto py-3 py-lg-0">
+        <div className="collapse navbar-collapse" id="navbarCollapse">
+          <div className="navbar-nav ms-auto py-3 py-lg-0">
             <Access role={"admin"}>
               <Link className="Link" to={"/users"}>
                 {" "}
@@ -119,20 +119,20 @@ export default function Header(props) {
             </Access>
             {/* *************Reservation************ */}
 
-            <div class="nav-item dropdown">
+            <div className="nav-item dropdown">
               {/* <button className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Reservation</button> */}
               <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                 Reservation
               </a>
               <Access role="user">
-                <div class="dropdown-menu bg-light m-0">
-                  <Link class="dropdown-item" to={"/Reservation-Admin"}>
+                <div className="dropdown-menu bg-light m-0">
+                  <Link className="dropdown-item" to={"/Reservation-Admin"}>
                     <li href="#">All Reservation</li>
                   </Link>
-                  <Link class="dropdown-item" to={"/My-Reservation"}>
+                  <Link className="dropdown-item" to={"/My-Reservation"}>
                     <li href="#">My Reservation</li>
                   </Link>
-                  <Link class="dropdown-item" to={"/reserve/myService"}>
+                  <Link className="dropdown-item" to={"/reserve/myService"}>
                     <li href="#">Reserve my Service</li>
                   </Link>
                 </div>
@@ -149,12 +149,12 @@ export default function Header(props) {
                 {" "}
                 <li>Contact us</li>
               </Link>
-              <div class="nav-item dropdown">
+              <div className="nav-item dropdown">
                 <Access role={"admin"}>
-                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                  <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                     Contact us
                   </a>
-                  <div class="dropdown-menu bg-light m-0">
+                  <div className="dropdown-menu bg-light m-0">
                     <Link className="dropdown-item" to={"/Contact-Admin"}>
                       <li href="#">All Contact</li>
                     </Link>
@@ -163,11 +163,11 @@ export default function Header(props) {
               </div>
             </div>
             {/* **************Setting********** */}
-            <div class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+            <div className="nav-item dropdown">
+              <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                 Setting
               </a>
-              <div class="dropdown-menu bg-light m-0">
+              <div className="dropdown-menu bg-light m-0">
                 <Link className="dropdown-item" to={"/Settings"}>
                   {" "}
                   <li href="#">Profile Setting</li>{" "}
@@ -538,11 +538,11 @@ export default function Header(props) {
 //       {/* // <!-- NAVIGATION --> */}
 //       <nav id="navigation">
 //         {/* <!-- container --> */}
-//         <div class="container">
+//         <div className="container">
 //           {/* <!-- responsive-nav --> */}
 //           <div id="responsive-nav">
 //             {/* <!-- NAV --> */}
-//             <ul class="main-nav nav justify-content-center">
+//             <ul className="main-nav nav justify-content-center">
 //               <Access role={"admin"}>
 //                 <Link className="Link" to={"/users"}>
 //                   {" "}
@@ -611,15 +611,15 @@ export default function Header(props) {
 //   <li>Reports</li>
 // </Link>
 // {/****************AllContactAdmin********************/}
-// <div class="dropdown">
-//   <button class="dropbtn">
+// <div className="dropdown">
+//   <button className="dropbtn">
 //     {" "}
 //     <Link className="Link" to={"/Contact-us"}>
 //       {" "}
 //       <li>Contact us</li>
 //     </Link>
 //   </button>
-//   <div class="dropdown-content">
+//   <div className="dropdown-content">
 //     <Access role={"admin"}>
 //       <Link className="Link" to={"/Contact-Admin"}>
 //         <li href="#">All Contact</li>

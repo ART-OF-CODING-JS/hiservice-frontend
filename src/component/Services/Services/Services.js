@@ -21,7 +21,6 @@ export default function Services(props) {
   useEffect(() => {
     dispatch(getAllServices());
   }, [dispatch]);
-  console.log(allServices);
   // console.log(searchedServices,"this we I will render the searched service");
   
   ///////////pagination/////

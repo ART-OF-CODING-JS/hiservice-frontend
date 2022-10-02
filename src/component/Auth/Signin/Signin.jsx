@@ -1,5 +1,5 @@
 import "./Signin.css";
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import { useDispatch } from "react-redux";
 
 import { signin, sendEmailVerification } from "../../../store/auth";
@@ -12,21 +12,20 @@ export default function Signin() {
   const passwordRef = useRef(null);
 
   const navigate = useNavigate();
-  const handleSignin = (event) => {
+  const handleSignin = async (event) => {
     event.preventDefault();
-
     const data = {
       username: usernameRef.current.value,
       password: passwordRef.current.value,
     };
-    dispatch(signin(data));
-    navigate("/services");
+    await dispatch(signin(data));
+    navigate("/");
     usernameRef.current.value = null;
     passwordRef.current.value = null;
   };
 
   const emailForgotPassRef = useRef(null);
-  const handleForgotPassword = () => {
+  const handleSendEmailVerification = () => {
     const data = {
       email: emailForgotPassRef.current.value,
     };
