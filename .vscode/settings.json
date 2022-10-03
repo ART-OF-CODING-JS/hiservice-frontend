@@ -9,6 +9,7 @@
     "sendpasswordlink",
     "Signin",
     "Signout",
+    "signup",
     "userprovider"
   ]
 }

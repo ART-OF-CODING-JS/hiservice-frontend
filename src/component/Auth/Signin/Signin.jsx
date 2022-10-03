@@ -19,7 +19,7 @@ export default function Signin() {
       password: passwordRef.current.value,
     };
     await dispatch(signin(data));
-    navigate("/");
+    navigate("/services");
     usernameRef.current.value = null;
     passwordRef.current.value = null;
   };
@@ -35,7 +35,7 @@ export default function Signin() {
   return (
     <>
       <div className="login-wrapper">
-        <form action="" id="form" className="form" onSubmit={handleSignin}>
+        <form action="" id="form" className="auth-form" onSubmit={handleSignin}>
           <div className="d-flex flex-row justify-content-start">
             <Link to="/">
               <i className="fa-solid fa-arrow-left" href="/"></i>
@@ -60,10 +60,11 @@ export default function Signin() {
           </div>
 
           <input type="submit" value="Login" className="submit-btn" />
+          <br />
           <a href="#forgot-pw" className="forgot-pw">
             Forgot Password?
           </a>
-          <div className="forgot-pw">
+          <div className="forgot-pw footerForm">
             <p href="" className="text-white-50 fw-bold">
               Don't have an account?
               <Link to="/signup" className="forgot-pw">
@@ -83,7 +84,7 @@ export default function Signin() {
 
         <div id="forgot-pw">
           <div>
-            <form action="" className="form">
+            <form action="" className="auth-form">
               <div className="d-flex flex-row justify-content-start">
                 <a href="#form" className="forgot-pw">
                   <i className="fa-solid fa-arrow-left" href="/"></i>
@@ -95,6 +96,7 @@ export default function Signin() {
                 <input type="email" name="email" id="email" required ref={emailForgotPassRef} />
                 <label>Email</label>
               </div>
+
               <input type="submit" value="Submit" className="submit-btn" />
             </form>
           </div>
