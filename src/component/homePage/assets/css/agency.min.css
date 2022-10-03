@@ -117,7 +117,14 @@ img::-moz-selection {
 }
 
 #mainNav {
-  background-color: #212529;
+  background-color: #b9c6d2;
+}
+
+.navbar {
+    /* position: -webkit-sticky;
+    position: sticky;
+    top: 0; */
+    background: black; 
 }
 
 #mainNav .navbar-toggler {
@@ -184,7 +191,7 @@ img::-moz-selection {
   #mainNav.navbar-shrink {
     padding-top: 0;
     padding-bottom: 0;
-    background-color: #212529;
+    /* background-color: #212529; */
   }
 
   #mainNav.navbar-shrink .navbar-brand {

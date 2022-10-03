@@ -22,14 +22,17 @@ export default function MainService(props) {
         {/* <p className="address">Address {ele.city}</p>
         <p className="category">Category {ele.department}</p> */}
         
-        <div className="btn-main-service">
+        {/* <div className="btn-main-service">
           <di></di>
             <button className="callNum">Call Number</button>
             <button className="chat"> Chat</button>
             <button className="reserve"><Reservation serviceId={ele.id}/></button>
            
-        </div>
+        </div> */}
+        <div className='reserve-service-pro'>
         <ServiceProviderInfo ServiceProviderId ={ele.userID} />
+        <button className="reserve"><Reservation serviceId={ele.id}/></button>
+        </div>
         <div className="disc-main-service">
              <p> <strong>Description</strong></p>
               {ele.description}

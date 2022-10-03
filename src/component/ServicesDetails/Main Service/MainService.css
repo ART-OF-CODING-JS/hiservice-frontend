@@ -18,6 +18,7 @@
     margin-top: 3rem;
     word-break: break-all;
     margin-right: 6rem;
+    margin-bottom: 1.3rem;
 }
 
 .about-service {
@@ -58,4 +59,22 @@
 }
 .c {
     font-size: 1.3rem !important;
+}
+
+.reserve-service-pro {
+    display: grid;
+        grid-template-columns: 1fr 1fr;
+}
+.reserve {
+    width: 110px;
+    height: 55px;
+    justify-self: center;
+    align-self: center;
+    border: 0;
+    padding: 0 7px;
+    background-color: #dcdcdc;
+    transition: all 0.3s ease
+}
+.reserve:hover {
+background-color: #fecd1c;
 }
