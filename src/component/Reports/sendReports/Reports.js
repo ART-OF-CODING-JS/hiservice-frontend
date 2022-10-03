@@ -31,7 +31,7 @@ export default function Reports(props) {
       {/* <Button variant="primary" onClick={handleShow}>
         Launch demo modal
       </Button> */}
-      <button onClick={handleShow} className="report btn-card">
+      <button onClick={handleShow} >
         Reports
       </button>
 
