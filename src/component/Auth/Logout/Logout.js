@@ -2,15 +2,15 @@ import cookie from "react-cookies";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import "./Logout.css";
-
+import HomePage from "../../homePage/HomePage";
 
 export default function Logout(props) {
   const navigate = useNavigate();
-  const handleSignout = async () => {
-    await cookie.remove("token");
-    await cookie.remove("actions");
-    await cookie.remove("userAccess");
-    await cookie.remove("userID");
+  const handleSignout = () => {
+    cookie.remove("token");
+    cookie.remove("actions");
+    cookie.remove("userAccess");
+    cookie.remove("userID");
     navigate("/");
     window.location.reload();
   };
@@ -18,7 +18,7 @@ export default function Logout(props) {
     <>
       <Button className="mx-4" variant="dark" onClick={handleSignout}>
         Logout
-      </Button>{" "}
+      </Button>
     </>
   );
 }

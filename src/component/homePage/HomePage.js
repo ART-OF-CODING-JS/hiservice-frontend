@@ -1,7 +1,7 @@
 import React from "react";
 import Portfolio from "./Protfolio";
 import Logo from "../../assets/logo.png";
-
+import './work.scss'
 const HomePage = () => {
   const portfolioLinks = [
     {
@@ -16,14 +16,12 @@ const HomePage = () => {
     },
     {
       title: "Waste management",
-      caption:
-        "You can find different helpful team for clean any type of waste ",
+      caption: "You can find different helpful team for clean any type of waste ",
       image: "./image/waste.jpg",
     },
     {
       title: "Pest Control",
-      caption:
-        "if you have bugs , or mosquitoes you can book from our web site ",
+      caption: "if you have bugs , or mosquitoes you can book from our web site ",
       image: "./image/pest.jpg",
     },
     {
@@ -48,25 +46,16 @@ const HomePage = () => {
     },
     {
       title: "Engineer",
-      caption:
-        "You can find professional person to help you to design your life",
+      caption: "You can find professional person to help you to design your life",
       image: "./image/eng.jpg",
     },
   ];
   return (
     <div className="App">
-     <nav
-        className="navbar navbar-expand-lg navbar-dark fixed-top"
-        id="mainNav"
-      >
+      <nav className="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div className="container">
           <a className="navbar-brand js-scroll-trigger" href="#page-top">
-            <img
-              src={Logo}
-              className="navbar-brand js-scroll-trigger"
-              alt=""
-              width="150px"
-            />
+            <img src={Logo} className="navbar-brand js-scroll-trigger" alt="" width="150px" />
           </a>
 
           <button
@@ -125,13 +114,8 @@ const HomePage = () => {
               You can Find All helpful services , also you can be part of us
             </div>
             {/* <div className="intro-lead-in">Welcome To Our Website!</div> */}
-            <div className="intro-heading text-uppercase">
-              Welcome To Our Website!
-            </div>
-            <a
-              className="btn btn-primary btn-xl text-uppercase js-scroll-trigger"
-              href="/signin"
-            >
+            <div className="intro-heading text-uppercase">Welcome To Our Website!</div>
+            <a className="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/signin">
               Join us
             </a>
           </div>
@@ -139,147 +123,61 @@ const HomePage = () => {
       </header>
 
       <div id="services" className="container-how container">
-        <div class="row">
+        
           <div class="col-lg-12 text-center">
             <h2 class="title_section">How We Work</h2>
-            <h3 class="sub-title">
-              We worked hard to deliver this passion
-            </h3>
+            <h3 class="sub-title">We worked hard to deliver this passion</h3>
           </div>
-        </div>
-        <div className="section-how">
-          {/* ***1****** */}
-          <div className="square-how">
-            <img
-              src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-              className="mask-how"
-            />
-            <div className="how-info ">
-              <p className="h1-how">Tell us about your project?</p>
-              <p className="p-how">
-                Get started by submitting a request for the type of project you
-                need help with, plus a few more details about your needs.
-              </p>
-              <div>
-                <a
-                  href="https://medium.com/@laheshk/is-apple-a-design-company-f5c83514e261"
-                  target="_"
-                  className="button-how"
-                >
-                  Read More
-                </a>
-              </div>
-            </div>
-          </div>
-          {/* ***2****** */}
-          <div className="square-how">
-            <img
- src="https://images.unsplash.com/photo-1581094481644-f2ab64522498?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"              className="mask-how"
-            />
-            <div className="how-info">
-              <p className="h1-how"> We'll match you with local service provider</p>
-              <p className="p-how">
-              We'll match you with a few local pros ready for the job. Read reviews, ask
-                questions, discuss availability.
-              </p>
-              <div>
-                <a
-                  href="https://medium.com/@laheshk/is-apple-a-design-company-f5c83514e261"
-                  target="_"
-                  className="button-how"
-                >
-                  Read More
-                </a>
-              </div>
-            </div>
-          </div>
-          {/* ***3****** */}
-          <div className="square-how">
-            <img
-  src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80"              className="mask-how"
-            />
-            <div className="how-info">
-              <p className="h1-how">Hire a local pro & finish the job?</p>
-              <p className="p-how">
-              You hire the local pro that's right for you and your project's scope. You'll work
-                with your local pro to arrange schedules, payments, and all other details of the
-              </p>
-              <div>
-                <a
-                  href="https://medium.com/@laheshk/is-apple-a-design-company-f5c83514e261"
-                  target="_"
-                  className="button-how"
-                >
-                  Read More
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        
 
-      {/* <div className="page-section" id="services">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12 text-center">
-              <h2 className="section-heading text-uppercase">Hi Services</h2>
-              <h3 className="section-subheading text-muted" style={{ fontSize: "1.5rem" }}>
-                How We Works
-              </h3>
-            </div>
-            
-          </div>
-          <div className="card-wrapper">
-          <div className="row text-center">
-            <div className="col-md-4">
-              <span className="fa-stack fa-4x">
-                <i className="fa fa-circle fa-stack-2x text-primary"></i>
-                <i className="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
-              </span>
-              <h4 className="service-heading"> Tell us about your project</h4>
-              <p className="text-muted">
+        {/* <div className="section-how"> */}
+          <div className="work">
+
+          <div class="scene">
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" />
+    </div>
+    <div class="card__face card__face--back">
+    <p className="h1-how">Tell us about your project?</p>
+              <p className="p-how">
                 Get started by submitting a request for the type of project you need help with, plus
                 a few more details about your needs.
               </p>
-            </div>
-            
-            
-            <div className="col-md-4">
-              <span className="fa-stack fa-4x">
-                <i className="fa fa-circle fa-stack-2x text-primary"></i>
-                <i className="fa fa-laptop fa-stack-1x fa-inverse"></i>
-              </span>
-              <h4 className="service-heading">
-                We'll match you with local professional or service provider
-              </h4>
-              <p className="text-muted">
+    </div>
+  </div>
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img src="https://images.unsplash.com/photo-1581094481644-f2ab64522498?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"       />
+    </div>
+    <div class="card__face card__face--back">
+    <p className="h1-how"> We'll match you with local service provider</p>
+              <p className="p-how">
                 We'll match you with a few local pros ready for the job. Read reviews, ask
-                questions, discuss availability, and request project estimates from your matched
-                local pros before you commit.
+                questions, discuss availability.
               </p>
-            </div>
-            
-            
-            <div className="col-md-4">
-              <span className="fa-stack fa-4x">
-                <i className="fa fa-circle fa-stack-2x text-primary"></i>
-                <i className="fa fa-lock fa-stack-1x fa-inverse"></i>
-              </span>
-              <h4 className="service-heading"> Hire a local pro & finish the job</h4>
-              <p className="text-muted">
+    </div>
+  </div>
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80"    />
+    </div>
+    <div class="card__face card__face--back">
+    <p className="h1-how">Hire a local pro & finish the job?</p>
+              <p className="p-how">
                 You hire the local pro that's right for you and your project's scope. You'll work
                 with your local pro to arrange schedules, payments, and all other details of the
-                job.
               </p>
-            </div>
-            </div>
+    </div>
+  </div>
+</div>
           </div>
-        </div>
-      </div> */}
+      
 
+</div>
       <Portfolio portfolioLinks={portfolioLinks}></Portfolio>
 
-      <div className="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+      <div className="container-fluid bg-light overflow-hidden  px-lg-0">
         <div className="container feature px-lg-0">
           <div className="row g-0 mx-lg-0">
             <div
@@ -292,16 +190,12 @@ const HomePage = () => {
               }}
             >
               <div className="p-lg-5 ps-lg-0">
-                <div
-                  className="bg-primary mb-3"
-                  style={{ width: 60, height: 2 }}
-                />
+                <div className="bg-primary mb-3" style={{ width: 60, height: 2 }} />
                 <h1 className="display-5 mb-5">Why Choose Us</h1>
                 <p className="mb-4 pb-2">
-                  We are the only web site in Jordan that you can find all what
-                  you need to make your life easy, only on click you can solve
-                  all your house issue . one more thing, if you are professional
-                  you can join us
+                  We are the only web site in Jordan that you can find all what you need to make
+                  your life easy, only on click you can solve all your house issue . one more thing,
+                  if you are professional you can join us
                 </p>
                 <div className="row g-4">
                   <div className="col-6">
@@ -441,11 +335,10 @@ const HomePage = () => {
         </div>
       </section> */}
 
-
-<div class="container-t testimonial-body">
+      <div class="container-t testimonial-body">
         <div class="row">
 
-        <h3>What Our Clients Say</h3>
+        <h3 className="h3">What Our Clients Say</h3>
             <div class="col-lg-4">
                 <div class="card-t">
                     <div class="face front-face">
@@ -466,58 +359,58 @@ const HomePage = () => {
                         <span class="fas fa-quote-right"></span>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card-t">
-                    <div class="face front-face">
-                        <img src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
-                            alt="" class="profile"/>
-                        <div class="pt-3 text-uppercase name">
-                            Jeffery Kennan
-                        </div>
-                        <div class="designation">Full Stack Developer</div>
-                    </div>
-                    <div class="face back-face">
-                        <span class="fas fa-quote-left"></span>
-                        <div class="testimonial">
-                            Really good, you have saved our business! I made bacck the purchase price in just 48 hours!
-                            man, this thing is getting better and better as I learn more about it.
-                        </div>
-                        <span class="fas fa-quote-right"></span>
-                    </div>
+              </div>
+          <div class="col-lg-4">
+            <div class="card-t">
+              <div class="face front-face">
+                <img
+                  src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+                  alt=""
+                  class="profile"
+                />
+                <div class="pt-3 text-uppercase name">Jeffery Kennan</div>
+                <div class="designation">Full Stack Developer</div>
+              </div>
+              <div class="face back-face">
+                <span class="fas fa-quote-left"></span>
+                <div class="testimonial">
+                  Really good, you have saved our business! I made bacck the purchase price in just
+                  48 hours! man, this thing is getting better and better as I learn more about it.
                 </div>
+                <span class="fas fa-quote-right"></span>
+              </div>
             </div>
-            <div class="col-lg-4">
-                <div class="card-t">
-                    <div class="face front-face">
-                        <img src="https://images.unsplash.com/photo-1614574762522-6ac2fbba2208?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjY2fHxtYW58ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                            alt="" class="profile"/>
-                        <div class="pt-3 text-uppercase name">
-                            Issac Maxwell
-                        </div>
-                        <div class="designation">Finance Director</div>
-                    </div>
-                    <div class="face back-face">
-                        <span class="fas fa-quote-left"></span>
-                        <div class="testimonial">
-                            Account keeper is the most valuable business research we have EVER purchased. Without
-                            electrician, we would ahave gone bankrupt by now.
-                        </div>
-                        <span class="fas fa-quote-right"></span>
-                    </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card-t">
+              <div class="face front-face">
+                <img
+                  src="https://images.unsplash.com/photo-1614574762522-6ac2fbba2208?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjY2fHxtYW58ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                  alt=""
+                  class="profile"
+                />
+                <div class="pt-3 text-uppercase name">Issac Maxwell</div>
+                <div class="designation">Finance Director</div>
+              </div>
+              <div class="face back-face">
+                <span class="fas fa-quote-left"></span>
+                <div class="testimonial">
+                  Account keeper is the most valuable business research we have EVER purchased.
+                  Without electrician, we would ahave gone bankrupt by now.
                 </div>
+                <span class="fas fa-quote-right"></span>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
+      </div>
 
-
+      
       <div className="bg-light page-section" id="team">
         <div className="container">
           <div className="row">
             <div className="col-lg-12 text-center">
-              <h2 className="section-heading text-uppercase">
-                Our Amazing Team
-              </h2>
+              <h2 className="section-heading text-uppercase">Our Amazing Team</h2>
               <h3 className="section-subheading text-muted">
                 We worked hard to deliver this passion
               </h3>
@@ -526,11 +419,7 @@ const HomePage = () => {
           <div className="row">
             <div className="col-sm-4">
               <div className="team-member">
-                <img
-                  className="mx-auto rounded-circle"
-                  src="./image/murad2.jpeg"
-                  alt=""
-                />
+                <img className="mx-auto rounded-circle" src="./image/murad2.jpeg" alt="" />
                 <h4>Murad Alazzeh</h4>
                 <p className="text-muted">Team leader and developer </p>
                 <ul className="list-inline social-buttons">
@@ -554,15 +443,9 @@ const HomePage = () => {
             </div>
             <div className="col-sm-4">
               <div className="team-member">
-                <img
-                  className="mx-auto rounded-circle"
-                  src="./image/Mohammad.jpg"
-                  alt=""
-                />
+                <img className="mx-auto rounded-circle" src="./image/Mohammad.jpg" alt="" />
                 <h4>Mohammad Alhaj</h4>
-                <p className="text-muted">
-                  Super Engineer and perfect developer{" "}
-                </p>
+                <p className="text-muted">Super Engineer and perfect developer </p>
                 <ul className="list-inline social-buttons">
                   <li className="list-inline-item">
                     <a href="#something">
@@ -584,11 +467,7 @@ const HomePage = () => {
             </div>
             <div className="col-sm-4">
               <div className="team-member">
-                <img
-                  className="mx-auto rounded-circle"
-                  src="./image/heba.jpeg"
-                  alt=""
-                />
+                <img className="mx-auto rounded-circle" src="./image/heba.jpeg" alt="" />
                 <h4>Heba Alhamaydeh</h4>
                 <p className="text-muted">super Mom and super developer </p>
                 <ul className="list-inline social-buttons">
@@ -612,11 +491,7 @@ const HomePage = () => {
             </div>
             <div className="col-sm-4">
               <div className="team-member">
-                <img
-                  className="mx-auto rounded-circle"
-                  src="./image/sara.jpeg"
-                  alt=""
-                />
+                <img className="mx-auto rounded-circle" src="./image/sara.jpeg" alt="" />
                 <h4>Sara Altayeh</h4>
                 <p className="text-muted">nice color designer and coder </p>
                 <ul className="list-inline social-buttons">
@@ -640,15 +515,9 @@ const HomePage = () => {
             </div>
             <div className="col-sm-4">
               <div className="team-member">
-                <img
-                  className="mx-auto rounded-circle"
-                  src="./image/Yasin.jpg"
-                  alt=""
-                />
+                <img className="mx-auto rounded-circle" src="./image/Yasin.jpg" alt="" />
                 <h4>Yasin burqan </h4>
-                <p className="text-muted">
-                  The one and the only barber , and fast developer{" "}
-                </p>
+                <p className="text-muted">The one and the only barber , and fast developer </p>
                 <ul className="list-inline social-buttons">
                   <li className="list-inline-item">
                     <a href="#something">
@@ -672,44 +541,29 @@ const HomePage = () => {
           <div className="row">
             <div className="col-lg-8 mx-auto text-center">
               <p className="large text-muted">
-                This is our development team if have any question please contact
-                us
+                This is our development team if have any question please contact us
               </p>
             </div>
           </div>
         </div>
       </div>
 
-
       <div className="py-5">
-
         <div className="container">
           <div className="row">
             <div className="col-md-3 col-sm-6">
               <a href="#something">
-                <img
-                  className="img-fluid d-block mx-auto"
-                  src="img/logos/envato.jpg"
-                  alt=""
-                />
+                <img className="img-fluid d-block mx-auto" src="img/logos/envato.jpg" alt="" />
               </a>
             </div>
             <div className="col-md-3 col-sm-6">
               <a href="#something">
-                <img
-                  className="img-fluid d-block mx-auto"
-                  src="img/logos/designmodo.jpg"
-                  alt=""
-                />
+                <img className="img-fluid d-block mx-auto" src="img/logos/designmodo.jpg" alt="" />
               </a>
             </div>
             <div className="col-md-3 col-sm-6">
               <a href="#something">
-                <img
-                  className="img-fluid d-block mx-auto"
-                  src="img/logos/themeforest.jpg"
-                  alt=""
-                />
+                <img className="img-fluid d-block mx-auto" src="img/logos/themeforest.jpg" alt="" />
               </a>
             </div>
             <div className="col-md-3 col-sm-6">
@@ -723,9 +577,7 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-
       </div>
-
 
       <section className="page-section" id="contact">
         <div className="container">
