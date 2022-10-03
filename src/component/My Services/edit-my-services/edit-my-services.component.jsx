@@ -42,7 +42,12 @@ const EditServices = (props) => {
   return (
     <>
       <>
-        <button variant="primary" size="lg" onClick={handleShow} className="ms-4 mt-3 add-btn">
+        <button
+          variant="primary"
+          size="lg"
+          onClick={handleShow}
+          className="btn btn-outline-secondary btn-lg btn_services_"
+        >
           Edit <i className="fa-regular fa-pen-to-square" />
         </button>
 
