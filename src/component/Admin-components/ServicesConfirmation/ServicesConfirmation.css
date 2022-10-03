@@ -29,7 +29,7 @@
 
 }
 img:hover {
-    scale: 1.03;
+    /* scale: 1.03; */
 }
 .title {
     font-size: 1.8rem;
