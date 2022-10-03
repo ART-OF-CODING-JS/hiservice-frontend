@@ -32,7 +32,7 @@ const HomePage = () => {
     {
       title: "Moving",
       caption: "Moving furniture and house stuff",
-      image: "./image/electr.jpg",
+      image: "./image/move.jpg",
     },
     {
       title: "Painting & Staining",
@@ -42,7 +42,12 @@ const HomePage = () => {
     {
       title: "barber",
       caption: "You can call a barber to give you a hair cut in your house",
-      image: "./image/move.jpg",
+      image: "./image/barber.jpg",
+    },
+    {
+      title: "Engineer",
+      caption: "You can find professional person to help you to design your life",
+      image: "./image/eng.jpg",
     },
   ];
   return (
@@ -117,7 +122,78 @@ const HomePage = () => {
         </div>
       </header>
 
-      <section className="page-section" id="services">
+
+     <div className="all-how">
+      <div className="container-how">
+    <div className="square-how">
+      <img
+        src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+        className="mask-how"
+      />
+      <div className="h1-how">Tell us about your project?</div>
+      <p className="p-how">
+      Get started by submitting a request for the type of project you need help with, plus
+                a few more details about your needs.
+      </p>
+      <div>
+        <a
+          href="https://medium.com/@laheshk/is-apple-a-design-company-f5c83514e261"
+          target="_"
+          className="button-how"
+        >
+          Read More
+        </a>
+      </div>
+    </div>
+  {/* </div> */}
+  <title>Blog card</title>
+  {/* <div className="container-how"> */}
+    <div className="square-how">
+      <img 
+        src="https://images.unsplash.com/photo-1581094481644-f2ab64522498?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+        className="mask-how"
+      />
+      <div className="h1-how"> We'll match you with local service provider</div>
+      <p className="p-how">
+      We'll match you with a few local pros ready for the job. Read reviews, ask
+                questions, discuss availability, and request project estimates from your matched
+                local pros before you commit.
+      </p>
+      <div>
+        <a
+          href="https://medium.com/@laheshk/is-apple-a-design-company-f5c83514e261"
+          target="_"
+          className="button-how"
+        >
+          Read More
+        </a>
+      </div>
+    </div>
+    <div className="square-how">
+      <img 
+        src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80"
+        className="mask-how"
+      />
+      <div className="h1-how">Hire a local pro & finish the job?</div>
+      <p className="p-how">
+      You hire the local pro that's right for you and your project's scope. You'll work
+                with your local pro to arrange schedules, payments, and all other details of the
+      </p>
+      <div>
+        <a
+          href="https://medium.com/@laheshk/is-apple-a-design-company-f5c83514e261"
+          target="_"
+          className="button-how"
+        >
+          Read More
+        </a>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+      {/* <div className="page-section" id="services">
         <div className="container">
           <div className="row">
             <div className="col-lg-12 text-center">
@@ -128,6 +204,7 @@ const HomePage = () => {
             </div>
             
           </div>
+          <div className="card-wrapper">
           <div className="row text-center">
             <div className="col-md-4">
               <span className="fa-stack fa-4x">
@@ -140,6 +217,8 @@ const HomePage = () => {
                 a few more details about your needs.
               </p>
             </div>
+            
+            
             <div className="col-md-4">
               <span className="fa-stack fa-4x">
                 <i className="fa fa-circle fa-stack-2x text-primary"></i>
@@ -154,6 +233,8 @@ const HomePage = () => {
                 local pros before you commit.
               </p>
             </div>
+            
+            
             <div className="col-md-4">
               <span className="fa-stack fa-4x">
                 <i className="fa fa-circle fa-stack-2x text-primary"></i>
@@ -166,56 +247,11 @@ const HomePage = () => {
                 job.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-      <section class="mobile-app">
-        <div class="container">
-          <div class="content row">
-            <div class="col-md-6 col-sm-12">
-              <img
-                class="mobile-app__image img-responsive"
-                alt=" mobile app"
-                src="https://media.angi.com/s3fs-public/HP-Angi-App.png"
-              />
-            </div>
-            <div class="mobile-app__information col-md-5 col-md-push-1 col-sm-12">
-              <svg width="60" height="61" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <mask id="AppBadge_svg__a" x="0" y="0" width="60" height="61"></mask>
-                <g mask="url(#AppBadge_svg__a)">
-                  <path d="M60 0H0v60h60V0z" fill="#D6FFEC"></path>
-                </g>
-              </svg>
-              <h2>Hi Service best mobile app coming soon</h2>
-              <p>
-                Message and video chat with pros, securely pay for projects, and more — only in the
-                Hi Service app.
-              </p>
-              <div class="mobile-app__badges">
-                <a
-                  id="mobile-app--app-store-badge"
-                  href="https://xy59r.app.goo.gl/DXKa"
-                  rel="noreferrer noopener"
-                  target="_blank"
-                >
-                  <img
-                    src="https://media.angi.com/sites/all/themes/altheme/images/app-store-badge-60%402x.png"
-                    alt="App Store"
-                    class="mobile-app__button"
-                  />
-                </a>
-                <a id="mobile-app--google-play-badge" href="#/" target="_blank">
-                  <img
-                    src="https://media.angi.com/sites/all/themes/altheme/images/google-play-badge-60@2x.png"
-                    alt="Google Play"
-                    class="mobile-app__button mobile-app__button--android"
-                  />
-                </a>
-              </div>
             </div>
           </div>
         </div>
-      </section>
+      </div> */}
+     
       <Portfolio portfolioLinks={portfolioLinks}></Portfolio>
 
 
@@ -328,198 +364,52 @@ const HomePage = () => {
     </div>
   </div>
 </div>
+    
 
-<br/>
 
-<div className="container-fluid bg-light overflow-hidden my-5 px-lg-0">
-  <div className="container about px-lg-0">
-    <div className="row g-0 mx-lg-0">
-      <div className="col-lg-6 ps-lg-0" style={{ minHeight: 400 }}>
-        <div className="position-relative h-100">
-          <img
-            className="position-absolute img-fluid w-100 h-100"
-            src="./image/sevice.png"
-            style={{ objectFit: "cover" }}
-            alt=""
-          />
-        </div>
-      </div>
-      <div
-        className="col-lg-6 about-text py-5 wow fadeIn"
-        data-wow-delay="0.5s"
-        style={{
-          visibility: "visible",
-          animationDelay: "0.5s",
-          animationName: "fadeIn"
-        }}
-      >
-        <div className="p-lg-5 pe-lg-0">
-          <div className="section-title text-start">
-            <h1 className="display-5 mb-4">About Us</h1>
-          </div>
-          <p className="mb-4 pb-2">
-        We are 5 student from different majors, we start with ASAC, as software developers,
-        so for our graduation project we come with this big idea 
-          </p>
-          <div className="row g-4 mb-4 pb-2">
-            <div
-              className="col-sm-6 wow fadeIn"
-              data-wow-delay="0.1s"
-              style={{
-                visibility: "visible",
-                animationDelay: "0.1s",
-                animationName: "fadeIn"
-              }}
-            >
-              <div className="d-flex align-items-center">
-                <div
-                  className="d-flex flex-shrink-0 align-items-center justify-content-center bg-white"
-                  style={{ width: 60, height: 60 }}
+ {/* <section class="mobile-app">
+        <div class="container">
+          <div class="content row">
+            <div class="col-md-6 col-sm-12">
+              <img
+                class="mobile-app__image img-responsive"
+                alt=" mobile app"
+                src="https://media.angi.com/s3fs-public/HP-Angi-App.png"
+              />
+            </div>
+            <div class="mobile-app__information col-md-5 col-md-push-1 col-sm-12">
+              <svg width="60" height="61" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="AppBadge_svg__a" x="0" y="0" width="60" height="61"></mask>
+                <g mask="url(#AppBadge_svg__a)">
+                  <path d="M60 0H0v60h60V0z" fill="#D6FFEC"></path>
+                </g>
+              </svg>
+              <h2>Hi Service best mobile app coming soon</h2>
+              <p>
+                Message and video chat with pros, securely pay for projects, and more — only in the
+                Hi Service app.
+              </p>
+              <div class="mobile-app__badges">
+                <a
+                  id="mobile-app--app-store-badge"
+                  href="https://xy59r.app.goo.gl/DXKa"
+                  rel="noreferrer noopener"
+                  target="_blank"
                 >
-                  <i className="fa fa-users fa-2x text-primary" />
-                </div>
-                <div className="ms-3">
-                  <h2 className="text-primary mb-1" data-toggle="counter-up">
-                    5
-                  </h2>
-                  <p className="fw-medium mb-0">Happy Clients</p>
-                </div>
+                  <img
+                    src="https://media.angi.com/sites/all/themes/altheme/images/app-store-badge-60%402x.png"
+                    alt="App Store"
+                    class="mobile-app__button"
+                  />
+                </a>
+                <a id="mobile-app--google-play-badge" href="#/" target="_blank">
+                  <img
+                    src="https://media.angi.com/sites/all/themes/altheme/images/google-play-badge-60@2x.png"
+                    alt="Google Play"
+                    class="mobile-app__button mobile-app__button--android"
+                  />
+                </a>
               </div>
-            </div>
-            <div
-              className="col-sm-6 wow fadeIn"
-              data-wow-delay="0.3s"
-              style={{
-                visibility: "visible",
-                animationDelay: "0.3s",
-                animationName: "fadeIn"
-              }}
-            >
-              <div className="d-flex align-items-center">
-                <div
-                  className="d-flex flex-shrink-0 align-items-center justify-content-center bg-white"
-                  style={{ width: 60, height: 60 }}
-                >
-                  <i className="fa fa-check fa-2x text-primary" />
-                </div>
-                <div className="ms-3">
-                  <h2 className="text-primary mb-1" data-toggle="counter-up">
-                    2
-                  </h2>
-                  <p className="fw-medium mb-0">Projects Done</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <a href="" className="btn btn-primary py-3 px-5">
-            Explore More
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-      {/* <section className="page-section" id="about">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12 text-center">
-              <h2 className="section-heading text-uppercase">How we are </h2>
-            
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-lg-12">
-              <ul className="timeline">
-                <li>
-                  <div className="timeline-image">
-                    <img className="rounded-circle img-fluid" src="img/about/1.jpg" alt="" />
-                  </div>
-                  <div className="timeline-panel">
-                    <div className="timeline-heading">
-                      <h4>2022</h4>
-                      <h4 className="subheading">Hi service </h4>
-                    </div>
-                    <div className="timeline-body">
-                      <p className="text-muted">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum
-                        eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit
-                        vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
-                      </p>
-                    </div>
-                  </div>
-                </li>
-                <li className="timeline-inverted">
-                  <div className="timeline-image">
-                    <img className="rounded-circle img-fluid" src="img/about/2.jpg" alt="" />
-                  </div>
-                  <div className="timeline-panel">
-                    <div className="timeline-heading">
-                      <h4>March 2011</h4>
-                      <h4 className="subheading">An Agency is Born</h4>
-                    </div>
-                    <div className="timeline-body">
-                      <p className="text-muted">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum
-                        eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit
-                        vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
-                      </p>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div className="timeline-image">
-                    <img className="rounded-circle img-fluid" src="img/about/3.jpg" alt="" />
-                  </div>
-                  <div className="timeline-panel">
-                    <div className="timeline-heading">
-                      <h4>December 2012</h4>
-                      <h4 className="subheading">Transition to Full Service</h4>
-                    </div>
-                    <div className="timeline-body">
-                      <p className="text-muted">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum
-                        eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit
-                        vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
-                      </p>
-                    </div>
-                  </div>
-                </li>
-                <li className="timeline-inverted">
-                  <div className="timeline-image">
-                    <img
-                      className="rounded-circle img-fluid"
-                      src="./assets/img/murad.jpeg"
-                      alt=""
-                    />
-                  </div>
-                  <div className="timeline-panel">
-                    <div className="timeline-heading">
-                      <h4>July 2014</h4>
-                      <h4 className="subheading">Phase Two Expansion</h4>
-                    </div>
-                    <div className="timeline-body">
-                      <p className="text-muted">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum
-                        eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit
-                        vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
-                      </p>
-                    </div>
-                  </div>
-                </li>
-                <li className="timeline-inverted">
-                  <div className="timeline-image">
-                    <h4>
-                      Be Part
-                      <br />
-                      Of Our
-                      <br />
-                      Story!
-                    </h4>
-                  </div>
-                </li>
-              </ul>
             </div>
           </div>
         </div>
@@ -608,7 +498,7 @@ const HomePage = () => {
           <div className="row">
             <div className="col-sm-4">
               <div className="team-member">
-                <img className="mx-auto rounded-circle" src="./image/murad.jpeg" alt="" />
+                <img className="mx-auto rounded-circle" src="./image/murad2.jpeg" alt="" />
                 <h4>Murad Alazzeh</h4>
                 <p className="text-muted">Team leader and developer </p>
                 <ul className="list-inline social-buttons">
@@ -730,8 +620,7 @@ const HomePage = () => {
           <div className="row">
             <div className="col-lg-8 mx-auto text-center">
               <p className="large text-muted">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam
-                veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.
+                This is our development team if have any question please contact us 
               </p>
             </div>
           </div>
@@ -739,6 +628,7 @@ const HomePage = () => {
       </div>
 
 
+      <div className="py-5">
 
         <div className="container">
           <div className="row">
@@ -769,13 +659,16 @@ const HomePage = () => {
           </div>
         </div>
 
+      </div>
+
+
       <section className="page-section" id="contact">
         <div className="container">
           <div className="row">
             <div className="col-lg-12 text-center">
               <h2 className="section-heading text-uppercase">Contact Us</h2>
               <h3 className="section-subheading text-muted">
-                Lorem ipsum dolor sit amet consectetur.
+                All message will be received and replayed by our team
               </h3>
             </div>
           </div>

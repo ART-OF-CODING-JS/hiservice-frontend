@@ -69,7 +69,7 @@ export default function Header(props) {
             <div class="navbar-nav nav justify-content-center ms-auto py-3 py-lg-0">
 
             <Access role={"admin"}>
-                <Link className="Link" to={"/users"}>
+                <Link className="nav-item nav-link" to={"/users"}>
                   {" "}
                   <li nav-link>Users</li>
                 </Link>
@@ -83,14 +83,14 @@ export default function Header(props) {
             </Access>
 
             <Access role="admin">
-                <div className="dropdown">
-                  <button className="dropbtn nav-link">Service</button>
-                  <div className="dropdown-content">
-                    <Link className="nav-item nav-link" to={"/Services"}>
+            <div class="nav-item dropdown">
+            <a className="nav-link dropdown-toggle nav-link" data-bs-toggle="dropdown">Service</a>
+            <div class="dropdown-menu bg-light m-0">
+                    <Link className="dropdown-item" to={"/Services"}>
                       {" "}
                       <li href="#">All Services</li>{" "}
                     </Link>
-                    <Link className="nav-item nav-link" to={"/Services/confirmation"}>
+                    <Link className="dropdown-item" to={"/Services/confirmation"}>
                       {" "}
                       <li href="#">Services Confirmation</li>{" "}
                     </Link>
@@ -113,11 +113,11 @@ export default function Header(props) {
                 </Link>
               </Access>
               {/* *************Reservation************ */}
-
+              
               <div class="nav-item dropdown">
                 {/* <button className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Reservation</button> */}
                 <a className="nav-link dropdown-toggle nav-link" data-bs-toggle="dropdown">Reservation</a>
-                <Access role="user">
+
                 <div class="dropdown-menu bg-light m-0">
                     <Link class="dropdown-item" to={"/Reservation-Admin"}>
                       <li href="#">All Reservation</li>
@@ -129,15 +129,36 @@ export default function Header(props) {
                       <li href="#">Reserve my Service</li>
                     </Link>
                   </div>
-                </Access>
+                
               </div>
-              {/************************************/}
-              <Link className="nav-item nav-link" to={"/Reports"}>
-                <li>Reports</li>
-              </Link>
               {/****************AllContactAdmin********************/}
              <div>
+
+             <div class="nav-item dropdown">
                   {" "}
+                  <Access role="user">
+                  <Link className="nav-item nav-link" to={"/Contact-us"}>
+                    {" "}
+                    
+                    <li nav-link>Contact us</li>
+                  </Link>
+                  </Access>
+                <div class="nav-item dropdown">
+                  <Access role={"admin"}>
+                  <a class="nav-link dropdown-toggle nav-link" data-bs-toggle="dropdown">
+                  Contact us</a>
+                  <div class="dropdown-menu bg-light m-0">
+                    <Link className="dropdown-item" to={"/Contact-Admin"}>
+                      <li href="#">All Contact</li>
+                    </Link>
+                    </div>
+                  </Access>
+                </div>
+              </div>
+
+
+
+                  {/* {" "}
                   <Link className="nav-item nav-link" to={"/Contact-us"}>
                     {" "}
                   <li nav-link>Contact us</li>
@@ -151,7 +172,7 @@ export default function Header(props) {
                     </Link>
                     </div>
                   </Access>
-                  </div>
+                  </div> */}
               </div>
 {/* **************Setting********** */}
 <div class="nav-item dropdown">
@@ -188,16 +209,15 @@ export default function Header(props) {
     {/* <!-- SEARCH BAR --> */}
     <div className="se-he">
                 <div className="header-search">
-                  <form onSubmit={handleSubmit} className="form">
+                  <form onSubmit={handleSubmit}>
                     <input
                     type="search"
                       className="input"
                       placeholder="Search..."
                       onChange={(e) => setSearch(e.target.value)}
-                      autofocus required
                     />
                     <button type="submit" className="search-btn">
-                    <i class="fa fa-search"></i>
+                      <i class="fa fa-search"></i>
                     </button>
 </form>
 
@@ -219,7 +239,7 @@ export default function Header(props) {
                     </div>
                   </div>
                 </div>
-                <div className="search-city">
+                <div className="search-city ">
                   <select className="search-field1 ttt" onChange={handleChange}>
                     <option>Search By city</option>
                     <option value="amman">Amman</option>
