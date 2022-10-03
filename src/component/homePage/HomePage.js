@@ -331,79 +331,74 @@ const HomePage = () => {
       </section> */}
 
       <div class="container-t testimonial-body">
-        <div class="row">
+      <div class="row">
 
-
-        <h2 className="h3">What Our Clients Say</h2>
-            <div class="col-lg-4">
-                <div class="card-t">
-                    <div class="face front-face">
-                        <img src="https://ca.slack-edge.com/TNGRRLUMA-UPRCC16QP-53e7e37645fd-512"
-                            alt="" class="profile"/>
-                        <div class="pt-3 text-uppercase name">
-                            Shihab Eshtaiwi
-                        </div>
-                        <div class="designation">Instructor</div>
-                    </div>
-                    <div class="face back-face">
-                        <span class="fas fa-quote-left"></span>
-                        <div class="testimonial">
-                            I made bacck the purchase price in just 48 hours! Thank you for making it pain less,
-                            pleasant.
-                            The service was execellent. I will refer everyone I know.
-                        </div>
-                        <span class="fas fa-quote-right"></span>
-                    </div>
-
+<h2 className="h3">What Our Clients Say</h2>
+    <div class="col-lg-4">
+        <div class="card-t">
+            <div class="face front-face">
+                <img src="https://ca.slack-edge.com/TNGRRLUMA-UPRCC16QP-53e7e37645fd-512"
+                    alt="" class="profile"/>
+                <div class="pt-3 text-uppercase name">
+                    Shihab Eshtaiwi
                 </div>
-                <span class="fas fa-quote-right"></span>
-              </div>
+                <div class="designation">Instructor</div>
             </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="card-t">
-              <div class="face front-face">
-                <img
-                  src="https://ca.slack-edge.com/TNGRRLUMA-UTE75MPJ9-282b001b930f-512"
-                  alt=""
-                  class="profile"
-                />
-                <div class="pt-3 text-uppercase name">Obada Tumah</div>
-                <div class="designation">Full Stack Developer</div>
-              </div>
-              <div class="face back-face">
+            <div class="face back-face">
                 <span class="fas fa-quote-left"></span>
                 <div class="testimonial">
-                  Really good, you have saved our business! I made bacck the purchase price in just
-                  48 hours! man, this thing is getting better and better as I learn more about it.
+                    I made bacck the purchase price in just 48 hours! Thank you for making it pain less,
+                    pleasant.
+                    The service was execellent. I will refer everyone I know.
                 </div>
                 <span class="fas fa-quote-right"></span>
-              </div>
             </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="card-t">
-              <div class="face front-face">
-                <img
-                  src="https://ca.slack-edge.com/TNGRRLUMA-U011NPNQ9FX-537d8bf49726-512"
-                  alt=""
-                  class="profile"
-                />
-                <div class="pt-3 text-uppercase name">Ahmad Swedani</div>
-                <div class="designation">Software Developer</div>
-              </div>
-              <div class="face back-face">
-                <span class="fas fa-quote-left"></span>
-                <div class="testimonial">
-                  Account keeper is the most valuable business research we have EVER purchased.
-                  Without electrician, we would ahave gone bankrupt by now.
-                </div>
-                <span class="fas fa-quote-right"></span>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
+  <div class="col-lg-4">
+    <div class="card-t">
+      <div class="face front-face">
+        <img
+          src="https://ca.slack-edge.com/TNGRRLUMA-UTE75MPJ9-282b001b930f-512"
+          alt=""
+          class="profile"
+        />
+        <div class="pt-3 text-uppercase name">Obada Tumah</div>
+        <div class="designation">Full Stack Developer</div>
+      </div>
+      <div class="face back-face">
+        <span class="fas fa-quote-left"></span>
+        <div class="testimonial">
+          Really good, you have saved our business! I made bacck the purchase price in just
+          48 hours! man, this thing is getting better and better as I learn more about it.
+        </div>
+        <span class="fas fa-quote-right"></span>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="card-t">
+      <div class="face front-face">
+        <img
+          src="https://ca.slack-edge.com/TNGRRLUMA-U011NPNQ9FX-537d8bf49726-512"
+          alt=""
+          class="profile"
+        />
+        <div class="pt-3 text-uppercase name">Ahmad Swedani</div>
+        <div class="designation">Software Developer</div>
+      </div>
+      <div class="face back-face">
+        <span class="fas fa-quote-left"></span>
+        <div class="testimonial">
+          Account keeper is the most valuable business research we have EVER purchased.
+          Without electrician, we would ahave gone bankrupt by now.
+        </div>
+        <span class="fas fa-quote-right"></span>
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
 
     
       <br />
@@ -445,7 +440,7 @@ const HomePage = () => {
           <h2>
             Murad Alazzeh
             <br />
-            <span className="job-title-team">Team leader and developer</span>
+            <p className="job-title-team">Team leader and developer</p>
           </h2>
         </div>
       </div>
@@ -484,7 +479,7 @@ const HomePage = () => {
           <h2>
             Mohammad Alhaj
             <br />
-            <span className="job-title-team"> perfect developer</span>
+            <p className="job-title-team"> perfect developer</p>
           </h2>
         </div>
       </div>
@@ -523,7 +518,7 @@ const HomePage = () => {
           <h2>
             Heba Alhamaydeh
             <br />
-            <span className="job-title-team">Super mom and developer</span>
+            <p className="job-title-team">Super mom and developer</p>
           </h2>
         </div>
       </div>
@@ -562,7 +557,7 @@ const HomePage = () => {
           <h2>
             Sara Altayeh
             <br />
-            <span className="job-title-team">Best designer</span>
+            <p className="job-title-team">Best designer</p>
           </h2>
         </div>
       </div>
@@ -601,7 +596,7 @@ const HomePage = () => {
           <h2>
             Yasien Burqan
             <br />
-            <span className="job-title-team">UI Developer</span>
+            <p className="job-title-team">UI Developer</p>
           </h2>
         </div>
       </div>
@@ -804,7 +799,7 @@ const HomePage = () => {
           </div>
           <div className="row">
             <div className="col-lg-12">
-              <form id="contactForm" name="sentMessage" novalidate="novalidate">
+              <form id="contactForm"  novalidate="novalidate">
                 <div className="row">
                   <div className="col-md-6">
                     <div className="form-group">
