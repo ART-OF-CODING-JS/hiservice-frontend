@@ -16,14 +16,12 @@ const HomePage = () => {
     },
     {
       title: "Waste management",
-      caption:
-        "You can find different helpful team for clean any type of waste ",
+      caption: "You can find different helpful team for clean any type of waste ",
       image: "./image/waste.jpg",
     },
     {
       title: "Pest Control",
-      caption:
-        "if you have bugs , or mosquitoes you can book from our web site ",
+      caption: "if you have bugs , or mosquitoes you can book from our web site ",
       image: "./image/pest.jpg",
     },
     {
@@ -48,25 +46,16 @@ const HomePage = () => {
     },
     {
       title: "Engineer",
-      caption:
-        "You can find professional person to help you to design your life",
+      caption: "You can find professional person to help you to design your life",
       image: "./image/eng.jpg",
     },
   ];
   return (
     <div className="App">
-      <nav
-        className="navbar navbar-expand-lg navbar-dark fixed-top"
-        id="mainNav"
-      >
+      <nav className="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div className="container">
           <a className="navbar-brand js-scroll-trigger" href="#page-top">
-            <img
-              src={Logo}
-              className="navbar-brand js-scroll-trigger"
-              alt=""
-              width="150px"
-            />
+            <img src={Logo} className="navbar-brand js-scroll-trigger" alt="" width="150px" />
           </a>
 
           <button
@@ -125,13 +114,8 @@ const HomePage = () => {
               You can Find All helpful services , also you can be part of us
             </div>
             {/* <div className="intro-lead-in">Welcome To Our Website!</div> */}
-            <div className="intro-heading text-uppercase">
-              Welcome To Our Website!
-            </div>
-            <a
-              className="btn btn-primary btn-xl text-uppercase js-scroll-trigger"
-              href="/signin"
-            >
+            <div className="intro-heading text-uppercase">Welcome To Our Website!</div>
+            <a className="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/signin">
               Join us
             </a>
           </div>
@@ -142,9 +126,7 @@ const HomePage = () => {
         
           <div class="col-lg-12 text-center">
             <h2 class="title_section">How We Work</h2>
-            <h3 class="sub-title">
-              We worked hard to deliver this passion
-            </h3>
+            <h3 class="sub-title">We worked hard to deliver this passion</h3>
           </div>
         
 
@@ -159,8 +141,8 @@ const HomePage = () => {
     <div class="card__face card__face--back">
     <p className="h1-how">Tell us about your project?</p>
               <p className="p-how">
-                Get started by submitting a request for the type of project you
-                need help with, plus a few more details about your needs.
+                Get started by submitting a request for the type of project you need help with, plus
+                a few more details about your needs.
               </p>
     </div>
   </div>
@@ -171,7 +153,7 @@ const HomePage = () => {
     <div class="card__face card__face--back">
     <p className="h1-how"> We'll match you with local service provider</p>
               <p className="p-how">
-              We'll match you with a few local pros ready for the job. Read reviews, ask
+                We'll match you with a few local pros ready for the job. Read reviews, ask
                 questions, discuss availability.
               </p>
     </div>
@@ -183,7 +165,7 @@ const HomePage = () => {
     <div class="card__face card__face--back">
     <p className="h1-how">Hire a local pro & finish the job?</p>
               <p className="p-how">
-              You hire the local pro that's right for you and your project's scope. You'll work
+                You hire the local pro that's right for you and your project's scope. You'll work
                 with your local pro to arrange schedules, payments, and all other details of the
               </p>
     </div>
@@ -208,16 +190,12 @@ const HomePage = () => {
               }}
             >
               <div className="p-lg-5 ps-lg-0">
-                <div
-                  className="bg-primary mb-3"
-                  style={{ width: 60, height: 2 }}
-                />
+                <div className="bg-primary mb-3" style={{ width: 60, height: 2 }} />
                 <h1 className="display-5 mb-5">Why Choose Us</h1>
                 <p className="mb-4 pb-2">
-                  We are the only web site in Jordan that you can find all what
-                  you need to make your life easy, only on click you can solve
-                  all your house issue . one more thing, if you are professional
-                  you can join us
+                  We are the only web site in Jordan that you can find all what you need to make
+                  your life easy, only on click you can solve all your house issue . one more thing,
+                  if you are professional you can join us
                 </p>
                 <div className="row g-4">
                   <div className="col-6">
@@ -357,13 +335,80 @@ const HomePage = () => {
         </div>
       </section> */}
 
+      <div class="container-t testimonial-body">
+        <div class="row">
+          <h3>What Our Clients Say</h3>
+          <div class="col-lg-4">
+            <div class="card-t">
+              <div class="face front-face">
+                <img
+                  src="https://images.unsplash.com/photo-1557862921-37829c790f19?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
+                  alt=""
+                  class="profile"
+                />
+                <div class="pt-3 text-uppercase name">Robert Garrison</div>
+                <div class="designation">Android Developer</div>
+              </div>
+              <div class="face back-face">
+                <span class="fas fa-quote-left"></span>
+                <div class="testimonial">
+                  I made bacck the purchase price in just 48 hours! Thank you for making it pain
+                  less, pleasant. The service was execellent. I will refer everyone I know.
+                </div>
+                <span class="fas fa-quote-right"></span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card-t">
+              <div class="face front-face">
+                <img
+                  src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+                  alt=""
+                  class="profile"
+                />
+                <div class="pt-3 text-uppercase name">Jeffery Kennan</div>
+                <div class="designation">Full Stack Developer</div>
+              </div>
+              <div class="face back-face">
+                <span class="fas fa-quote-left"></span>
+                <div class="testimonial">
+                  Really good, you have saved our business! I made bacck the purchase price in just
+                  48 hours! man, this thing is getting better and better as I learn more about it.
+                </div>
+                <span class="fas fa-quote-right"></span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card-t">
+              <div class="face front-face">
+                <img
+                  src="https://images.unsplash.com/photo-1614574762522-6ac2fbba2208?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjY2fHxtYW58ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                  alt=""
+                  class="profile"
+                />
+                <div class="pt-3 text-uppercase name">Issac Maxwell</div>
+                <div class="designation">Finance Director</div>
+              </div>
+              <div class="face back-face">
+                <span class="fas fa-quote-left"></span>
+                <div class="testimonial">
+                  Account keeper is the most valuable business research we have EVER purchased.
+                  Without electrician, we would ahave gone bankrupt by now.
+                </div>
+                <span class="fas fa-quote-right"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="bg-light page-section" id="team">
         <div className="container">
           <div className="row">
             <div className="col-lg-12 text-center">
-              <h2 className="section-heading text-uppercase">
-                Our Amazing Team
-              </h2>
+              <h2 className="section-heading text-uppercase">Our Amazing Team</h2>
               <h3 className="section-subheading text-muted">
                 We worked hard to deliver this passion
               </h3>
@@ -372,11 +417,7 @@ const HomePage = () => {
           <div className="row">
             <div className="col-sm-4">
               <div className="team-member">
-                <img
-                  className="mx-auto rounded-circle"
-                  src="./image/murad2.jpeg"
-                  alt=""
-                />
+                <img className="mx-auto rounded-circle" src="./image/murad2.jpeg" alt="" />
                 <h4>Murad Alazzeh</h4>
                 <p className="text-muted">Team leader and developer </p>
                 <ul className="list-inline social-buttons">
@@ -392,7 +433,7 @@ const HomePage = () => {
                   </li>
                   <li className="list-inline-item">
                     <a href="#something">
-                      <i className="fa fa-linkedin-in"></i>
+                      <i className="fab fa-linkedin-in"></i>
                     </a>
                   </li>
                 </ul>
@@ -400,15 +441,9 @@ const HomePage = () => {
             </div>
             <div className="col-sm-4">
               <div className="team-member">
-                <img
-                  className="mx-auto rounded-circle"
-                  src="./image/Mohammad.jpg"
-                  alt=""
-                />
+                <img className="mx-auto rounded-circle" src="./image/Mohammad.jpg" alt="" />
                 <h4>Mohammad Alhaj</h4>
-                <p className="text-muted">
-                  Super Engineer and perfect developer{" "}
-                </p>
+                <p className="text-muted">Super Engineer and perfect developer </p>
                 <ul className="list-inline social-buttons">
                   <li className="list-inline-item">
                     <a href="#something">
@@ -422,7 +457,7 @@ const HomePage = () => {
                   </li>
                   <li className="list-inline-item">
                     <a href="#something">
-                      <i className="fa fa-linkedin-in"></i>
+                      <i className="fab fa-linkedin-in"></i>
                     </a>
                   </li>
                 </ul>
@@ -430,11 +465,7 @@ const HomePage = () => {
             </div>
             <div className="col-sm-4">
               <div className="team-member">
-                <img
-                  className="mx-auto rounded-circle"
-                  src="./image/heba.jpeg"
-                  alt=""
-                />
+                <img className="mx-auto rounded-circle" src="./image/heba.jpeg" alt="" />
                 <h4>Heba Alhamaydeh</h4>
                 <p className="text-muted">super Mom and super developer </p>
                 <ul className="list-inline social-buttons">
@@ -450,7 +481,7 @@ const HomePage = () => {
                   </li>
                   <li className="list-inline-item">
                     <a href="#something">
-                      <i className="fa fa-linkedin-in"></i>
+                      <i className="fab fa-linkedin-in"></i>
                     </a>
                   </li>
                 </ul>
@@ -458,11 +489,7 @@ const HomePage = () => {
             </div>
             <div className="col-sm-4">
               <div className="team-member">
-                <img
-                  className="mx-auto rounded-circle"
-                  src="./image/sara.jpeg"
-                  alt=""
-                />
+                <img className="mx-auto rounded-circle" src="./image/sara.jpeg" alt="" />
                 <h4>Sara Altayeh</h4>
                 <p className="text-muted">nice color designer and coder </p>
                 <ul className="list-inline social-buttons">
@@ -478,7 +505,7 @@ const HomePage = () => {
                   </li>
                   <li className="list-inline-item">
                     <a href="#something">
-                      <i className="fa fa-linkedin-in"></i>
+                      <i className="fab fa-linkedin-in"></i>
                     </a>
                   </li>
                 </ul>
@@ -486,15 +513,9 @@ const HomePage = () => {
             </div>
             <div className="col-sm-4">
               <div className="team-member">
-                <img
-                  className="mx-auto rounded-circle"
-                  src="./image/Yasin.jpg"
-                  alt=""
-                />
+                <img className="mx-auto rounded-circle" src="./image/Yasin.jpg" alt="" />
                 <h4>Yasin burqan </h4>
-                <p className="text-muted">
-                  The one and the only barber , and fast developer{" "}
-                </p>
+                <p className="text-muted">The one and the only barber , and fast developer </p>
                 <ul className="list-inline social-buttons">
                   <li className="list-inline-item">
                     <a href="#something">
@@ -508,7 +529,7 @@ const HomePage = () => {
                   </li>
                   <li className="list-inline-item">
                     <a href="#something">
-                      <i className="fa fa-linkedin-in"></i>
+                      <i className="fab fa-linkedin-in"></i>
                     </a>
                   </li>
                 </ul>
@@ -518,8 +539,7 @@ const HomePage = () => {
           <div className="row">
             <div className="col-lg-8 mx-auto text-center">
               <p className="large text-muted">
-                This is our development team if have any question please contact
-                us
+                This is our development team if have any question please contact us
               </p>
             </div>
           </div>
@@ -531,29 +551,17 @@ const HomePage = () => {
           <div className="row">
             <div className="col-md-3 col-sm-6">
               <a href="#something">
-                <img
-                  className="img-fluid d-block mx-auto"
-                  src="img/logos/envato.jpg"
-                  alt=""
-                />
+                <img className="img-fluid d-block mx-auto" src="img/logos/envato.jpg" alt="" />
               </a>
             </div>
             <div className="col-md-3 col-sm-6">
               <a href="#something">
-                <img
-                  className="img-fluid d-block mx-auto"
-                  src="img/logos/designmodo.jpg"
-                  alt=""
-                />
+                <img className="img-fluid d-block mx-auto" src="img/logos/designmodo.jpg" alt="" />
               </a>
             </div>
             <div className="col-md-3 col-sm-6">
               <a href="#something">
-                <img
-                  className="img-fluid d-block mx-auto"
-                  src="img/logos/themeforest.jpg"
-                  alt=""
-                />
+                <img className="img-fluid d-block mx-auto" src="img/logos/themeforest.jpg" alt="" />
               </a>
             </div>
             <div className="col-md-3 col-sm-6">
@@ -652,9 +660,7 @@ const HomePage = () => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-4">
-              <span className="copyright">
-                Copyright &copy; Your Website 2019
-              </span>
+              <span className="copyright">Copyright &copy; Your Website 2019</span>
             </div>
             <div className="col-md-4">
               <ul className="list-inline social-buttons">
@@ -670,7 +676,7 @@ const HomePage = () => {
                 </li>
                 <li className="list-inline-item">
                   <a href="#something">
-                    <i className="fa fa-linkedin-in"></i>
+                    <i className="fab fa-linkedin-in"></i>
                   </a>
                 </li>
               </ul>

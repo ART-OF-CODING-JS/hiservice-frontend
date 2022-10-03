@@ -12,9 +12,6 @@ import { useDispatch } from "react-redux";
 import { updateService } from "../../../store/services";
 
 const EditServices = (props) => {
-  // console.log();
-  // console.log("----", props.id);
-
   const dispatch = useDispatch();
 
   const [show, setShow] = useState(false);
@@ -45,10 +42,10 @@ const EditServices = (props) => {
 
   return (
     <>
-    <button onClick={handleShow}>
-    Edit <i className="fa-regular fa-pen-to-square"></i>
-    </button>
-    
+      <button type="button" class="btn btn-outline-secondary btn-lg" onClick={handleShow}>
+        Edit <i className="fa-regular fa-pen-to-square" />
+      </button>
+
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Edit Service</Modal.Title>

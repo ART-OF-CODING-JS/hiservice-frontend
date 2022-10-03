@@ -11,13 +11,12 @@ function DeleteProfile() {
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
-  const handleSignout = () => {
-    cookie.remove("token");
-    cookie.remove("actions");
-    cookie.remove("userAccess");
-    cookie.remove("userID");
+  const handleSignout = async () => {
+    await cookie.remove("token");
+    await cookie.remove("actions");
+    await cookie.remove("userAccess");
+    await cookie.remove("userID");
     navigate("/");
-
     window.location.reload();
   };
   async function handleSubmit(event) {
