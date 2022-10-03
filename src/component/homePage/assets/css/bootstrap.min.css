@@ -10965,6 +10965,8 @@ button.bg-dark:hover {
 
 .text-center {
   text-align: center !important;
+  padding: 50px 0;
+  
 }
 
 @media (min-width: 576px) {
