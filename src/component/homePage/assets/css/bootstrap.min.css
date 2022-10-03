@@ -95,7 +95,8 @@ h4,
 h5,
 h6 {
   margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 
+  0.5rem;
 }
 
 p {
@@ -410,6 +411,7 @@ h2 {
 .h3,
 h3 {
   font-size: 1.75rem;
+  padding-bottom: 30px;
 }
 
 .h4,
@@ -459,7 +461,7 @@ h6 {
 
 
 .testimonial-body {
-  background: linear-gradient(to bottom, #FDC500, rgb(251, 251, 251));
+  background: linear-gradient(to bottom, #f8f9fa, #f8f9fa);
   animation: background-color 20s;
   min-height: 70vh;
 }
@@ -483,9 +485,6 @@ h6 {
 
 } */
 
-.container-t {
-  margin-top: 80px;
-}
 
 .container-t .col-lg-4 {
   display: flex;
@@ -499,7 +498,7 @@ h6 {
   perspective: 500px;
   border: none;
   background-color: inherit;
-  padding: 100px 0;
+  padding: 70px 0;
 }
 
 .card-t .face {
@@ -584,12 +583,14 @@ border-bottom: 1px solid #999; */
   }
 }
 
-h3 {
+.h3 {
   color: rgb(0, 0, 0);
   text-align: center;
-  padding-top: 50px;
+  padding-top: 80px;
   font-size: 30px;
   }
+
+
 
 
 hr {

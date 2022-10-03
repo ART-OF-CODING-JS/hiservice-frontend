@@ -177,7 +177,7 @@ const HomePage = () => {
 </div>
       <Portfolio portfolioLinks={portfolioLinks}></Portfolio>
 
-      <div className="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+      <div className="container-fluid bg-light overflow-hidden  px-lg-0">
         <div className="container feature px-lg-0">
           <div className="row g-0 mx-lg-0">
             <div
@@ -337,28 +337,29 @@ const HomePage = () => {
 
       <div class="container-t testimonial-body">
         <div class="row">
-          <h3>What Our Clients Say</h3>
-          <div class="col-lg-4">
-            <div class="card-t">
-              <div class="face front-face">
-                <img
-                  src="https://images.unsplash.com/photo-1557862921-37829c790f19?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
-                  alt=""
-                  class="profile"
-                />
-                <div class="pt-3 text-uppercase name">Robert Garrison</div>
-                <div class="designation">Android Developer</div>
-              </div>
-              <div class="face back-face">
-                <span class="fas fa-quote-left"></span>
-                <div class="testimonial">
-                  I made bacck the purchase price in just 48 hours! Thank you for making it pain
-                  less, pleasant. The service was execellent. I will refer everyone I know.
+
+        <h3 className="h3">What Our Clients Say</h3>
+            <div class="col-lg-4">
+                <div class="card-t">
+                    <div class="face front-face">
+                        <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
+                            alt="" class="profile"/>
+                        <div class="pt-3 text-uppercase name">
+                            Robert Garrison
+                        </div>
+                        <div class="designation">Android Developer</div>
+                    </div>
+                    <div class="face back-face">
+                        <span class="fas fa-quote-left"></span>
+                        <div class="testimonial">
+                            I made bacck the purchase price in just 48 hours! Thank you for making it pain less,
+                            pleasant.
+                            The service was execellent. I will refer everyone I know.
+                        </div>
+                        <span class="fas fa-quote-right"></span>
+                    </div>
                 </div>
-                <span class="fas fa-quote-right"></span>
               </div>
-            </div>
-          </div>
           <div class="col-lg-4">
             <div class="card-t">
               <div class="face front-face">
@@ -404,6 +405,7 @@ const HomePage = () => {
         </div>
       </div>
 
+      
       <div className="bg-light page-section" id="team">
         <div className="container">
           <div className="row">
