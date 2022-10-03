@@ -6,7 +6,7 @@ import { getAllServices } from '../../../src/store/services'
 import { Link } from 'react-router-dom'
 import { removeService } from '../../store/favorite'
 import MyServices from '../My Services/MyServices';
-export default function FavoriteList({ favId, serviceId }) {
+export default function FavoriteList({ favId, serviceId ,userID}) {
 
   const [show, setShow] = useState(false);
 
@@ -28,8 +28,9 @@ export default function FavoriteList({ favId, serviceId }) {
    <section className="myservice-container container-com">
         {
 
-          allServices.filter(ele => ele.id === serviceId).map(ele =>
+          allServices.filter(ele => (ele.id === serviceId)).map(ele =>
             <div className="my_services_body">
+              {console.log(ele)}
             <div className="container-my-services">
               <div className="card_img">
               <img
