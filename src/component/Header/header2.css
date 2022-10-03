@@ -199,8 +199,8 @@ form .search-city {
   .ttt option {
     color: black;
     font-size: 1.2rem;
-    background-color: rgb(8, 7, 7);
-  }
+    /* background-color: rgb(8, 7, 7); */
+  /* } */
    */
  form .input {
     width: calc(100% - 130px);
@@ -218,7 +218,7 @@ form .search-city {
     border-radius: 0px 40px 40px 0px;
   }
 
-.ttt {
+/* .ttt {
   min-width: 160px;
   z-index: 1;
 }
@@ -226,7 +226,7 @@ form .search-city {
   color: black;
   font-size: 1.2rem;
   background-color: rgb(8, 7, 7);
-}
+} */
 
 form .input {
   width: calc(100% - 130px);
@@ -262,6 +262,47 @@ textarea.input {
 \*----------------------------*/
 
 @media only screen and (max-width: 991px) {
+    .header-ctn .menu-toggle {
+      display: inline-block;
+    }
+    #responsive-nav {
+      position: fixed;
+      left: 0;
+      top: 0;
+      /* background: #15161d; */
+      height: 100vh;
+      max-width: 250px;
+      width: 0%;
+      overflow: hidden;
+      z-index: 22;
+      padding-top: 60px;
+      -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+      transform: translateX(-100%);
+      -webkit-transition: 0.2s all;
+      transition: 0.2s all;
+    }
+    #responsive-nav.active {
+      -webkit-transform: translateX(0%);
+      -ms-transform: translateX(0%);
+      transform: translateX(0%);
+      width: 100%;
+    }
+    .main-nav {
+      margin: 0px;
+      float: none;
+    }
+    .main-nav > li {
+      display: block;
+      float: none;
+    }
+    .main-nav > li + li {
+      margin-left: 0px;
+    }
+    .main-nav > li > p {
+      padding: 15px;
+      color: #fff;
+    }
   .header-ctn .menu-toggle {
     display: inline-block;
   }
