@@ -15,90 +15,142 @@ const EditServices = (props) => {
   const dispatch = useDispatch();
 
   const [show, setShow] = useState(false);
+  const [city, setCity] = useState("city");
+  const [department, setDepartment] = useState("");
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   const titleRef = useRef(null);
-  const cityRef = useRef(null);
-  const phoneRef = useRef(null);
   const discRef = useRef(null);
-  const departmentRef = useRef(null);
+  const phoneRef = useRef(null);
   const imageRef = useRef(null);
 
   const handleSubmit = () => {
     const sendData = {
       id: props.id,
       title: titleRef.current.value,
-      department: departmentRef.current.value,
+      department: department,
       description: discRef.current.value,
-      city: cityRef.current.value,
+      city: city,
       phoneNumber: phoneRef.current.value,
       image: imageRef.current.value,
       userID: cookie.load("userID"),
     };
-
     dispatch(updateService(sendData));
   };
 
   return (
     <>
-      <button type="button" class="btn btn-outline-secondary btn-lg" onClick={handleShow}>
-        Edit <i className="fa-regular fa-pen-to-square" />
-      </button>
+      <>
+        <button
+          variant="primary"
+          size="lg"
+          onClick={handleShow}
+          className="btn btn-outline-secondary btn-lg btn_services_"
+        >
+          Edit <i className="fa-regular fa-pen-to-square" />
+        </button>
 
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Edit Service</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Title</Form.Label>
-              <Form.Control type="text" placeholder="Title" autoFocus ref={titleRef} />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>department</Form.Label>
-              <Form.Control type="text" placeholder="home, ..." ref={departmentRef} />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>City</Form.Label>
-              <Form.Control type="text" placeholder="amman" ref={cityRef} />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Phone number</Form.Label>
-              <Form.Control type="text" placeholder="07" ref={phoneRef} />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Add Image</Form.Label>
-              <Form.Control type="text" placeholder="http//" ref={imageRef} />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-              <Form.Label>Disruption</Form.Label>
-              <Form.Control as="textarea" rows={3} ref={discRef} />
-            </Form.Group>
-          </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button className="px-3 py-3" variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button
-            variant="primary"
-            onClick={() => {
+        <Modal show={show} onHide={handleClose} className="add-service-pop-form">
+          <form
+            action=""
+            onSubmit={() => {
               handleClose();
               handleSubmit();
             }}
-            className="add-btn"
           >
-            Save Edit
-          </Button>
-        </Modal.Footer>
-      </Modal>
+            <div className="wrapper">
+              <div className="title">Edit Service</div>
+              <div className="form">
+                <div className="inputfield">
+                  <label>Title</label>
+                  <input
+                    type="text"
+                    className="input"
+                    placeholder="title"
+                    maxLength={25}
+                    ref={titleRef}
+                    required
+                  />
+                </div>
+
+                <div className="inputfield">
+                  <label>department</label>
+                  <div className="custom_select">
+                    <select value={department} onChange={(e) => setDepartment(e.target.value)}>
+                      <option value="Electrical">Electrical</option>
+                      <option value="Plumbing">Plumbing</option>
+                      <option value="Cleaning">Cleaning</option>
+                      <option value="Maid Service">Maid Service</option>
+                      <option value="Painting">Painting</option>
+                      <option value="Moving">Moving</option>
+                      <option value="Teaching">Teaching</option>
+                      <option value="ًWelding">Welding</option>
+                      <option value="ًCarpentry and Furniture">Carpentry and Furniture</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="inputfield">
+                  <label>city</label>
+                  <div className="custom_select">
+                    <select value={city} onChange={(e) => setCity(e.target.value)}>
+                      <option value="Amman">Amman</option>
+                      <option value="Jarash">Jarash</option>
+                      <option value="Irbid">Irbid</option>
+                      <option value="Zarqa">Zarqa</option>
+                      <option value="Aqaba">Aqaba</option>
+                      <option value="Madaba">Madaba</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="inputfield">
+                  <label>Phone Number</label>
+                  <input
+                    type="tel"
+                    className="input"
+                    placeholder="07"
+                    maxLength={15}
+                    ref={phoneRef}
+                    required
+                  />
+                </div>
+
+                <div className="inputfield">
+                  <label>Add Image</label>
+                  <input
+                    type="text"
+                    className="input"
+                    placeholder="http//"
+                    ref={imageRef}
+                    required
+                  />
+                </div>
+
+                <div className="inputfield">
+                  <label>Disruption</label>
+                  <textarea
+                    className="textarea"
+                    placeholder="Disruption"
+                    maxLength={200}
+                    ref={discRef}
+                    required
+                  />
+                </div>
+                <br />
+                <div className="footer">
+                  <button type="" value="Close" className="btn-submit" onClick={handleClose}>
+                    Close
+                  </button>
+                  <input type="submit" value="Edit" className="btn-submit" />
+                </div>
+              </div>
+            </div>
+          </form>
+        </Modal>
+      </>
+      ;
     </>
   );
 };

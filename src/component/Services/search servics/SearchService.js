@@ -27,7 +27,6 @@ export default function SearchService(props) {
     dispatch(addToFavorite(sendData))
     
   }
-  console.log(searchedServices,"this we I will render the searched service");
    ///////////pagination/////
    const [currentPage, setCurrentPage] = useState(1);
    const [postsPerPage,setPerPage] = useState(6);

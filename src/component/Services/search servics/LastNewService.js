@@ -13,19 +13,20 @@ import EditServices from "../../My Services/edit-my-services/edit-my-services.co
 import Pagination from "../../pagenation/Pagination";
 import { addToFavorite } from "../../../store/favorite";
 import { Spinner } from "react-bootstrap";
+
 export default function LastNewService(props) {
-  const {newServices ,isLoading} = useSelector((state) => state.servicesSlice);
-const dispatch = useDispatch();
-  function handleClick(id){
+  const { newServices, isLoading } = useSelector((state) => state.servicesSlice);
+  const dispatch = useDispatch();
+
+  function handleClick(id) {
     const sendData = {
-    addToFavorite:true,
-    comments:"",
-    rate:5,
-    userID:cookie.load("userID"),
-    serviceID:id
-    }
-    dispatch(addToFavorite(sendData))
-    
+      addToFavorite: true,
+      comments: "",
+      rate: 5,
+      userID: cookie.load("userID"),
+      serviceID: id,
+    };
+    dispatch(addToFavorite(sendData));
   }
   console.log(newServices,"this we I will render the searched service");
     ///////////pagination/////

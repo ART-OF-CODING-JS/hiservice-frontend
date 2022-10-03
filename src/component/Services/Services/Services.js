@@ -56,7 +56,7 @@ export default function Services(props) {
       <section className="service-container container-com">
         {currentRecords.map((ele) => (
           <>
-            <figure class="image-block">
+            <figure className="image-block">
               <Link to={`/Services/${ele.id}`}>
                 <img className="img" alt="service" src={ele.image} />
               </Link>
@@ -64,13 +64,7 @@ export default function Services(props) {
                 <h3>{ele.title}</h3>
                 <p>In {ele.city}</p>
                 <h4>{ele.department}</h4>
-                {/* <div className="star">
-                  <span className="fa fa-star checked" />
-                  <span className="fa fa-star checked" />
-                  <span className="fa fa-star checked" />
-                  <span className="fa fa-star checked" />
-                  <span className="fa fa-star checked" />
-                </div> */}
+
                 <Access role={"user"}>
                   <div className="edit-delete-auth-button">
                     <div className="edit">
@@ -78,13 +72,17 @@ export default function Services(props) {
                         type="button"
                         className="btn btn-outline-secondary btn-lg btn_services_"
                         onClick={() => handleClick(ele.id)}
-                       
                       >
                         Add to Favorite <i className="fa-regular fa-heart"></i>
                       </button>
                     </div>
                     <div className="delete">
-                    <Link className="Link btn btn-outline-secondary btn-lg" to={`/Services/${ele.id}`}> More Details</Link>
+                      <Link
+                        className="Link btn btn-outline-secondary btn-lg"
+                        to={`/Services/${ele.id}`}
+                      >
+                        More Details
+                      </Link>
                     </div>
                   </div>
                 </Access>
