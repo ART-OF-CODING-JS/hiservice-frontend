@@ -1,7 +1,7 @@
 import React from "react";
 import Portfolio from "./Protfolio";
 import Logo from "../../assets/logo.png";
-
+import './work.scss'
 const HomePage = () => {
   const portfolioLinks = [
     {
@@ -139,143 +139,60 @@ const HomePage = () => {
       </header>
 
       <div id="services" className="container-how container">
-        <div class="row">
+        
           <div class="col-lg-12 text-center">
             <h2 class="title_section">How We Work</h2>
             <h3 class="sub-title">
               We worked hard to deliver this passion
             </h3>
           </div>
-        </div>
-        <div className="section-how">
-          {/* ***1****** */}
-          <div className="square-how">
-            <img
-              src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-              className="mask-how"
-            />
-            <div className="how-info ">
-              <p className="h1-how">Tell us about your project?</p>
+        
+
+        {/* <div className="section-how"> */}
+          <div className="work">
+
+          <div class="scene">
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" />
+    </div>
+    <div class="card__face card__face--back">
+    <p className="h1-how">Tell us about your project?</p>
               <p className="p-how">
                 Get started by submitting a request for the type of project you
                 need help with, plus a few more details about your needs.
               </p>
-              <div>
-                <a
-                  href="https://medium.com/@laheshk/is-apple-a-design-company-f5c83514e261"
-                  target="_"
-                  className="button-how"
-                >
-                  Read More
-                </a>
-              </div>
-            </div>
-          </div>
-          {/* ***2****** */}
-          <div className="square-how">
-            <img
- src="https://images.unsplash.com/photo-1581094481644-f2ab64522498?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"              className="mask-how"
-            />
-            <div className="how-info">
-              <p className="h1-how"> We'll match you with local service provider</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img src="https://images.unsplash.com/photo-1581094481644-f2ab64522498?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"       />
+    </div>
+    <div class="card__face card__face--back">
+    <p className="h1-how"> We'll match you with local service provider</p>
               <p className="p-how">
               We'll match you with a few local pros ready for the job. Read reviews, ask
                 questions, discuss availability.
               </p>
-              <div>
-                <a
-                  href="https://medium.com/@laheshk/is-apple-a-design-company-f5c83514e261"
-                  target="_"
-                  className="button-how"
-                >
-                  Read More
-                </a>
-              </div>
-            </div>
-          </div>
-          {/* ***3****** */}
-          <div className="square-how">
-            <img
-  src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80"              className="mask-how"
-            />
-            <div className="how-info">
-              <p className="h1-how">Hire a local pro & finish the job?</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card__face card__face--front">
+      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80"    />
+    </div>
+    <div class="card__face card__face--back">
+    <p className="h1-how">Hire a local pro & finish the job?</p>
               <p className="p-how">
               You hire the local pro that's right for you and your project's scope. You'll work
                 with your local pro to arrange schedules, payments, and all other details of the
               </p>
-              <div>
-                <a
-                  href="https://medium.com/@laheshk/is-apple-a-design-company-f5c83514e261"
-                  target="_"
-                  className="button-how"
-                >
-                  Read More
-                </a>
-              </div>
-            </div>
+    </div>
+  </div>
+</div>
           </div>
-        </div>
-      </div>
+      
 
-      {/* <div className="page-section" id="services">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12 text-center">
-              <h2 className="section-heading text-uppercase">Hi Services</h2>
-              <h3 className="section-subheading text-muted" style={{ fontSize: "1.5rem" }}>
-                How We Works
-              </h3>
-            </div>
-          </div>
-          <div className="card-wrapper">
-          <div className="row text-center">
-            <div className="col-md-4">
-              <span className="fa-stack fa-4x">
-                <i className="fa fa-circle fa-stack-2x text-primary"></i>
-                <i className="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
-              </span>
-              <h4 className="service-heading"> Tell us about your project</h4>
-              <p className="text-muted">
-                Get started by submitting a request for the type of project you need help with, plus
-                a few more details about your needs.
-              </p>
-            </div>
-            
-            
-            <div className="col-md-4">
-              <span className="fa-stack fa-4x">
-                <i className="fa fa-circle fa-stack-2x text-primary"></i>
-                <i className="fa fa-laptop fa-stack-1x fa-inverse"></i>
-              </span>
-              <h4 className="service-heading">
-                We'll match you with local professional or service provider
-              </h4>
-              <p className="text-muted">
-                We'll match you with a few local pros ready for the job. Read reviews, ask
-                questions, discuss availability, and request project estimates from your matched
-                local pros before you commit.
-              </p>
-            </div>
-            
-            
-            <div className="col-md-4">
-              <span className="fa-stack fa-4x">
-                <i className="fa fa-circle fa-stack-2x text-primary"></i>
-                <i className="fa fa-lock fa-stack-1x fa-inverse"></i>
-              </span>
-              <h4 className="service-heading"> Hire a local pro & finish the job</h4>
-              <p className="text-muted">
-                You hire the local pro that's right for you and your project's scope. You'll work
-                with your local pro to arrange schedules, payments, and all other details of the
-                job.
-              </p>
-            </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
-
+</div>
       <Portfolio portfolioLinks={portfolioLinks}></Portfolio>
 
       <div className="container-fluid bg-light overflow-hidden my-5 px-lg-0">
