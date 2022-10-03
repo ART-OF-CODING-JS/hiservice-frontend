@@ -64,13 +64,7 @@ export default function Services(props) {
                 <h3>{ele.title}</h3>
                 <p>In {ele.city}</p>
                 <h4>{ele.department}</h4>
-                {/* <div className="star">
-                  <span className="fa fa-star checked" />
-                  <span className="fa fa-star checked" />
-                  <span className="fa fa-star checked" />
-                  <span className="fa fa-star checked" />
-                  <span className="fa fa-star checked" />
-                </div> */}
+
                 <Access role={"user"}>
                   <div className="edit-delete-auth-button">
                     <div className="edit">
