@@ -77,7 +77,7 @@ console.log(sendData,"add service updated datat")
               <Form.Control type="text" placeholder="amman" ref={cityRef} />
             </Form.Group> */}
 
-<select   className="search-field1 ttt"  id='city' value={city} onChange={(e)=> setCity(e.target.value)}>
+<select   className="city-sele"  id='city' value={city} onChange={(e)=> setCity(e.target.value)}>
         
         <option value="Aamman">Amman</option>
         <option value="Jarash">Jerash</option>
@@ -86,6 +86,8 @@ console.log(sendData,"add service updated datat")
         <option value="Aqaba">Aqaba</option>
         <option value="Madaba">Madaba</option>
       </select>
+      <br/>
+      <br/>
             {/* *****************  */}
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Phone number</Form.Label>
@@ -120,6 +122,8 @@ console.log(sendData,"add service updated datat")
           </Button>
         </Modal.Footer>
       </Modal>
+
+      
     </>
   );
 }

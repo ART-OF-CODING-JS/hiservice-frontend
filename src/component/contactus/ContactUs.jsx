@@ -107,11 +107,7 @@ const Contact = () => {
 
 export default Contact;
 
-// <div className="form-group">
-//   <label htmlFor="exampleFormControlTextarea1">Basic textarea</label>
-//   <textarea
-//     className="form-control"
-//     id="exampleFormControlTextarea1"
-//     rows="5"
-//   />
-// </div>
+
+
+    
+

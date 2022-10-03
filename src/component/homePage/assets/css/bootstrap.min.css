@@ -38,6 +38,7 @@
     monospace;
 }
 
+
 *,
 ::after,
 ::before {
@@ -74,7 +75,7 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #fff;
+  background-color: #f8f9fa;
 }
 
 [tabindex="-1"]:focus {
@@ -94,7 +95,8 @@ h4,
 h5,
 h6 {
   margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 
+  0.5rem;
 }
 
 p {
@@ -409,6 +411,7 @@ h2 {
 .h3,
 h3 {
   font-size: 1.75rem;
+  padding-bottom: 30px;
 }
 
 .h4,
@@ -454,6 +457,141 @@ h6 {
   font-weight: 300;
   line-height: 1.2;
 }
+
+
+
+.testimonial-body {
+  background: linear-gradient(to bottom, #f8f9fa, #f8f9fa);
+  animation: background-color 20s;
+  min-height: 70vh;
+}
+
+/* @keyframes background-color {
+  0% {
+      background: linear-gradient(to bottom, #000428, #004683);
+  }
+
+  25% {
+      background: linear-gradient(135deg, #1a4223, #5ee95e);
+  }
+
+  50% {
+      background: linear-gradient(to bottom, #421a31, #e95ed2);
+  }
+
+  100% {
+      background: linear-gradient(-135deg, #fae37d, #881da8, #20668f);
+  }
+
+} */
+
+
+.container-t .col-lg-4 {
+  display: flex;
+  justify-content: center;
+}
+
+.card-t {
+  width: 300px;
+  height: 300px;
+  transform-style: preserve-3d;
+  perspective: 500px;
+  border: none;
+  background-color: inherit;
+  padding: 70px 0;
+}
+
+.card-t .face {
+  position: absolute;
+  color: rgb(0, 0, 0);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.06);
+  transform-style: preserve-3d;
+  transition: 0.5s;
+  backface-visibility: hidden;
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  /* border-right: 1px solid #999;
+border-bottom: 1px solid #999; */
+}
+
+.card-t .face.front-face,
+.card-t .face.back-face {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-t .face.front-face .profile {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.card-t .face.front-face .name {
+  letter-spacing: 2px;
+}
+
+.card-t .face.front-face .designation {
+  font-size: 0.8rem;
+  color: rgb(14, 12, 12);
+  letter-spacing: 0.8px;
+}
+
+.card-t:hover .face.front-face {
+  transform: rotateY(180deg);
+}
+
+.card-t .face.back-face {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.06);
+  transform: rotateY(180deg);
+  padding: 20px 30px;
+  text-align: center;
+  user-select: none;
+}
+
+.card-t .face.back-face .fa-quote-left {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  font-size: 1.2rem;
+}
+
+.card-t .face.back-face .fa-quote-right {
+  position: absolute;
+  bottom: 35px;
+  right: 25px;
+  font-size: 1.2rem;
+}
+
+.card-t:hover .face.back-face {
+  transform: rotateY(360deg);
+}
+
+@media(max-width: 991.5px) {
+  .col-lg-4 {
+      margin-top: 40px;
+      margin-bottom: 20px;
+  }
+}
+
+.h3 {
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding-top: 80px;
+  font-size: 30px;
+  }
+
+
+
 
 hr {
   margin-top: 1rem;
@@ -1173,7 +1311,6 @@ pre code {
     -ms-flex: 0 0 33.333333%;
     flex: 0 0 33.333333%;
     max-width: 33.333333%;
-    
   }
 
   .col-md-5 {
@@ -11167,14 +11304,6 @@ a.text-dark:hover {
     color: inherit;
     border-color: #dee2e6;
   }
-
-
-
-
-
-
-
-
 }
 
 /*# sourceMappingURL=bootstrap.min.css.map */
