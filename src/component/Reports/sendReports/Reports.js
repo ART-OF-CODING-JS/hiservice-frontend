@@ -59,7 +59,13 @@ export default function Reports(props) {
           <Button variant="secondary py-3" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary add-btn" onClick={()=>{handleClose();handleSubmit()}}>
+          <Button
+            variant="primary add-btn"
+            onClick={() => {
+              handleClose();
+              handleSubmit();
+            }}
+          >
             Send
           </Button>
         </Modal.Footer>

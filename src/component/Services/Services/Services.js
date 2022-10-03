@@ -1,20 +1,23 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 // import "./Services.css";
 import './serv.scss'
 import { getAllServices } from "../../../store/services";
 import AddService from "../Add service/AddServices";
 import Reports from "../../Reports/sendReports/Reports";
-import Pagination from "../../pagenation/Pagination"
+import Pagination from "../../pagenation/Pagination";
 import Access from "../../Access/Access";
 import DeleteService from "../../My Services/DeleteMyService/DeleteMyService";
 import EditServices from "../../My Services/edit-my-services/edit-my-services.component";
 import Search from "../../searchBar/Search";
 import cookie from "react-cookies";
 import { addToFavorite } from "../../../store/favorite";
+import { Spinner } from "react-bootstrap";
 export default function Services(props) {
-  const { allServices } = useSelector((state) => state.servicesSlice);
+  const { allServices, isLoading, error } = useSelector(
+    (state) => state.servicesSlice
+  );
   // const [show, setShow] = useState(false);
 
   const dispatch = useDispatch();
@@ -22,30 +25,36 @@ export default function Services(props) {
   useEffect(() => {
     dispatch(getAllServices());
   }, [dispatch]);
-  console.log(allServices);
   // console.log(searchedServices,"this we I will render the searched service");
-  
+
   ///////////pagination/////
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage,setPerPage] = useState(9);
+  const [postsPerPage, setPerPage] = useState(9);
 
   const indexOfLastRecord = currentPage * postsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - postsPerPage;
-  const currentRecords = allServices.slice(indexOfFirstRecord, indexOfLastRecord);
+  const currentRecords = allServices.slice(
+    indexOfFirstRecord,
+    indexOfLastRecord
+  );
 
-//////////////
-function handleClick(id){
-  const sendData = {
-  addToFavorite:true,
-  comments:"",
-  rate:5,
-  userID:cookie.load("userID"),
-  serviceID:id
+  //////////////
+  function handleClick(id) {
+    const sendData = {
+      addToFavorite: true,
+      comments: "",
+      rate: 5,
+      userID: cookie.load("userID"),
+      serviceID: id,
+    };
+    dispatch(addToFavorite(sendData));
   }
-    dispatch(addToFavorite(sendData))
-}
-  
-  return (
+
+  return isLoading ? (
+    <div className="spinner-service">
+      <Spinner animation="border" variant="dark" />
+    </div>
+  ) : (
     <>
      <Access role='user'> <AddService /></Access>
      <Search/>

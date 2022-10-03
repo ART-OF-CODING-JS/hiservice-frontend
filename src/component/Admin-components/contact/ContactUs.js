@@ -1,11 +1,11 @@
-import Card from 'react-bootstrap/Card';
+import Card from "react-bootstrap/Card";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {getAllContact} from '../../../store/contact'
-// import "./contact.css";
-import './con.css'
-import Pagination from '../../pagenation/Pagination';
+import { getAllContact } from "../../../store/contact";
+import "./contact.css";
+import "./con.css";
+import Pagination from "../../pagenation/Pagination";
 
 export default function ContactUs(props) {
   const dispatch = useDispatch();
@@ -15,13 +15,13 @@ export default function ContactUs(props) {
   useEffect(() => {
     dispatch(getAllContact());
   }, [dispatch]);
-  
-     ///////////pagination/////
-     const [currentPage, setCurrentPage] = useState(1);
-     const [postsPerPage,setPerPage] = useState(4);
-     const indexOfLastRecord = currentPage * postsPerPage;
-     const indexOfFirstRecord = indexOfLastRecord - postsPerPage;
-     const currentRecords = allContact.slice(indexOfFirstRecord, indexOfLastRecord);
+
+  ///////////pagination/////
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPerPage] = useState(4);
+  const indexOfLastRecord = currentPage * postsPerPage;
+  const indexOfFirstRecord = indexOfLastRecord - postsPerPage;
+  const currentRecords = allContact.slice(indexOfFirstRecord, indexOfLastRecord);
   return (
     <>
    

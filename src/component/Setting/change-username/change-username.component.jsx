@@ -21,9 +21,15 @@ function UpdateUsername() {
   return (
     <div>
       <div className="input-group mb-3">
-        <input type="text" className="form-control" placeholder="New Username" autoFocus ref={usernameRef} />
+        <input
+          type="text"
+          className="form-control"
+          placeholder="New Username"
+          autoFocus
+          ref={usernameRef}
+        />
       </div>
-      <button type="submit" class="btn btn-success" onClick={handleSubmit}>
+      <button type="submit" className="btn btn-success" onClick={handleSubmit}>
         Save
       </button>
     </div>

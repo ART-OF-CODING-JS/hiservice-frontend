@@ -8,9 +8,10 @@ import cookie from "react-cookies";
 import Pagination from "../../pagenation/Pagination"
 import Search from "../../searchBar/Search";
 import { addToFavorite } from "../../../store/favorite";
+import { Spinner } from "react-bootstrap";
 export default function SearchService(props) {
   const dispatch = useDispatch()
-  const {searchedServices } = useSelector((state) => state.servicesSlice);
+  const {searchedServices ,isLoading} = useSelector((state) => state.servicesSlice);
   function handleClick(id){
     const sendData = {
     addToFavorite:true,
@@ -31,7 +32,7 @@ export default function SearchService(props) {
    const indexOfFirstRecord = indexOfLastRecord - postsPerPage;
    const currentRecords = searchedServices.slice(indexOfFirstRecord, indexOfLastRecord);
   return (
-    <>
+    isLoading?<div className="spinner-service" ><Spinner animation="border" variant="dark" /></div>: <>
     <Search/>
       <AddService />
       <section className="service-container container-com">

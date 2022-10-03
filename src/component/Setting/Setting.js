@@ -5,13 +5,15 @@ import "./Setting.css";
 
 export default function Setting(props) {
   return (
-    <div className="setting-container">
-      <div>
-        <UserInfo />
+    <>
+      <div className="setting-container">
+        <div className="UserInfo">
+          <UserInfo />
+        </div>
+        <div className="ChangeInfo">
+          <ChangeInfo />
+        </div>
       </div>
-      <div>
-        <ChangeInfo />
-      </div>
-    </div>
+    </>
   );
 }

@@ -9,7 +9,8 @@ import ConfirmReserve from './ConfirmReserve/ConfirmReserve'
 import RejectReserve from './RejectReserve/RejectReserve'
 import './ReserveMyService.css'
 
-import { getProviderReservations } from '../../../store/reservations'
+import { getProviderReservations} from '../../../store/reservations'
+import { Spinner } from 'react-bootstrap'
 
 export default function ReserveMyService(props) {
     const dispatch = useDispatch()
@@ -17,10 +18,12 @@ export default function ReserveMyService(props) {
     useEffect(()=>{
      dispatch(getProviderReservations())  
     },[dispatch])
-    const{ProviderReservations} =useSelector(state=>state.reserveSlice)
+    const{ProviderReservations,isLoading} =useSelector(state=>state.reserveSlice)
     console.log(ProviderReservations);
     return(
-        <section className="Reserve-myService-container container-com">
+        isLoading?<div className="spinner-service" ><Spinner animation="border" variant="dark" /></div>:     <section className="Reserve-myService-container container-com">
+            <div className="image-all-section"><img alt="h" src='https://i.postimg.cc/mrHFFMNy/pexels-cottonbro-4065889.jpg'/>
+      <p>Reserve My Services </p></div>
             <div className='title-reserve-myservice'>
             <p>Your Service</p>
             <p>schedule</p>

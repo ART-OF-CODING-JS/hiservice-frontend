@@ -35,7 +35,7 @@ function UpdatePassword() {
       <div className="input-group mb-3">
         <input type="text" className="form-control" placeholder="Confirm New password" autoFocus ref={confirmPasswordRef} />
       </div>
-      <button type="submit" class="btn btn-success" onClick={handleSubmit}>
+      <button type="submit" className="btn btn-success" onClick={handleSubmit}>
         Save
       </button>
     </div>

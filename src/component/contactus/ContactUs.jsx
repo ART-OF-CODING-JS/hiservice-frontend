@@ -1,44 +1,107 @@
 import React from "react";
 import "./contact.css";
-import { useRef } from 'react';
-import { useDispatch } from 'react-redux';
-import{addContact} from '../../store/contact';
+import { useRef } from "react";
+import { useDispatch } from "react-redux";
+import { addContact } from "../../store/contact";
 
 const Contact = () => {
-  const dispatch=useDispatch();
+  const dispatch = useDispatch();
 
   const nameRef = useRef(null);
   const emailRef = useRef(null);
   const msgRef = useRef(null);
 
-  const sendMessage=(e)=>{
+  const sendMessage = (e) => {
     e.preventDefault();
-    const sendData ={
+    const sendData = {
       username: nameRef.current.value,
       email: emailRef.current.value,
       description: msgRef.current.value,
-          }
-          console.log("dddddddddddd",sendData);
-        dispatch(addContact(sendData))
-        nameRef.current.value=null;
-        emailRef.current.value=null;
-        msgRef.current.value=null;
-  }
+    };
+    console.log("dddddddddddd", sendData);
+    dispatch(addContact(sendData));
+    nameRef.current.value = null;
+    emailRef.current.value = null;
+    msgRef.current.value = null;
+  };
   return (
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <div className="container contact__container">
-        <div className="contact__options">
+    <section className="page-section" id="contact">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-12 text-center">
+            <h2 className="section-heading text-uppercase">Contact Us</h2>
+            <h2 className="section-subheading text-muted">
+              We are glad to hear and read your opinion.
+            </h2>
+          </div>
         </div>
-        <form onSubmit={sendMessage} className="form-contact">
-          <input ref={nameRef} type='text' name='name' placeholder="Your Full Name" required/>
-          <input ref={emailRef} type='email' name='email' placeholder="Your Email" required/>
-          <textarea ref={msgRef} name="message" rows="7" placeholder="Your Message" required></textarea>
-          <button type="submit" className="btn btn-primary" >Send Message</button>
-        </form>
+        <div className="row">
+          <div className="col-lg-12">
+            <form
+              id="contactForm"
+              name="sentMessage"
+              noValidate="novalidate"
+              onSubmit={sendMessage}
+            >
+              <div className="row">
+                <div className="col-md-6">
+                  <div className="form-group">
+                    <input
+                      className="form-control"
+                      type="text"
+                      placeholder="Your Name *"
+                      ref={nameRef}
+                      required
+                      data-validation-required-message="Please enter your name."
+                    />
+                    <p className="help-block text-danger"></p>
+                  </div>
+
+                  <div className="form-group">
+                    <input
+                      className="form-control"
+                      id="email"
+                      type="email"
+                      placeholder="Your Email *"
+                      ref={emailRef}
+                      required
+                      data-validation-required-message="Please enter your email address."
+                    />
+                    <p className="help-block text-danger"></p>
+                  </div>
+                </div>
+
+                <div className="col-md-6">
+                  <div className="form-group">
+                    <textarea
+                      className="form-control"
+                      id="message"
+                      placeholder="Your Message *"
+                      ref={msgRef}
+                      required
+                      data-validation-required-message="Please enter a message."
+                    ></textarea>
+                    <p className="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div className="clearfix"></div>
+                <div className="col-lg-12 text-center">
+                  <div id="success"></div>
+                  <button
+                    id="sendMessageButton"
+                    className="btn btn-primary btn-xl text-uppercase"
+                    type="submit"
+                    value="Send Message"
+                  >
+                    Send Message
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </section>
-
   );
 };
 
@@ -47,4 +110,4 @@ export default Contact;
 
 
     
-   
+

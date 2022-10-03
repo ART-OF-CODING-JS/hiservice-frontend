@@ -21,18 +21,17 @@ export const signin = createAsyncThunk("auth/signin", async (data, thunkApi) => 
         },
       }
     );
-    console.log(request.data);
     return request.data;
   } catch (err) {
     return rejectWithValue(err.message);
   }
 });
+
 //// sign up //////
 export const signup = createAsyncThunk("auth/signup", async (data, thunkApi) => {
   const { rejectWithValue } = thunkApi;
   try {
     const request = await axios.post(`${url}/users/signup`, data);
-    console.log(request.data);
     return request.data;
   } catch (err) {
     return rejectWithValue(err.message);
@@ -40,13 +39,28 @@ export const signup = createAsyncThunk("auth/signup", async (data, thunkApi) => 
 });
 
 // Forget Password
-export const forgetPassword = createAsyncThunk(
-  "services/forgetPassword",
+export const forgetPassword = createAsyncThunk("auth/forgetPassword", async (data, thunkApi) => {
+  const { rejectWithValue } = thunkApi;
+  console.log(data);
+  try {
+    const res = await axios.put(`${url}/api/v2/resetpassword`, data, {
+      headers: {
+        authorization: `Bearer ${cookie.load("token")}`,
+      },
+    });
+    return res.data;
+  } catch (error) {
+    return rejectWithValue(error.response.data);
+  }
+});
+
+// Forget Password
+export const sendEmailVerification = createAsyncThunk(
+  "auth/sendPasswordLink",
   async (data, thunkApi) => {
     const { rejectWithValue } = thunkApi;
-    console.log(data);
     try {
-      const res = await axios.put(`${url}/api/v2/resetpassword`, data, {
+      const res = await axios.put(`${url}/sendpasswordlink`, data, {
         headers: {
           authorization: `Bearer ${cookie.load("token")}`,
         },
@@ -59,10 +73,9 @@ export const forgetPassword = createAsyncThunk(
 );
 
 const initialState = {
-  isSignin: cookie.load("token") ? true : false, //add cook
-  isLoadingSignIn: false,
+  isSignin: cookie.load("token") ? true : false, 
   errorSignIn: null,
-  isLoadingSignUp: false,
+  isLoadingSignIn: false,
   errorSignUp: null,
 };
 
@@ -72,18 +85,21 @@ const authSlice = createSlice({
   extraReducers: {
     [signin.fulfilled]: (state, action) => {
       state.isSignin = true;
+      // window.location.href = '/Services'
       cookie.save("token", action.payload.token);
       cookie.save("actions", action.payload.actions);
       cookie.save("userAccess", action.payload.role);
       cookie.save("userID", action.payload.id);
       state.actions = cookie.load("actions");
-      state.isLoadingSignIn = false;
       state.errorSignIn = null;
+   
+      state.isLoadingSignIn = false;
     },
     /// Sign in  /////
     [signin.pending]: (state, action) => {
       state.isLoadingSignIn = true;
       state.errorSignIn = null;
+   
     },
     [signin.rejected]: (state, action) => {
       state.isLoadingSignIn = false;
@@ -110,6 +126,16 @@ const authSlice = createSlice({
       toast.success(`Password Reset Successfully`, { autoClose: false });
     },
     [forgetPassword.rejected]: (state, action) => {
+      toast.error(`${action.payload}`);
+      state.error = action.payload;
+    },
+
+    //**************** send Email Verification ****************
+    [sendEmailVerification.fulfilled]: (state) => {
+      state.isLoading = false;
+      toast.success(`Email Sent Successfully`, { autoClose: false });
+    },
+    [sendEmailVerification.rejected]: (state, action) => {
       toast.error(`${action.payload}`);
       state.error = action.payload;
     },

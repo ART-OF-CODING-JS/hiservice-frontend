@@ -3,13 +3,14 @@ import AddService from "../Add service/AddServices";
 import "./SearchService.css";
 import Search from "../../searchBar/Search";
 import MostRatedList from './MostRatedList'
+import { Spinner } from "react-bootstrap";
 export default function MostRatedService(props) {
-  const {mostRated } = useSelector((state) => state.servicesSlice);
+  const {mostRated,isLoading } = useSelector((state) => state.servicesSlice);
 
  
   console.log(mostRated,"this we I will the most rated");
   return (
-    <>
+    isLoading?<div className="spinner-service" ><Spinner animation="border" variant="dark" /></div>: <>
     <Search/>
       <AddService />
       

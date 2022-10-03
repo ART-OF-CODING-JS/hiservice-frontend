@@ -17,7 +17,7 @@ export const getAllServices = createAsyncThunk("services/getAllServices", async 
     });
     return response.data;
   } catch (error) {
-    return rejectWithValue(error.response.data.message);
+    return rejectWithValue(error.response.data.error);
   }
 });
 
@@ -209,6 +209,7 @@ const initialState = {
   searchedServices: [],
   newServices: [],
   mostRated: [],
+  
   isLoading: false,
   error: null,
 };
@@ -230,6 +231,7 @@ const servicesSlice = createSlice({
       state.error = null;
     },
     [getAllServices.rejected]: (state, action) => {
+      console.log(action.payload)
       state.error = action.payload;
       state.isLoading = false;
       // state.allServices = []
@@ -354,6 +356,7 @@ const servicesSlice = createSlice({
     [addService.rejected]: (state, action) => {
 
       if(!action.payload === "You should pay !!"){
+        state.isLoading = false;
         toast.error(`${action.payload}`);
   
         state.error = action.payload;
