@@ -400,10 +400,11 @@ h2 {
   font-size: 2rem;
 }
 
-.h3,
-h3 {
-  font-size: 1.75rem;
+.h3 {
+   font-size: 80px;
   padding-bottom: 30px;
+
+  align-content: center;
 }
 
 .h4,
@@ -555,8 +556,11 @@ h6 {
   color: rgb(0, 0, 0);
   text-align: center;
   padding-top: 80px;
-  font-size: 30px;
-}
+  font-size: 40px;
+  font-weight: 700;
+  }
+
+
 
 hr {
   margin-top: 1rem;

@@ -330,6 +330,7 @@ const HomePage = () => {
         </div>
       </section> */}
 
+
       <div className="container-t testimonial-body">
         <div className="row">
           <h3 className="h3">What Our Clients Say</h3>
@@ -349,6 +350,7 @@ const HomePage = () => {
                 <div className="testimonial">
                   I made bacck the purchase price in just 48 hours! Thank you for making it pain
                   less, pleasant. The service was execellent. I will refer everyone I know.
+
                 </div>
                 <span className="fas fa-quote-right"></span>
               </div>
@@ -358,12 +360,14 @@ const HomePage = () => {
             <div className="card-t">
               <div className="face front-face">
                 <img
-                  src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+                  src="https://ca.slack-edge.com/TNGRRLUMA-UTE75MPJ9-282b001b930f-512"
                   alt=""
                   className="profile"
                 />
+
                 <div className="pt-3 text-uppercase name">Jeffery Kennan</div>
                 <div className="designation">Full Stack Developer</div>
+
               </div>
               <div className="face back-face">
                 <span className="fas fa-quote-left"></span>
@@ -379,12 +383,14 @@ const HomePage = () => {
             <div className="card-t">
               <div className="face front-face">
                 <img
-                  src="https://images.unsplash.com/photo-1614574762522-6ac2fbba2208?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjY2fHxtYW58ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                  src="https://ca.slack-edge.com/TNGRRLUMA-U011NPNQ9FX-537d8bf49726-512"
                   alt=""
                   className="profile"
                 />
+
                 <div className="pt-3 text-uppercase name">Issac Maxwell</div>
                 <div className="designation">Finance Director</div>
+
               </div>
               <div className="face back-face">
                 <span className="fas fa-quote-left"></span>
