@@ -48,10 +48,10 @@ export default function Services(props) {
     </div>
   ) : (
     <>
+      <Search />
       <Access role="user">
         <AddService />
       </Access>
-      <Search />
 
       <section className="service-container container-com">
         {currentRecords.map((ele) => (
@@ -64,19 +64,28 @@ export default function Services(props) {
                 <h3>{ele.title}</h3>
                 <p>In {ele.city}</p>
                 <h4>{ele.department}</h4>
-                <div className="star">
+                {/* <div className="star">
                   <span className="fa fa-star checked" />
                   <span className="fa fa-star checked" />
                   <span className="fa fa-star checked" />
                   <span className="fa fa-star checked" />
                   <span className="fa fa-star checked" />
-                </div>
+                </div> */}
                 <Access role={"user"}>
-                  <div className="btn">
-                    <button onClick={() => handleClick(ele.id)}>
-                      Add to Favorite <i className="fa-regular fa-heart"></i>
-                    </button>
-                    <Reports id={ele.id} />
+                  <div className="edit-delete-auth-button">
+                    <div className="edit">
+                      <button
+                        type="button"
+                        className="btn btn-outline-secondary btn-lg btn_services_"
+                        onClick={() => handleClick(ele.id)}
+                       
+                      >
+                        Add to Favorite <i className="fa-regular fa-heart"></i>
+                      </button>
+                    </div>
+                    <div className="delete">
+                    <Link className="Link btn btn-outline-secondary btn-lg" to={`/Services/${ele.id}`}> More Details</Link>
+                    </div>
                   </div>
                 </Access>
                 <Access role={"admin"}>

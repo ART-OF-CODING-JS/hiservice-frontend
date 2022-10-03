@@ -210,7 +210,7 @@ header.masthead {
   background-attachment: scroll;
   background-position: left;
   background-size: cover;
-  box-shadow: 31px 31px 31px rgb(68 68 68 / 90%)
+  box-shadow: 21px 21px 21px rgb(80 80 80 / 60%);
   
 }
 
@@ -776,7 +776,7 @@ ul.social-buttons li a:hover {
     font-size: 16px;
     font-weight: 400;
     font-style: italic;
-    margin-bottom: 75px;
+    /* margin-bottom: 75px; */
     text-transform: none;
   }
   .title_section {
@@ -826,3 +826,138 @@ width: 100%;
   .button-how {
 
   }
+
+/* //////////  our team member css   */
+  .container-team {
+    max-width: 900px;
+    display: grid;
+ 
+    grid-template-columns: repeat(3, 1fr);
+    
+    grid-auto-rows: auto;
+     
+    grid-gap: 0.5rem;
+}
+.card-wrapper-team {
+    width: 500px;
+    height: 400px;
+    position: relative;
+}
+.card-team {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    width: 350px;
+    height: 350px;
+    transform: translate(-50%, -50%);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    transition: 0.5s;
+}
+ .card-image-team {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: #000;
+    transition: 0.5s;
+}
+ .card-image-team1 {
+   
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  
+}
+.card-team:hover img {
+    opacity: 0.4;
+    transition: 0.5s;
+}
+.card-team:hover .card-image-team {
+    transform: translateY(-80px);
+    transition: all 0.9s;
+}
+/**** Social Icons *****/
+.social-icons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    display: flex;
+}
+.social-icons li {
+    list-style: none;
+}
+.social-icons li a {
+    position: relative;
+    display: block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: #fff;
+    font-size: 23px;
+    color: #333;
+    font-weight: bold;
+    margin: 0 6px;
+    transition: 0.4s;
+    transform: translateY(200px);
+    opacity: 0;
+}
+.card-team:hover .social-icons li a {
+    transform: translateY(0px);
+    opacity: 1;
+}
+.social-icons li a:hover {
+    background: #000;
+    transition: 0.2s;
+}
+.social-icons li a:hover .fab {
+    color: #fff;
+}
+.social-icons li a .fab {
+    transition: 0.8s;
+}
+.social-icons li a .fab:hover {
+    transform: rotateY(360deg);
+    color: #fff;
+}
+.card-team:hover li:nth-child(1) a {
+    transition-delay: 0.1s;
+}
+.card-team:hover li:nth-child(2) a {
+    transition-delay: 0.2s;
+}
+.card-team:hover li:nth-child(3) a {
+    transition-delay: 0.3s;
+}
+.card-team:hover li:nth-child(4) a {
+    transition-delay: 0.4s;
+}
+/**** Personal Details ****/
+.details-team {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    width: 100%;
+    height: 120px;
+    z-index: 1;
+    padding: 10px;
+}
+.details-team h2 {
+    margin: 30px 0;
+    padding: 0;
+    text-align: center;
+}
+.details-team h2 .job-title {
+    font-size: 1rem;
+    line-height: 2.5rem;
+    color: #333;
+    font-weight: 300;
+}

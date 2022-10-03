@@ -30,9 +30,6 @@ const Contact = () => {
         <div className="row">
           <div className="col-lg-12 text-center">
             <h2 className="section-heading text-uppercase">Contact Us</h2>
-            <h2 className="section-subheading text-muted">
-              We are glad to hear and read your opinion.
-            </h2>
           </div>
         </div>
         <div className="row">
@@ -106,8 +103,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
-
-
-    
-

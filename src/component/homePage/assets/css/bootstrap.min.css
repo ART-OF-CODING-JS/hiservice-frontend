@@ -1,10 +1,4 @@
-/*!
- * Bootstrap v4.3.1 (https://getbootstrap.com/)
- * Copyright 2011-2019 The Bootstrap Authors url
- * Copyright 2011-2019 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE) sticky
- */
- :root {
+:root {
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -37,7 +31,6 @@
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
     monospace;
 }
-
 
 *,
 ::after,
@@ -95,8 +88,7 @@ h4,
 h5,
 h6 {
   margin-top: 0;
-  margin-bottom: 
-  0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 p {
@@ -459,33 +451,11 @@ h6 {
   line-height: 1.2;
 }
 
-
-
 .testimonial-body {
   background: linear-gradient(to bottom, #f8f9fa, #f8f9fa);
   animation: background-color 20s;
   min-height: 70vh;
 }
-
-/* @keyframes background-color {
-  0% {
-      background: linear-gradient(to bottom, #000428, #004683);
-  }
-
-  25% {
-      background: linear-gradient(135deg, #1a4223, #5ee95e);
-  }
-
-  50% {
-      background: linear-gradient(to bottom, #421a31, #e95ed2);
-  }
-
-  100% {
-      background: linear-gradient(-135deg, #fae37d, #881da8, #20668f);
-  }
-
-} */
-
 
 .container-t .col-lg-4 {
   display: flex;
@@ -516,8 +486,6 @@ h6 {
   backface-visibility: hidden;
   border-top: 1px solid #ddd;
   border-left: 1px solid #ddd;
-  /* border-right: 1px solid #999;
-border-bottom: 1px solid #999; */
 }
 
 .card-t .face.front-face,
@@ -577,10 +545,10 @@ border-bottom: 1px solid #999; */
   transform: rotateY(360deg);
 }
 
-@media(max-width: 991.5px) {
+@media (max-width: 991.5px) {
   .col-lg-4 {
-      margin-top: 40px;
-      margin-bottom: 20px;
+    margin-top: 40px;
+    margin-bottom: 20px;
   }
 }
 
@@ -591,7 +559,6 @@ border-bottom: 1px solid #999; */
   font-size: 40px;
   font-weight: 700;
   }
-
 
 
 
@@ -622,6 +589,7 @@ mark {
 .list-inline {
   padding-left: 0;
   list-style: none;
+  font-size: 50;
 }
 
 .list-inline-item {
@@ -1313,6 +1281,8 @@ pre code {
     -ms-flex: 0 0 33.333333%;
     flex: 0 0 33.333333%;
     max-width: 33.333333%;
+    text-align: center;
+    color: #000;
   }
 
   .col-md-5 {
@@ -7800,6 +7770,7 @@ button.bg-dark:hover {
 .align-items-center {
   -ms-flex-align: center !important;
   align-items: center !important;
+  
 }
 
 .align-items-baseline {
@@ -11307,5 +11278,3 @@ a.text-dark:hover {
     border-color: #dee2e6;
   }
 }
-
-/*# sourceMappingURL=bootstrap.min.css.map */
