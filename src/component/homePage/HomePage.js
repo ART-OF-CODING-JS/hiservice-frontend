@@ -279,7 +279,7 @@ const HomePage = () => {
 
       <Portfolio portfolioLinks={portfolioLinks}></Portfolio>
 
-      <div className="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+      <div className="container-fluid bg-light overflow-hidden  px-lg-0">
         <div className="container feature px-lg-0">
           <div className="row g-0 mx-lg-0">
             <div
@@ -445,7 +445,7 @@ const HomePage = () => {
 <div class="container-t testimonial-body">
         <div class="row">
 
-        <h3>What Our Clients Say</h3>
+        <h3 className="h3">What Our Clients Say</h3>
             <div class="col-lg-4">
                 <div class="card-t">
                     <div class="face front-face">
