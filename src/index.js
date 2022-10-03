@@ -1,23 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { Provider } from 'react-redux';
-import store from './store';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './component/homePage/assets/css/bootstrap.min.css'
-import './component/homePage/assets/css/agency.min.css'
-import { BrowserRouter } from 'react-router-dom';
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { Provider } from "react-redux";
+import store from "./store";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./component/homePage/assets/css/bootstrap.min.css";
+import "./component/homePage/assets/css/agency.min.css";
+import { BrowserRouter } from "react-router-dom";
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // <React.StrictMode>
-   
-    <Provider store={store}>
+
+  <Provider store={store}>
     <BrowserRouter>
-    <App />
+      <App />
     </BrowserRouter>
-    </Provider>
+  </Provider>
   // </React.StrictMode>
 );
 

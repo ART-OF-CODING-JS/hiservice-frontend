@@ -7770,7 +7770,6 @@ button.bg-dark:hover {
 .align-items-center {
   -ms-flex-align: center !important;
   align-items: center !important;
-  
 }
 
 .align-items-baseline {
@@ -10966,6 +10965,8 @@ button.bg-dark:hover {
 
 .text-center {
   text-align: center !important;
+  padding: 50px 0;
+  
 }
 
 @media (min-width: 576px) {

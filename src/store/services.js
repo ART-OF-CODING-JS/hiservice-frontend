@@ -68,7 +68,6 @@ export const updateStatusService = createAsyncThunk(
 );
 
 // get service by id
-
 export const getOneService = createAsyncThunk("services/getOneService", async (id, thunkApi) => {
   const { rejectWithValue } = thunkApi;
   try {
@@ -381,6 +380,7 @@ const servicesSlice = createSlice({
       state.isLoading = true;
     },
     [updateService.rejected]: (state, action) => {
+      state.isLoading = false;
       toast.error(`${action.payload}`);
       state.error = action.payload;
     },

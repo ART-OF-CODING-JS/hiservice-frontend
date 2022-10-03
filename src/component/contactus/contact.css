@@ -21,7 +21,7 @@ section > h2 {
 
 .contact__option-icon {
   font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 4rem;
 }
 
 .contact__option a {
@@ -46,7 +46,7 @@ section > h2 {
 
 input,
 textarea {
-  width: 100%;
+  width: 100% !important;
   padding: 1.5rem;
   /* border-radius: 0.5rem; */
   background: transparent;

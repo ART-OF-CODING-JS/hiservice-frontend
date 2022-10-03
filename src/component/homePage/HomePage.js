@@ -114,7 +114,7 @@ const HomePage = () => {
               You can Find All helpful services , also you can be part of us
             </div>
             {/* <div className="intro-lead-in">Welcome To Our Website!</div> */}
-            <div className="intro-heading text-uppercase">Welcome To Our Website!</div>
+            <p className="intro-heading">YOUR WAY TO GET MORE MONEY!</p>
             <a className="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/signin">
               Join us
             </a>
@@ -272,7 +272,7 @@ const HomePage = () => {
               <div className="position-relative h-100">
                 <img
                   className="position-absolute img-fluid w-100 h-100"
-                  src="./image/tech.jpg"
+                  src="https://media.istockphoto.com/photos/drop-shipping-business-owner-confirming-the-order-on-phone-picture-id1287030300?k=20&m=1287030300&s=612x612&w=0&h=NqBSkPWDXCj9GJzTkVPs42EmezQ3_K8Csrkk57mrXe0="
                   style={{ objectFit: "cover" }}
                   alt=""
                 />
@@ -330,294 +330,263 @@ const HomePage = () => {
         </div>
       </section> */}
 
+      <div class="container-t testimonial-body">
+      <div class="row">
 
-      <div className="container-t testimonial-body">
-        <div className="row">
-          <h3 className="h3">What Our Clients Say</h3>
-          <div className="col-lg-4">
-            <div className="card-t">
-              <div className="face front-face">
-                <img
-                  src="https://images.unsplash.com/photo-1557862921-37829c790f19?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
-                  alt=""
-                  className="profile"
-                />
-                <div className="pt-3 text-uppercase name">Robert Garrison</div>
-                <div className="designation">Android Developer</div>
-              </div>
-              <div className="face back-face">
-                <span className="fas fa-quote-left"></span>
-                <div className="testimonial">
-                  I made bacck the purchase price in just 48 hours! Thank you for making it pain
-                  less, pleasant. The service was execellent. I will refer everyone I know.
-
+<h2 className="h3">What Our Clients Say</h2>
+    <div class="col-lg-4">
+        <div class="card-t">
+            <div class="face front-face">
+                <img src="https://ca.slack-edge.com/TNGRRLUMA-UPRCC16QP-53e7e37645fd-512"
+                    alt="" class="profile"/>
+                <div class="pt-3 text-uppercase name">
+                    Shihab Eshtaiwi
                 </div>
-                <span className="fas fa-quote-right"></span>
-              </div>
+                <div class="designation">Instructor</div>
             </div>
-          </div>
-          <div className="col-lg-4">
-            <div className="card-t">
-              <div className="face front-face">
-                <img
-                  src="https://ca.slack-edge.com/TNGRRLUMA-UTE75MPJ9-282b001b930f-512"
-                  alt=""
-                  className="profile"
-                />
-
-                <div className="pt-3 text-uppercase name">Jeffery Kennan</div>
-                <div className="designation">Full Stack Developer</div>
-
-              </div>
-              <div className="face back-face">
-                <span className="fas fa-quote-left"></span>
-                <div className="testimonial">
-                  Really good, you have saved our business! I made bacck the purchase price in just
-                  48 hours! man, this thing is getting better and better as I learn more about it.
+            <div class="face back-face">
+                <span class="fas fa-quote-left"></span>
+                <div class="testimonial">
+                    I made bacck the purchase price in just 48 hours! Thank you for making it pain less,
+                    pleasant.
+                    The service was execellent. I will refer everyone I know.
                 </div>
-                <span className="fas fa-quote-right"></span>
-              </div>
+                <span class="fas fa-quote-right"></span>
             </div>
-          </div>
-          <div className="col-lg-4">
-            <div className="card-t">
-              <div className="face front-face">
-                <img
-                  src="https://ca.slack-edge.com/TNGRRLUMA-U011NPNQ9FX-537d8bf49726-512"
-                  alt=""
-                  className="profile"
-                />
-
-                <div className="pt-3 text-uppercase name">Issac Maxwell</div>
-                <div className="designation">Finance Director</div>
-
-              </div>
-              <div className="face back-face">
-                <span className="fas fa-quote-left"></span>
-                <div className="testimonial">
-                  Account keeper is the most valuable business research we have EVER purchased.
-                  Without electrician, we would ahave gone bankrupt by now.
-                </div>
-                <span className="fas fa-quote-right"></span>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
+  <div class="col-lg-4">
+    <div class="card-t">
+      <div class="face front-face">
+        <img
+          src="https://ca.slack-edge.com/TNGRRLUMA-UTE75MPJ9-282b001b930f-512"
+          alt=""
+          class="profile"
+        />
+        <div class="pt-3 text-uppercase name">Obada Tumah</div>
+        <div class="designation">Full Stack Developer</div>
+      </div>
+      <div class="face back-face">
+        <span class="fas fa-quote-left"></span>
+        <div class="testimonial">
+          Really good, you have saved our business! I made bacck the purchase price in just
+          48 hours! man, this thing is getting better and better as I learn more about it.
+        </div>
+        <span class="fas fa-quote-right"></span>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="card-t">
+      <div class="face front-face">
+        <img
+          src="https://ca.slack-edge.com/TNGRRLUMA-U011NPNQ9FX-537d8bf49726-512"
+          alt=""
+          class="profile"
+        />
+        <div class="pt-3 text-uppercase name">Ahmad Swedani</div>
+        <div class="designation">Software Developer</div>
+      </div>
+      <div class="face back-face">
+        <span class="fas fa-quote-left"></span>
+        <div class="testimonial">
+          Account keeper is the most valuable business research we have EVER purchased.
+          Without electrician, we would ahave gone bankrupt by now.
+        </div>
+        <span class="fas fa-quote-right"></span>
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
 
-    
       <br />
       <br />
       <h3 className="h3">Our Team member</h3>
-      <br/>
-  <section className="container-team">
-    <div className="card-wrapper-team">
-      <div className="card-team">
-        <div className="card-image-team">
-          <img className="card-image-team1"
-            src="./image/murad2.jpeg"
-            alt="profile one"
-          />
+      <br />
+      <section className="container-team">
+        <div className="card-wrapper-team">
+          <div className="card-team">
+            <div className="card-image-team">
+              <img className="card-image-team1" src="./image/murad2.jpeg" alt="profile one" />
+            </div>
+            <ul className="social-icons">
+              <li>
+                <a href="">
+                  <i className="fab fa-facebook-f" />
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <i className="fab fa-instagram" />
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <i className="fab fa-twitter" />
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <i className="fab fa-dribbble" />
+                </a>
+              </li>
+            </ul>
+            <div className="details-team">
+              <h2>
+                Murad Alazzeh
+                <br />
+                <p className="job-title-team">Team leader and developer</p>
+              </h2>
+            </div>
+          </div>
         </div>
-        <ul className="social-icons">
-          <li>
-            <a href="">
-              <i className="fab fa-facebook-f" />
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <i className="fab fa-instagram" />
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <i className="fab fa-twitter" />
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <i className="fab fa-dribbble" />
-            </a>
-          </li>
-        </ul>
-        <div className="details-team">
-          <h2>
-            Murad Alazzeh
-            <br />
-            <span className="job-title-team">Team leader and developer</span>
-          </h2>
+        <div className="card-wrapper-team">
+          <div className="card-team">
+            <div className="card-image-team">
+              <img className="card-image-team1" src="./image/Mohammad.jpg" alt="profile one" />
+            </div>
+            <ul className="social-icons">
+              <li>
+                <a href="">
+                  <i className="fab fa-facebook-f" />
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <i className="fab fa-instagram" />
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <i className="fab fa-twitter" />
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <i className="fab fa-dribbble" />
+                </a>
+              </li>
+            </ul>
+            <div className="details-team">
+              <h2>
+                Mohammad Alhaj
+                <br />
+                <p className="job-title-team"> perfect developer</p>
+              </h2>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div className="card-wrapper-team">
-      <div className="card-team">
-        <div className="card-image-team">
-          <img className="card-image-team1"
-            src="./image/Mohammad.jpg"
-            alt="profile one"
-          />
+        <div className="card-wrapper-team">
+          <div className="card-team">
+            <div className="card-image-team">
+              <img className="card-image-team1" src="./image/heba.jpeg" alt="profile one" />
+            </div>
+            <ul className="social-icons">
+              <li>
+                <a href="">
+                  <i className="fab fa-facebook-f" />
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <i className="fab fa-instagram" />
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <i className="fab fa-twitter" />
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <i className="fab fa-dribbble" />
+                </a>
+              </li>
+            </ul>
+            <div className="details-team">
+              <h2>
+                Heba Alhamaydeh
+                <br />
+                <p className="job-title-team">Super mom and developer</p>
+              </h2>
+            </div>
+          </div>
         </div>
-        <ul className="social-icons">
-          <li>
-            <a href="">
-              <i className="fab fa-facebook-f" />
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <i className="fab fa-instagram" />
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <i className="fab fa-twitter" />
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <i className="fab fa-dribbble" />
-            </a>
-          </li>
-        </ul>
-        <div className="details-team">
-          <h2>
-            Mohammad Alhaj
-            <br />
-            <span className="job-title-team"> perfect developer</span>
-          </h2>
+        <div className="card-wrapper-team">
+          <div className="card-team">
+            <div className="card-image-team">
+              <img className="card-image-team1" src="./image/sara.jpeg" alt="profile one" />
+            </div>
+            <ul className="social-icons">
+              <li>
+                <a href="">
+                  <i className="fab fa-facebook-f" />
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <i className="fab fa-instagram" />
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <i className="fab fa-twitter" />
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <i className="fab fa-dribbble" />
+                </a>
+              </li>
+            </ul>
+            <div className="details-team">
+              <h2>
+                Sara Altayeh
+                <br />
+                <p className="job-title-team">Best designer</p>
+              </h2>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div className="card-wrapper-team">
-      <div className="card-team">
-        <div className="card-image-team">
-          <img  className="card-image-team1"
-            src="./image/heba.jpeg"
-            alt="profile one"
-          />
+        <div className="card-wrapper-team">
+          <div className="card-team">
+            <div className="card-image-team">
+              <img className="card-image-team1" src="./image/Yasin.jpg" alt="profile one" />
+            </div>
+            <ul className="social-icons">
+              <li>
+                <a href="">
+                  <i className="fab fa-facebook-f" />
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <i className="fab fa-instagram" />
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <i className="fab fa-twitter" />
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <i className="fab fa-dribbble" />
+                </a>
+              </li>
+            </ul>
+            <div className="details-team">
+              <h2>
+                Yasien Burqan
+                <br />
+                <p className="job-title-team">UI Developer</p>
+              </h2>
+            </div>
+          </div>
         </div>
-        <ul className="social-icons">
-          <li>
-            <a href="">
-              <i className="fab fa-facebook-f" />
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <i className="fab fa-instagram" />
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <i className="fab fa-twitter" />
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <i className="fab fa-dribbble" />
-            </a>
-          </li>
-        </ul>
-        <div className="details-team">
-          <h2>
-            Heba Alhamaydeh
-            <br />
-            <span className="job-title-team">Super mom and developer</span>
-          </h2>
-        </div>
-      </div>
-    </div>
-    <div className="card-wrapper-team">
-      <div className="card-team">
-        <div className="card-image-team">
-          <img className="card-image-team1"
-            src="./image/sara.jpeg"
-            alt="profile one"
-          />
-        </div>
-        <ul className="social-icons">
-          <li>
-            <a href="">
-              <i className="fab fa-facebook-f" />
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <i className="fab fa-instagram" />
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <i className="fab fa-twitter" />
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <i className="fab fa-dribbble" />
-            </a>
-          </li>
-        </ul>
-        <div className="details-team">
-          <h2>
-            Sara Altayeh
-            <br />
-            <span className="job-title-team">Best designer</span>
-          </h2>
-        </div>
-      </div>
-    </div>
-    <div className="card-wrapper-team">
-      <div className="card-team">
-        <div className="card-image-team">
-          <img className="card-image-team1"
-            src="./image/Yasin.jpg"
-            alt="profile one"
-          />
-        </div>
-        <ul className="social-icons">
-          <li>
-            <a href="">
-              <i className="fab fa-facebook-f" />
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <i className="fab fa-instagram" />
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <i className="fab fa-twitter" />
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <i className="fab fa-dribbble" />
-            </a>
-          </li>
-        </ul>
-        <div className="details-team">
-          <h2>
-            Yasien Burqan
-            <br />
-            <span className="job-title-team">UI Developer</span>
-          </h2>
-        </div>
-      </div>
-    </div>
-    
-    
-  </section>
-  {/* END container */}
-
-
-
-
-
-
-
-
+      </section>
+      {/* END container */}
 
       {/* <div className="bg-light page-section" id="team">
         <div className="container">
@@ -797,14 +766,12 @@ const HomePage = () => {
           <div className="row">
             <div className="col-lg-12 text-center">
               <h2 className="section-heading text-uppercase">Contact Us</h2>
-              <h3 className="section-subheading text-muted">
-                All message will be received and replayed by our team
-              </h3>
+           
             </div>
           </div>
           <div className="row">
             <div className="col-lg-12">
-              <form id="contactForm" name="sentMessage" novalidate="novalidate">
+              <form id="contactForm"  novalidate="novalidate">
                 <div className="row">
                   <div className="col-md-6">
                     <div className="form-group">
