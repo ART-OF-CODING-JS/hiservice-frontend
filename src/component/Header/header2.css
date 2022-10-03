@@ -191,6 +191,32 @@ form .search-city {
 /* .header-search form {
     position: relative;
   } */
+  
+  /* .ttt {
+    min-width: 160px;
+    z-index: 1;
+  }
+  .ttt option {
+    color: black;
+    font-size: 1.2rem;
+    background-color: rgb(8, 7, 7);
+  }
+   */
+ form .input {
+    width: calc(100% - 130px);
+    margin-right: -4px;
+  }
+  
+  .header-search form .search-btn .input {
+    height: 40px;
+    width: 100px;
+    background: var(--primary-color);
+    color: #fff;
+    font-weight: 700;
+    /* border: none; */
+    /* border-radius: 0.5rem 0 0 0.5rem; */
+    border-radius: 0px 40px 40px 0px;
+  }
 
 .ttt {
   min-width: 160px;

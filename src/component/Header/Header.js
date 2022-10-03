@@ -75,26 +75,33 @@ export default function Header(props) {
           <div class="navbar-nav nav justify-content-center ms-auto py-3 py-lg-0">
             <Access role={"admin"}>
               <Link className="nav-item nav-link" to={"/users"}>
+                {" "}
                 <li nav-link>Users</li>
               </Link>
             </Access>
 
             <Access role="user">
               <Link className="nav-item nav-link" to={"/Services"}>
+                {" "}
                 <li nav-link>Services</li>
               </Link>
             </Access>
 
             <Access role="admin">
               <div class="nav-item dropdown">
-                <a className="nav-link dropdown-toggle nav-link" data-bs-toggle="dropdown">
+                <a
+                  className="nav-link dropdown-toggle nav-link"
+                  data-bs-toggle="dropdown"
+                >
                   Service
                 </a>
                 <div class="dropdown-menu bg-light m-0">
                   <Link className="dropdown-item" to={"/Services"}>
+                    {" "}
                     <li href="#">All Services</li>{" "}
                   </Link>
                   <Link className="dropdown-item" to={"/Services/confirmation"}>
+                    {" "}
                     <li href="#">Services Confirmation</li>{" "}
                   </Link>
                 </div>
@@ -108,43 +115,56 @@ export default function Header(props) {
                 <li nav-link>Reports</li>
               </Link>
             </Access>
-
             {/* ********************************** */}
             <Access role="user">
               <Link className="nav-item nav-link" to={"/My-Services"}>
+                {" "}
                 <li nav-link>My services</li>
               </Link>
             </Access>
-
             {/* *************Reservation************ */}
+
             <div class="nav-item dropdown">
-              <a className="nav-link dropdown-toggle nav-link" data-bs-toggle="dropdown">
+              {/* <button className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Reservation</button> */}
+              <a
+                className="nav-link dropdown-toggle nav-link"
+                data-bs-toggle="dropdown"
+              >
                 Reservation
               </a>
+
               <div class="dropdown-menu bg-light m-0">
+                <Access role={'admin'}>
                 <Link class="dropdown-item" to={"/Reservation-Admin"}>
                   <li href="#">All Reservation</li>
                 </Link>
+                </Access>
+                <Access role={'user'}>
                 <Link class="dropdown-item" to={"/My-Reservation"}>
                   <li href="#">My Reservation</li>
                 </Link>
                 <Link class="dropdown-item" to={"/reserve/myService"}>
                   <li href="#">Reserve my Service</li>
                 </Link>
+                </Access>
               </div>
             </div>
-
             {/****************AllContactAdmin********************/}
             <div>
               <div class="nav-item dropdown">
+                {" "}
                 <Access role="user">
                   <Link className="nav-item nav-link" to={"/Contact-us"}>
+                    {" "}
                     <li nav-link>Contact us</li>
                   </Link>
                 </Access>
                 <div class="nav-item dropdown">
                   <Access role={"admin"}>
-                    <a class="nav-link dropdown-toggle nav-link" data-bs-toggle="dropdown">
+                    <a
+                      class="nav-link dropdown-toggle nav-link"
+                      data-bs-toggle="dropdown"
+                    >
                       Contact us
                     </a>
                     <div class="dropdown-menu bg-light m-0">
@@ -155,26 +175,13 @@ export default function Header(props) {
                   </Access>
                 </div>
               </div>
-
-              {/* {" "}
-                  <Link className="nav-item nav-link" to={"/Contact-us"}>
-                    {" "}
-                  <li nav-link>Contact us</li>
-                  </Link>
-                  <div class="nav-item dropdown">
-                  <Access role={"admin"}>
-                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Contact us</a>
-                  <div class="dropdown-menu bg-light m-0">
-                    <Link className="dropdown-item" to={"/Contact-Admin"}>
-                      <li href="#">All Contact</li>
-                    </Link>
-                    </div>
-                  </Access>
-                  </div> */}
             </div>
             {/* **************Setting********** */}
             <div class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle nav-link" data-bs-toggle="dropdown">
+              <a
+                class="nav-link dropdown-toggle nav-link"
+                data-bs-toggle="dropdown"
+              >
                 Setting
               </a>
               <div class="dropdown-menu bg-light m-0">
@@ -206,50 +213,8 @@ export default function Header(props) {
       {/* <!-- responsive-nav --> */}
       <div id="responsive-nav">
         {/* <!-- SEARCH BAR --> */}
-        <div className="se-he">
-          <div className="header-search">
-            <form onSubmit={handleSubmit}>
-              <input
-                type="search"
-                className="input"
-                placeholder="Search..."
-                onChange={(e) => setSearch(e.target.value)}
-              />
-              <button type="submit" className="search-btn">
-                <i class="fa fa-search"></i>
-              </button>
-            </form>
 
-            {/* <form className="form" onsubmit={handleSubmit} role="search">
-  <input id="search" type="search" placeholder="Search..." onChange={(e) => setSearch(e.target.value)} autofocus required />
-  <button type="submit" className="search-btn">Go</button>    
-                  </form> */}
-          </div>
-          <div className="input-select">
-            <div className="nav-item dropdown">
-              <p className="filter">filter</p>
-              <div className="dropdown-content">
-                <li onClick={handleNew} href="#">
-                  New Service
-                </li>
-                <li onClick={handleMostRated} href="#">
-                  Most Rated
-                </li>
-              </div>
-            </div>
-          </div>
-          <div className="search-city ">
-            <select className="search-field1 ttt" onChange={handleChange}>
-              <option>Search By city</option>
-              <option value="amman">Amman</option>
-              <option value="jarash">Jerash</option>
-              <option value="Irbid">Irbid</option>
-              <option value="zarqa">Zarqa</option>
-              <option value="Aqaba">Aqaba</option>
-              <option value="Madaba">Madaba</option>
-            </select>
-          </div>
-        </div>
+        {/* *********************** */}
       </div>
     </>
   );
