@@ -1,52 +1,49 @@
-
-
-.footer {
-    color: #999999;
+.main-footer {
+  text-align: center;
+  color: #999999;
 }
 
-.footer .btn.btn-link {
-    display: block;
-    margin-bottom: 5px;
-    padding: 0;
-    text-align: left;
-    color: #999999;
-    font-weight: normal;
-    text-transform: capitalize;
-    transition: .3s;
+.btn.btn-link {
+  display: block;
+  margin-bottom: 5px;
+  padding: 0;
+  text-align: left;
+  color: #999999;
+  font-weight: normal;
+  text-transform: capitalize;
+  transition: 0.3s;
+}
+.btn.btn-link::before {
+  position: relative;
+  content: "\f105";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #999999;
+  margin-right: 10px;
 }
 
-.footer .btn.btn-link::before {
-    position: relative;
-    content: "\f105";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    color: #999999;
-    margin-right: 10px;
+.btn.btn-link:hover {
+  color: var(--light);
+  letter-spacing: 1px;
+  box-shadow: none;
 }
 
-.footer .btn.btn-link:hover {
-    color: var(--light);
-    letter-spacing: 1px;
-    box-shadow: none;
+.copyright {
+  padding: 10px 0;
+  font-size: 15px;
+  border-top: 1px solid rgba(256, 256, 256, 0.1);
 }
-
-.footer .copyright {
-    padding: 10px 0;
-    font-size: 15px;
-    border-top: 1px solid rgba(256, 256, 256, .1);
+.copyright a {
+  color: var(--light);
 }
-
-.footer .copyright a {
-    color: var(--light);
-}
-
-.footer .copyright a:hover {
-    color: var(--primary);
+.copyright a:hover {
+  color: var(--primary);
 }
 
 .social {
-    text-align: center;
+  text-align: center;
+  margin-left: 40px;
 }
 p {
-    font-size: 16px;
+  font-size: 16px;
 }
