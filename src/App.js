@@ -37,7 +37,6 @@ import Reports from "./component/Reports/sendReports/Reports";
 
 function App() {
   const { isSignin } = useSelector((state) => state.authSlice);
-  console.log(isSignin);
   return (
     <>
       {isSignin ? (

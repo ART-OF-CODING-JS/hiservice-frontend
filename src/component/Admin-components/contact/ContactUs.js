@@ -24,66 +24,38 @@ export default function ContactUs(props) {
   const currentRecords = allContact.slice(indexOfFirstRecord, indexOfLastRecord);
   return (
     <>
-   
-    {currentRecords.map((ele ,idx) => (
+      {currentRecords.map((ele, idx) => (
+        <div class="main-container">
+          <div class="contact">
+            <img
+              src="https://images.pexels.com/photos/9089222/pexels-photo-9089222.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="Pancake"
+            />
+            <div class="contact__text">
+              <h1>{ele.username}</h1>
+              <div class="contact__text__timing">
+                <div class="contact__text__timing_time">
+                  <h2>{ele.email}</h2>
+                </div>
+              </div>
+              <div class="contact__text__star">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </div>
+              <p>{ele.description}</p>
+            </div>
+          </div>
+        </div>
+      ))}
 
-//       <div class="main-container">
-  
-//   <div class="cards">
-//     <div class="card card-1">
-//       <div class="card__icon"><i class="fas fa-bolt"></i></div>
-//       <div class="heading">
-//     <h1 class="heading__title">{ele.username}</h1>
-    
-//     <p class="heading__credits">{ele.email}</p>
-//   </div>
-//       <h2 class="card__title">{ele.description}</h2>
-    
-//     </div>
-   
-//   </div>
-// </div>  
-<div class="main-container">
-<div class="contact">
-<img
- src="https://images.pexels.com/photos/9089222/pexels-photo-9089222.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
- alt="Pancake"
-/>
-<div class="contact__text">
- <h1>{ele.username}</h1>
- <div class="contact__text__timing">
-  <div class="contact__text__timing_time">
-   <h2>{ele.email}</h2>
-  
-  </div>
- </div>
- <div class="contact__text__star">
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star checked"></span>
- </div>
- <p>
- 
- {ele.description}
- </p>
-
-
-</div>
-</div>
-</div>
- ))}
-
-    <Pagination 
-      recordsPerPage={postsPerPage}
-      totalPosts={allContact.length}
-      setCurrentPage={setCurrentPage}
+      <Pagination
+        recordsPerPage={postsPerPage}
+        totalPosts={allContact.length}
+        setCurrentPage={setCurrentPage}
       />
     </>
   );
 }
-
-
- 
-

@@ -22,7 +22,7 @@ export default function Favorite (props) {
   </div>: <>
       <div className="image-all-section"><img alt="h" src="https://i.postimg.cc/B6459fVF/pexels-ann-h-1989821.jpg"/>
       <p>Favorite List </p></div>
-        {fav.filter(ele=>ele.userID ===userId).map((ele) => (
+        {fav.filter(ele=>ele.userID ===parseInt(userId) ).map((ele) => (
           <div key={ele.id}> <FavoriteList favId={ele.id} serviceId={ele.serviceID} userID={ele.userID}/>
           {console.log(ele)}
     </div>

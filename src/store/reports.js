@@ -15,7 +15,6 @@ export const sendReport = createAsyncThunk(
             authorization: `Bearer ${cookie.load("token")}`,
           },
         });
-        console.log( req.data)
         return req.data;
       } catch (error) {
         return rejectWithValue(error.message);

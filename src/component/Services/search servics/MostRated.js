@@ -8,7 +8,6 @@ export default function MostRatedService(props) {
   const {mostRated,isLoading } = useSelector((state) => state.servicesSlice);
 
  
-  console.log(mostRated,"this we I will the most rated");
   return (
     isLoading?<div className="spinner-service" ><Spinner animation="border" variant="dark" /></div>: <>
     <Search/>

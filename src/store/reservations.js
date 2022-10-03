@@ -17,7 +17,6 @@ export const sendReserve = createAsyncThunk(
             authorization: `Bearer ${cookie.load("token")}`,
           },
         });
-        console.log( req.data)
         return req.data;
       } catch (error) {
         return rejectWithValue(error.message);
@@ -88,7 +87,6 @@ export const updateConfirm = createAsyncThunk(
           authorization: `Bearer ${cookie.load("token")}`,
         },
       });
-      console.log( req.data)
       return req.data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -107,7 +105,6 @@ export const updateReject = createAsyncThunk(
           authorization: `Bearer ${cookie.load("token")}`,
         },
       });
-      console.log( req.data)
       return req.data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -138,7 +135,6 @@ export const updateReject = createAsyncThunk(
           authorization: `Bearer ${cookie.load("token")}`,
         },
       });
-      console.log(res.data);
       dispatch(getAllReservation());
       return res.data;
     } catch (error) {
@@ -259,7 +255,6 @@ extraReducers:{
  // **********updateReservation Admin**********
  [updateReservation.fulfilled]: (state, action) => {
   state.isLoading = false;
-  console.log(action.payload.status);
   toast.success(`Edit Successfully`, { autoClose: false });
 },
 [updateReservation.pending]: (state, action) => {

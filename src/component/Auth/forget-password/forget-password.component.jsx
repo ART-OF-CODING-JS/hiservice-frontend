@@ -17,7 +17,6 @@ const ForgetPassword = () => {
       username: usernameRef.current.value,
       newPassword: newPasswordRef.current.value,
     };
-    console.log(sendData);
     dispatch(forgetPassword(sendData));
   };
 

@@ -18,7 +18,6 @@ const Contact = () => {
       email: emailRef.current.value,
       description: msgRef.current.value,
     };
-    console.log("dddddddddddd", sendData);
     dispatch(addContact(sendData));
     nameRef.current.value = null;
     emailRef.current.value = null;

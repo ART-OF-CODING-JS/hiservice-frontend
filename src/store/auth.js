@@ -5,8 +5,6 @@ import cookie from "react-cookies";
 import { toast } from "react-toastify";
 const url = process.env.REACT_APP_URL;
 
-console.log(process.env, "111111111");
-console.log(process.env);
 
 //******signin****//
 export const signin = createAsyncThunk("auth/signin", async (data, thunkApi) => {
@@ -41,7 +39,6 @@ export const signup = createAsyncThunk("auth/signup", async (data, thunkApi) => 
 // Forget Password
 export const forgetPassword = createAsyncThunk("auth/forgetPassword", async (data, thunkApi) => {
   const { rejectWithValue } = thunkApi;
-  console.log(data);
   try {
     const res = await axios.put(`${url}/api/v2/resetpassword`, data, {
       headers: {

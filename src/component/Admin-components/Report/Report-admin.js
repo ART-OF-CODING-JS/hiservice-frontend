@@ -11,7 +11,6 @@ export default function ReportAdmin(props) {
     useEffect(()=>{
         dispatch(getReportsAdmin())
     },[dispatch])
-    console.log(reportsAdmin)
     return(
         <section className="reports-admin container-com">
             <div className="title-report-admin">
