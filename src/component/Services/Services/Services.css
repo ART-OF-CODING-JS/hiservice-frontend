@@ -13,6 +13,7 @@
  grid-template-columns: repeat(3,1fr);  
  /* grid-template-rows: repeat(auto-fill, minmax(40rem, 1fr)); */
  gap: 1rem; 
+ 
 }
 .service-card:hover {
     /* border: 1px solid #ffe88e; */
