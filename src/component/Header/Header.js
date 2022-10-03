@@ -557,11 +557,11 @@ export default function Header(props) {
 //       {/* // <!-- NAVIGATION --> */}
 //       <nav id="navigation">
 //         {/* <!-- container --> */}
-//         <div class="container">
+//         <div className="container">
 //           {/* <!-- responsive-nav --> */}
 //           <div id="responsive-nav">
 //             {/* <!-- NAV --> */}
-//             <ul class="main-nav nav justify-content-center">
+//             <ul className="main-nav nav justify-content-center">
 //               <Access role={"admin"}>
 //                 <Link className="Link" to={"/users"}>
 //                   {" "}

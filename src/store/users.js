@@ -69,6 +69,22 @@ export const deleteUser = createAsyncThunk("users/deleteUser", async (id, thunkA
   }
 });
 
+// Delete Profile >> User by him self
+export const deleteProfile = createAsyncThunk("users/deleteUser", async (data, thunkApi) => {
+  const { rejectWithValue } = thunkApi;
+  try {
+    console.log(data);
+    let response = await axios.post(`${url}/deleteprofile`, data, {
+      headers: {
+        authorization: `Bearer ${cookie.load("token")}`,
+      },
+    });
+    return;
+  } catch (error) {
+    return rejectWithValue(error.response, "-----");
+  }
+});
+
 //Block users >> admin
 export const blockUser = createAsyncThunk("users/blockUser", async (id, thunkApi) => {
   const { rejectWithValue, dispatch } = thunkApi;
@@ -149,7 +165,6 @@ const usersSlice = createSlice({
     },
 
     // Delete Users
-
     [deleteUser.fulfilled]: (state, action) => {
       toast.success("Deleted User successfully");
     },
@@ -157,7 +172,6 @@ const usersSlice = createSlice({
     [deleteUser.rejected]: (state, action) => {
       toast.error("Error");
     },
-    // Block Users
 
     [blockUser.fulfilled]: (state, action) => {
       toast.success(`${action.payload}`);

@@ -1,12 +1,14 @@
 {
   "cSpell.words": [
     "clearfix",
+    "deleteprofile",
     "forgetpassword",
     "inputref",
     "myservice",
     "quicklinks",
     "sendpasswordlink",
     "Signin",
+    "Signout",
     "userprovider"
   ]
 }

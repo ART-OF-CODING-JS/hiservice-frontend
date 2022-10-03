@@ -6,8 +6,9 @@ import "./SearchService.css";
 import Search from "../../searchBar/Search";
 import cookie from "react-cookies";
 import { addToFavorite } from "../../../store/favorite";
+import { Spinner } from "react-bootstrap";
 export default function SearchByCity(props) {
-  const {searchedServices } = useSelector((state) => state.servicesSlice);
+  const {searchedServices ,isLoading} = useSelector((state) => state.servicesSlice);
   const dispatch = useDispatch()
   function handleClick(id){
     const sendData = {
@@ -23,7 +24,7 @@ export default function SearchByCity(props) {
  
   console.log(searchedServices,"this we I will render the searched service");
   return (
-    <>
+ <>
     <Search/>
       <AddService />
       <section className="service-container container-com">

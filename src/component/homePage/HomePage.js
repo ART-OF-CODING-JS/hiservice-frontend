@@ -16,22 +16,24 @@ const HomePage = () => {
     },
     {
       title: "Waste management",
-      caption: "You can find different helpful team for clean any type of waste ",
+      caption:
+        "You can find different helpful team for clean any type of waste ",
       image: "./image/waste.jpg",
     },
     {
       title: "Pest Control",
-      caption: "if you have bugs , or mosquitoes you can book from our web site ",
+      caption:
+        "if you have bugs , or mosquitoes you can book from our web site ",
       image: "./image/pest.jpg",
     },
     {
       title: "Cleaning and maid services",
-      caption: "We provide all type of cleaning services ",
+      caption: "We provide all type of cleaning services and we have another services ",
       image: "./image/clean.jpg",
     },
     {
       title: "Moving",
-      caption: "Moving furniture and house stuff",
+      caption: "Moving furniture and house stuff and many of things",
       image: "./image/move.jpg",
     },
     {
@@ -46,16 +48,25 @@ const HomePage = () => {
     },
     {
       title: "Engineer",
-      caption: "You can find professional person to help you to design your life",
+      caption:
+        "You can find professional person to help you to design your life",
       image: "./image/eng.jpg",
     },
   ];
   return (
     <div className="App">
-      <nav className="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+     <nav
+        className="navbar navbar-expand-lg navbar-dark fixed-top"
+        id="mainNav"
+      >
         <div className="container">
           <a className="navbar-brand js-scroll-trigger" href="#page-top">
-            <img src={Logo} className="navbar-brand js-scroll-trigger" alt="" width="150px" />
+            <img
+              src={Logo}
+              className="navbar-brand js-scroll-trigger"
+              alt=""
+              width="150px"
+            />
           </a>
 
           <button
@@ -114,84 +125,98 @@ const HomePage = () => {
               You can Find All helpful services , also you can be part of us
             </div>
             {/* <div className="intro-lead-in">Welcome To Our Website!</div> */}
-            <div className="intro-heading text-uppercase">Welcome To Our Website!</div>
-            <a className="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/signin">
-              Join us{" "}
+            <div className="intro-heading text-uppercase">
+              Welcome To Our Website!
+            </div>
+            <a
+              className="btn btn-primary btn-xl text-uppercase js-scroll-trigger"
+              href="/signin"
+            >
+              Join us
             </a>
           </div>
         </div>
       </header>
 
-
-     <div className="all-how">
-      <div className="container-how">
-    <div className="square-how">
-      <img
-        src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-        className="mask-how"
-      />
-      <div className="h1-how">Tell us about your project?</div>
-      <p className="p-how">
-      Get started by submitting a request for the type of project you need help with, plus
-                a few more details about your needs.
-      </p>
-      <div>
-        <a
-          href="https://medium.com/@laheshk/is-apple-a-design-company-f5c83514e261"
-          target="_"
-          className="button-how"
-        >
-          Read More
-        </a>
-      </div>
-    </div>
-  {/* </div> */}
-  <title>Blog card</title>
-  {/* <div className="container-how"> */}
-    <div className="square-how">
-      <img 
-        src="https://images.unsplash.com/photo-1581094481644-f2ab64522498?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-        className="mask-how"
-      />
-      <div className="h1-how"> We'll match you with local service provider</div>
-      <p className="p-how">
-      We'll match you with a few local pros ready for the job. Read reviews, ask
-                questions, discuss availability, and request project estimates from your matched
-                local pros before you commit.
-      </p>
-      <div>
-        <a
-          href="https://medium.com/@laheshk/is-apple-a-design-company-f5c83514e261"
-          target="_"
-          className="button-how"
-        >
-          Read More
-        </a>
-      </div>
-    </div>
-    <div className="square-how">
-      <img 
-        src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80"
-        className="mask-how"
-      />
-      <div className="h1-how">Hire a local pro & finish the job?</div>
-      <p className="p-how">
-      You hire the local pro that's right for you and your project's scope. You'll work
+      <div id="services" className="container-how container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="title_section">How We Work</h2>
+            <h3 class="sub-title">
+              We worked hard to deliver this passion
+            </h3>
+          </div>
+        </div>
+        <div className="section-how">
+          {/* ***1****** */}
+          <div className="square-how">
+            <img
+              src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+              className="mask-how"
+            />
+            <div className="how-info ">
+              <p className="h1-how">Tell us about your project?</p>
+              <p className="p-how">
+                Get started by submitting a request for the type of project you
+                need help with, plus a few more details about your needs.
+              </p>
+              <div>
+                <a
+                  href="https://medium.com/@laheshk/is-apple-a-design-company-f5c83514e261"
+                  target="_"
+                  className="button-how"
+                >
+                  Read More
+                </a>
+              </div>
+            </div>
+          </div>
+          {/* ***2****** */}
+          <div className="square-how">
+            <img
+ src="https://images.unsplash.com/photo-1581094481644-f2ab64522498?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"              className="mask-how"
+            />
+            <div className="how-info">
+              <p className="h1-how"> We'll match you with local service provider</p>
+              <p className="p-how">
+              We'll match you with a few local pros ready for the job. Read reviews, ask
+                questions, discuss availability.
+              </p>
+              <div>
+                <a
+                  href="https://medium.com/@laheshk/is-apple-a-design-company-f5c83514e261"
+                  target="_"
+                  className="button-how"
+                >
+                  Read More
+                </a>
+              </div>
+            </div>
+          </div>
+          {/* ***3****** */}
+          <div className="square-how">
+            <img
+  src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80"              className="mask-how"
+            />
+            <div className="how-info">
+              <p className="h1-how">Hire a local pro & finish the job?</p>
+              <p className="p-how">
+              You hire the local pro that's right for you and your project's scope. You'll work
                 with your local pro to arrange schedules, payments, and all other details of the
-      </p>
-      <div>
-        <a
-          href="https://medium.com/@laheshk/is-apple-a-design-company-f5c83514e261"
-          target="_"
-          className="button-how"
-        >
-          Read More
-        </a>
+              </p>
+              <div>
+                <a
+                  href="https://medium.com/@laheshk/is-apple-a-design-company-f5c83514e261"
+                  target="_"
+                  className="button-how"
+                >
+                  Read More
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  </div>
-
 
       {/* <div className="page-section" id="services">
         <div className="container">
@@ -251,123 +276,124 @@ const HomePage = () => {
           </div>
         </div>
       </div> */}
-     
+
       <Portfolio portfolioLinks={portfolioLinks}></Portfolio>
 
-
       <div className="container-fluid bg-light overflow-hidden my-5 px-lg-0">
-  <div className="container feature px-lg-0">
-    <div className="row g-0 mx-lg-0">
-      <div
-        className="col-lg-6 feature-text py-5 wow fadeIn"
-        data-wow-delay="0.5s"
-        style={{
-          visibility: "visible",
-          animationDelay: "0.5s",
-          animationName: "fadeIn"
-        }}
-      >
-        <div className="p-lg-5 ps-lg-0">
-          <div className="bg-primary mb-3" style={{ width: 60, height: 2 }} />
-          <h1 className="display-5 mb-5">Why Choose Us</h1>
-          <p className="mb-4 pb-2">
-           We are the only web site in Jordan that you can find all what you need to make your life easy,
-            only on click you can solve all your house issue .
-            one more thing, if you are professional you can join us
-          </p>
-          <div className="row g-4">
-            <div className="col-6">
-              <div className="d-flex align-items-center">
+        <div className="container feature px-lg-0">
+          <div className="row g-0 mx-lg-0">
+            <div
+              className="col-lg-6 feature-text py-5 wow fadeIn"
+              data-wow-delay="0.5s"
+              style={{
+                visibility: "visible",
+                animationDelay: "0.5s",
+                animationName: "fadeIn",
+              }}
+            >
+              <div className="p-lg-5 ps-lg-0">
                 <div
-                  className="btn-square bg-white rounded-circle"
-                  style={{ width: 64, height: 64 }}
-                >
-                  <img
-                    className="img-fluid"
-                    src="https://technext.github.io/securex/img/icon/icon-10.png"
-                    alt="Icon"
-                  />
-                </div>
-                <div className="ms-4">
-                  <p className="text-primary mb-2">Trusted</p>
-                  <h5 className="mb-0">Security</h5>
+                  className="bg-primary mb-3"
+                  style={{ width: 60, height: 2 }}
+                />
+                <h1 className="display-5 mb-5">Why Choose Us</h1>
+                <p className="mb-4 pb-2">
+                  We are the only web site in Jordan that you can find all what
+                  you need to make your life easy, only on click you can solve
+                  all your house issue . one more thing, if you are professional
+                  you can join us
+                </p>
+                <div className="row g-4">
+                  <div className="col-6">
+                    <div className="d-flex align-items-center">
+                      <div
+                        className="btn-square bg-white rounded-circle"
+                        style={{ width: 64, height: 64 }}
+                      >
+                        <img
+                          className="img-fluid"
+                          src="https://technext.github.io/securex/img/icon/icon-10.png"
+                          alt="Icon"
+                        />
+                      </div>
+                      <div className="ms-4">
+                        <p className="text-primary mb-2">Trusted</p>
+                        <h5 className="mb-0">Security</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-6">
+                    <div className="d-flex align-items-center">
+                      <div
+                        className="btn-square bg-white rounded-circle"
+                        style={{ width: 64, height: 64 }}
+                      >
+                        <img
+                          className="img-fluid"
+                          src="https://technext.github.io/securex/img/icon/icon-7.png"
+                          alt="Icon"
+                        />
+                      </div>
+                      <div className="ms-4">
+                        <p className="text-primary mb-2">Quality</p>
+                        <h5 className="mb-0">Services</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-6">
+                    <div className="d-flex align-items-center">
+                      <div
+                        className="btn-square bg-white rounded-circle"
+                        style={{ width: 64, height: 64 }}
+                      >
+                        <img
+                          className="img-fluid"
+                          src="https://technext.github.io/securex/img/icon/icon-3.png"
+                          alt="Icon"
+                        />
+                      </div>
+                      <div className="ms-4">
+                        <p className="text-primary mb-2">Smart</p>
+                        <h5 className="mb-0">Systems</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-6">
+                    <div className="d-flex align-items-center">
+                      <div
+                        className="btn-square bg-white rounded-circle"
+                        style={{ width: 64, height: 64 }}
+                      >
+                        <img
+                          className="img-fluid"
+                          src="https://technext.github.io/securex/img/icon/icon-2.png"
+                          alt="Icon"
+                        />
+                      </div>
+                      <div className="ms-4">
+                        <p className="text-primary mb-2">24/7 Hours</p>
+                        <h5 className="mb-0">Support</h5>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="col-6">
-              <div className="d-flex align-items-center">
-                <div
-                  className="btn-square bg-white rounded-circle"
-                  style={{ width: 64, height: 64 }}
-                >
-                  <img
-                    className="img-fluid"
-                    src="https://technext.github.io/securex/img/icon/icon-7.png"
-                    alt="Icon"
-                  />
-                </div>
-                <div className="ms-4">
-                  <p className="text-primary mb-2">Quality</p>
-                  <h5 className="mb-0">Services</h5>
-                </div>
-              </div>
-            </div>
-            <div className="col-6">
-              <div className="d-flex align-items-center">
-                <div
-                  className="btn-square bg-white rounded-circle"
-                  style={{ width: 64, height: 64 }}
-                >
-                  <img
-                    className="img-fluid"
-                    src="https://technext.github.io/securex/img/icon/icon-3.png"
-                    alt="Icon"
-                  />
-                </div>
-                <div className="ms-4">
-                  <p className="text-primary mb-2">Smart</p>
-                  <h5 className="mb-0">Systems</h5>
-                </div>
-              </div>
-            </div>
-            <div className="col-6">
-              <div className="d-flex align-items-center">
-                <div
-                  className="btn-square bg-white rounded-circle"
-                  style={{ width: 64, height: 64 }}
-                >
-                  <img
-                    className="img-fluid"
-                    src="https://technext.github.io/securex/img/icon/icon-2.png"
-                    alt="Icon"
-                  />
-                </div>
-                <div className="ms-4">
-                  <p className="text-primary mb-2">24/7 Hours</p>
-                  <h5 className="mb-0">Support</h5>
-                </div>
+            <div className="col-lg-6 pe-lg-0" style={{ minHeight: 400 }}>
+              <div className="position-relative h-100">
+                <img
+                  className="position-absolute img-fluid w-100 h-100"
+                  src="./image/tech.jpg"
+                  style={{ objectFit: "cover" }}
+                  alt=""
+                />
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="col-lg-6 pe-lg-0" style={{ minHeight: 400 }}>
-        <div className="position-relative h-100">
-          <img
-            className="position-absolute img-fluid w-100 h-100"
-            src="./image/tech.jpg"
-            style={{ objectFit: "cover" }}
-            alt=""
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-    
 
-
- {/* <section class="mobile-app">
+      {/* <section class="mobile-app">
         <div class="container">
           <div class="content row">
             <div class="col-md-6 col-sm-12">
@@ -489,7 +515,9 @@ const HomePage = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-12 text-center">
-              <h2 className="section-heading text-uppercase">Our Amazing Team</h2>
+              <h2 className="section-heading text-uppercase">
+                Our Amazing Team
+              </h2>
               <h3 className="section-subheading text-muted">
                 We worked hard to deliver this passion
               </h3>
@@ -498,7 +526,11 @@ const HomePage = () => {
           <div className="row">
             <div className="col-sm-4">
               <div className="team-member">
-                <img className="mx-auto rounded-circle" src="./image/murad2.jpeg" alt="" />
+                <img
+                  className="mx-auto rounded-circle"
+                  src="./image/murad2.jpeg"
+                  alt=""
+                />
                 <h4>Murad Alazzeh</h4>
                 <p className="text-muted">Team leader and developer </p>
                 <ul className="list-inline social-buttons">
@@ -522,9 +554,15 @@ const HomePage = () => {
             </div>
             <div className="col-sm-4">
               <div className="team-member">
-                <img className="mx-auto rounded-circle" src="./image/Mohammad.jpg" alt="" />
+                <img
+                  className="mx-auto rounded-circle"
+                  src="./image/Mohammad.jpg"
+                  alt=""
+                />
                 <h4>Mohammad Alhaj</h4>
-                <p className="text-muted">Super Engineer and perfect developer </p>
+                <p className="text-muted">
+                  Super Engineer and perfect developer{" "}
+                </p>
                 <ul className="list-inline social-buttons">
                   <li className="list-inline-item">
                     <a href="#something">
@@ -546,7 +584,11 @@ const HomePage = () => {
             </div>
             <div className="col-sm-4">
               <div className="team-member">
-                <img className="mx-auto rounded-circle" src="./image/heba.jpeg" alt="" />
+                <img
+                  className="mx-auto rounded-circle"
+                  src="./image/heba.jpeg"
+                  alt=""
+                />
                 <h4>Heba Alhamaydeh</h4>
                 <p className="text-muted">super Mom and super developer </p>
                 <ul className="list-inline social-buttons">
@@ -570,7 +612,11 @@ const HomePage = () => {
             </div>
             <div className="col-sm-4">
               <div className="team-member">
-                <img className="mx-auto rounded-circle" src="./image/sara.jpeg" alt="" />
+                <img
+                  className="mx-auto rounded-circle"
+                  src="./image/sara.jpeg"
+                  alt=""
+                />
                 <h4>Sara Altayeh</h4>
                 <p className="text-muted">nice color designer and coder </p>
                 <ul className="list-inline social-buttons">
@@ -594,9 +640,15 @@ const HomePage = () => {
             </div>
             <div className="col-sm-4">
               <div className="team-member">
-                <img className="mx-auto rounded-circle" src="./image/Yasin.jpg" alt="" />
+                <img
+                  className="mx-auto rounded-circle"
+                  src="./image/Yasin.jpg"
+                  alt=""
+                />
                 <h4>Yasin burqan </h4>
-                <p className="text-muted">The one and the only barber , and fast developer </p>
+                <p className="text-muted">
+                  The one and the only barber , and fast developer{" "}
+                </p>
                 <ul className="list-inline social-buttons">
                   <li className="list-inline-item">
                     <a href="#something">
@@ -620,7 +672,8 @@ const HomePage = () => {
           <div className="row">
             <div className="col-lg-8 mx-auto text-center">
               <p className="large text-muted">
-                This is our development team if have any question please contact us 
+                This is our development team if have any question please contact
+                us
               </p>
             </div>
           </div>
@@ -634,17 +687,29 @@ const HomePage = () => {
           <div className="row">
             <div className="col-md-3 col-sm-6">
               <a href="#something">
-                <img className="img-fluid d-block mx-auto" src="img/logos/envato.jpg" alt="" />
+                <img
+                  className="img-fluid d-block mx-auto"
+                  src="img/logos/envato.jpg"
+                  alt=""
+                />
               </a>
             </div>
             <div className="col-md-3 col-sm-6">
               <a href="#something">
-                <img className="img-fluid d-block mx-auto" src="img/logos/designmodo.jpg" alt="" />
+                <img
+                  className="img-fluid d-block mx-auto"
+                  src="img/logos/designmodo.jpg"
+                  alt=""
+                />
               </a>
             </div>
             <div className="col-md-3 col-sm-6">
               <a href="#something">
-                <img className="img-fluid d-block mx-auto" src="img/logos/themeforest.jpg" alt="" />
+                <img
+                  className="img-fluid d-block mx-auto"
+                  src="img/logos/themeforest.jpg"
+                  alt=""
+                />
               </a>
             </div>
             <div className="col-md-3 col-sm-6">
@@ -745,7 +810,9 @@ const HomePage = () => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-4">
-              <span className="copyright">Copyright &copy; Your Website 2019</span>
+              <span className="copyright">
+                Copyright &copy; Your Website 2019
+              </span>
             </div>
             <div className="col-md-4">
               <ul className="list-inline social-buttons">

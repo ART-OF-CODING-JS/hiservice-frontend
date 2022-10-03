@@ -5,7 +5,8 @@ import './Favorite.css'
 import { getAllServices } from '../../../src/store/services'
 import { Link } from 'react-router-dom'
 import { removeService } from '../../store/favorite'
-export default function FavoriteList({ favId, serviceId }) {
+import MyServices from '../My Services/MyServices';
+export default function FavoriteList({ favId, serviceId ,userID}) {
 
   const [show, setShow] = useState(false);
 
@@ -21,31 +22,60 @@ export default function FavoriteList({ favId, serviceId }) {
 
     dispatch(removeService(id))
   }
-
   return (
     <>
-      <section className="myservice-container container-com">
+
+   <section className="myservice-container container-com">
         {
 
-          allServices.filter(ele => ele.id === serviceId).map((ele) => (
-            <div className="t" key={ele.id}>
-              <div className="myservice-card">
-                <div className="image-myservice">
-                  <Link to={`/Services/${ele.id}`}>
-                    <img className="img-myservice" alt="service" src={ele.image} />
-                  </Link>
-                </div>
-                <div className="card-info-myservice">
-                  <p className="title">{ele.title}</p>
-                  <p className="city">{ele.city}</p>
-                  <p className="department">{ele.department}</p>
-                  {ele.status === null ? <p className="inProgress stateus-myservice">inProgress</p> : ele.status === "reject" ? <p className="reject stateus-myservice">Rejected</p> : <p className="confirm stateus-myservice">Active</p>}
-                  <div className="btns-myService">
-
-                    <div className="delete-myservice common-edi-del">
-
-                      <button onClick={handleShow}> Remove from Favorite</button>
-                      <Modal
+          allServices.filter(ele => (ele.id === serviceId)).map(ele =>
+            <div className="my_services_body">
+              {console.log(ele)}
+            <div className="container-my-services">
+              <div className="card_img">
+              <img
+          src={ele.image} 
+          alt="Pancake"
+        />
+        <div className="info">
+          <div className="edit-myservice common-edi-del">
+          {/* <button><EditServices id={ele.id} /></button>
+          <button><DeleteService serviceId={ele.id}/></button> */}
+          </div>
+      
+        </div>
+              </div>
+       
+        <div className="container__text">
+          <h1>{ele.title}</h1>
+          <div className="container__text__star">
+            <span className="fa fa-star checked" />
+            <span className="fa fa-star checked" />
+            <span className="fa fa-star checked" />
+            <span className="fa fa-star checked" />
+            <span className="fa fa-star checked" />
+          </div>
+          <p>
+           {ele.description}
+          </p>
+          <div className="container__text__timing">
+            <div className="container__text__timing_time">
+              <h2>City</h2>
+              <p>{ele.city}</p>
+            </div>
+            <div className="container__text__timing_time">
+              <h2>Phone Number</h2>
+              <p>{ele.phoneNumber}</p>
+            </div>
+            <div className="container__text__timing_time">
+              <h2>department</h2>
+              <p>{ele.department}</p>
+            </div>
+          </div>
+          <button onClick={handleShow} className={"btn_my_services ra fiv-list"}>
+          Remove
+          </button>
+          <Modal
                         show={show}
                         onHide={handleClose}
                         backdrop="static"
@@ -66,15 +96,12 @@ export default function FavoriteList({ favId, serviceId }) {
                           </Button>
                         </Modal.Footer>
                       </Modal>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))
-        }
-      </section>
+        </div>
+      </div>
+      </div>
+                )}
+          
+       </section>
     </>
 
   )
