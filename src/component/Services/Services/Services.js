@@ -72,11 +72,19 @@ export default function Services(props) {
                   <span className="fa fa-star checked" />
                 </div>
                 <Access role={"user"}>
-                  <div className="btn">
-                    <button onClick={() => handleClick(ele.id)}>
-                      Add to Favorite <i className="fa-regular fa-heart"></i>
-                    </button>
-                    <Reports id={ele.id} />
+                  <div className="edit-delete-auth-button">
+                    <div className="edit">
+                      <button
+                        type="button"
+                        class="btn btn-outline-secondary btn-lg"
+                        onClick={() => handleClick(ele.id)}
+                      >
+                        Add to Favorite <i className="fa-regular fa-heart"></i>
+                      </button>
+                    </div>
+                    <div className="delete">
+                      <Reports id={ele.id} />
+                    </div>
                   </div>
                 </Access>
                 <Access role={"admin"}>

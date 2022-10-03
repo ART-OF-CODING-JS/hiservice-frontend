@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -13,9 +13,7 @@ export default function Reports(props) {
   const handleShow = () => setShow(true);
 
   const discRef = useRef(null);
-
   const dispatch = useDispatch();
-  const { reportUser, isLoading, error } = useSelector((state) => state.reportsSlice);
 
   const handleSubmit = () => {
     const sendData = {
@@ -28,11 +26,8 @@ export default function Reports(props) {
 
   return (
     <>
-      {/* <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
-      </Button> */}
-      <button onClick={handleShow} >
-        Reports
+      <button type="button" class="btn btn-outline-secondary btn-lg" onClick={handleShow}>
+        Reports <i class="fa-light fa-file-chart-column"></i>
       </button>
 
       <Modal show={show} onHide={handleClose}>
@@ -41,14 +36,7 @@ export default function Reports(props) {
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              {/* <Form.Label>Email address</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="name@example.com"
-                autoFocus
-              /> */}
-            </Form.Group>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1"></Form.Group>
             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
               <Form.Label>Disruption issue</Form.Label>
               <Form.Control as="textarea" rows={3} ref={discRef} />

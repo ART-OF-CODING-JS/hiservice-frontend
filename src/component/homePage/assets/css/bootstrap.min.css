@@ -1,10 +1,4 @@
-/*!
- * Bootstrap v4.3.1 (https://getbootstrap.com/)
- * Copyright 2011-2019 The Bootstrap Authors url
- * Copyright 2011-2019 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE) sticky
- */
- :root {
+:root {
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -37,7 +31,6 @@
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
     monospace;
 }
-
 
 *,
 ::after,
@@ -456,10 +449,8 @@ h6 {
   line-height: 1.2;
 }
 
-
-
 .testimonial-body {
-  background: linear-gradient(to bottom, #FDC500, rgb(251, 251, 251));
+  background: linear-gradient(to bottom, #fdc500, rgb(251, 251, 251));
   animation: background-color 20s;
   min-height: 70vh;
 }
@@ -577,10 +568,10 @@ border-bottom: 1px solid #999; */
   transform: rotateY(360deg);
 }
 
-@media(max-width: 991.5px) {
+@media (max-width: 991.5px) {
   .col-lg-4 {
-      margin-top: 40px;
-      margin-bottom: 20px;
+    margin-top: 40px;
+    margin-bottom: 20px;
   }
 }
 
@@ -589,8 +580,7 @@ h3 {
   text-align: center;
   padding-top: 50px;
   font-size: 30px;
-  }
-
+}
 
 hr {
   margin-top: 1rem;
@@ -11304,5 +11294,3 @@ a.text-dark:hover {
     border-color: #dee2e6;
   }
 }
-
-/*# sourceMappingURL=bootstrap.min.css.map */
