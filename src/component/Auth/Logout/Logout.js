@@ -1,6 +1,8 @@
 import cookie from "react-cookies";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import "./Logout.css";
+
 
 export default function Logout(props) {
   const navigate = useNavigate();

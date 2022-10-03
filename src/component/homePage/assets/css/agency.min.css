@@ -744,11 +744,16 @@ ul.social-buttons li a:hover {
 }
 
 
-/* *************************** */
-.container-how {
-  padding: 100px 0;
+.container-how{
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+	flex-flow: wrap;
+	font-family: "Ubuntu", sans-serif;
+
 
 }
+
 .section-how{
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -806,5 +811,3 @@ width: 100%;
   .button-how {
 
   }
-
-
