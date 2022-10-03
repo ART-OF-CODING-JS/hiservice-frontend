@@ -211,7 +211,7 @@ form .search-city {
   .ttt option {
     color: black;
     font-size: 1.2rem;
-    background-color: rgb(8, 7, 7);
+    /* background-color: rgb(8, 7, 7); */
   }
   
  form .input {
@@ -259,7 +259,7 @@ form .search-city {
       position: fixed;
       left: 0;
       top: 0;
-      background: #15161d;
+      /* background: #15161d; */
       height: 100vh;
       max-width: 250px;
       width: 0%;

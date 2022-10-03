@@ -405,8 +405,220 @@ const HomePage = () => {
         </div>
       </div>
 
-      
-      <div className="bg-light page-section" id="team">
+    
+      <br />
+      <br />
+      <h3 className="h3">Our Team member</h3>
+  <section className="container-team">
+    <div className="card-wrapper-team">
+      <div className="card-team">
+        <div className="card-image-team">
+          <img className="card-image-team1"
+            src="./image/murad2.jpeg"
+            alt="profile one"
+          />
+        </div>
+        <ul className="social-icons">
+          <li>
+            <a href="">
+              <i className="fab fa-facebook-f" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i className="fab fa-instagram" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i className="fab fa-twitter" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i className="fab fa-dribbble" />
+            </a>
+          </li>
+        </ul>
+        <div className="details-team">
+          <h2>
+            Murad Alazzeh
+            <br />
+            <span className="job-title-team">Team leader and developer</span>
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div className="card-wrapper-team">
+      <div className="card-team">
+        <div className="card-image-team">
+          <img className="card-image-team1"
+            src="./image/Mohammad.jpg"
+            alt="profile one"
+          />
+        </div>
+        <ul className="social-icons">
+          <li>
+            <a href="">
+              <i className="fab fa-facebook-f" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i className="fab fa-instagram" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i className="fab fa-twitter" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i className="fab fa-dribbble" />
+            </a>
+          </li>
+        </ul>
+        <div className="details-team">
+          <h2>
+            Mohammad Alhaj
+            <br />
+            <span className="job-title-team"> perfect developer</span>
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div className="card-wrapper-team">
+      <div className="card-team">
+        <div className="card-image-team">
+          <img  className="card-image-team1"
+            src="./image/heba.jpeg"
+            alt="profile one"
+          />
+        </div>
+        <ul className="social-icons">
+          <li>
+            <a href="">
+              <i className="fab fa-facebook-f" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i className="fab fa-instagram" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i className="fab fa-twitter" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i className="fab fa-dribbble" />
+            </a>
+          </li>
+        </ul>
+        <div className="details-team">
+          <h2>
+            Heba Alhamaydeh
+            <br />
+            <span className="job-title-team">Super mom and developer</span>
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div className="card-wrapper-team">
+      <div className="card-team">
+        <div className="card-image-team">
+          <img className="card-image-team1"
+            src="./image/sara.jpeg"
+            alt="profile one"
+          />
+        </div>
+        <ul className="social-icons">
+          <li>
+            <a href="">
+              <i className="fab fa-facebook-f" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i className="fab fa-instagram" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i className="fab fa-twitter" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i className="fab fa-dribbble" />
+            </a>
+          </li>
+        </ul>
+        <div className="details-team">
+          <h2>
+            Sara Altayeh
+            <br />
+            <span className="job-title-team">Best designer</span>
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div className="card-wrapper-team">
+      <div className="card-team">
+        <div className="card-image-team">
+          <img className="card-image-team1"
+            src="./image/Yasin.jpg"
+            alt="profile one"
+          />
+        </div>
+        <ul className="social-icons">
+          <li>
+            <a href="">
+              <i className="fab fa-facebook-f" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i className="fab fa-instagram" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i className="fab fa-twitter" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i className="fab fa-dribbble" />
+            </a>
+          </li>
+        </ul>
+        <div className="details-team">
+          <h2>
+            Yasien Burqan
+            <br />
+            <span className="job-title-team">UI Developer</span>
+          </h2>
+        </div>
+      </div>
+    </div>
+    
+    
+  </section>
+  {/* END container */}
+
+
+
+
+
+
+
+
+
+      {/* <div className="bg-light page-section" id="team">
         <div className="container">
           <div className="row">
             <div className="col-lg-12 text-center">
@@ -546,7 +758,7 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="py-5">
         <div className="container">
