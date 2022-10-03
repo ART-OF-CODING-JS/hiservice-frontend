@@ -272,7 +272,7 @@ const HomePage = () => {
               <div className="position-relative h-100">
                 <img
                   className="position-absolute img-fluid w-100 h-100"
-                  src="./image/tech.jpg"
+                  src="https://media.istockphoto.com/photos/drop-shipping-business-owner-confirming-the-order-on-phone-picture-id1287030300?k=20&m=1287030300&s=612x612&w=0&h=NqBSkPWDXCj9GJzTkVPs42EmezQ3_K8Csrkk57mrXe0="
                   style={{ objectFit: "cover" }}
                   alt=""
                 />
@@ -436,7 +436,7 @@ const HomePage = () => {
               <h2>
                 Murad Alazzeh
                 <br />
-                <span className="job-title-team">Team leader and developer</span>
+                <p className="job-title-team">Team leader and developer</p>
               </h2>
             </div>
           </div>
@@ -472,7 +472,7 @@ const HomePage = () => {
               <h2>
                 Mohammad Alhaj
                 <br />
-                <span className="job-title-team"> perfect developer</span>
+                <p className="job-title-team"> perfect developer</p>
               </h2>
             </div>
           </div>
@@ -508,7 +508,7 @@ const HomePage = () => {
               <h2>
                 Heba Alhamaydeh
                 <br />
-                <span className="job-title-team">Super mom and developer</span>
+                <p className="job-title-team">Super mom and developer</p>
               </h2>
             </div>
           </div>
@@ -544,7 +544,7 @@ const HomePage = () => {
               <h2>
                 Sara Altayeh
                 <br />
-                <span className="job-title-team">Best designer</span>
+                <p className="job-title-team">Best designer</p>
               </h2>
             </div>
           </div>
@@ -580,7 +580,7 @@ const HomePage = () => {
               <h2>
                 Yasien Burqan
                 <br />
-                <span className="job-title-team">UI Developer</span>
+                <p className="job-title-team">UI Developer</p>
               </h2>
             </div>
           </div>
@@ -766,9 +766,7 @@ const HomePage = () => {
           <div className="row">
             <div className="col-lg-12 text-center">
               <h2 className="section-heading text-uppercase">Contact Us</h2>
-              <h3 className="section-subheading text-muted">
-                All message will be received and replayed by our team
-              </h3>
+           
             </div>
           </div>
           <div className="row">
