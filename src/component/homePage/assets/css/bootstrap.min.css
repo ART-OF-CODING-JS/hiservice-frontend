@@ -585,6 +585,7 @@ mark {
 .list-inline {
   padding-left: 0;
   list-style: none;
+  font-size: 50;
 }
 
 .list-inline-item {
@@ -1276,6 +1277,8 @@ pre code {
     -ms-flex: 0 0 33.333333%;
     flex: 0 0 33.333333%;
     max-width: 33.333333%;
+    text-align: center;
+    color: #000;
   }
 
   .col-md-5 {
@@ -7763,6 +7766,7 @@ button.bg-dark:hover {
 .align-items-center {
   -ms-flex-align: center !important;
   align-items: center !important;
+  
 }
 
 .align-items-baseline {

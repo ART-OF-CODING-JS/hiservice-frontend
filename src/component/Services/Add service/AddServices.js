@@ -58,7 +58,7 @@ export default function AddService({ postData }) {
                   type="text"
                   className="input"
                   placeholder="title"
-                  maxLength={30}
+                  maxLength={25}
                   ref={titleRef}
                   required
                 />
@@ -85,8 +85,8 @@ export default function AddService({ postData }) {
                 <label>city</label>
                 <div className="custom_select">
                   <select value={city} onChange={(e) => setCity(e.target.value)}>
-                    <option value="Aamman">Amman</option>
-                    <option value="Jarash">Jerash</option>
+                    <option value="Amman">Amman</option>
+                    <option value="Jarash">Jarash</option>
                     <option value="Irbid">Irbid</option>
                     <option value="Zarqa">Zarqa</option>
                     <option value="Aqaba">Aqaba</option>
@@ -101,7 +101,7 @@ export default function AddService({ postData }) {
                   type="tel"
                   className="input"
                   placeholder="07"
-                  maxLength={200}
+                  maxLength={15}
                   ref={phoneRef}
                   required
                 />
@@ -122,9 +122,7 @@ export default function AddService({ postData }) {
                   required
                 />
               </div>
-
               <br />
-
               <div className="footer">
                 <button type="" value="Close" className="btn-submit" onClick={handleClose}>
                   Close

@@ -23,16 +23,17 @@ export default function MainService(props) {
         <p className="category">Category {ele.department}</p> */}
         
         <div className="btn-main-service">
+          <di></di>
             <button className="callNum">Call Number</button>
             <button className="chat"> Chat</button>
             <button className="reserve"><Reservation serviceId={ele.id}/></button>
            
         </div>
         <ServiceProviderInfo ServiceProviderId ={ele.userID} />
-        <p className="disc-main-service">
-             <div> <strong>Description</strong></div>
+        <div className="disc-main-service">
+             <p> <strong>Description</strong></p>
               {ele.description}
-            </p>
+            </div>
         <div className="block-report">
             {/* <button className="block">Block Service provider</button> */}
             <Access role={'user'}><BlockProvider providerID={ele.userID}/></Access>

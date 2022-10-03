@@ -1,7 +1,7 @@
 import React from "react";
 import Portfolio from "./Protfolio";
 import Logo from "../../assets/logo.png";
-import './work.scss'
+import "./work.scss";
 const HomePage = () => {
   const portfolioLinks = [
     {
@@ -123,58 +123,53 @@ const HomePage = () => {
       </header>
 
       <div id="services" className="container-how container">
-        
-          <div class="col-lg-12 text-center">
-            <h2 class="title_section">How We Work</h2>
-            <h3 class="sub-title">We worked hard to deliver this passion</h3>
-          </div>
-        
+        <div class="col-lg-12 text-center">
+          <h2 class="title_section">How We Work</h2>
+          <h3 class="sub-title">We worked hard to deliver this passion</h3>
+        </div>
 
         {/* <div className="section-how"> */}
-          <div className="work">
-
+        <div className="work">
           <div class="scene">
-  <div class="card">
-    <div class="card__face card__face--front">
-      <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" />
-    </div>
-    <div class="card__face card__face--back">
-    <p className="h1-how">Tell us about your project?</p>
-              <p className="p-how">
-                Get started by submitting a request for the type of project you need help with, plus
-                a few more details about your needs.
-              </p>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card__face card__face--front">
-      <img src="https://images.unsplash.com/photo-1581094481644-f2ab64522498?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"       />
-    </div>
-    <div class="card__face card__face--back">
-    <p className="h1-how"> We'll match you with local service provider</p>
-              <p className="p-how">
-                We'll match you with a few local pros ready for the job. Read reviews, ask
-                questions, discuss availability.
-              </p>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card__face card__face--front">
-      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80"    />
-    </div>
-    <div class="card__face card__face--back">
-    <p className="h1-how">Hire a local pro & finish the job?</p>
-              <p className="p-how">
-                You hire the local pro that's right for you and your project's scope. You'll work
-                with your local pro to arrange schedules, payments, and all other details of the
-              </p>
-    </div>
-  </div>
-</div>
+            <div class="card">
+              <div class="card__face card__face--front">
+                <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" />
+              </div>
+              <div class="card__face card__face--back">
+                <p className="h1-how">Tell us about your project?</p>
+                <p className="p-how">
+                  Get started by submitting a request for the type of project you need help with,
+                  plus a few more details about your needs.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card__face card__face--front">
+                <img src="https://images.unsplash.com/photo-1581094481644-f2ab64522498?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" />
+              </div>
+              <div class="card__face card__face--back">
+                <p className="h1-how"> We'll match you with local service provider</p>
+                <p className="p-how">
+                  We'll match you with a few local pros ready for the job. Read reviews, ask
+                  questions, discuss availability.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card__face card__face--front">
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80" />
+              </div>
+              <div class="card__face card__face--back">
+                <p className="h1-how">Hire a local pro & finish the job?</p>
+                <p className="p-how">
+                  You hire the local pro that's right for you and your project's scope. You'll work
+                  with your local pro to arrange schedules, payments, and all other details of the
+                </p>
+              </div>
+            </div>
           </div>
-      
-
-</div>
+        </div>
+      </div>
       <Portfolio portfolioLinks={portfolioLinks}></Portfolio>
 
       <div className="container-fluid bg-light overflow-hidden  px-lg-0">
@@ -337,29 +332,28 @@ const HomePage = () => {
 
       <div class="container-t testimonial-body">
         <div class="row">
-
-        <h3 className="h3">What Our Clients Say</h3>
-            <div class="col-lg-4">
-                <div class="card-t">
-                    <div class="face front-face">
-                        <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
-                            alt="" class="profile"/>
-                        <div class="pt-3 text-uppercase name">
-                            Robert Garrison
-                        </div>
-                        <div class="designation">Android Developer</div>
-                    </div>
-                    <div class="face back-face">
-                        <span class="fas fa-quote-left"></span>
-                        <div class="testimonial">
-                            I made bacck the purchase price in just 48 hours! Thank you for making it pain less,
-                            pleasant.
-                            The service was execellent. I will refer everyone I know.
-                        </div>
-                        <span class="fas fa-quote-right"></span>
-                    </div>
-                </div>
+          <h3 className="h3">What Our Clients Say</h3>
+          <div class="col-lg-4">
+            <div class="card-t">
+              <div class="face front-face">
+                <img
+                  src="https://images.unsplash.com/photo-1557862921-37829c790f19?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
+                  alt=""
+                  class="profile"
+                />
+                <div class="pt-3 text-uppercase name">Robert Garrison</div>
+                <div class="designation">Android Developer</div>
               </div>
+              <div class="face back-face">
+                <span class="fas fa-quote-left"></span>
+                <div class="testimonial">
+                  I made bacck the purchase price in just 48 hours! Thank you for making it pain
+                  less, pleasant. The service was execellent. I will refer everyone I know.
+                </div>
+                <span class="fas fa-quote-right"></span>
+              </div>
+            </div>
+          </div>
           <div class="col-lg-4">
             <div class="card-t">
               <div class="face front-face">
@@ -409,6 +403,7 @@ const HomePage = () => {
       <br />
       <br />
       <h3 className="h3">Our Team member</h3>
+      <br/>
   <section className="container-team">
     <div className="card-wrapper-team">
       <div className="card-team">
@@ -828,17 +823,7 @@ const HomePage = () => {
                       />
                       <p className="help-block text-danger"></p>
                     </div>
-                    <div className="form-group">
-                      <input
-                        className="form-control"
-                        id="phone"
-                        type="tel"
-                        placeholder="Your Phone *"
-                        required="required"
-                        data-validation-required-message="Please enter your phone number."
-                      />
-                      <p className="help-block text-danger"></p>
-                    </div>
+                    <br />
                   </div>
                   <div className="col-md-6">
                     <div className="form-group">
@@ -874,9 +859,7 @@ const HomePage = () => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-4">
-              <span className="copyright">
-                Copyright &copy; Art of coding 2022
-              </span>
+              <span className="copyright">Copyright &copy; Art of coding 2022</span>
             </div>
             <div className="col-md-4">
               <ul className="list-inline social-buttons">
@@ -887,7 +870,7 @@ const HomePage = () => {
                 </li>
                 <li className="list-inline-item">
                   <a href="#something">
-                    <i className="fa fa-facebook-f"></i>
+                    <a href="#" class="fa fa-facebook"></a>
                   </a>
                 </li>
                 <li className="list-inline-item">
