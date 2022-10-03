@@ -332,23 +332,29 @@ const HomePage = () => {
 
       <div class="container-t testimonial-body">
         <div class="row">
-          <h3 className="h3">What Our Clients Say</h3>
-          <div class="col-lg-4">
-            <div class="card-t">
-              <div class="face front-face">
-                <img
-                  src="https://images.unsplash.com/photo-1557862921-37829c790f19?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
-                  alt=""
-                  class="profile"
-                />
-                <div class="pt-3 text-uppercase name">Robert Garrison</div>
-                <div class="designation">Android Developer</div>
-              </div>
-              <div class="face back-face">
-                <span class="fas fa-quote-left"></span>
-                <div class="testimonial">
-                  I made bacck the purchase price in just 48 hours! Thank you for making it pain
-                  less, pleasant. The service was execellent. I will refer everyone I know.
+
+
+        <h2 className="h3">What Our Clients Say</h2>
+            <div class="col-lg-4">
+                <div class="card-t">
+                    <div class="face front-face">
+                        <img src="https://ca.slack-edge.com/TNGRRLUMA-UPRCC16QP-53e7e37645fd-512"
+                            alt="" class="profile"/>
+                        <div class="pt-3 text-uppercase name">
+                            Shihab Eshtaiwi
+                        </div>
+                        <div class="designation">Instructor</div>
+                    </div>
+                    <div class="face back-face">
+                        <span class="fas fa-quote-left"></span>
+                        <div class="testimonial">
+                            I made bacck the purchase price in just 48 hours! Thank you for making it pain less,
+                            pleasant.
+                            The service was execellent. I will refer everyone I know.
+                        </div>
+                        <span class="fas fa-quote-right"></span>
+                    </div>
+
                 </div>
                 <span class="fas fa-quote-right"></span>
               </div>
@@ -358,11 +364,11 @@ const HomePage = () => {
             <div class="card-t">
               <div class="face front-face">
                 <img
-                  src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+                  src="https://ca.slack-edge.com/TNGRRLUMA-UTE75MPJ9-282b001b930f-512"
                   alt=""
                   class="profile"
                 />
-                <div class="pt-3 text-uppercase name">Jeffery Kennan</div>
+                <div class="pt-3 text-uppercase name">Obada Tumah</div>
                 <div class="designation">Full Stack Developer</div>
               </div>
               <div class="face back-face">
@@ -379,12 +385,12 @@ const HomePage = () => {
             <div class="card-t">
               <div class="face front-face">
                 <img
-                  src="https://images.unsplash.com/photo-1614574762522-6ac2fbba2208?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjY2fHxtYW58ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                  src="https://ca.slack-edge.com/TNGRRLUMA-U011NPNQ9FX-537d8bf49726-512"
                   alt=""
                   class="profile"
                 />
-                <div class="pt-3 text-uppercase name">Issac Maxwell</div>
-                <div class="designation">Finance Director</div>
+                <div class="pt-3 text-uppercase name">Ahmad Swedani</div>
+                <div class="designation">Software Developer</div>
               </div>
               <div class="face back-face">
                 <span class="fas fa-quote-left"></span>
