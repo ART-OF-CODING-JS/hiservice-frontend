@@ -17,7 +17,7 @@ export default function DeleteService({ serviceId }) {
     <>
       <button
         type="button"
-        class="btn btn-outline-secondary btn-lg"
+        className="btn btn-outline-secondary btn-lg"
         onClick={handleShow}
         style={{ backgroundColor: "$color-2" }}
       >

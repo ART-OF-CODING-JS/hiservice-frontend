@@ -22,7 +22,6 @@ export default function SearchByCity(props) {
     
   }
  
-  console.log(searchedServices,"this we I will render the searched service");
   return (
  <>
     <Search/>

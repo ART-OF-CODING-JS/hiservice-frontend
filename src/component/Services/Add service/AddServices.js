@@ -11,19 +11,19 @@ export default function AddService({ postData }) {
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const [city, setCity] = useState("city");
+  const [department, setDepartment] = useState("");
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   const titleRef = useRef(null);
   const phoneRef = useRef(null);
-  const discRef = useRef(null);
-  const departmentRef = useRef(null);
   const imageRef = useRef(null);
+  const discRef = useRef(null);
 
   const handleSubmit = () => {
     const sendData = {
       title: titleRef.current.value,
-      department: departmentRef.current.value,
+      department: department,
       description: discRef.current.value,
       city: city,
       phoneNumber: phoneRef.current.value,
@@ -65,14 +65,19 @@ export default function AddService({ postData }) {
 
               <div className="inputfield">
                 <label>department</label>
-                <input
-                  type="text"
-                  className="input"
-                  placeholder="Mech"
-                  maxLength={15}
-                  ref={departmentRef}
-                  required
-                />
+                <div className="custom_select">
+                  <select value={department} onChange={(e) => setDepartment(e.target.value)}>
+                    <option value="Electrical">Electrical</option>
+                    <option value="Plumbing">Plumbing</option>
+                    <option value="Cleaning">Cleaning</option>
+                    <option value="Maid Service">Maid Service</option>
+                    <option value="Painting">Painting</option>
+                    <option value="Moving">Moving</option>
+                    <option value="Teaching">Teaching</option>
+                    <option value="ًWelding">Welding</option>
+                    <option value="ًCarpentry and Furniture">Carpentry and Furniture</option>
+                  </select>
+                </div>
               </div>
 
               <div className="inputfield">

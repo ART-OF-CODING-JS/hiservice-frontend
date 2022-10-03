@@ -37,7 +37,6 @@ import Reports from "./component/Reports/sendReports/Reports";
 
 function App() {
   const { isSignin } = useSelector((state) => state.authSlice);
-  console.log(isSignin);
   return (
     <>
       {isSignin ? (
@@ -55,7 +54,7 @@ function App() {
             ></Route>
             <Route path="*" element={<NotFoundPage />} />
             <Route path="/signin" />
-            <Route path="/" />
+            <Route path="/" element={<Services />} /> 
             <Route path="/Services" element={<Services />} />
             <Route path="/Services/:id" element={<ServiceDetails />} />
             <Route path="/My-Services" element={<MyServices />} />

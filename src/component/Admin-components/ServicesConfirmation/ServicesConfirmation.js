@@ -16,8 +16,6 @@ export default function ServicesConfirmation(props) {
   useEffect(() => {
     dispatch(getServicesConfirmation());
   }, [dispatch]);
-  console.log(allServicesAdmin);
-  // console.log(searchedServices,"this we I will render the searched service");
   
   ///////////pagination/////
   const [currentPage, setCurrentPage] = useState(1);
