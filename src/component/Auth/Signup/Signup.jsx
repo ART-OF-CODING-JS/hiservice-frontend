@@ -1,5 +1,3 @@
-import "./Signup.css";
-
 import React, { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
@@ -42,7 +40,7 @@ export default function Signup(props) {
   return (
     <>
       <div className="login-wrapper">
-        <form action="" className="form" onSubmit={handleSignup}>
+        <form action="" className="auth-form" onSubmit={handleSignup}>
           <div className="d-flex flex-row justify-content-start">
             <Link to="/signin">
               <i className="fa-solid fa-arrow-left"></i>
@@ -53,7 +51,7 @@ export default function Signup(props) {
             <img src={Logo} width="175px" alt="" />
           </a>
           <br />
-          <h3>Create new account</h3>
+          <h2>Create new account</h2>
 
           <div className="input-group">
             <input type="text" name="loginUser" id="loginUser" ref={usernameRef} required />
