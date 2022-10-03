@@ -9,14 +9,12 @@ export const addToFavorite = createAsyncThunk(
     "favorite/addToFavorite",
     async (data, thunkApi) => {
       const { rejectWithValue,dispatch } = thunkApi;
-      console.log(data,'this is my add to favorite')
       try {
         const req = await axios.post(`${url}/api/v2/interactions`, data , {
           headers: {
             authorization: `Bearer ${cookie.load("token")}`,
           },
         });
-        console.log( req.data,"1000000001")
         dispatch(getAllFav()); 
         return req.data;
       } catch (error) {
@@ -30,7 +28,6 @@ export const addPayment = createAsyncThunk(
   "favorite/addPayment",
   async (data, thunkApi) => {
     const { rejectWithValue,dispatch } = thunkApi;
-    console.log(data,'this is my add to favorite')
     try {
       const req = await axios.post(`${url}/payment`, data , {
         headers: {
@@ -51,14 +48,12 @@ export const getAllFav = createAsyncThunk(
     "favorite/getAllFav",
     async (data, thunkApi) => {
       const { rejectWithValue } = thunkApi;
-    //   console.log(data,'this is my add to favorite')
       try {
         const req = await axios.get(`${url}/api/v2/interactions`,  {
           headers: {
             authorization: `Bearer ${cookie.load("token")}`,
           },
         });
-        console.log( req.data,"1000000001")
         return req.data;
       } catch (error) {
         return rejectWithValue(error.response.data);

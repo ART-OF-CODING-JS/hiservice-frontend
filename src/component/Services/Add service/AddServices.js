@@ -11,20 +11,19 @@ export default function AddService({ postData }) {
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const [city, setCity] = useState("city");
-  const [department,setDepartment]=useState('')
+  const [department, setDepartment] = useState("");
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   const titleRef = useRef(null);
   const phoneRef = useRef(null);
-  const discRef = useRef(null);
-  const departmentRef = useRef(null);
   const imageRef = useRef(null);
+  const discRef = useRef(null);
 
   const handleSubmit = () => {
     const sendData = {
       title: titleRef.current.value,
-      department: departmentRef.current.value,
+      department: department,
       description: discRef.current.value,
       city: city,
       phoneNumber: phoneRef.current.value,

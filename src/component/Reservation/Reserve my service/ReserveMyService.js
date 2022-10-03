@@ -19,7 +19,6 @@ export default function ReserveMyService(props) {
      dispatch(getProviderReservations())  
     },[dispatch])
     const{ProviderReservations,isLoading} =useSelector(state=>state.reserveSlice)
-    console.log(ProviderReservations);
     return(
         isLoading?<div className="spinner-service" ><Spinner animation="border" variant="dark" /></div>:     <section className="Reserve-myService-container container-com">
             <div className="image-all-section"><img alt="h" src='https://i.postimg.cc/mrHFFMNy/pexels-cottonbro-4065889.jpg'/>

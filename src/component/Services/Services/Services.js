@@ -56,7 +56,7 @@ export default function Services(props) {
       <section className="service-container container-com">
         {currentRecords.map((ele) => (
           <>
-            <figure class="image-block">
+            <figure className="image-block">
               <Link to={`/Services/${ele.id}`}>
                 <img className="img" alt="service" src={ele.image} />
               </Link>
@@ -78,13 +78,18 @@ export default function Services(props) {
                         type="button"
                         className="btn btn-outline-secondary btn-lg btn_services_"
                         onClick={() => handleClick(ele.id)}
-                       
                       >
                         Add to Favorite <i className="fa-regular fa-heart"></i>
                       </button>
                     </div>
                     <div className="delete">
-                    <Link className="Link btn btn-outline-secondary btn-lg" to={`/Services/${ele.id}`}> More Details</Link>
+                      <Link
+                        className="Link btn btn-outline-secondary btn-lg"
+                        to={`/Services/${ele.id}`}
+                      >
+                        {" "}
+                        More Details
+                      </Link>
                     </div>
                   </div>
                 </Access>

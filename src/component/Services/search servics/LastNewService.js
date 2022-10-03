@@ -1,4 +1,4 @@
-import { useSelector,useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import AddService from "../Add service/AddServices";
 import Reports from "../../Reports/sendReports/Reports";
 import { Link } from "react-router-dom";
@@ -7,24 +7,28 @@ import "./SearchService.css";
 import Search from "../../searchBar/Search";
 import { addToFavorite } from "../../../store/favorite";
 import { Spinner } from "react-bootstrap";
+
 export default function LastNewService(props) {
-  const {newServices ,isLoading} = useSelector((state) => state.servicesSlice);
-const dispatch = useDispatch();
-  function handleClick(id){
+  const { newServices, isLoading } = useSelector((state) => state.servicesSlice);
+  const dispatch = useDispatch();
+
+  function handleClick(id) {
     const sendData = {
-    addToFavorite:true,
-    comments:"",
-    rate:5,
-    userID:cookie.load("userID"),
-    serviceID:id
-    }
-    dispatch(addToFavorite(sendData))
-    
+      addToFavorite: true,
+      comments: "",
+      rate: 5,
+      userID: cookie.load("userID"),
+      serviceID: id,
+    };
+    dispatch(addToFavorite(sendData));
   }
-  console.log(newServices,"this we I will render the searched service");
-  return (
-    isLoading?<div className="spinner-service" ><Spinner animation="border" variant="dark" /></div>:   <>
-    <Search/>
+  return isLoading ? (
+    <div className="spinner-service">
+      <Spinner animation="border" variant="dark" />
+    </div>
+  ) : (
+    <>
+      <Search />
       <AddService />
       <section className="service-container container-com">
         {newServices.map((ele) => (
@@ -40,7 +44,7 @@ const dispatch = useDispatch();
                 <p className="city">{ele.city}</p>
                 <p className="department">{ele.department}</p>
                 <div className="">
-                  <button className="add-fav btn-card" onClick={()=> handleClick(ele.id)}>
+                  <button className="add-fav btn-card" onClick={() => handleClick(ele.id)}>
                     Add to Favorite <i className="fa-regular fa-heart"></i>
                   </button>
                   <Reports id={ele.id} />

@@ -2,65 +2,74 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import cookie from "react-cookies";
 import { toast } from "react-toastify";
-import { redirect } from "react-router-dom";// import {Navigate} from 'react-router-dom'
+import { redirect } from "react-router-dom"; // import {Navigate} from 'react-router-dom'
 const url = process.env.REACT_APP_URL;
 
 // get all
-export const getAllServices = createAsyncThunk("services/getAllServices", async (data, thunkApi) => {
-  const { rejectWithValue } = thunkApi;
-  
-  try {
-    let response = await axios.get(`${url}/service`, {
-      headers: {
-        authorization: `Bearer ${cookie.load("token")}`,
-      },
-    });
-    return response.data;
-  } catch (error) {
-    return rejectWithValue(error.response.data.error);
-  }
-});
+export const getAllServices = createAsyncThunk(
+  "services/getAllServices",
+  async (data, thunkApi) => {
+    const { rejectWithValue } = thunkApi;
 
-// get all services >> admin >> to confirmation 
-
-export const getServicesConfirmation = createAsyncThunk("services/getServicesConfirmation",
- async (data, thunkApi) => {
-  const { rejectWithValue } = thunkApi;
-  
-  try {
-    let response = await axios.get(`${url}/allServiceAdmin`, {
-      headers: {
-        authorization: `Bearer ${cookie.load("token")}`,
-      },
-    });
-    return response.data;
-  } catch (error) {
-    return rejectWithValue(error.response.data.message);
+    try {
+      let response = await axios.get(`${url}/service`, {
+        headers: {
+          authorization: `Bearer ${cookie.load("token")}`,
+        },
+      });
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response.data.error);
+    }
   }
-});
+);
+
+// get all services >> admin >> to confirmation
+
+export const getServicesConfirmation = createAsyncThunk(
+  "services/getServicesConfirmation",
+  async (data, thunkApi) => {
+    const { rejectWithValue } = thunkApi;
+
+    try {
+      let response = await axios.get(`${url}/allServiceAdmin`, {
+        headers: {
+          authorization: `Bearer ${cookie.load("token")}`,
+        },
+      });
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response.data.message);
+    }
+  }
+);
 
 // confirmation service >>> admin
-export const updateStatusService = createAsyncThunk("services/updateStatusService",
- async (data, thunkApi) => {
-  const { rejectWithValue, dispatch } = thunkApi;
-  try {
-    const res = await axios.put(`${url}/allServiceAdmin/${data.id}`, {status:data.status}, {
-      headers: {
-        authorization: `Bearer ${cookie.load("token")}`,
-      },
-    });
-    console.log(res.data);
-    dispatch(getServicesConfirmation());
-    return res.data;
-  } catch (error) {
-    return rejectWithValue(error.response.data);
+export const updateStatusService = createAsyncThunk(
+  "services/updateStatusService",
+  async (data, thunkApi) => {
+    const { rejectWithValue, dispatch } = thunkApi;
+    try {
+      const res = await axios.put(
+        `${url}/allServiceAdmin/${data.id}`,
+        { status: data.status },
+        {
+          headers: {
+            authorization: `Bearer ${cookie.load("token")}`,
+          },
+        }
+      );
+      dispatch(getServicesConfirmation());
+      return res.data;
+    } catch (error) {
+      return rejectWithValue(error.response.data);
+    }
   }
-});
-
+);
 
 // get service by id
 
-export const getOneService = createAsyncThunk('services/getOneService',async (id,thunkApi)=>{
+export const getOneService = createAsyncThunk("services/getOneService", async (id, thunkApi) => {
   const { rejectWithValue } = thunkApi;
   try {
     let response = await axios.get(`${url}/service/${id}`, {
@@ -68,7 +77,6 @@ export const getOneService = createAsyncThunk('services/getOneService',async (id
         authorization: `Bearer ${cookie.load("token")}`,
       },
     });
-    console.log("response.data", response.data);
     return response.data;
   } catch (error) {
     return rejectWithValue(error.response.data.message);
@@ -76,20 +84,23 @@ export const getOneService = createAsyncThunk('services/getOneService',async (id
 });
 
 //// delete selected service
-export const deleteOneService = createAsyncThunk("services/deleteOneService", async (id, thunkApi) => {
-  const { rejectWithValue ,dispatch} = thunkApi;
-  try {
-    let response = await axios.delete(`${url}/service/${id}`, {
-      headers: {
-        authorization: `Bearer ${cookie.load("token")}`,
-      },
-    });
-    dispatch(getAllServices())
-    return id;
-  } catch (error) {
-    return rejectWithValue(error.response);
+export const deleteOneService = createAsyncThunk(
+  "services/deleteOneService",
+  async (id, thunkApi) => {
+    const { rejectWithValue, dispatch } = thunkApi;
+    try {
+      let response = await axios.delete(`${url}/service/${id}`, {
+        headers: {
+          authorization: `Bearer ${cookie.load("token")}`,
+        },
+      });
+      dispatch(getAllServices());
+      return id;
+    } catch (error) {
+      return rejectWithValue(error.response);
+    }
   }
-});
+);
 
 // Add service
 export const addService = createAsyncThunk("services/addService", async (arg, thunkApi) => {
@@ -100,13 +111,12 @@ export const addService = createAsyncThunk("services/addService", async (arg, th
         authorization: `Bearer ${cookie.load("token")}`,
       },
     });
-    console.log(req.data);
     return req.data;
   } catch (error) {
     return rejectWithValue(error.response.data);
   }
 });
-///// Search service 
+///// Search service
 export const searchService = createAsyncThunk("services/searchService", async (data, thunkApi) => {
   const { rejectWithValue } = thunkApi;
   try {
@@ -115,7 +125,6 @@ export const searchService = createAsyncThunk("services/searchService", async (d
         authorization: `Bearer ${cookie.load("token")}`,
       },
     });
-    console.log(req.data,"this is the search title");
     return req.data;
   } catch (error) {
     return rejectWithValue(error.response.data);
@@ -131,42 +140,47 @@ export const searchByCity = createAsyncThunk("services/searchByCity", async (dat
         authorization: `Bearer ${cookie.load("token")}`,
       },
     });
-    console.log(req.data,"this is the search by city  title");
     return req.data;
   } catch (error) {
     return rejectWithValue(error.response.data);
   }
 });
 // Last new service
-export const lastNewService = createAsyncThunk("services/lastNewService", async (data, thunkApi) => {
-  const { rejectWithValue } = thunkApi;
-  
-  try {
-    let response = await axios.get(`${url}/lastnews`, {
-      headers: {
-        authorization: `Bearer ${cookie.load("token")}`,
-      },
-    });
-    return response.data;
-  } catch (error) {
-    return rejectWithValue(error.response.data.message);
+export const lastNewService = createAsyncThunk(
+  "services/lastNewService",
+  async (data, thunkApi) => {
+    const { rejectWithValue } = thunkApi;
+
+    try {
+      let response = await axios.get(`${url}/lastnews`, {
+        headers: {
+          authorization: `Bearer ${cookie.load("token")}`,
+        },
+      });
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response.data.message);
+    }
   }
-});
-//// most rated service 
-export const mostRatedService = createAsyncThunk("services/mostRatedService", async (data, thunkApi) => {
-  const { rejectWithValue } = thunkApi;
-  
-  try {
-    let response = await axios.get(`${url}/mostrated`, {
-      headers: {
-        authorization: `Bearer ${cookie.load("token")}`,
-      },
-    });
-    return response.data;
-  } catch (error) {
-    return rejectWithValue(error.response.data.message);
+);
+//// most rated service
+export const mostRatedService = createAsyncThunk(
+  "services/mostRatedService",
+  async (data, thunkApi) => {
+    const { rejectWithValue } = thunkApi;
+
+    try {
+      let response = await axios.get(`${url}/mostrated`, {
+        headers: {
+          authorization: `Bearer ${cookie.load("token")}`,
+        },
+      });
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response.data.message);
+    }
   }
-});
+);
 
 // Edit Service
 export const updateService = createAsyncThunk("services/updateService", async (data, thunkApi) => {
@@ -177,7 +191,6 @@ export const updateService = createAsyncThunk("services/updateService", async (d
         authorization: `Bearer ${cookie.load("token")}`,
       },
     });
-    console.log(res.data);
     dispatch(getMyServices());
     return res.data;
   } catch (error) {
@@ -194,7 +207,6 @@ export const getMyServices = createAsyncThunk("services/myServices", async (data
         authorization: `Bearer ${cookie.load("token")}`,
       },
     });
-    console.log("response.data", response.data);
     return response.data;
   } catch (error) {
     return rejectWithValue(error.response.data.message);
@@ -209,7 +221,7 @@ const initialState = {
   searchedServices: [],
   newServices: [],
   mostRated: [],
-  
+
   isLoading: false,
   error: null,
 };
@@ -231,7 +243,6 @@ const servicesSlice = createSlice({
       state.error = null;
     },
     [getAllServices.rejected]: (state, action) => {
-      console.log(action.payload)
       state.error = action.payload;
       state.isLoading = false;
       // state.allServices = []
@@ -252,7 +263,7 @@ const servicesSlice = createSlice({
     // **********confirm service>> admin   **********
     [updateStatusService.fulfilled]: (state, action) => {
       state.isLoading = false;
-      toast.success(`${action.payload}`)
+      toast.success(`${action.payload}`);
     },
     [updateStatusService.pending]: (state, action) => {
       state.isLoading = true;
@@ -262,7 +273,7 @@ const servicesSlice = createSlice({
       state.error = action.payload;
       state.isLoading = false;
     },
-    ///// last new service 
+    ///// last new service
     [lastNewService.fulfilled]: (state, action) => {
       state.newServices = action.payload;
       state.isLoading = false;
@@ -341,35 +352,29 @@ const servicesSlice = createSlice({
 
     //****************post****************
     [addService.fulfilled]: (state, action) => {
-      console.log(!action.payload === "You should pay !!")
       if (action.payload.status === "confirm") {
         state.allServices.push(action.payload);
       }
       state.isLoading = false;
-      console.log(action.payload.status);
       toast.error(`${action.payload.status}`, { autoClose: false });
-  
     },
     [addService.pending]: (state, action) => {
       state.isLoading = true;
     },
     [addService.rejected]: (state, action) => {
-
-      if(!action.payload === "You should pay !!"){
+      if (!action.payload === "You should pay !!") {
         state.isLoading = false;
         toast.error(`${action.payload}`);
-  
+
         state.error = action.payload;
+      } else {
+        window.location.href = "/payment";
       }
-        else {
-          window.location.href = '/payment'
-        }
     },
 
     //****************Edit****************
     [updateService.fulfilled]: (state, action) => {
       state.isLoading = false;
-      console.log(action.payload.status);
       toast.success(`Edit Successfully`, { autoClose: false });
     },
     [updateService.pending]: (state, action) => {
@@ -393,7 +398,6 @@ const servicesSlice = createSlice({
     [getMyServices.rejected]: (state, action) => {
       state.error = action.payload;
       state.isLoading = false;
-      // state.allServices = []
     },
 
     //************************* delete service///////////////*/
@@ -401,7 +405,6 @@ const servicesSlice = createSlice({
       state.isLoading = false;
       state.error = null;
       toast.success(`Deleted successfully`);
-
     },
     [deleteOneService.pending]: (state, action) => {
       state.isLoading = true;
@@ -410,27 +413,7 @@ const servicesSlice = createSlice({
     [deleteOneService.rejected]: (state, action) => {
       state.error = action.payload;
       state.isLoading = false;
-      // state.allServices = []
     },
-
-    //****************post****************
-    // [addService.fulfilled]: (state, action) => {
-    //   console.log(action.payload,'new')
-    //   if (action.payload.status === "confirm") {
-    //     state.allServices.push(action.payload);
-    //   }
-    //   state.isLoading = false;
-    //   console.log(action.payload.status);
-    //   toast.error(`${action.payload.status}`, { autoClose: false });
-    // },
-    // [addService.pending]: (state, action) => {
-    //   state.isLoading = true;
-    // },
-    // [addService.rejected]: (state, action) => {
-    //   toast.error(`${action.payload}`);
-
-    //   state.error = action.payload;
-    // },
   },
 });
 

@@ -123,19 +123,19 @@ const HomePage = () => {
       </header>
 
       <div id="services" className="container-how container">
-        <div class="col-lg-12 text-center">
-          <h2 class="title_section">How We Work</h2>
-          <h3 class="sub-title">We worked hard to deliver this passion</h3>
+        <div className="col-lg-12 text-center">
+          <h2 className="title_section">How We Work</h2>
+          <h3 className="sub-title">We worked hard to deliver this passion</h3>
         </div>
 
         {/* <div className="section-how"> */}
         <div className="work">
-          <div class="scene">
-            <div class="card">
-              <div class="card__face card__face--front">
+          <div className="scene">
+            <div className="card">
+              <div className="card__face card__face--front">
                 <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" />
               </div>
-              <div class="card__face card__face--back">
+              <div className="card__face card__face--back">
                 <p className="h1-how">Tell us about your project?</p>
                 <p className="p-how">
                   Get started by submitting a request for the type of project you need help with,
@@ -143,11 +143,11 @@ const HomePage = () => {
                 </p>
               </div>
             </div>
-            <div class="card">
-              <div class="card__face card__face--front">
+            <div className="card">
+              <div className="card__face card__face--front">
                 <img src="https://images.unsplash.com/photo-1581094481644-f2ab64522498?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" />
               </div>
-              <div class="card__face card__face--back">
+              <div className="card__face card__face--back">
                 <p className="h1-how"> We'll match you with local service provider</p>
                 <p className="p-how">
                   We'll match you with a few local pros ready for the job. Read reviews, ask
@@ -155,11 +155,11 @@ const HomePage = () => {
                 </p>
               </div>
             </div>
-            <div class="card">
-              <div class="card__face card__face--front">
+            <div className="card">
+              <div className="card__face card__face--front">
                 <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80" />
               </div>
-              <div class="card__face card__face--back">
+              <div className="card__face card__face--back">
                 <p className="h1-how">Hire a local pro & finish the job?</p>
                 <p className="p-how">
                   You hire the local pro that's right for you and your project's scope. You'll work
@@ -282,17 +282,17 @@ const HomePage = () => {
         </div>
       </div>
 
-      {/* <section class="mobile-app">
-        <div class="container">
-          <div class="content row">
-            <div class="col-md-6 col-sm-12">
+      {/* <section className="mobile-app">
+        <div className="container">
+          <div className="content row">
+            <div className="col-md-6 col-sm-12">
               <img
-                class="mobile-app__image img-responsive"
+                className="mobile-app__image img-responsive"
                 alt=" mobile app"
                 src="https://media.angi.com/s3fs-public/HP-Angi-App.png"
               />
             </div>
-            <div class="mobile-app__information col-md-5 col-md-push-1 col-sm-12">
+            <div className="mobile-app__information col-md-5 col-md-push-1 col-sm-12">
               <svg width="60" height="61" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <mask id="AppBadge_svg__a" x="0" y="0" width="60" height="61"></mask>
                 <g mask="url(#AppBadge_svg__a)">
@@ -304,7 +304,7 @@ const HomePage = () => {
                 Message and video chat with pros, securely pay for projects, and more — only in the
                 Hi Service app.
               </p>
-              <div class="mobile-app__badges">
+              <div className="mobile-app__badges">
                 <a
                   id="mobile-app--app-store-badge"
                   href="https://xy59r.app.goo.gl/DXKa"
@@ -314,14 +314,14 @@ const HomePage = () => {
                   <img
                     src="https://media.angi.com/sites/all/themes/altheme/images/app-store-badge-60%402x.png"
                     alt="App Store"
-                    class="mobile-app__button"
+                    className="mobile-app__button"
                   />
                 </a>
                 <a id="mobile-app--google-play-badge" href="#/" target="_blank">
                   <img
                     src="https://media.angi.com/sites/all/themes/altheme/images/google-play-badge-60@2x.png"
                     alt="Google Play"
-                    class="mobile-app__button mobile-app__button--android"
+                    className="mobile-app__button mobile-app__button--android"
                   />
                 </a>
               </div>
@@ -330,75 +330,75 @@ const HomePage = () => {
         </div>
       </section> */}
 
-      <div class="container-t testimonial-body">
-        <div class="row">
 
-
-        <h2 className="h3">What Our Clients Say</h2>
-            <div class="col-lg-4">
-                <div class="card-t">
-                    <div class="face front-face">
-                        <img src="https://ca.slack-edge.com/TNGRRLUMA-UPRCC16QP-53e7e37645fd-512"
-                            alt="" class="profile"/>
-                        <div class="pt-3 text-uppercase name">
-                            Shihab Eshtaiwi
-                        </div>
-                        <div class="designation">Instructor</div>
-                    </div>
-                    <div class="face back-face">
-                        <span class="fas fa-quote-left"></span>
-                        <div class="testimonial">
-                            I made bacck the purchase price in just 48 hours! Thank you for making it pain less,
-                            pleasant.
-                            The service was execellent. I will refer everyone I know.
-                        </div>
-                        <span class="fas fa-quote-right"></span>
-                    </div>
+      <div className="container-t testimonial-body">
+        <div className="row">
+          <h3 className="h3">What Our Clients Say</h3>
+          <div className="col-lg-4">
+            <div className="card-t">
+              <div className="face front-face">
+                <img
+                  src="https://images.unsplash.com/photo-1557862921-37829c790f19?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
+                  alt=""
+                  className="profile"
+                />
+                <div className="pt-3 text-uppercase name">Robert Garrison</div>
+                <div className="designation">Android Developer</div>
+              </div>
+              <div className="face back-face">
+                <span className="fas fa-quote-left"></span>
+                <div className="testimonial">
+                  I made bacck the purchase price in just 48 hours! Thank you for making it pain
+                  less, pleasant. The service was execellent. I will refer everyone I know.
 
                 </div>
-                <span class="fas fa-quote-right"></span>
+                <span className="fas fa-quote-right"></span>
               </div>
             </div>
           </div>
-          <div class="col-lg-4">
-            <div class="card-t">
-              <div class="face front-face">
+          <div className="col-lg-4">
+            <div className="card-t">
+              <div className="face front-face">
                 <img
                   src="https://ca.slack-edge.com/TNGRRLUMA-UTE75MPJ9-282b001b930f-512"
                   alt=""
-                  class="profile"
+                  className="profile"
                 />
-                <div class="pt-3 text-uppercase name">Obada Tumah</div>
-                <div class="designation">Full Stack Developer</div>
+
+                <div className="pt-3 text-uppercase name">Jeffery Kennan</div>
+                <div className="designation">Full Stack Developer</div>
+
               </div>
-              <div class="face back-face">
-                <span class="fas fa-quote-left"></span>
-                <div class="testimonial">
+              <div className="face back-face">
+                <span className="fas fa-quote-left"></span>
+                <div className="testimonial">
                   Really good, you have saved our business! I made bacck the purchase price in just
                   48 hours! man, this thing is getting better and better as I learn more about it.
                 </div>
-                <span class="fas fa-quote-right"></span>
+                <span className="fas fa-quote-right"></span>
               </div>
             </div>
           </div>
-          <div class="col-lg-4">
-            <div class="card-t">
-              <div class="face front-face">
+          <div className="col-lg-4">
+            <div className="card-t">
+              <div className="face front-face">
                 <img
                   src="https://ca.slack-edge.com/TNGRRLUMA-U011NPNQ9FX-537d8bf49726-512"
                   alt=""
-                  class="profile"
+                  className="profile"
                 />
-                <div class="pt-3 text-uppercase name">Ahmad Swedani</div>
-                <div class="designation">Software Developer</div>
+
+                <div className="pt-3 text-uppercase name">Issac Maxwell</div>
+                <div className="designation">Finance Director</div>
+
               </div>
-              <div class="face back-face">
-                <span class="fas fa-quote-left"></span>
-                <div class="testimonial">
+              <div className="face back-face">
+                <span className="fas fa-quote-left"></span>
+                <div className="testimonial">
                   Account keeper is the most valuable business research we have EVER purchased.
                   Without electrician, we would ahave gone bankrupt by now.
                 </div>
-                <span class="fas fa-quote-right"></span>
+                <span className="fas fa-quote-right"></span>
               </div>
             </div>
           </div>
@@ -876,7 +876,7 @@ const HomePage = () => {
                 </li>
                 <li className="list-inline-item">
                   <a href="#something">
-                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" className="fa fa-facebook"></a>
                   </a>
                 </li>
                 <li className="list-inline-item">

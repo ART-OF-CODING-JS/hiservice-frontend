@@ -42,7 +42,7 @@ const EditServices = (props) => {
 
   return (
     <>
-      <button type="button" class="btn btn-outline-secondary btn-lg" onClick={handleShow}>
+      <button type="button" className="btn btn-outline-secondary btn-lg" onClick={handleShow}>
         Edit <i className="fa-regular fa-pen-to-square" />
       </button>
 
