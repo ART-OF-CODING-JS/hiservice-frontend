@@ -38,7 +38,7 @@ export default function ServiceProviderInfo({ ServiceProviderId }) {
                 <strong>Email:</strong> {ele.email}
               </p>
               <p>
-                <strong>Gender:</strong> {ele.gender}
+                <strong>Phone:</strong> {ele.phoneNumber}
               </p>
             </div>
           </div>

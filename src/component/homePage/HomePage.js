@@ -1,7 +1,7 @@
 import React from "react";
 import Portfolio from "./Protfolio";
 import Logo from "../../assets/logo.png";
-import './work.scss'
+import "./work.scss";
 const HomePage = () => {
   const portfolioLinks = [
     {
@@ -123,61 +123,56 @@ const HomePage = () => {
       </header>
 
       <div id="services" className="container-how container">
-        
-          <div class="col-lg-12 text-center">
-            <h2 class="title_section">How We Work</h2>
-            <h3 class="sub-title">We worked hard to deliver this passion</h3>
-          </div>
-        
+        <div class="col-lg-12 text-center">
+          <h2 class="title_section">How We Work</h2>
+          <h3 class="sub-title">We worked hard to deliver this passion</h3>
+        </div>
 
         {/* <div className="section-how"> */}
-          <div className="work">
-
+        <div className="work">
           <div class="scene">
-  <div class="card">
-    <div class="card__face card__face--front">
-      <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" />
-    </div>
-    <div class="card__face card__face--back">
-    <p className="h1-how">Tell us about your project?</p>
-              <p className="p-how">
-                Get started by submitting a request for the type of project you need help with, plus
-                a few more details about your needs.
-              </p>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card__face card__face--front">
-      <img src="https://images.unsplash.com/photo-1581094481644-f2ab64522498?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"       />
-    </div>
-    <div class="card__face card__face--back">
-    <p className="h1-how"> We'll match you with local service provider</p>
-              <p className="p-how">
-                We'll match you with a few local pros ready for the job. Read reviews, ask
-                questions, discuss availability.
-              </p>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card__face card__face--front">
-      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80"    />
-    </div>
-    <div class="card__face card__face--back">
-    <p className="h1-how">Hire a local pro & finish the job?</p>
-              <p className="p-how">
-                You hire the local pro that's right for you and your project's scope. You'll work
-                with your local pro to arrange schedules, payments, and all other details of the
-              </p>
-    </div>
-  </div>
-</div>
+            <div class="card">
+              <div class="card__face card__face--front">
+                <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" />
+              </div>
+              <div class="card__face card__face--back">
+                <p className="h1-how">Tell us about your project?</p>
+                <p className="p-how">
+                  Get started by submitting a request for the type of project you need help with,
+                  plus a few more details about your needs.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card__face card__face--front">
+                <img src="https://images.unsplash.com/photo-1581094481644-f2ab64522498?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" />
+              </div>
+              <div class="card__face card__face--back">
+                <p className="h1-how"> We'll match you with local service provider</p>
+                <p className="p-how">
+                  We'll match you with a few local pros ready for the job. Read reviews, ask
+                  questions, discuss availability.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card__face card__face--front">
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80" />
+              </div>
+              <div class="card__face card__face--back">
+                <p className="h1-how">Hire a local pro & finish the job?</p>
+                <p className="p-how">
+                  You hire the local pro that's right for you and your project's scope. You'll work
+                  with your local pro to arrange schedules, payments, and all other details of the
+                </p>
+              </div>
+            </div>
           </div>
-      
-
-</div>
+        </div>
+      </div>
       <Portfolio portfolioLinks={portfolioLinks}></Portfolio>
 
-      <div className="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+      <div className="container-fluid bg-light overflow-hidden  px-lg-0">
         <div className="container feature px-lg-0">
           <div className="row g-0 mx-lg-0">
             <div
@@ -337,7 +332,7 @@ const HomePage = () => {
 
       <div class="container-t testimonial-body">
         <div class="row">
-          <h3>What Our Clients Say</h3>
+          <h3 className="h3">What Our Clients Say</h3>
           <div class="col-lg-4">
             <div class="card-t">
               <div class="face front-face">
@@ -404,7 +399,221 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className="bg-light page-section" id="team">
+    
+      <br />
+      <br />
+      <h3 className="h3">Our Team member</h3>
+      <br/>
+  <section className="container-team">
+    <div className="card-wrapper-team">
+      <div className="card-team">
+        <div className="card-image-team">
+          <img className="card-image-team1"
+            src="./image/murad2.jpeg"
+            alt="profile one"
+          />
+        </div>
+        <ul className="social-icons">
+          <li>
+            <a href="">
+              <i className="fab fa-facebook-f" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i className="fab fa-instagram" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i className="fab fa-twitter" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i className="fab fa-dribbble" />
+            </a>
+          </li>
+        </ul>
+        <div className="details-team">
+          <h2>
+            Murad Alazzeh
+            <br />
+            <span className="job-title-team">Team leader and developer</span>
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div className="card-wrapper-team">
+      <div className="card-team">
+        <div className="card-image-team">
+          <img className="card-image-team1"
+            src="./image/Mohammad.jpg"
+            alt="profile one"
+          />
+        </div>
+        <ul className="social-icons">
+          <li>
+            <a href="">
+              <i className="fab fa-facebook-f" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i className="fab fa-instagram" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i className="fab fa-twitter" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i className="fab fa-dribbble" />
+            </a>
+          </li>
+        </ul>
+        <div className="details-team">
+          <h2>
+            Mohammad Alhaj
+            <br />
+            <span className="job-title-team"> perfect developer</span>
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div className="card-wrapper-team">
+      <div className="card-team">
+        <div className="card-image-team">
+          <img  className="card-image-team1"
+            src="./image/heba.jpeg"
+            alt="profile one"
+          />
+        </div>
+        <ul className="social-icons">
+          <li>
+            <a href="">
+              <i className="fab fa-facebook-f" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i className="fab fa-instagram" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i className="fab fa-twitter" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i className="fab fa-dribbble" />
+            </a>
+          </li>
+        </ul>
+        <div className="details-team">
+          <h2>
+            Heba Alhamaydeh
+            <br />
+            <span className="job-title-team">Super mom and developer</span>
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div className="card-wrapper-team">
+      <div className="card-team">
+        <div className="card-image-team">
+          <img className="card-image-team1"
+            src="./image/sara.jpeg"
+            alt="profile one"
+          />
+        </div>
+        <ul className="social-icons">
+          <li>
+            <a href="">
+              <i className="fab fa-facebook-f" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i className="fab fa-instagram" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i className="fab fa-twitter" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i className="fab fa-dribbble" />
+            </a>
+          </li>
+        </ul>
+        <div className="details-team">
+          <h2>
+            Sara Altayeh
+            <br />
+            <span className="job-title-team">Best designer</span>
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div className="card-wrapper-team">
+      <div className="card-team">
+        <div className="card-image-team">
+          <img className="card-image-team1"
+            src="./image/Yasin.jpg"
+            alt="profile one"
+          />
+        </div>
+        <ul className="social-icons">
+          <li>
+            <a href="">
+              <i className="fab fa-facebook-f" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i className="fab fa-instagram" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i className="fab fa-twitter" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i className="fab fa-dribbble" />
+            </a>
+          </li>
+        </ul>
+        <div className="details-team">
+          <h2>
+            Yasien Burqan
+            <br />
+            <span className="job-title-team">UI Developer</span>
+          </h2>
+        </div>
+      </div>
+    </div>
+    
+    
+  </section>
+  {/* END container */}
+
+
+
+
+
+
+
+
+
+      {/* <div className="bg-light page-section" id="team">
         <div className="container">
           <div className="row">
             <div className="col-lg-12 text-center">
@@ -544,7 +753,7 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="py-5">
         <div className="container">
@@ -614,17 +823,7 @@ const HomePage = () => {
                       />
                       <p className="help-block text-danger"></p>
                     </div>
-                    <div className="form-group">
-                      <input
-                        className="form-control"
-                        id="phone"
-                        type="tel"
-                        placeholder="Your Phone *"
-                        required="required"
-                        data-validation-required-message="Please enter your phone number."
-                      />
-                      <p className="help-block text-danger"></p>
-                    </div>
+                    <br />
                   </div>
                   <div className="col-md-6">
                     <div className="form-group">
@@ -660,7 +859,7 @@ const HomePage = () => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-4">
-              <span className="copyright">Copyright &copy; Your Website 2019</span>
+              <span className="copyright">Copyright &copy; Art of coding 2022</span>
             </div>
             <div className="col-md-4">
               <ul className="list-inline social-buttons">
@@ -671,7 +870,7 @@ const HomePage = () => {
                 </li>
                 <li className="list-inline-item">
                   <a href="#something">
-                    <i className="fa fa-facebook-f"></i>
+                    <a href="#" class="fa fa-facebook"></a>
                   </a>
                 </li>
                 <li className="list-inline-item">

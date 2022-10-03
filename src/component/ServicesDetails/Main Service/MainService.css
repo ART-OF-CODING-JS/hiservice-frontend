@@ -16,6 +16,8 @@
 .disc-main-service {
     font-size: 1.3rem;
     margin-top: 3rem;
+    word-break: break-all;
+    margin-right: 6rem;
 }
 
 .about-service {
