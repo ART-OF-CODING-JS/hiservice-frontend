@@ -73,7 +73,6 @@ export const deleteUser = createAsyncThunk("users/deleteUser", async (id, thunkA
 export const deleteProfile = createAsyncThunk("users/deleteUser", async (data, thunkApi) => {
   const { rejectWithValue } = thunkApi;
   try {
-    console.log(data);
     let response = await axios.post(`${url}/deleteprofile`, data, {
       headers: {
         authorization: `Bearer ${cookie.load("token")}`,
@@ -127,7 +126,6 @@ export const unBlockUser = createAsyncThunk("users/blockUser", async (id, thunkA
 
 export const updatePassword = createAsyncThunk("users/updatePassword", async (data, thunkApi) => {
   const { rejectWithValue } = thunkApi;
-  console.log(data.id);
   try {
     let response = await axios.put(`${url}/api/v2/change/password/${cookie.load("userID")}`, data, {
       headers: {

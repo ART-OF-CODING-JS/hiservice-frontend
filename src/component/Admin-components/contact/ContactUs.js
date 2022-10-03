@@ -27,17 +27,17 @@ export default function ContactUs(props) {
    
     {currentRecords.map((ele ,idx) => (
 
-      <div class="main-container">
+      <div className="main-container">
   
-  <div class="cards">
-    <div class="card card-1">
-      <div class="card__icon"><i class="fas fa-bolt"></i></div>
-      <div class="heading">
-    <h1 class="heading__title">{ele.username}</h1>
+  <div className="cards">
+    <div className="card card-1">
+      <div className="card__icon"><i className="fas fa-bolt"></i></div>
+      <div className="heading">
+    <h1 className="heading__title">{ele.username}</h1>
     
-    <p class="heading__credits">{ele.email}</p>
+    <p className="heading__credits">{ele.email}</p>
   </div>
-      <h2 class="card__title">{ele.description}</h2>
+      <h2 className="card__title">{ele.description}</h2>
     
     </div>
    

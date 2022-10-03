@@ -15,13 +15,11 @@ export default function Payment() {
         e.preventDefault()
         
         cardNumberRef.current.value = Math.ceil((cardNumberRef.current.value-'')/100000000 )
-        console.log(cardNumberRef.current.value)
         const data = {
             cardNumber:cardNumberRef.current.value,
             cvv:cvvRef.current.value,
             expirationDate:"2024-2-2"
         }
-        console.log(data)
    dispatch(addPayment(data))
     }
     return(

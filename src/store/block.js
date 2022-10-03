@@ -14,7 +14,6 @@ export const blockServiceProvider = createAsyncThunk(
             authorization: `Bearer ${cookie.load("token")}`,
           },
         });
-        console.log( req.data)
         return req.data;
       } catch (error) {
         return rejectWithValue(error.message);
@@ -31,7 +30,6 @@ export const unBlockServiceProvider = createAsyncThunk(
             authorization: `Bearer ${cookie.load("token")}`,
           },
         });
-        console.log( req.data)
         dispatch(getBlockList_user())
         return req.data;
       } catch (error) {
@@ -50,7 +48,6 @@ export const getBlockList_user=createAsyncThunk('block/getBlockList_user',async(
           authorization: `Bearer ${cookie.load("token")}`,
         },
       });
-      console.log( req.data)
       return req.data;
     } catch (error) {
       return rejectWithValue(error.message);

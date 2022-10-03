@@ -28,7 +28,6 @@ export default function Reservation({serviceId}) {
           serviceID:serviceId,
           userID:cookie.load('userID')
               }
-              // console.log('SendData',sendData)
      dispatch(sendReserve(sendData))
   }
 
