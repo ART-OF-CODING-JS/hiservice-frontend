@@ -14,6 +14,8 @@ export default function FavoriteList({ favId, serviceId ,userID}) {
   const handleShow = () => setShow(true);
   const dispatch = useDispatch()
   const { allServices } = useSelector(state => state.servicesSlice)
+  const {fav ,isLoading} = useSelector((state) => state.favSlice);
+
   useEffect(() => {
     dispatch(getAllServices())
   }, [dispatch])

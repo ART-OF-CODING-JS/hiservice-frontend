@@ -13,8 +13,8 @@ export default function Payment() {
 
     const handlePayment = (e)=>{
         e.preventDefault()
-        
-        cardNumberRef.current.value = Math.ceil((cardNumberRef.current.value-'')/100000000 )
+        console.log(cardNumberRef.current.value)
+        cardNumberRef.current.value = Math.floor((cardNumberRef.current.value-'')/100000000 )
         console.log(cardNumberRef.current.value)
         const data = {
             cardNumber:cardNumberRef.current.value,
@@ -23,6 +23,8 @@ export default function Payment() {
         }
         console.log(data)
    dispatch(addPayment(data))
+   cardNumberRef.current.value = null
+   cvvRef.current.value = null
     }
     return(
       
@@ -89,9 +91,8 @@ export default function Payment() {
           <label htmlFor="" >Cardnumber</label>
           <div id="cardnumber">
             <input
-              type="number"
+              placeholder={'4040 xxxx xxxx xxxx'}
               ref={cardNumberRef}
-            placeholder={'4040 xxxx xxxx xxxx'}
       
             />
         

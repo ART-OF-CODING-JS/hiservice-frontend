@@ -43,7 +43,8 @@ export default function UserInfo() {
               <p>{ele.email}</p>
           <div className="membership">
             {
-              ele.didPay?<p>Free Membership</p>:<p>Premium Membership</p>
+              ele.didPay?<p>Premium Membership</p>:ele.role==='admin'?<p>Admin</p>:<p>Free Membership</p>
+          
             }
           </div>
             </div>
