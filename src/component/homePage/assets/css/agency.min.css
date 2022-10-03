@@ -744,84 +744,67 @@ ul.social-buttons li a:hover {
 }
 
 
+/* *************************** */
+.container-how {
+  padding: 100px 0;
 
+}
+.section-how{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 3rem;
 
-.container-how{
-    display: flex;
-    justify-content: center;
-    padding: 30px;
-	flex-flow: wrap;
-	font-family: "Ubuntu", sans-serif;
-    background-color:gray;
-
-    
   }
-  
+  .sub-title {
+    font-size: 16px;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 75px;
+    text-transform: none;
+  }
+  .title_section {
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+  .square-how img{
+width: 100%;
+  }
+
+
+.how-info {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+
+
   .square-how:hover {
-      -webkit-transform: translate(20px, -10px);
-      -ms-transform: translate(10px, -10px);
-      transform: translate(10px, -10px);
-      -webkit-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+
        }
   
   
   .square-how {
-    width: 460px;
-      height: 430px;
-      margin:10px;
-      background: white;
-    border-radius: 4px;
-    box-shadow: 0px 20px 50px #D9DBDF;
-    -webkit-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease; 
+    box-shadow: 0 0 14px 2px #b2b2b2;
+  }
+  .mask-how{
   }
   
   .mask-how{
-    clip: rect(0px, 460px, 220px, 0px);
-    border-radius: 4px;
-    position: absolute;
-  }
-  
-  .mask-how{
-    width: 460px;
+
     }
   
   .h1-how {
-    margin: auto;
-    text-align: left;
-    margin-top: 240px;
-    padding-left: 30px;
-    
-    font-family: 'Merriweather', serif;
-    font-size: 24px;
+    font-size: 1.4rem;
+    font-weight: 600;
   }
   .p-how {
-   text-align: justify; 
-   padding-left: 30px;
-   padding-right: 30px;
-   font-family: 'Open Sans', sans-serif;
-   font-size: 15px;
-   color: #201d1d;
-   line-height: 18px;
+    line-height: 1.4;
   }
   
   .button-how {
-      background-color:  #fed136;
-      color: rgb(24, 21, 21);
-      width: 90px;
-      padding: 10px 18px;
-      border-radius: 3px;
-      text-align: center;
-      text-decoration: none;
-      display: block;
-      margin-top: 20px;
-      margin-left: 30px;
-      margin-right: 70px;
-      font-size: 12px;
-      cursor: pointer;
-      font-family: 'merriweather';
+
   }
 
 

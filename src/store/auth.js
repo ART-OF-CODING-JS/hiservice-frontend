@@ -85,7 +85,7 @@ const authSlice = createSlice({
   extraReducers: {
     [signin.fulfilled]: (state, action) => {
       state.isSignin = true;
-      window.location.href = '/Services'
+      // window.location.href = '/Services'
       cookie.save("token", action.payload.token);
       cookie.save("actions", action.payload.actions);
       cookie.save("userAccess", action.payload.role);
