@@ -13,15 +13,12 @@ export default function Payment() {
 
     const handlePayment = (e)=>{
         e.preventDefault()
-        console.log(cardNumberRef.current.value)
         cardNumberRef.current.value = Math.floor((cardNumberRef.current.value-'')/100000000 )
-        console.log(cardNumberRef.current.value)
         const data = {
             cardNumber:cardNumberRef.current.value,
             cvv:cvvRef.current.value,
             expirationDate:"2024-2-2"
         }
-        console.log(data)
    dispatch(addPayment(data))
    cardNumberRef.current.value = null
    cvvRef.current.value = null

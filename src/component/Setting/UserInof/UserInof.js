@@ -2,11 +2,10 @@ import cookie from "react-cookies";
 import { decodeToken } from "react-jwt";
 import "./UserInfo.css";
 export default function UserInfo() {
-  const userInof = decodeToken(cookie.load("token"));
+  const userInfo = decodeToken(cookie.load("token"));
 
   let userArrInfo = [];
-  userArrInfo.push(userInof);
-  console.log(userArrInfo);
+  userArrInfo.push(userInfo);
 
   return (
     <section className="userInfo-container container-com">
@@ -28,12 +27,15 @@ export default function UserInfo() {
               <p>professions: {ele.professions}</p>
               <p>Phone: {ele.phoneNumber}</p>
               <p>{ele.email}</p>
-          <div className="membership">
-            {
-              ele.didPay?<p>Premium Membership</p>:ele.role==='admin'?<p>Admin</p>:<p>Free Membership</p>
-          
-            }
-          </div>
+              <div className="membership">
+                {ele.didPay ? (
+                  <p>Premium Membership</p>
+                ) : ele.role === "admin" ? (
+                  <p>Admin</p>
+                ) : (
+                  <p>Free Membership</p>
+                )}
+              </div>
             </div>
           </div>
         </div>
