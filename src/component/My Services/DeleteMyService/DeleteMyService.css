@@ -1,0 +1,13 @@
+.edit-delete-auth-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding-right: auto;
+  padding-bottom: auto;
+  padding-left: auto;
+
+  column-count: 2;
+  column-gap: 30px;
+}

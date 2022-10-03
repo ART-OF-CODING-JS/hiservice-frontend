@@ -81,7 +81,6 @@ export default function Services(props) {
                         className="Link btn btn-outline-secondary btn-lg"
                         to={`/Services/${ele.id}`}
                       >
-                        {" "}
                         More Details
                       </Link>
                     </div>
