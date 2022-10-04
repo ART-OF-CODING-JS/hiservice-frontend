@@ -80,13 +80,14 @@ export const deleteReservation = createAsyncThunk("reserve/deleteReservation", a
 export const updateConfirm = createAsyncThunk(
   "reserve/updateConfirm",
   async (id, thunkApi) => {
-    const { rejectWithValue } = thunkApi;
+    const { rejectWithValue ,dispatch} = thunkApi;
     try {
       const req = await axios.put(`${url}/confirm/${id}`,{status:'confirm'} , {
         headers: {
           authorization: `Bearer ${cookie.load("token")}`,
         },
       });
+      dispatch(getProviderReservations())
       return req.data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -98,13 +99,14 @@ export const updateConfirm = createAsyncThunk(
 export const updateReject = createAsyncThunk(
   "reserve/updateReject",
   async (id, thunkApi) => {
-    const { rejectWithValue } = thunkApi;
+    const { rejectWithValue ,dispatch} = thunkApi;
     try {
       const req = await axios.put(`${url}/reject/${id}` ,{status:'reject'}, {
         headers: {
           authorization: `Bearer ${cookie.load("token")}`,
         },
       });
+      dispatch(getProviderReservations())
       return req.data;
     } catch (error) {
       return rejectWithValue(error.message);

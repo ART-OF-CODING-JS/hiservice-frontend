@@ -13,6 +13,13 @@ export default function BlockListUser(props) {
 
     return(
         <section className="block-list-user-container container-com">
+               <div className="image-all-section">
+        <img
+          alt="h"
+          src='https://i.postimg.cc/4xy3GNqm/pexels-digital-buggu-171198.jpg'
+        />
+        <p>Block List</p>
+      </div>
            { blockListUser.map(ele=>
            <div className="block-list-user-cards" key={ele.id}>
             <div className='image-service-provider'>
