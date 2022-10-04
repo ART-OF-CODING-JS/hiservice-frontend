@@ -5,6 +5,7 @@ import { getOneService } from "../../store/services";
 import MainService from "./Main Service/MainService";
 import SuggestServices from "./Suggest service/SuggestServices";
 import { Spinner } from "react-bootstrap";
+import Comments from "./Comments/Comments";
 
 export default function ServiceDetails(props) {
   const { oneService, isLoading, error } = useSelector((state) => state.servicesSlice);
