@@ -1,6 +1,7 @@
 import React from "react";
 import Portfolio from "./Protfolio";
 import Logo from "../../assets/logo.png";
+import { Button } from "react-bootstrap";
 import "./work.scss";
 const HomePage = () => {
   const portfolioLinks = [
@@ -58,8 +59,8 @@ const HomePage = () => {
             <img src={Logo} className="navbar-brand js-scroll-trigger" alt="" width="150px" />
           </a>
 
-          <button
-            className="navbar-toggler navbar-toggler-right"
+          <Button 
+            className="navbar-toggler navbar-toggler-right btn btn-warning"
             type="button"
             data-toggle="collapse"
             data-target="#navbarResponsive"
@@ -69,7 +70,8 @@ const HomePage = () => {
           >
             Menu
             <i className="fa fa-bars"></i>
-          </button>
+          </Button >
+        
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav text-uppercase ml-auto">
               <li className="nav-item">

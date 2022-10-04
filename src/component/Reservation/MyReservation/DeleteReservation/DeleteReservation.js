@@ -16,7 +16,7 @@ const handleDelete = ()=>{
 
   return (
     <>
-      <button className="del-reserve add-btn" onClick={handleShow}>
+      <button className="btn btn-warning del-reserve add-btn" onClick={handleShow}>
        Delete Reservation
       </button>
       <Modal

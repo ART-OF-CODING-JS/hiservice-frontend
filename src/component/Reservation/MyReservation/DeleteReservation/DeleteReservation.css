@@ -1,5 +1,7 @@
 .del-reserve {
+    margin-right: 51px !important;
     margin-bottom: 1.8rem;
+    width: 150px;
     font-size: 1.2rem;
     font-weight: 600;
 }
