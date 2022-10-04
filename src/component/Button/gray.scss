@@ -1,0 +1,21 @@
+.button-container-gray {
+  border-radius: 5px;
+  border: 1px solid rgb(150, 150, 150);
+  width: 90px;
+  height: 40px;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(150, 150, 150);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial,
+    sans-serif;
+  font-weight: bolder;
+  justify-content: center;
+  text-align: center;
+
+  &:hover {
+    background-color: rgb(150, 150, 150);
+    color: white;
+    border: 1px solid rgb(150, 150, 150);
+  }
+}

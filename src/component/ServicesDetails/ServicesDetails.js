@@ -8,15 +8,19 @@ import { Spinner } from "react-bootstrap";
 import Comments from "./Comments/Comments";
 
 export default function ServiceDetails(props) {
-  const { oneService, isLoading, error } = useSelector((state) => state.servicesSlice);
+  const { oneService, isLoading } = useSelector((state) => state.servicesSlice);
   const dispatch = useDispatch();
   const { id } = useParams();
 
   useEffect(() => {
     dispatch(getOneService(id));
   }, [dispatch, id]);
-  return (
-    isLoading?<div className="spinner-service" ><Spinner animation="border" variant="dark" /></div>:  <>
+  return isLoading ? (
+    <div className="spinner-service">
+      <Spinner animation="border" variant="dark" />
+    </div>
+  ) : (
+    <>
       <MainService oneService={oneService} />
       <SuggestServices SuggestServ={oneService} />
     </>
