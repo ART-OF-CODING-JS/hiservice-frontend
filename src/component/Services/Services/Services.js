@@ -54,16 +54,16 @@ export default function Services(props) {
       </Access>
 
       <section className="service-container container-com">
-        {currentRecords.map((ele) => (
+        {currentRecords.map((service) => (
           <>
-            <figure className="image-block">
-              <Link to={`/Services/${ele.id}`}>
-                <img className="img" alt="service" src={ele.image} />
+            <figure className="image-block" key={service.id}>
+              <Link to={`/Services/${service.id}`}>
+                <img className="img" alt="service" src={service.image} />
               </Link>
               <figcaption>
-                <h3>{ele.title}</h3>
-                <p>In {ele.city}</p>
-                <h4>{ele.department}</h4>
+                <h3>{service.title}</h3>
+                <p>In {service.city}</p>
+                <h4>{service.department}</h4>
 
                 <Access role={"user"}>
                   <div className="edit-delete-auth-button">
@@ -71,7 +71,7 @@ export default function Services(props) {
                       <button
                         type="button"
                         className="btn btn-outline-secondary btn-lg btn_services_"
-                        onClick={() => handleClick(ele.id)}
+                        onClick={() => handleClick(service.id)}
                       >
                         Add to Favorite <i className="fa-regular fa-heart"></i>
                       </button>
@@ -79,7 +79,7 @@ export default function Services(props) {
                     <div className="delete">
                       <Link
                         className="Link btn btn-outline-secondary btn-lg"
-                        to={`/Services/${ele.id}`}
+                        to={`/Services/${service.id}`}
                       >
                         More Details
                       </Link>
@@ -89,10 +89,10 @@ export default function Services(props) {
                 <Access role={"admin"}>
                   <div className="edit-delete-auth-button">
                     <div className="edit">
-                      <EditServices id={ele.id} />
+                      <EditServices service={service} />
                     </div>
                     <div className="delete">
-                      <DeleteService serviceId={ele.id} />
+                      <DeleteService serviceId={service.id} />
                     </div>
                   </div>
                 </Access>
