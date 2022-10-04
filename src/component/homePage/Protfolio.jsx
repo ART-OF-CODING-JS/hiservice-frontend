@@ -4,7 +4,7 @@ const PortfolioLinks = ({ portfolioLinks }) => {
   return (
     <>
       <section className="bg-light page-section" id="portfolio">
-        <div className="container">
+        <div className="container-c">
           
           <div className="row">
             
@@ -19,7 +19,7 @@ const PortfolioLinks = ({ portfolioLinks }) => {
             {portfolioLinks &&
               portfolioLinks.map(({ title, caption, image }, index) => (
                 <div className="col-md-4 col-sm-6 portfolio-item">
-                 <div class = "container">
+                 <div class = "container-c">
                
     <div class = "card-w">
    
