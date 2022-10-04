@@ -102,7 +102,6 @@ export default function Reservation(props) {
           </div>
         ))}
       </section>
-      ;
       <Pagination
         recordsPerPage={postsPerPage}
         totalPosts={allReservation.length}
