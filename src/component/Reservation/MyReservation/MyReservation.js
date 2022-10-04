@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getMyReserve } from "../../../store/reservations";
-import ServiceInfo from "./ServiceInfo-left/ServiceInfo";
-import "./MyReservation.css";
 import DeleteReservation from "./DeleteReservation/DeleteReservation";
 import { Spinner } from "react-bootstrap";
 
 export default function MyReservation(props) {
+  const { allServices } = useSelector((state) => state.servicesSlice);
   const { myReservation, isLoading } = useSelector((state) => state.reserveSlice);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -19,38 +19,112 @@ export default function MyReservation(props) {
       <Spinner animation="border" variant="dark" />
     </div>
   ) : (
-    <section className="my-reservation-container container-com">
-      <div className="image-all-section">
-        <img alt="h" src="https://i.postimg.cc/mrHFFMNy/pexels-cottonbro-4065889.jpg" />
-        <p>My Reservation</p>
-      </div>
-      {myReservation.map((ele, idx) => (
-        <div className="reservations-cards" key={idx}>
-          <div className="service-left">
-            <ServiceInfo serviceId={ele.serviceID} />
-          </div>
-          {/* <div className='service-provider-middle'></div> */}
-          <div className="reserve-info-right">
-            <p>
-              <strong>Date:</strong> {ele.date}
-            </p>
-            <p>
-              {" "}
-              <strong>Time:</strong> {ele.time}
-            </p>
-            <p>
-              <strong>Note:</strong> {ele.description}
-            </p>
-            {ele.status === null ? (
-              <p className="inProgress stateus-myservice">inProgress</p>
-            ) : ele.status === "reject" ? (
-              <p className="reject stateus-myservice">Rejected</p>
-            ) : (
-              <p className="confirm stateus-myservice">confirmed</p>
-            )}
-          </div>
-          <div>
-            <DeleteReservation reserveId={ele.id} />
+    <section className="myservice-container container-com">
+      {myReservation.map((reservation, idx) => (
+        <div className="t" key={idx}>
+          <div className="my_services_body">
+            <div className="container-my-services">
+              <div className="card_img">
+                {allServices
+                  .filter((service) => service.id === reservation.serviceID)
+                  .map((service) => (
+                    <img src={service.image} alt="" />
+                  ))}
+                <div className="info">
+                  <div className="edit-myservice common-edi-del">
+                    <DeleteReservation reserveId={reservation.id} />
+                  </div>
+                </div>
+              </div>
+
+              <div className="container__text">
+                <div className="container__text__timing">
+                  <div className="container__text__timing_time">
+                    <h2>Provider</h2>
+                  </div>
+
+                  <div className="container__text__timing_time">
+                    <h2>Title</h2>
+                    {allServices
+                      .filter((service) => service.id === reservation.serviceID)
+                      .map((service) => (
+                        <h5>{service.title}</h5>
+                      ))}
+                  </div>
+                </div>
+
+                <div className="container__text__star">
+                  <span className="fa fa-star checked" />
+                  <span className="fa fa-star checked" />
+                  <span className="fa fa-star checked" />
+                  <span className="fa fa-star checked" />
+                  <span className="fa fa-star checked" />
+                </div>
+
+                <div className="container__text__timing">
+                  <div className="container__text__timing_time">
+                    <h2>department</h2>
+                    {allServices
+                      .filter((service) => service.id === reservation.serviceID)
+                      .map((service) => (
+                        <h5>{service.department}</h5>
+                      ))}
+                  </div>
+
+                  <div className="container__text__timing_time">
+                    <h2>City</h2>
+                    {allServices
+                      .filter((service) => service.id === reservation.serviceID)
+                      .map((service) => (
+                        <h5>{service.city}</h5>
+                      ))}
+                  </div>
+
+                  <div className="container__text__timing_time">
+                    <h2>Phone Number</h2>
+                    {allServices
+                      .filter((service) => service.id === reservation.serviceID)
+                      .map((service) => (
+                        <h5>{service.phoneNumber}</h5>
+                      ))}
+                  </div>
+                </div>
+
+                <div className="container__text__timing">
+                  <div className="container__text__timing_time">
+                    <h2>Time</h2>
+                    <p>{reservation.time}</p>
+                  </div>
+                  <div className="container__text__timing_time">
+                    <h2>Date</h2>
+                    <p>{reservation.date.substring(0, 10)}</p>
+                  </div>
+                </div>
+
+                <div className="container__text__timing">
+                  <div className="container__text__timing_time">
+                    <h2>Note</h2>
+                    <p>{reservation.description}</p>
+                  </div>
+                </div>
+
+                <button
+                  className={
+                    reservation.status === null
+                      ? "btn_my_services ra"
+                      : reservation.status === "confirm"
+                      ? "btn_my_services con"
+                      : "btn_my_services rej"
+                  }
+                >
+                  {reservation.status === null
+                    ? "inProgress"
+                    : reservation.status === "reject"
+                    ? "Rejected"
+                    : "Active"}
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       ))}

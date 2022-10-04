@@ -31,7 +31,7 @@ const EditReservation = (props) => {
 
   return (
     <>
-      <button onClick={handleShow}>
+      <button className="button-container-yellow" onClick={handleShow}>
         Edit <i className="fa-regular fa-pen-to-square"></i>
       </button>
 
