@@ -1,9 +1,7 @@
 import "./edit-my-services.style.css";
 
 import React, { useState, useRef } from "react";
-import { Button } from "react-bootstrap";
 
-import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 
 import cookie from "react-cookies";
@@ -11,7 +9,7 @@ import cookie from "react-cookies";
 import { useDispatch } from "react-redux";
 import { updateService } from "../../../store/services";
 
-const EditServices = (props) => {
+const EditServices = ({ service }) => {
   const dispatch = useDispatch();
 
   const [show, setShow] = useState(false);
@@ -27,7 +25,7 @@ const EditServices = (props) => {
 
   const handleSubmit = () => {
     const sendData = {
-      id: props.id,
+      id: service.id,
       title: titleRef.current.value,
       department: department,
       description: discRef.current.value,
@@ -70,6 +68,7 @@ const EditServices = (props) => {
                     placeholder="title"
                     maxLength={25}
                     ref={titleRef}
+                    defaultValue={service.title}
                     required
                   />
                 </div>
@@ -77,7 +76,10 @@ const EditServices = (props) => {
                 <div className="inputfield">
                   <label>department</label>
                   <div className="custom_select">
-                    <select value={department} onChange={(e) => setDepartment(e.target.value)}>
+                    <select
+                      onChange={(e) => setDepartment(e.target.value)}
+                      defaultValue={service.department}
+                    >
                       <option value="Electrical">Electrical</option>
                       <option value="Plumbing">Plumbing</option>
                       <option value="Cleaning">Cleaning</option>
@@ -94,7 +96,7 @@ const EditServices = (props) => {
                 <div className="inputfield">
                   <label>city</label>
                   <div className="custom_select">
-                    <select value={city} onChange={(e) => setCity(e.target.value)}>
+                    <select onChange={(e) => setCity(e.target.value)} defaultValue={service.city}>
                       <option value="Amman">Amman</option>
                       <option value="Jarash">Jarash</option>
                       <option value="Irbid">Irbid</option>
@@ -114,6 +116,7 @@ const EditServices = (props) => {
                     maxLength={15}
                     ref={phoneRef}
                     required
+                    defaultValue={service.phoneNumber}
                   />
                 </div>
 
@@ -125,6 +128,7 @@ const EditServices = (props) => {
                     placeholder="http//"
                     ref={imageRef}
                     required
+                    defaultValue={service.image}
                   />
                 </div>
 
@@ -136,6 +140,7 @@ const EditServices = (props) => {
                     maxLength={200}
                     ref={discRef}
                     required
+                    defaultValue={service.description}
                   />
                 </div>
                 <br />
@@ -150,7 +155,6 @@ const EditServices = (props) => {
           </form>
         </Modal>
       </>
-      ;
     </>
   );
 };

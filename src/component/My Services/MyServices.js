@@ -37,22 +37,22 @@ export default function MyServices(props) {
       </div>
       <AddService />
       <section className="myservice-container container-com">
-        {currentRecords.map((ele) => (
-          <div className="t" key={ele.id}>
+        {currentRecords.map((service) => (
+          <div className="t" key={service.id}>
             <div className="my_services_body">
               <div className="container-my-services">
                 <div className="card_img">
-                  <img src={ele.image} alt="Pancake" />
+                  <img src={service.image} alt="Pancake" />
                   <div className="info">
                     <div className="edit-myservice common-edi-del">
-                      <EditServices id={ele.id} />
-                      <DeleteService serviceId={ele.id} />
+                      <EditServices service={service} />
+                      <DeleteService serviceId={service.id} />
                     </div>
                   </div>
                 </div>
 
                 <div className="container__text">
-                  <h1>{ele.title}</h1>
+                  <h1>{service.title}</h1>
                   <div className="container__text__star">
                     <span className="fa fa-star checked" />
                     <span className="fa fa-star checked" />
@@ -60,33 +60,33 @@ export default function MyServices(props) {
                     <span className="fa fa-star checked" />
                     <span className="fa fa-star checked" />
                   </div>
-                  <p>{ele.description}</p>
+                  <p>{service.description}</p>
                   <div className="container__text__timing">
                     <div className="container__text__timing_time">
                       <h2>City</h2>
-                      <p>{ele.city}</p>
+                      <p>{service.city}</p>
                     </div>
                     <div className="container__text__timing_time">
                       <h2>Phone Number</h2>
-                      <p>{ele.phoneNumber}</p>
+                      <p>{service.phoneNumber}</p>
                     </div>
                     <div className="container__text__timing_time">
                       <h2>department</h2>
-                      <p>{ele.department}</p>
+                      <p>{service.department}</p>
                     </div>
                   </div>
                   <button
                     className={
-                      ele.status === null
+                      service.status === null
                         ? "btn_my_services ra"
-                        : ele.status === "confirm"
+                        : service.status === "confirm"
                         ? "btn_my_services con"
                         : "btn_my_services rej"
                     }
                   >
-                    {ele.status === null
+                    {service.status === null
                       ? "inProgress"
-                      : ele.status === "reject"
+                      : service.status === "reject"
                       ? "Rejected"
                       : "Active"}
                   </button>

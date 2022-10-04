@@ -3,6 +3,7 @@ import Portfolio from "./Protfolio";
 import Logo from "../../assets/logo.png";
 import { Button } from "react-bootstrap";
 import "./work.scss";
+import Footer from "../footer/footer";
 const HomePage = () => {
   const portfolioLinks = [
     {
@@ -52,6 +53,7 @@ const HomePage = () => {
     },
   ];
   return (
+    <>
     <div className="App">
       <nav className="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div className="container">
@@ -147,7 +149,7 @@ const HomePage = () => {
             </div>
             <div className="card">
               <div className="card__face card__face--front">
-                <img src="https://images.unsplash.com/photo-1581094481644-f2ab64522498?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" />
+                <img src="https://img.freepik.com/free-photo/household-repair-middle-aged-man-inspecting-pipe-touching-hand-sink-stylish-modern-kitchen_259150-58265.jpg?w=1800&t=st=1664874343~exp=1664874943~hmac=763ad50ee71052aef6dd7128e8494b5be341a04ec83d0e04489d0ee0469376fa" />
               </div>
               <div className="card__face card__face--back">
                 <p className="h1-how"> We'll match you with local service provider</p>
@@ -159,7 +161,7 @@ const HomePage = () => {
             </div>
             <div className="card">
               <div className="card__face card__face--front">
-                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80" />
+                <img src="https://img.freepik.com/free-photo/housewife-woking-home-lady-blue-shirt-woman-clean-mirror_1157-45532.jpg?w=1800&t=st=1664873902~exp=1664874502~hmac=8a4a6f181da07251c53646262960c510274fe3746ac19aaf2f3ee203c0183052" />
               </div>
               <div className="card__face card__face--back">
                 <p className="h1-how">Hire a local pro & finish the job?</p>
@@ -274,7 +276,7 @@ const HomePage = () => {
               <div className="position-relative h-100">
                 <img
                   className="position-absolute img-fluid w-100 h-100"
-                  src="https://media.istockphoto.com/photos/drop-shipping-business-owner-confirming-the-order-on-phone-picture-id1287030300?k=20&m=1287030300&s=612x612&w=0&h=NqBSkPWDXCj9GJzTkVPs42EmezQ3_K8Csrkk57mrXe0="
+                  src="https://img.freepik.com/free-photo/business-people-modern-office_1262-1402.jpg?w=1800&t=st=1664874630~exp=1664875230~hmac=4db2d91b9606e5c2d990dbf99a1c9032a45d039f82d9dc37ddcac5045cd58a02"
                   style={{ objectFit: "cover" }}
                   alt=""
                 />
@@ -332,70 +334,70 @@ const HomePage = () => {
         </div>
       </section> */}
 
-      <div class="container-t testimonial-body">
-      <div class="row">
+      <div className="container-t testimonial-body">
+      <div className="row">
 
 <h2 className="h3">What Our Clients Say</h2>
-    <div class="col-lg-4">
-        <div class="card-t">
-            <div class="face front-face">
+    <div className="col-lg-4">
+        <div className="card-t">
+            <div className="face front-face">
                 <img src="https://ca.slack-edge.com/TNGRRLUMA-UPRCC16QP-53e7e37645fd-512"
-                    alt="" class="profile"/>
-                <div class="pt-3 text-uppercase name">
+                    alt="" className="profile"/>
+                <div className="pt-3 text-uppercase name">
                     Shihab Eshtaiwi
                 </div>
-                <div class="designation">Instructor</div>
+                <div className="designation">Instructor</div>
             </div>
-            <div class="face back-face">
-                <span class="fas fa-quote-left"></span>
-                <div class="testimonial">
+            <div className="face back-face">
+                <span className="fas fa-quote-left"></span>
+                <div className="testimonial">
                     I made bacck the purchase price in just 48 hours! Thank you for making it pain less,
                     pleasant.
                     The service was execellent. I will refer everyone I know.
                 </div>
-                <span class="fas fa-quote-right"></span>
+                <span className="fas fa-quote-right"></span>
             </div>
         </div>
       </div>
-  <div class="col-lg-4">
-    <div class="card-t">
-      <div class="face front-face">
+  <div className="col-lg-4">
+    <div className="card-t">
+      <div className="face front-face">
         <img
           src="https://ca.slack-edge.com/TNGRRLUMA-UTE75MPJ9-282b001b930f-512"
           alt=""
-          class="profile"
+          className="profile"
         />
-        <div class="pt-3 text-uppercase name">Obada Tumah</div>
-        <div class="designation">Full Stack Developer</div>
+        <div className="pt-3 text-uppercase name">Obada Tumah</div>
+        <div className="designation">Full Stack Developer</div>
       </div>
-      <div class="face back-face">
-        <span class="fas fa-quote-left"></span>
-        <div class="testimonial">
+      <div className="face back-face">
+        <span className="fas fa-quote-left"></span>
+        <div className="testimonial">
           Really good, you have saved our business! I made bacck the purchase price in just
           48 hours! man, this thing is getting better and better as I learn more about it.
         </div>
-        <span class="fas fa-quote-right"></span>
+        <span className="fas fa-quote-right"></span>
       </div>
     </div>
   </div>
-  <div class="col-lg-4">
-    <div class="card-t">
-      <div class="face front-face">
+  <div className="col-lg-4">
+    <div className="card-t">
+      <div className="face front-face">
         <img
           src="https://ca.slack-edge.com/TNGRRLUMA-U011NPNQ9FX-537d8bf49726-512"
           alt=""
-          class="profile"
+          className="profile"
         />
-        <div class="pt-3 text-uppercase name">Ahmad Swedani</div>
-        <div class="designation">Software Developer</div>
+        <div className="pt-3 text-uppercase name">Ahmad Swedani</div>
+        <div className="designation">Software Developer</div>
       </div>
-      <div class="face back-face">
-        <span class="fas fa-quote-left"></span>
-        <div class="testimonial">
+      <div className="face back-face">
+        <span className="fas fa-quote-left"></span>
+        <div className="testimonial">
           Account keeper is the most valuable business research we have EVER purchased.
           Without electrician, we would ahave gone bankrupt by now.
         </div>
-        <span class="fas fa-quote-right"></span>
+        <span className="fas fa-quote-right"></span>
       </div>
     </div>
   </div>
@@ -404,9 +406,10 @@ const HomePage = () => {
 
       <br />
       <br />
-      <h3 className="h3">Our Team member</h3>
+      <h3 className="h3 team-title">Our Team member</h3>
       <br />
-      <section className="container-team">
+      <section className="container_team">
+        <div className="team-section">
         <div className="card-wrapper-team">
           <div className="card-team">
             <div className="card-image-team">
@@ -586,6 +589,7 @@ const HomePage = () => {
               </h2>
             </div>
           </div>
+        </div>
         </div>
       </section>
       {/* END container */}
@@ -830,7 +834,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      <footer className="footer">
+      {/* <footer className="footer">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-4">
@@ -867,8 +871,10 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-      </footer>
+      </footer> */}
     </div>
+    <Footer/>
+    </>
   );
 };
 

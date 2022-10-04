@@ -3,8 +3,9 @@ import axios from "axios";
 import base64 from "base-64";
 import cookie from "react-cookies";
 import { toast } from "react-toastify";
-const url = process.env.REACT_APP_URL;
+import Swal from "sweetalert2";
 
+const url = process.env.REACT_APP_URL;
 
 //******signin****//
 export const signin = createAsyncThunk("auth/signin", async (data, thunkApi) => {
@@ -19,8 +20,16 @@ export const signin = createAsyncThunk("auth/signin", async (data, thunkApi) => 
         },
       }
     );
+    window.location.href = "/";
     return request.data;
   } catch (err) {
+    Swal.fire({
+      title: "Error!",
+      text: "User name or password wrong!",
+      icon: "error",
+      showConfirmButton: false,
+      timer: 1500,
+    });
     return rejectWithValue(err.message);
   }
 });
@@ -70,7 +79,7 @@ export const sendEmailVerification = createAsyncThunk(
 );
 
 const initialState = {
-  isSignin: cookie.load("token") ? true : false, 
+  isSignin: cookie.load("token") ? true : false,
   errorSignIn: null,
   isLoadingSignIn: false,
   errorSignUp: null,
@@ -89,14 +98,13 @@ const authSlice = createSlice({
       cookie.save("userID", action.payload.id);
       state.actions = cookie.load("actions");
       state.errorSignIn = null;
-   
+
       state.isLoadingSignIn = false;
     },
     /// Sign in  /////
     [signin.pending]: (state, action) => {
       state.isLoadingSignIn = true;
       state.errorSignIn = null;
-   
     },
     [signin.rejected]: (state, action) => {
       state.isLoadingSignIn = false;

@@ -39,34 +39,59 @@ export default function ServicesConfirmation(props) {
 
   return (
     <>
-      <section className="service-container container-com">
-        {currentRecords.map((ele) => (
-          <div className="ser" key={ele.id}>
-            <div className="service-card card">
-              <div className="image-card card-images">
-                <Link to={`/Services/${ele.id}`}>
-                  <img className="img" alt="service" src={ele.image} />
-                </Link>
-              </div>
-              <div className="card-info">
-                <p className="title">{ele.title}</p>
-                <p className="city">{ele.city}</p>
-                <p className="department details">
-                  {ele.department}
-                  <h2>Hello</h2>
-                </p>
-                {/***********Admin********* */}
+      <section className="myservice-container container-com">
+        {currentRecords.map((service) => (
+          <div className="t" key={service.id}>
+            <div className="my_services_body">
+              <div className="container-my-services">
+                <div className="card_img">
+                  <img src={service.image} alt="Pancake" />
 
-                <div className="btns-myService">
-                  <div className="common-edi-del">
-                    <button className="btn btn-outline-danger" onClick={() => handleReject(ele.id)}>
-                      Reject <i className="fa-solid fa-circle-xmark"></i>
-                    </button>
+                  <div className="info">
+                    <div className="edit-myservice common-edi-del">
+                      <div className="common-edi-del">
+                        <button
+                          className="btn btn-outline-danger"
+                          onClick={() => handleReject(service.id)}
+                        >
+                          Reject <i className="fa-solid fa-circle-xmark"></i>
+                        </button>
+                      </div>
+                      <div className="common-edi-del">
+                        <button
+                          className="btn btn-outline-success"
+                          onClick={() => handleConfirm(service.id)}
+                        >
+                          Confirm <i className="fa-solid fa-circle-check"></i>
+                        </button>
+                      </div>{" "}
+                    </div>
                   </div>
-                  <div className="common-edi-del">
-                    <button className="btn btn-outline-success" onClick={() => handleConfirm(ele.id)}>
-                      Confirm <i className="fa-solid fa-circle-check"></i>
-                    </button>
+                </div>
+
+                <div className="container__text">
+                  <h1>{service.title}</h1>
+                  <div className="container__text__star">
+                    <span className="fa fa-star checked" />
+                    <span className="fa fa-star checked" />
+                    <span className="fa fa-star checked" />
+                    <span className="fa fa-star checked" />
+                    <span className="fa fa-star checked" />
+                  </div>
+                  <p>{service.description}</p>
+                  <div className="container__text__timing">
+                    <div className="container__text__timing_time">
+                      <h2>City</h2>
+                      <p>{service.city}</p>
+                    </div>
+                    <div className="container__text__timing_time">
+                      <h2>Phone Number</h2>
+                      <p>{service.phoneNumber}</p>
+                    </div>
+                    <div className="container__text__timing_time">
+                      <h2>department</h2>
+                      <p>{service.department}</p>
+                    </div>
                   </div>
                 </div>
               </div>

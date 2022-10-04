@@ -18,10 +18,11 @@ export default function Signin() {
       username: usernameRef.current.value,
       password: passwordRef.current.value,
     };
+
     await dispatch(signin(data));
-    navigate("/services");
     usernameRef.current.value = null;
     passwordRef.current.value = null;
+    // navigate("/services");
   };
 
   const emailForgotPassRef = useRef(null);
