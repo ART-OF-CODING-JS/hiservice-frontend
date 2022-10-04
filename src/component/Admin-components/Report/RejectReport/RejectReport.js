@@ -14,7 +14,7 @@ export default function RejectReport({id}) {
   }
     return(
         <>
-        <button className="del-reserve add-btn" onClick={handleShow}>
+        <button className="btn btn-warning del-reserve add-btn" onClick={handleShow}>
        Reject Report
       </button>
       <Modal

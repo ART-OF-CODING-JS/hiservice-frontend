@@ -14,7 +14,7 @@ const handleBlock = ()=>{
 
   return (
     <>
-      <button className="block" onClick={handleShow}>
+      <button className="btn btn-secondary block" onClick={handleShow}>
         Block Service provider
       </button>
       <Modal
