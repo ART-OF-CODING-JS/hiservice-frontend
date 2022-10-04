@@ -18,11 +18,7 @@ export default function Comments({ serviceId }) {
   const { userInfo } = useSelector((state) => state.usersSlice);
   const user_comment = decodeToken(cookie.load("token"));
   const commentsRef = useRef(null);
-  // let countComment = 0
-  //   comments.filter((ele)=>{
-  //     ele.serviceID === serviceId
-  //     return countComment++
-  // })
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = {
@@ -80,7 +76,7 @@ export default function Comments({ serviceId }) {
                   </div>
                 </fieldset>
               </form>
-              <h3>4 Comments</h3>
+              <h3> Comments</h3>
 
               {comments
                 .filter((ele) => ele.serviceID === serviceId)

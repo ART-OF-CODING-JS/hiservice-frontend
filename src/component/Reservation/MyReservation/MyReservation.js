@@ -20,6 +20,13 @@ export default function MyReservation(props) {
     </div>
   ) : (
     <section className="myservice-container container-com">
+       <div className="image-all-section">
+        <img
+          alt="h"
+          src="https://i.postimg.cc/mrHFFMNy/pexels-cottonbro-4065889.jpg"
+        />
+        <p>My Reservation</p>
+      </div>
       {myReservation.map((reservation, idx) => (
         <div className="t" key={idx}>
           <div className="my_services_body">
