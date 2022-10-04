@@ -44,7 +44,7 @@ export default function Reports(props) {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary py-3" onClick={handleClose}>
+          <Button  class="btn btn-warning" onClick={handleClose}>
             Close
           </Button>
           <Button

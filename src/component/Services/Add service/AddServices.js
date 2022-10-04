@@ -4,7 +4,7 @@ import React, { useState, useRef } from "react";
 import Modal from "react-bootstrap/Modal";
 import cookie from "react-cookies";
 import { useDispatch } from "react-redux";
-
+import { Button } from "react-bootstrap";
 import { addService } from "../../../store/services";
 
 export default function AddService({ postData }) {
@@ -36,9 +36,9 @@ export default function AddService({ postData }) {
 
   return (
     <>
-      <button variant="primary" size="lg" onClick={handleShow} className="ms-4 mt-3 add-btn">
+      <Button variant="primary" size="lg" onClick={handleShow} className="ms-4 mt-3 add-btn">
         Add Service
-      </button>
+      </Button>
 
       <Modal show={show} onHide={handleClose} className="add-service-pop-form">
         <form

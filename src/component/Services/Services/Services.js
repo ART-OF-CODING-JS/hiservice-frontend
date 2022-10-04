@@ -6,7 +6,6 @@ import { Spinner } from "react-bootstrap";
 import "./Services.scss";
 import { getAllServices } from "../../../store/services";
 import AddService from "../Add service/AddServices";
-import Reports from "../../Reports/sendReports/Reports";
 import Pagination from "../../pagenation/Pagination";
 import Access from "../../Access/Access";
 import DeleteService from "../../My Services/DeleteMyService/DeleteMyService";
@@ -15,7 +14,7 @@ import Search from "../../searchBar/Search";
 import cookie from "react-cookies";
 import { addToFavorite } from "../../../store/favorite";
 
-export default function Services(props) {
+export default function Services() {
   const { allServices, isLoading } = useSelector((state) => state.servicesSlice);
 
   const dispatch = useDispatch();
@@ -50,10 +49,8 @@ export default function Services(props) {
     <>
       <Search />
       <div className="image-all-section">
-        <img
-          alt="h"
-          src='https://i.postimg.cc/VvvTD7Vt/pexels-cottonbro-4488651-1.jpg'
-        />
+        <img alt="h" src="https://i.postimg.cc/VvvTD7Vt/pexels-cottonbro-4488651-1.jpg" />
+
         <p>Profile Settings</p>
       </div>
       <Access role="user">
@@ -61,16 +58,17 @@ export default function Services(props) {
       </Access>
 
       <section className="service-container container-com">
-        {currentRecords.map((ele,idx) => (
+        {currentRecords.map((service) => (
           <>
-            <figure className="image-block" key={idx}>
-              <Link to={`/Services/${ele.id}`}>
-                <img className="img" alt="service" src={ele.image} />
+            <figure className="image-block" key={service.id}>
+              <Link to={`/Services/${service.id}`}>
+                <img className="img" alt="service" src={service.image} />
+
               </Link>
               <figcaption>
-                <h3>{ele.title}</h3>
-                <p>In {ele.city}</p>
-                <h4>{ele.department}</h4>
+                <h3>{service.title}</h3>
+                <p>In {service.city}</p>
+                <h4>{service.department}</h4>
 
                 <Access role={"user"}>
                   <div className="edit-delete-auth-button">
@@ -78,7 +76,7 @@ export default function Services(props) {
                       <button
                         type="button"
                         className="btn btn-outline-secondary btn-lg btn_services_"
-                        onClick={() => handleClick(ele.id)}
+                        onClick={() => handleClick(service.id)}
                       >
                         Add to Favorite <i className="fa-regular fa-heart"></i>
                       </button>
@@ -86,7 +84,7 @@ export default function Services(props) {
                     <div className="delete">
                       <Link
                         className="Link btn btn-outline-secondary btn-lg"
-                        to={`/Services/${ele.id}`}
+                        to={`/Services/${service.id}`}
                       >
                         More Details
                       </Link>
@@ -96,10 +94,10 @@ export default function Services(props) {
                 <Access role={"admin"}>
                   <div className="edit-delete-auth-button">
                     <div className="edit">
-                      <EditServices id={ele.id} />
+                      <EditServices service={service} />
                     </div>
                     <div className="delete">
-                      <DeleteService serviceId={ele.id} />
+                      <DeleteService serviceId={service.id} />
                     </div>
                   </div>
                 </Access>

@@ -10,11 +10,14 @@
     "Jerash",
     "Madaba",
     "myservice",
+    "pagenation",
     "quicklinks",
     "sendpasswordlink",
     "Signin",
     "Signout",
     "signup",
+    "Swal",
+    "sweetalert",
     "userprovider"
   ]
 }

@@ -31,7 +31,7 @@ export default function MainService(props) {
         </div> */}
         <div className='reserve-service-pro'>
         <ServiceProviderInfo ServiceProviderId ={ele.userID} />
-        <button className="reserve"><Reservation serviceId={ele.id}/></button>
+        <button className="btn btn-warning reserve"><Reservation serviceId={ele.id}/></button>
         </div>
         <div className="disc-main-service">
              <p> <strong>Description</strong></p>
@@ -40,7 +40,7 @@ export default function MainService(props) {
         <div className="block-report">
             {/* <button className="block">Block Service provider</button> */}
             <Access role={'user'}><BlockProvider providerID={ele.userID}/></Access>
-            <Access role={'user'}><div className='reports__btn'><Reports/></div> </Access>
+            <Access role={'user'}> <button className="btn btn-secondary report">Report Service</button></Access>
         </div>
         </div>
     </div>

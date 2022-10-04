@@ -1,6 +1,3 @@
-
-import "./editService.css";
-
 import React, { useState, useRef } from "react";
 import { Button } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
@@ -10,7 +7,6 @@ import { useDispatch } from "react-redux";
 import { updateReservation } from "../../../store/reservations";
 
 const EditReservation = (props) => {
- 
   const dispatch = useDispatch();
 
   const [show, setShow] = useState(false);
@@ -20,7 +16,6 @@ const EditReservation = (props) => {
   const dateRef = useRef(null);
   const timeRef = useRef(null);
   const discRef = useRef(null);
- 
 
   const handleSubmit = () => {
     const sendData = {
@@ -36,10 +31,10 @@ const EditReservation = (props) => {
 
   return (
     <>
-    <button onClick={handleShow}>
-    Edit <i className="fa-regular fa-pen-to-square"></i>
-    </button>
-    
+      <button onClick={handleShow}>
+        Edit <i className="fa-regular fa-pen-to-square"></i>
+      </button>
+
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Edit Reservation</Modal.Title>
@@ -60,7 +55,6 @@ const EditReservation = (props) => {
               <Form.Label>Description</Form.Label>
               <Form.Control type="text" placeholder="Description" ref={discRef} />
             </Form.Group>
-
           </Form>
         </Modal.Body>
         <Modal.Footer>

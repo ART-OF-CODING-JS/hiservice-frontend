@@ -1,30 +1,25 @@
 import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
-import { useSelector,useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { deleteReservation, getAllReservation } from "../../../../store/reservations";
-import './DeleteReservation.css'
-export default function DeleteReservation({reserveId}) {
+import "./DeleteReservation.css";
+export default function DeleteReservation({ reserveId }) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const dispatch = useDispatch()
-const handleDelete = ()=>{
-  dispatch(deleteReservation(reserveId))
-  dispatch(getAllReservation())  
-}
+  const dispatch = useDispatch();
+  const handleDelete = () => {
+    dispatch(deleteReservation(reserveId));
+    dispatch(getAllReservation());
+  };
 
   return (
     <>
-      <button className="del-reserve add-btn" onClick={handleShow}>
-       Delete Reservation
+      <button className="btn btn-warning del-reserve add-btn" onClick={handleShow}>
+       Delete 
       </button>
-      <Modal
-        show={show}
-        onHide={handleClose}
-        backdrop="static"
-        keyboard={false}
-      >
+      <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
         <Modal.Header closeButton>
           <Modal.Title>Delete Reservation</Modal.Title>
         </Modal.Header>
@@ -35,7 +30,14 @@ const handleDelete = ()=>{
           <Button className="py-3" variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button className="add-btn" variant="primary" onClick={()=>{handleDelete();handleClose()}}>
+          <Button
+            className="add-btn"
+            variant="primary"
+            onClick={() => {
+              handleDelete();
+              handleClose();
+            }}
+          >
             Yes I'm Sure
           </Button>
         </Modal.Footer>

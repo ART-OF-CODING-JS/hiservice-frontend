@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
-
+import { Button } from "react-bootstrap";
 import { updatePassword } from "../../../store/users";
 
 function UpdatePassword() {
@@ -35,9 +35,9 @@ function UpdatePassword() {
       <div className="input-group mb-3">
         <input type="text" className="form-control" placeholder="Confirm New password" autoFocus ref={confirmPasswordRef} />
       </div>
-      <button type="submit" className="btn btn-success" onClick={handleSubmit}>
+      <button  type="submit" className="btn btn-dark" onClick={handleSubmit}>
         Save
-      </button>
+      </button >
     </div>
   );
 }
