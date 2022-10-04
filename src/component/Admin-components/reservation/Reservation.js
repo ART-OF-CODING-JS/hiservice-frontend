@@ -59,17 +59,23 @@ export default function Reservation(props) {
                     <span className="fa fa-star checked" />
                   </div>
 
-                  {allServices
-                    .filter((service) => service.id === reservation.serviceID)
-                    .map((service) => (
-                      <p>{service.description}</p>
-                    ))}
+                  <div className="container__text__timing_time">
+                    <h2>description</h2>
+                    {allServices
+                      .filter((service) => service.id === reservation.serviceID)
+                      .map((service) => (
+                        <p>{service.description}</p>
+                      ))}
+                  </div>
 
-                  {allServices
-                    .filter((service) => service.id === reservation.serviceID)
-                    .map((service) => (
-                      <h5>{service.department}</h5>
-                    ))}
+                  <div className="container__text__timing_time">
+                    <h2>department</h2>
+                    {allServices
+                      .filter((service) => service.id === reservation.serviceID)
+                      .map((service) => (
+                        <h5>{service.department}</h5>
+                      ))}
+                  </div>
 
                   <div className="container__text__timing">
                     <div className="container__text__timing_time">
@@ -78,7 +84,7 @@ export default function Reservation(props) {
                     </div>
                     <div className="container__text__timing_time">
                       <h2>Date</h2>
-                      <p>{reservation.date}</p>
+                      <p>{reservation.date.substring(0, 10)}</p>
                     </div>
                   </div>
                   <div className="container__text__timing">
