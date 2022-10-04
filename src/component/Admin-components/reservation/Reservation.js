@@ -65,6 +65,12 @@ export default function Reservation(props) {
                       <p>{service.description}</p>
                     ))}
 
+                  {allServices
+                    .filter((service) => service.id === reservation.serviceID)
+                    .map((service) => (
+                      <h5>{service.department}</h5>
+                    ))}
+
                   <div className="container__text__timing">
                     <div className="container__text__timing_time">
                       <h2>Time</h2>
@@ -102,7 +108,6 @@ export default function Reservation(props) {
           </div>
         ))}
       </section>
-      ;
       <Pagination
         recordsPerPage={postsPerPage}
         totalPosts={allReservation.length}

@@ -26,7 +26,7 @@ export default function Reports(props) {
 
   return (
     <>
-      <button type="button" className="btn btn-outline-secondary btn-lg" onClick={handleShow}>
+      <button type="button" className="btn btn-secondary block" onClick={handleShow}>
         Reports <i className="fa-light fa-file-chart-column"></i>
       </button>
 
@@ -44,7 +44,7 @@ export default function Reports(props) {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button  class="btn btn-warning" onClick={handleClose}>
+          <Button class="btn btn-warning" onClick={handleClose}>
             Close
           </Button>
           <Button

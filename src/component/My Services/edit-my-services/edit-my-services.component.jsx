@@ -145,9 +145,7 @@ const EditServices = ({ service }) => {
                 </div>
                 <br />
                 <div className="footer">
-                  <button type="" value="Close" className="btn-submit" onClick={handleClose}>
-                    Close
-                  </button>
+                  <input type="" value="Close" className="btn-submit" onClick={handleClose} />
                   <input type="submit" value="Edit" className="btn-submit" />
                 </div>
               </div>
