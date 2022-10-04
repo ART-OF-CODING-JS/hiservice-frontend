@@ -39,6 +39,7 @@ export default function UserInfo() {
           </div>
         </div>
       ))}
+      <p>Upgrade Subsection</p>
     </section>
   );
 }
