@@ -2,6 +2,7 @@ import React from "react";
 import Portfolio from "./Protfolio";
 import Logo from "../../assets/logo.png";
 import "./work.scss";
+import Footer from "../footer/footer";
 const HomePage = () => {
   const portfolioLinks = [
     {
@@ -51,6 +52,7 @@ const HomePage = () => {
     },
   ];
   return (
+    <>
     <div className="App">
       <nav className="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div className="container">
@@ -830,7 +832,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      <footer className="footer">
+      {/* <footer className="footer">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-4">
@@ -867,8 +869,10 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-      </footer>
+      </footer> */}
     </div>
+    <Footer/>
+    </>
   );
 };
 
