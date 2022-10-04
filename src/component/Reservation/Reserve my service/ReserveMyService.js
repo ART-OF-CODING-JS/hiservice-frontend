@@ -23,7 +23,13 @@ export default function ReserveMyService() {
     </div>
   ) : (
     <section className="myservice-container container-com">
-      <p>Reserve My Services </p>
+      <div className="image-all-section">
+        <img
+          alt="h"
+          src="https://i.postimg.cc/mrHFFMNy/pexels-cottonbro-4065889.jpg"
+        />
+        <p>Reserve My Services </p>
+      </div>
 
       {ProviderReservations.map((reservation, idx) => (
         <div className="t" key={idx}>

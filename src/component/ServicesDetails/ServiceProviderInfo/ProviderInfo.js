@@ -5,6 +5,7 @@ import "./ProviderInfo.css";
 export default function ServiceProviderInfo({ ServiceProviderId }) {
   const dispatch = useDispatch();
   const { userInfo } = useSelector((state) => state.usersSlice);
+  
 
   useEffect(() => {
     dispatch(getAllUser());

@@ -74,9 +74,86 @@ export const getAllFav = createAsyncThunk(
       return rejectWithValue(error.response);
     }
   });
+
+  // get all comments
+
+  export const getComments = createAsyncThunk(
+    "favorite/getComments",
+    async (data, thunkApi) => {
+      const { rejectWithValue } = thunkApi;
+      try {
+        const req = await axios.get(`${url}/api/v2/comments`,  {
+          headers: {
+            authorization: `Bearer ${cookie.load("token")}`,
+          },
+        });
+        return req.data;
+      } catch (error) {
+        return rejectWithValue(error.response.data);
+      }
+    }
+  );
+
+  // add comments
+  export const addComments = createAsyncThunk(
+    "favorite/addComments",
+    async (data, thunkApi) => {
+      const { rejectWithValue,dispatch } = thunkApi;
+      try {
+        const req = await axios.post(`${url}/api/v2/comments`, data , {
+          headers: {
+            authorization: `Bearer ${cookie.load("token")}`,
+          },
+        });
+        dispatch(getComments())
+        return req.data;
+      } catch (error) {
+        return rejectWithValue(error.response.data);
+      }
+    }
+  );
+  // update comments
+  export const updateComments = createAsyncThunk(
+    "favorite/updateComments",
+    async (data, thunkApi) => {
+      const { rejectWithValue,dispatch } = thunkApi;
+      try {
+        const req = await axios.put(`${url}/api/v2/comments/${data.id}`, data , {
+          headers: {
+            authorization: `Bearer ${cookie.load("token")}`,
+          },
+        });
+        dispatch(getComments())
+        return req.data;
+      } catch (error) {
+        return rejectWithValue(error.response.data);
+      }
+    }
+  );
+  // delete comments
+  export const deleteComments = createAsyncThunk(
+    "favorite/addComments",
+    async (id, thunkApi) => {
+      const { rejectWithValue,dispatch } = thunkApi;
+      try {
+        const req = await axios.delete(`${url}/api/v2/comments/${id}` , {
+          headers: {
+            authorization: `Bearer ${cookie.load("token")}`,
+          },
+        });
+        dispatch(getComments())
+        return req.data;
+      } catch (error) {
+        return rejectWithValue(error.response.data);
+      }
+    }
+  );
+  
+
   const initialState = {
     fav:[],
     favServices:[],
+    comments:[],
     isLoading:false,
     error:null,
     }
@@ -102,6 +179,7 @@ export const getAllFav = createAsyncThunk(
     state.isLoading = false;
     state.error = action.payload;
   },
+  //........
    [getAllFav.fulfilled]: (state, action) => {
     state.fav=action.payload
     state.isLoading = false;
@@ -151,6 +229,65 @@ export const getAllFav = createAsyncThunk(
     state.error = action.payload;
     state.isLoading = false;
  
+  },
+  // get comments
+  [getComments.fulfilled]: (state, action) => {
+    state.comments=action.payload
+    state.isLoading = false;
+   
+  },
+  [getComments.pending]: (state, action) => {
+    state.isLoading = true;
+    state.error=null;
+  },
+  [getComments.rejected]: (state, action) => {
+  
+    toast.error(`${action.payload}`)
+    state.isLoading = false;
+    state.error = action.payload;
+  },
+  // Post comments
+  [addComments.fulfilled]: (state, action) => {
+    state.isLoading = false;
+  },
+  [addComments.pending]: (state, action) => {
+    state.isLoading = true;
+    state.error=null;
+  },
+  [addComments.rejected]: (state, action) => {
+  
+    toast.error(`${action.payload}`)
+    state.isLoading = false;
+    state.error = action.payload;
+  },
+  // Update comments
+  [updateComments.fulfilled]: (state, action) => {
+    state.isLoading = false;
+   
+  },
+  [updateComments.pending]: (state, action) => {
+    state.isLoading = true;
+    state.error=null;
+  },
+  [updateComments.rejected]: (state, action) => {
+  
+    toast.error(`${action.payload}`)
+    state.isLoading = false;
+    state.error = action.payload;
+  },
+  // Delete comments
+  [deleteComments.fulfilled]: (state, action) => {
+    state.isLoading = false;
+  },
+  [deleteComments.pending]: (state, action) => {
+    state.isLoading = true;
+    state.error=null;
+  },
+  [deleteComments.rejected]: (state, action) => {
+  
+    toast.error(`${action.payload}`)
+    state.isLoading = false;
+    state.error = action.payload;
   },
 
         }
