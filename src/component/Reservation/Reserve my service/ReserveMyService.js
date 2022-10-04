@@ -1,8 +1,5 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import { getMyReserve } from '../../../store/reservations'
-// import './MyReservation.css'
-// import DeleteReservation from './DeleteReservation/DeleteReservation'
 import ServiceProviderInfo from "../../ServicesDetails/ServiceProviderInfo/ProviderInfo";
 import ServiceInfo from "../MyReservation/ServiceInfo-left/ServiceInfo";
 import ConfirmReserve from "./ConfirmReserve/ConfirmReserve";

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import './MyReservation.css'
 import { getUserByID } from "../../../../store/users";
+
 export default function ProviderInfo({ useProviderId }) {
   const dispatch = useDispatch();
   const { userInfo } = useSelector((state) => state.usersSlice);
