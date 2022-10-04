@@ -6,7 +6,6 @@ export default function UserInfo() {
 
   let userArrInfo = [];
   userArrInfo.push(userInfo);
-
   return (
     <section className="userInfo-container container-com">
       {userArrInfo.map((ele) => (

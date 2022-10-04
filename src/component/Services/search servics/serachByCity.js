@@ -43,7 +43,7 @@ export default function SearchByCity(props) {
       <section className="service-container container-com">
         {currentRecords.map((ele) => (
            <>
-           <figure class="image-block">
+           <figure className="image-block">
              <Link to={`/Services/${ele.id}`}>
                <img className="img" alt="service" src={ele.image} />
              </Link>

@@ -49,14 +49,21 @@ export default function Services(props) {
   ) : (
     <>
       <Search />
+      <div className="image-all-section">
+        <img
+          alt="h"
+          src='https://i.postimg.cc/VvvTD7Vt/pexels-cottonbro-4488651-1.jpg'
+        />
+        <p>Profile Settings</p>
+      </div>
       <Access role="user">
         <AddService />
       </Access>
 
       <section className="service-container container-com">
-        {currentRecords.map((ele) => (
+        {currentRecords.map((ele,idx) => (
           <>
-            <figure className="image-block">
+            <figure className="image-block" key={idx}>
               <Link to={`/Services/${ele.id}`}>
                 <img className="img" alt="service" src={ele.image} />
               </Link>
