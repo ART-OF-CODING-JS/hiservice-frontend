@@ -12,7 +12,7 @@ useEffect(()=>{
     return(
        <>{
         allServices.filter(ele=>ele.id===serviceId).map(ele=>
-            <div className=''>
+            <div className='' key={ele.id}>
             <div className='service_cards'>
             <div className="cards_my_service">
             <h2 className="card_title_service">Title</h2>

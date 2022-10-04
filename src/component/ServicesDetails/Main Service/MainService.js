@@ -5,7 +5,7 @@ import Reservation from '../../Reservation/SendReservation/Reservation';
 import ServiceProviderInfo from '../ServiceProviderInfo/ProviderInfo';
 import BlockProvider from './Block service provider/BlockProvider';
 import './MainService.css'
-
+import Reports from '../../Reports/sendReports/Reports';
 export default function MainService(props) {
   return (
     <section className="container-main-service container-com">
@@ -40,7 +40,7 @@ export default function MainService(props) {
         <div className="block-report">
             {/* <button className="block">Block Service provider</button> */}
             <Access role={'user'}><BlockProvider providerID={ele.userID}/></Access>
-            <Access role={'user'}> <button className="report">Report Service</button></Access>
+            <Access role={'user'}><div className='reports__btn'><Reports/></div> </Access>
         </div>
         </div>
     </div>

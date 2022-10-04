@@ -25,25 +25,25 @@ export default function ContactUs(props) {
   return (
     <>
       {currentRecords.map((ele, idx) => (
-        <div class="main-container">
-          <div class="contact">
+        <div className="main-container">
+          <div className="contact">
             <img
               src="https://images.pexels.com/photos/9089222/pexels-photo-9089222.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               alt="Pancake"
             />
-            <div class="contact__text">
+            <div className="contact__text">
               <h1>{ele.username}</h1>
-              <div class="contact__text__timing">
-                <div class="contact__text__timing_time">
+              <div className="contact__text__timing">
+                <div className="contact__text__timing_time">
                   <h2>{ele.email}</h2>
                 </div>
               </div>
-              <div class="contact__text__star">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
+              <div className="contact__text__star">
+                <span className="fa fa-star checked"></span>
+                <span className="fa fa-star checked"></span>
+                <span className="fa fa-star checked"></span>
+                <span className="fa fa-star checked"></span>
+                <span className="fa fa-star checked"></span>
               </div>
               <p>{ele.description}</p>
             </div>

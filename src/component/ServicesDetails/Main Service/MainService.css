@@ -78,3 +78,7 @@
 .reserve:hover {
 background-color: #fecd1c;
 }
+
+.reports__btn {
+    background-color: #f0f0f0;
+}

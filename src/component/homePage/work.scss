@@ -56,3 +56,25 @@
     }
   }
 }
+
+.testimonial-body {
+  width: 1200px;
+  margin: auto;
+}
+.container_team {
+  width: 1200px;
+  margin: auto;
+}
+.card-image-team1 {
+  width: 100% !important;
+  height: 100%!important;
+}
+.team-section {
+  display: grid;
+  grid-template-columns: repeat(3, 400px);
+
+}
+
+.team-title {
+  margin: 5rem 0 14rem 0 !important;
+}
