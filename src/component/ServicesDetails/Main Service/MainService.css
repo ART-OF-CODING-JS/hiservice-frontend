@@ -46,7 +46,7 @@
 }
 
 .block-report button:hover {
-    background-color:#dc3545;
+    background-color:#dc3545 !important;
     color: aliceblue;
 }
 .block-report,.btn-main-service{
@@ -72,13 +72,9 @@
     align-self: center;
     border: 0;
     padding: 0 7px;
-    background-color: #dcdcdc;
+ 
     transition: all 0.3s ease
 }
 .reserve:hover {
-background-color: #fecd1c;
-}
-
-.reports__btn {
-    background-color: #f0f0f0;
+background-color: #fecd1c !important;
 }
