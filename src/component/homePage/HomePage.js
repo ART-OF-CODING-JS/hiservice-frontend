@@ -147,7 +147,7 @@ const HomePage = () => {
             </div>
             <div className="card">
               <div className="card__face card__face--front">
-                <img src="https://images.unsplash.com/photo-1581094481644-f2ab64522498?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" />
+                <img src="https://img.freepik.com/free-photo/household-repair-middle-aged-man-inspecting-pipe-touching-hand-sink-stylish-modern-kitchen_259150-58265.jpg?w=1800&t=st=1664874343~exp=1664874943~hmac=763ad50ee71052aef6dd7128e8494b5be341a04ec83d0e04489d0ee0469376fa" />
               </div>
               <div className="card__face card__face--back">
                 <p className="h1-how"> We'll match you with local service provider</p>
@@ -159,7 +159,7 @@ const HomePage = () => {
             </div>
             <div className="card">
               <div className="card__face card__face--front">
-                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80" />
+                <img src="https://img.freepik.com/free-photo/housewife-woking-home-lady-blue-shirt-woman-clean-mirror_1157-45532.jpg?w=1800&t=st=1664873902~exp=1664874502~hmac=8a4a6f181da07251c53646262960c510274fe3746ac19aaf2f3ee203c0183052" />
               </div>
               <div className="card__face card__face--back">
                 <p className="h1-how">Hire a local pro & finish the job?</p>
@@ -274,7 +274,7 @@ const HomePage = () => {
               <div className="position-relative h-100">
                 <img
                   className="position-absolute img-fluid w-100 h-100"
-                  src="https://media.istockphoto.com/photos/drop-shipping-business-owner-confirming-the-order-on-phone-picture-id1287030300?k=20&m=1287030300&s=612x612&w=0&h=NqBSkPWDXCj9GJzTkVPs42EmezQ3_K8Csrkk57mrXe0="
+                  src="https://img.freepik.com/free-photo/business-people-modern-office_1262-1402.jpg?w=1800&t=st=1664874630~exp=1664875230~hmac=4db2d91b9606e5c2d990dbf99a1c9032a45d039f82d9dc37ddcac5045cd58a02"
                   style={{ objectFit: "cover" }}
                   alt=""
                 />

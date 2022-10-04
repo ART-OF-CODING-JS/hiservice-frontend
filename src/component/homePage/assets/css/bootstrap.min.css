@@ -482,7 +482,7 @@ h6 {
   border-radius: 15px;
   background: rgba(255, 255, 255, 0.06);
   transform-style: preserve-3d;
-  transition: 0.5s;
+  transition: 1.2s;
   backface-visibility: hidden;
   border-top: 1px solid #ddd;
   border-left: 1px solid #ddd;
@@ -734,9 +734,10 @@ pre code {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-right: -15px;
+  margin-right: 100px;
   margin-left: -15px;
 }
+
 
 .no-gutters {
   margin-right: 0;

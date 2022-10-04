@@ -50,6 +50,7 @@ export default function Services() {
       <Search />
       <div className="image-all-section">
         <img alt="h" src="https://i.postimg.cc/VvvTD7Vt/pexels-cottonbro-4488651-1.jpg" />
+
         <p>Profile Settings</p>
       </div>
       <Access role="user">
@@ -62,6 +63,7 @@ export default function Services() {
             <figure className="image-block" key={service.id}>
               <Link to={`/Services/${service.id}`}>
                 <img className="img" alt="service" src={service.image} />
+
               </Link>
               <figcaption>
                 <h3>{service.title}</h3>
