@@ -6,7 +6,6 @@ import { Spinner } from "react-bootstrap";
 import "./Services.scss";
 import { getAllServices } from "../../../store/services";
 import AddService from "../Add service/AddServices";
-import Reports from "../../Reports/sendReports/Reports";
 import Pagination from "../../pagenation/Pagination";
 import Access from "../../Access/Access";
 import DeleteService from "../../My Services/DeleteMyService/DeleteMyService";
@@ -15,7 +14,7 @@ import Search from "../../searchBar/Search";
 import cookie from "react-cookies";
 import { addToFavorite } from "../../../store/favorite";
 
-export default function Services(props) {
+export default function Services() {
   const { allServices, isLoading } = useSelector((state) => state.servicesSlice);
 
   const dispatch = useDispatch();
@@ -49,6 +48,10 @@ export default function Services(props) {
   ) : (
     <>
       <Search />
+      <div className="image-all-section">
+        <img alt="h" src="https://i.postimg.cc/VvvTD7Vt/pexels-cottonbro-4488651-1.jpg" />
+        <p>Profile Settings</p>
+      </div>
       <Access role="user">
         <AddService />
       </Access>
