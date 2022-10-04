@@ -181,9 +181,6 @@ export default function Header(props) {
                 <Link className="dropdown-item" to={"/blockList-user"}>
                   <li href="#">Block List</li>
                 </Link>
-                <Link className="dropdown-item" to={"/Reports"}>
-                  <li>Reports</li>
-                </Link>
               </div>
             </div>
           </div>

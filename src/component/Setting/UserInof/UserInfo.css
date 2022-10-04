@@ -1,7 +1,7 @@
 .userInfo-container {
     display: grid;
     justify-items: center;
-    height: 100vh;
+    height: 80vh;
 }
 .username-setting {
     font-size: 2.5rem;
