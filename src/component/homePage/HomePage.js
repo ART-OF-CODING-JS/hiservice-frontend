@@ -9,7 +9,7 @@ const HomePage = () => {
     {
       title: "Electrical services",
       caption: "We provide a lot of different type of electrical services ",
-      image: "./image/electr.jpg",
+      image: "https://cdn.pixabay.com/photo/2015/12/07/10/49/electrician-1080554_960_720.jpg",
     },
     {
       title: "Plumbing Services",
