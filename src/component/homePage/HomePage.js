@@ -9,47 +9,47 @@ const HomePage = () => {
     {
       title: "Electrical services",
       caption: "We provide a lot of different type of electrical services ",
-      image: "https://cdn.pixabay.com/photo/2015/12/07/10/49/electrician-1080554_960_720.jpg",
+      image: "https://i.postimg.cc/hvTtCnsp/electr.jpg",
     },
     {
       title: "Plumbing Services",
       caption: "All your house water and sewage connection will be secure",
-      image: "./image/plumber.jpg",
+      image: "https://i.postimg.cc/KYjc6BQK/plumber.jpg",
     },
     {
       title: "Waste management",
       caption: "You can find different helpful team for clean any type of waste ",
-      image: "./image/waste.jpg",
+      image: "https://i.postimg.cc/NfxgLpz9/waste.jpg",
     },
     {
       title: "Pest Control",
       caption: "if you have bugs , or mosquitoes you can book from our web site ",
-      image: "./image/pest.jpg",
+      image: "https://i.postimg.cc/BnqnCdKB/pest.jpg",
     },
     {
       title: "Cleaning and maid services",
       caption: "We provide all type of cleaning services and we have another services ",
-      image: "./image/clean.jpg",
+      image: "https://i.postimg.cc/fRTMdmGH/clean.jpg",
     },
     {
       title: "Moving",
       caption: "Moving furniture and house stuff and many of things",
-      image: "./image/move.jpg",
+      image: "https://i.postimg.cc/mDFLD4vB/move.jpg",
     },
     {
       title: "Painting & Staining",
       caption: "We can provide you with a variety of professional painter",
-      image: "./image/paint.jpg",
+      image: "https://i.postimg.cc/3JjwmKdw/paint.jpg",
     },
     {
       title: "barber",
       caption: "You can call a barber to give you a hair cut in your house",
-      image: "./image/barber.jpg",
+      image: "https://i.postimg.cc/hPRjXJ4w/barber.jpg",
     },
     {
       title: "Engineer",
       caption: "You can find professional person to help you to design your life",
-      image: "./image/eng.jpg",
+      image: "https://i.postimg.cc/Xqfnf8NP/eng.jpg",
     },
   ];
   return (

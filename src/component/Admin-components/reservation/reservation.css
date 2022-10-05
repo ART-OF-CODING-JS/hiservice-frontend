@@ -86,7 +86,7 @@
 .my_services_body {
   display: grid;
   place-items: baseline;
-  min-height: 59vh;
+  min-height: 45vh;
 }
 
 .container-my-services {
