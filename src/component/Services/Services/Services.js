@@ -51,7 +51,7 @@ export default function Services() {
       <div className="image-all-section">
         <img alt="h" src="https://i.postimg.cc/VvvTD7Vt/pexels-cottonbro-4488651-1.jpg" />
 
-        <p>Profile Settings</p>
+        <p>Services</p>
       </div>
       <Access role="user">
         <AddService />

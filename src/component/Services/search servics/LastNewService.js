@@ -13,6 +13,7 @@ import EditServices from "../../My Services/edit-my-services/edit-my-services.co
 import Pagination from "../../pagenation/Pagination";
 import { addToFavorite } from "../../../store/favorite";
 import { Spinner } from "react-bootstrap";
+import "./SearchService.css"
 
 export default function LastNewService(props) {
   const { newServices, isLoading } = useSelector((state) => state.servicesSlice);
@@ -57,7 +58,7 @@ export default function LastNewService(props) {
                  <div className="edit">
                    <button
                      type="button"
-                     className="btn btn-outline-secondary btn-lg btn_services_"
+                     className="button-container-red"
                      onClick={() => handleClick(ele.id)}
                     
                    >

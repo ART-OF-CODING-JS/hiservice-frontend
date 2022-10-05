@@ -12,7 +12,9 @@ export default function Logout(props) {
     cookie.remove("userAccess");
     cookie.remove("userID");
     navigate("/");
-    window.location.reload();
+    setTimeout(()=>{
+      window.location.reload();
+    },100)
   };
   return (
     <>

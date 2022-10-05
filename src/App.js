@@ -54,7 +54,7 @@ function App() {
             ></Route>
             <Route path="*" element={<NotFoundPage />} />
             <Route path="/signin" />
-            <Route path="/" element={<Services />} /> 
+            <Route path="/" element={<Services />} />
             <Route path="/Services" element={<Services />} />
             <Route path="/Services/:id" element={<ServiceDetails />} />
             <Route path="/My-Services" element={<MyServices />} />
@@ -84,10 +84,8 @@ function App() {
             <Route path="/favList" element={<Favorite />} />
 
             <Route path="/payment" element={<Payment />} />
-
           </Routes>
           <Footer />
-          
         </>
       ) : (
         <>

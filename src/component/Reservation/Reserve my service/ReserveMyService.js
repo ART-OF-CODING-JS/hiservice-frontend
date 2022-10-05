@@ -1,32 +1,28 @@
+import "./ReserveMyService.css";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import { getMyReserve } from '../../../store/reservations'
-// import './MyReservation.css'
-// import DeleteReservation from './DeleteReservation/DeleteReservation'
-import ServiceProviderInfo from "../../ServicesDetails/ServiceProviderInfo/ProviderInfo";
-import ServiceInfo from "../MyReservation/ServiceInfo-left/ServiceInfo";
-import ConfirmReserve from "./ConfirmReserve/ConfirmReserve";
-import RejectReserve from "./RejectReserve/RejectReserve";
-import "./ReserveMyService.css";
-
-import { getProviderReservations } from "../../../store/reservations";
 import { Spinner } from "react-bootstrap";
 
-export default function ReserveMyService(props) {
+import RejectReserve from "./RejectReserve/RejectReserve";
+import ConfirmReserve from "./ConfirmReserve/ConfirmReserve";
+import { getProviderReservations } from "../../../store/reservations";
+import UserDataUsernamePhoneNumber from "../../userInfo/UserDataUsernamePhoneNumber";
+
+export default function ReserveMyService() {
   const dispatch = useDispatch();
+  const { allServices } = useSelector((state) => state.servicesSlice);
+  const { ProviderReservations, isLoading } = useSelector((state) => state.reserveSlice);
 
   useEffect(() => {
     dispatch(getProviderReservations());
   }, [dispatch]);
-  const { ProviderReservations, isLoading } = useSelector(
-    (state) => state.reserveSlice
-  );
+
   return isLoading ? (
     <div className="spinner-service">
       <Spinner animation="border" variant="dark" />
     </div>
   ) : (
-    <section className="Reserve-myService-container container-com">
+    <section className="myservice-container container-com">
       <div className="image-all-section">
         <img
           alt="h"
@@ -34,39 +30,99 @@ export default function ReserveMyService(props) {
         />
         <p>Reserve My Services </p>
       </div>
-      <div className="title-reserve-myservice">
-        <p>Your Service</p>
-        <p>schedule</p>
-        <p>Client Info</p>
-        <p>Status</p>
-      </div>
-      {ProviderReservations.map((ele, idx) => (
-        <div className="ReserveMyService-cards" key={idx}>
-          <div className="service-left">
-            <ServiceInfo serviceId={ele.serviceID} />
+
+      {ProviderReservations.map((reservation, idx) => (
+        <div className="t" key={idx}>
+          <div className="my_services_body">
+            <div className="container-my-services">
+              <div className="card_img">
+                {allServices
+                  .filter((service) => service.id === reservation.serviceID)
+                  .map((service) => (
+                    <img src={service.image} alt="" />
+                  ))}
+                <div className="info">
+                  <div className="edit-myservice common-edi-del">
+                    <RejectReserve id={reservation.id} />
+                    <ConfirmReserve id={reservation.id} />{" "}
+                  </div>
+                </div>
+              </div>
+
+              <div className="container__text">
+                <UserDataUsernamePhoneNumber ServiceProviderId={reservation.userID} />
+
+                <div className="container__text__timing">
+                  <div className="container__text__timing_time">
+                    <h2>Title</h2>
+                    {allServices
+                      .filter((service) => service.id === reservation.serviceID)
+                      .map((service) => (
+                        <h5>{service.title}</h5>
+                      ))}
+                  </div>
+                  <div className="container__text__timing_time">
+                    <h2>department</h2>
+                    {allServices
+                      .filter((service) => service.id === reservation.serviceID)
+                      .map((service) => (
+                        <h5>{service.department}</h5>
+                      ))}
+                  </div>
+
+                  <div className="container__text__timing_time">
+                    <h2>City</h2>
+                    {allServices
+                      .filter((service) => service.id === reservation.serviceID)
+                      .map((service) => (
+                        <h5>{service.city}</h5>
+                      ))}
+                  </div>
+
+                  <div className="container__text__timing_time">
+                    <h2>Phone Number</h2>
+                    {allServices
+                      .filter((service) => service.id === reservation.serviceID)
+                      .map((service) => (
+                        <h5>{service.phoneNumber}</h5>
+                      ))}
+                  </div>
+                </div>
+
+                <div className="container__text__timing">
+                  <div className="container__text__timing_time">
+                    <h2>Time</h2>
+                    <p>{reservation.time}</p>
+                  </div>
+                  <div className="container__text__timing_time">
+                    <h2>Date</h2>
+                    <p>{reservation.date.substring(0, 10)}</p>
+                  </div>
+
+                  <div className="container__text__timing_time">
+                    <h2>Note</h2>
+                    <p>{reservation.description}</p>
+                  </div>
+                </div>
+
+                <button
+                  className={
+                    reservation.status === null
+                      ? "btn_my_services ra"
+                      : reservation.status === "confirm"
+                      ? "btn_my_services con"
+                      : "btn_my_services rej"
+                  }
+                >
+                  {reservation.status === null
+                    ? "inProgress"
+                    : reservation.status === "reject"
+                    ? "Rejected"
+                    : "Active"}
+                </button>
+              </div>
+            </div>
           </div>
-          {/* <div className='service-provider-middle'></div> */}
-          <div className="reserve-info-right">
-            <p>
-              <strong>Date:</strong> {ele.date}
-            </p>
-            <p>
-              {" "}
-              <strong>Time:</strong> {ele.time}
-            </p>
-            <p>
-              <strong>Note:</strong> {ele.description}
-            </p>
-          </div>
-          <div>
-            <ServiceProviderInfo ServiceProviderId={ele.userID} />
-          </div>
-          <div className="btn-reserve-my">
-            <RejectReserve id={ele.id} />
-            <ConfirmReserve id={ele.id} />
-            <p className="status-reserve">{ele.status}</p>
-          </div>
-          {/* <div><DeleteReservation reserveId={ele.id}/></div> */}
         </div>
       ))}
     </section>
