@@ -30,7 +30,7 @@ export default function ButtonAction({id}){
         htmlFor={0}
         aria-hidden="aria-hidden"
       >
-      Edit
+<i class="fa-solid fa-pen-to-square"></i>
       </label>
     </li>
     <li  onClick={()=>dispatch(deleteComments(id))}>
@@ -39,7 +39,7 @@ export default function ButtonAction({id}){
         htmlFor={1}
         aria-hidden="aria-hidden"
       >
-        Delete
+    <i class="fa-solid fa-trash-can"></i>
       </label>
     </li>
 
