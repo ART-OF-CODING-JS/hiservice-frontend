@@ -4,23 +4,7 @@ import cookie from "react-cookies";
 import { toast } from "react-toastify";
 const url = process.env.REACT_APP_URL;
 
-// get user by ID {to render in service details}
-// export const getUserByID = createAsyncThunk('users/getUserByID',async (id,thunkApi)=>{
-//     const { rejectWithValue } = thunkApi;
-//     try {
-//       let response = await axios.get(`${url}/api/v2/users/${id}`, {
-//         headers: {
-//           authorization: `Bearer ${cookie.load("token")}`,
-//         },
-//       });
-//       return response.data;
-//     } catch (error) {
-//       return rejectWithValue(error.response.data.message);
-//     }
-//   }
-// )
 // get all users
-
 export const getAllUser = createAsyncThunk("users/getAllUser", async (id, thunkApi) => {
   const { rejectWithValue } = thunkApi;
   try {
@@ -35,6 +19,22 @@ export const getAllUser = createAsyncThunk("users/getAllUser", async (id, thunkA
   }
 });
 
+// // get user by ID {to render in service details}
+// export const getUserByID = createAsyncThunk("users/getUserByID", async (id, thunkApi) => {
+//   const { rejectWithValue } = thunkApi;
+//   try {
+//     let response = await axios.get(`${url}/api/v2/users/${id}`, {
+//       headers: {
+//         authorization: `Bearer ${cookie.load("token")}`,
+//       },
+//     });
+//     return response.data;
+//   } catch (error) {
+//     return rejectWithValue(error.response.data.message);
+//   }
+// });
+
+// update user name
 export const updateUsername = createAsyncThunk("users/updateUsername", async (data, thunkApi) => {
   const { rejectWithValue } = thunkApi;
   try {
@@ -142,6 +142,7 @@ const initialState = {
   userInfo: [],
   isLoadingProviderInfo: false,
   errorProviderInfo: null,
+  userInfoId: [],
 };
 const usersSlice = createSlice({
   name: "users",

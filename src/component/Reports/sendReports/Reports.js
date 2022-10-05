@@ -26,7 +26,7 @@ export default function Reports(props) {
 
   return (
     <>
-      <button type="button" className="btn btn-secondary block" onClick={handleShow}>
+      <button type="button" className="btn btn-secondary" onClick={handleShow}>
         Reports <i className="fa-light fa-file-chart-column"></i>
       </button>
 
