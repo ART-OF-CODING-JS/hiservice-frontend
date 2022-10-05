@@ -91,13 +91,13 @@
 }
 .select-box__option {
   display: block;
-  padding: 0 20px;
+  padding: 5px 19px;
   margin-bottom: .5rem;
-  background-color: #fff;
+  background-color: rgb(232, 232, 232);
 }
 .select-box__option:hover, .select-box__option:focus {
   color: #546c84;
-  background-color: #fbfbfb;
+  background-color: #cbcbcb;
 }
 
 @-webkit-keyframes HideList {

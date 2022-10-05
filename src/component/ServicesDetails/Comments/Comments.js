@@ -77,7 +77,10 @@ export default function Comments({ serviceId }) {
                 </fieldset>
               </form>
               <h3> Comments</h3>
-
+              {console.log(comments.filter(ele=>ele.serviceID === serviceId).length) }
+             { comments.filter(ele=>ele.serviceID === serviceId).length?<>
+                        
+                     
               {comments
                 .filter((ele) => ele.serviceID === serviceId)
                 .map((ele) => (
@@ -104,7 +107,6 @@ export default function Comments({ serviceId }) {
                           {/* <div> */}
                           <div className="action_info">
                             <div className="delete__comment">
-                                {console.log(ele.userID === cookie.load('userID'))}
                             {ele.userID === parseInt(cookie.load('userID')) ? <ButtonAction id={ele.id}/>
                             :null}
                            
@@ -117,7 +119,7 @@ export default function Comments({ serviceId }) {
          
                               <li>
                                 <i className="fa fa-thumbs-up" />
-                                13
+                                
                               </li>
                             </ul>
                             <ul className="list-unstyled list-inline media-detail pull-right">
@@ -134,6 +136,7 @@ export default function Comments({ serviceId }) {
                       ))}
                   </>
                 ))}
+                   </>:<h2 style={{color:'gray'}}>No Comments Yet</h2>}
             </div>
           </div>
         </div>
