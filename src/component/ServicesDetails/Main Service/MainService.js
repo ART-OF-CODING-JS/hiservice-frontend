@@ -27,7 +27,7 @@ export default function MainService(props) {
                   </span>
                   {ele.title}, in {ele.city}
                 </h1>
-                <p>{ele.description}</p>
+                <p className="text-break">{ele.description}</p>
                 <div className="block-report">
                   <Access role={"user"}>
                     <div className="block-report-btn">
