@@ -33,10 +33,10 @@ export default function Comments({ serviceId }) {
     commentsRef.current.value = null;
   };
   return (
-    <Accordion >
+    <Accordion>
       <Accordion.Item eventKey="0">
-        <div className='show-all-comments'>
-        <Accordion.Header >Show all Comments</Accordion.Header>
+        <div className="show-all-comments">
+          <Accordion.Header>Show all Comments</Accordion.Header>
         </div>
         <Accordion.Body>
           <>
@@ -88,17 +88,14 @@ export default function Comments({ serviceId }) {
                     </form>
                     <h3> Comments</h3>
 
-                    {comments.filter((ele) => ele.serviceID === serviceId)
-                      .length ? (
+                    {comments.filter((ele) => ele.serviceID === serviceId).length ? (
                       <>
                         {comments
                           .filter((ele) => ele.serviceID === serviceId)
                           .map((ele) => (
                             <>
                               {userInfo
-                                .filter(
-                                  (ele_user) => ele_user.id === ele.userID
-                                )
+                                .filter((ele_user) => ele_user.id === ele.userID)
                                 .map((elem) => (
                                   <div className="media edit_bot_com">
                                     <a className="pull-left">
@@ -109,29 +106,20 @@ export default function Comments({ serviceId }) {
                                           alt=""
                                         />
                                       ) : (
-                                        <img
-                                          className="media-object"
-                                          src={elem.image}
-                                          alt=""
-                                        />
+                                        <img className="media-object" src={elem.image} alt="" />
                                       )}
                                     </a>
                                     {/* <div> */}
                                     <div className="action_info">
                                       <div className="delete__comment">
-                                        {ele.userID ===
-                                        parseInt(cookie.load("userID")) ? (
+                                        {ele.userID === parseInt(cookie.load("userID")) ? (
                                           <ButtonAction id={ele.id} />
                                         ) : null}
                                       </div>
                                       <div className="media-body">
-                                        <h4 className="media-heading">
-                                          {elem.username}
-                                        </h4>
+                                        <h4 className="media-heading">{elem.username}</h4>
 
-                                        <p className="comment_text">
-                                          {ele.comment}
-                                        </p>
+                                        <p className="comment_text">{ele.comment}</p>
                                         <ul className="list-unstyled list-inline media-detail pull-left">
                                           <li>
                                             <i className="fa fa-thumbs-up" />

@@ -68,7 +68,7 @@ export default function Search(props) {
       </div>
       <div className="search-city ">
         <select className="search-field1 ttt" onChange={handleChange}>
-          <option class="list-choice-objects">Search By city</option>
+          <option className="list-choice-objects">Search By city</option>
           <option value="amman">Amman</option>
           <option value="jarash">Jerash</option>
           <option value="Irbid">Irbid</option>
