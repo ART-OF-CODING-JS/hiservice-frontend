@@ -4,6 +4,7 @@ import ServiceProviderInfo from "../ServiceProviderInfo/ProviderInfo";
 import BlockProvider from "./Block service provider/BlockProvider";
 import "./MainService.css";
 import Reports from "../../Reports/sendReports/Reports";
+import Comments from "../Comments/Comments";
 export default function MainService(props) {
   return (
     <section className="container-main-service container-com">
@@ -37,6 +38,7 @@ export default function MainService(props) {
               </Access>
             </div>
           </div>
+          <Comments serviceId={ele.id} />
         </div>
       ))}
     </section>

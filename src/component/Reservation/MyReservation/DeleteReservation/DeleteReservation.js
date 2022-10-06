@@ -16,7 +16,7 @@ export default function DeleteReservation({ reserveId }) {
 
   return (
     <>
-      <button className="btn btn-warning del-reserve add-btn" onClick={handleShow}>
+      <button className="button-container-red" onClick={handleShow}>
        Delete 
       </button>
       <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
