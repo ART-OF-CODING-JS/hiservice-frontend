@@ -4,7 +4,29 @@ import Logo from "../../assets/logo.png";
 import { Button } from "react-bootstrap";
 import "./work.scss";
 import Footer from "../footer/footer";
+import {MdOutlineMail} from 'react-icons/md'
+import { useRef } from 'react';
+import emailjs from "emailjs-com";
+
+
+
 const HomePage = () => {
+
+////Emailjs////
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+  
+    emailjs.sendForm('service_i3vdjet', 'template_dba6xsh', form.current, '4IRJ7S-Zy5peQfPMN')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+
+      e.target.reset();
+  };
+///////
   const portfolioLinks = [
     {
       title: "Electrical services",
@@ -27,7 +49,7 @@ const HomePage = () => {
       image: "https://i.postimg.cc/BnqnCdKB/pest.jpg",
     },
     {
-      title: "Cleaning and maid services",
+      title: "Cleaning and maid",
       caption: "We provide all type of cleaning services and we have another services ",
       image: "https://i.postimg.cc/fRTMdmGH/clean.jpg",
     },
@@ -276,7 +298,7 @@ const HomePage = () => {
               <div className="position-relative h-100">
                 <img
                   className="position-absolute img-fluid w-100 h-100"
-                  src="https://img.freepik.com/free-photo/business-people-modern-office_1262-1402.jpg?w=1800&t=st=1664874630~exp=1664875230~hmac=4db2d91b9606e5c2d990dbf99a1c9032a45d039f82d9dc37ddcac5045cd58a02"
+                  src="https://img.freepik.com/free-photo/business-man-holding-clipboard-with-why-choose-us-question_23-2148932318.jpg?w=1800&t=st=1664885617~exp=1664886217~hmac=691be53f850118ac62f7feb338e38b37398b76f2c7a152036a02e51f5bfc1277"
                   style={{ objectFit: "cover" }}
                   alt=""
                 />
@@ -736,7 +758,8 @@ const HomePage = () => {
         </div>
       </div> */}
 
-      <div className="py-5">
+
+      {/* <div className="py-5">
         <div className="container">
           <div className="row">
             <div className="col-md-3 col-sm-6">
@@ -765,74 +788,67 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+{/* <Contact/> */}
+<section className="page-section" id="contact">
+<div className="container">
+  
+    <div className="col-lg-12 text-center"> 
+      <h2 className="section-heading text-uppercase">Contact Us</h2>
+    </div>
 
-      <section className="page-section" id="contact">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12 text-center">
-              <h2 className="section-heading text-uppercase">Contact Us</h2>
-           
+  <div className="row">
+    <div className="col-lg-12">
+      <form  ref={form} onSubmit={sendEmail} novalidate="novalidate">
+        <div className="row">
+          <div className="col-md-6">
+            <div className="form-group">
+              <input
+                className="form-control"
+                name='name' placeholder="Your Full Name" required
+                type="text"
+                data-validation-required-message="Please enter your name."
+              />
+              <p className="help-block text-danger"></p>
+            </div>
+            <div className="form-group">
+              <input
+                className="form-control"
+                type='email' name='email' placeholder="Your Email" required
+                data-validation-required-message="Please enter your email address."
+              />
+              <p className="help-block text-danger"></p>
+            </div>
+            <br />
+          </div>
+          <div className="col-md-6">
+            <div className="form-group">
+              <textarea
+                className="form-control"
+                name="message" rows="7" placeholder="Your Message" required
+                data-validation-required-message="Please enter a message."
+              ></textarea>
+              <p className="help-block text-danger"></p>
             </div>
           </div>
-          <div className="row">
-            <div className="col-lg-12">
-              <form id="contactForm"  novalidate="novalidate">
-                <div className="row">
-                  <div className="col-md-6">
-                    <div className="form-group">
-                      <input
-                        className="form-control"
-                        id="name"
-                        type="text"
-                        placeholder="Your Name *"
-                        required="required"
-                        data-validation-required-message="Please enter your name."
-                      />
-                      <p className="help-block text-danger"></p>
-                    </div>
-                    <div className="form-group">
-                      <input
-                        className="form-control"
-                        id="email"
-                        type="email"
-                        placeholder="Your Email *"
-                        required="required"
-                        data-validation-required-message="Please enter your email address."
-                      />
-                      <p className="help-block text-danger"></p>
-                    </div>
-                    <br />
-                  </div>
-                  <div className="col-md-6">
-                    <div className="form-group">
-                      <textarea
-                        className="form-control"
-                        id="message"
-                        placeholder="Your Message *"
-                        required="required"
-                        data-validation-required-message="Please enter a message."
-                      ></textarea>
-                      <p className="help-block text-danger"></p>
-                    </div>
-                  </div>
-                  <div className="clearfix"></div>
-                  <div className="col-lg-12 text-center">
-                    <div id="success"></div>
-                    <button
-                      id="sendMessageButton"
-                      className="btn btn-primary btn-xl text-uppercase"
-                      type="submit"
-                    >
-                      Send Message
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
+          <div className="clearfix"></div>
+          <div className="col-lg-12 text-center">
+            <div id="success"></div>
+            <button
+            
+              className="btn btn-primary btn-xl text-uppercase"
+              type="submit"
+            >
+              Send Message
+            </button>
           </div>
         </div>
-      </section>
+      </form>
+    </div>
+  </div>
+</div>
+</section>
+
 
       {/* <footer className="footer">
         <div className="container">

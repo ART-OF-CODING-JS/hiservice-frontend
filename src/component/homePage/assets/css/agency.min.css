@@ -270,7 +270,7 @@ header.masthead .intro-text .intro-heading {
 
 #portfolio .portfolio-item {
   right: 0;
-  margin: 0 0 15px;
+  margin: 15px 0px;
 }
 
 #portfolio .portfolio-item .portfolio-link {
@@ -644,7 +644,7 @@ header.masthead .intro-text .intro-heading {
 }
 
 section#contact {
-  background-color: #212529;
+  /* background-color: #212529; */
   background-image: url(../img/web-gbe3d04ba3_1920.png);
   background-repeat: no-repeat;
   background-position: center;
@@ -652,7 +652,7 @@ section#contact {
 }
 
 section#contact .section-heading {
-  color: #fff;
+  color: black;
   padding-bottom: 100px;
 }
 
