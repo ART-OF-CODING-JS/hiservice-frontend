@@ -98,7 +98,7 @@ export default function Footer() {
             </p>
             <p>
               <i className="fa fa-envelope me-3"></i>
-              info@example.com
+              hiservice90@gmail.com
             </p>
             <p>
               <i className="fa fa-phone-alt me-3"></i> + 01 234 567 88
