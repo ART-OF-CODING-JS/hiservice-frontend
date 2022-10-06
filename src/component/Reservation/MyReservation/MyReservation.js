@@ -1,8 +1,9 @@
-import { useEffect } from "react";
+import { Fragment, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getMyReserve } from "../../../store/reservations";
 import DeleteReservation from "./DeleteReservation/DeleteReservation";
 import { Spinner } from "react-bootstrap";
+import UserDataUsernamePhoneNumber from "../../userInfo/UserDataUsernamePhoneNumber";
 
 export default function MyReservation(props) {
   const { allServices } = useSelector((state) => state.servicesSlice);
@@ -19,122 +20,109 @@ export default function MyReservation(props) {
       <Spinner animation="border" variant="dark" />
     </div>
   ) : (
-    <section className="myservice-container container-com">
-       <div className="image-all-section">
-        <img
-          alt="h"
-          src="https://i.postimg.cc/mrHFFMNy/pexels-cottonbro-4065889.jpg"
-        />
+    <div>
+      <div className="image-all-section">
+        <img alt="" src="https://i.postimg.cc/mrHFFMNy/pexels-cottonbro-4065889.jpg" />
         <p>My Reservation</p>
       </div>
-      {myReservation.map((reservation, idx) => (
-        <div className="t" key={idx}>
-          <div className="my_services_body">
-            <div className="container-my-services">
-              <div className="card_img">
-                {allServices
-                  .filter((service) => service.id === reservation.serviceID)
-                  .map((service) => (
-                    <img src={service.image} alt="" />
-                  ))}
-                <div className="info">
-                  <div className="edit-myservice common-edi-del">
-                    <DeleteReservation reserveId={reservation.id} />
-                  </div>
-                </div>
-              </div>
-
-              <div className="container__text">
-                <div className="container__text__timing">
-                  <div className="container__text__timing_time">
-                    <h2>Provider</h2>
-                  </div>
-
-                  <div className="container__text__timing_time">
-                    <h2>Title</h2>
-                    {allServices
-                      .filter((service) => service.id === reservation.serviceID)
-                      .map((service) => (
-                        <h5>{service.title}</h5>
-                      ))}
+      <section className="myservice-container container-com">
+        {myReservation.map((reservation, idx) => (
+          <div className="t" key={idx}>
+            <div className="my_services_body">
+              <div className="container-my-services">
+                <div className="card_img">
+                  {allServices
+                    .filter((service) => service.id === reservation.serviceID)
+                    .map((service) => (
+                      <img src={service.image} alt="" />
+                    ))}
+                  <div className="info">
+                    <div className="edit-myservice common-edi-del">
+                      <DeleteReservation reserveId={reservation.id} />
+                    </div>
                   </div>
                 </div>
 
-                <div className="container__text__star">
-                  <span className="fa fa-star checked" />
-                  <span className="fa fa-star checked" />
-                  <span className="fa fa-star checked" />
-                  <span className="fa fa-star checked" />
-                  <span className="fa fa-star checked" />
+                <div className="container__text">
+                  <div className="container__text__timing">
+                    <div className="container__text__timing_time">
+                      <h2>Provider</h2>
+                      {allServices
+                        .filter((service) => service.id === reservation.serviceID)
+                        .map((service) => (
+                          <UserDataUsernamePhoneNumber ID={service.userID} />
+                        ))}
+                    </div>
+
+                    <div className="container__text__timing_time">
+                      <h2>Title</h2>
+                      {allServices
+                        .filter((service) => service.id === reservation.serviceID)
+                        .map((service) => (
+                          <h5>{service.title}</h5>
+                        ))}
+                    </div>
+                  </div>
+
+                  <div className="container__text__timing">
+                    <div className="container__text__timing_time">
+                      <h2>department</h2>
+                      {allServices
+                        .filter((service) => service.id === reservation.serviceID)
+                        .map((service) => (
+                          <h5>{service.department}</h5>
+                        ))}
+                    </div>
+
+                    <div className="container__text__timing_time">
+                      <h2>City</h2>
+                      {allServices
+                        .filter((service) => service.id === reservation.serviceID)
+                        .map((service) => (
+                          <h5>{service.city}</h5>
+                        ))}
+                    </div>
+
+                    <div className="container__text__timing_time">
+                      <h2>Time</h2>
+                      <p>{reservation.time.substring(0, 5)}</p>
+                    </div>
+                    <div className="container__text__timing_time">
+                      <h2>Date</h2>
+                      <p>
+                        {reservation.date.substring(8, 10)}/{reservation.date.substring(5, 7)}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="container__text__timing">
+                    <div className="container__text__timing_time">
+                      <h2>Note</h2>
+                      <p>{reservation.description}</p>
+                    </div>
+                  </div>
+
+                  <button
+                    className={
+                      reservation.status === null
+                        ? "btn_my_services ra"
+                        : reservation.status === "confirm"
+                        ? "btn_my_services con"
+                        : "btn_my_services rej"
+                    }
+                  >
+                    {reservation.status === null
+                      ? "inProgress"
+                      : reservation.status === "reject"
+                      ? "Rejected"
+                      : "Active"}
+                  </button>
                 </div>
-
-                <div className="container__text__timing">
-                  <div className="container__text__timing_time">
-                    <h2>department</h2>
-                    {allServices
-                      .filter((service) => service.id === reservation.serviceID)
-                      .map((service) => (
-                        <h5>{service.department}</h5>
-                      ))}
-                  </div>
-
-                  <div className="container__text__timing_time">
-                    <h2>City</h2>
-                    {allServices
-                      .filter((service) => service.id === reservation.serviceID)
-                      .map((service) => (
-                        <h5>{service.city}</h5>
-                      ))}
-                  </div>
-
-                  <div className="container__text__timing_time">
-                    <h2>Phone Number</h2>
-                    {allServices
-                      .filter((service) => service.id === reservation.serviceID)
-                      .map((service) => (
-                        <h5>{service.phoneNumber}</h5>
-                      ))}
-                  </div>
-                </div>
-
-                <div className="container__text__timing">
-                  <div className="container__text__timing_time">
-                    <h2>Time</h2>
-                    <p>{reservation.time}</p>
-                  </div>
-                  <div className="container__text__timing_time">
-                    <h2>Date</h2>
-                    <p>{reservation.date.substring(0, 10)}</p>
-                  </div>
-                </div>
-
-                <div className="container__text__timing">
-                  <div className="container__text__timing_time">
-                    <h2>Note</h2>
-                    <p>{reservation.description}</p>
-                  </div>
-                </div>
-
-                <button
-                  className={
-                    reservation.status === null
-                      ? "btn_my_services ra"
-                      : reservation.status === "confirm"
-                      ? "btn_my_services con"
-                      : "btn_my_services rej"
-                  }
-                >
-                  {reservation.status === null
-                    ? "inProgress"
-                    : reservation.status === "reject"
-                    ? "Rejected"
-                    : "Active"}
-                </button>
               </div>
             </div>
           </div>
-        </div>
-      ))}
-    </section>
+        ))}
+      </section>{" "}
+    </div>
   );
 }

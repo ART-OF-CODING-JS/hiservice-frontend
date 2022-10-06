@@ -66,7 +66,10 @@ export default function AddService({ postData }) {
               <div className="inputfield">
                 <label>department</label>
                 <div className="custom_select">
-                  <select value={department} onChange={(e) => setDepartment(e.target.value)}>
+                  <select
+                    defaultValue={"Electrical"}
+                    onChange={(e) => setDepartment(e.target.value)}
+                  >
                     <option value="Electrical">Electrical</option>
                     <option value="Plumbing">Plumbing</option>
                     <option value="Cleaning">Cleaning</option>
@@ -83,7 +86,7 @@ export default function AddService({ postData }) {
               <div className="inputfield">
                 <label>city</label>
                 <div className="custom_select">
-                  <select value={city} onChange={(e) => setCity(e.target.value)}>
+                  <select defaultValue={"Amman"} onChange={(e) => setCity(e.target.value)}>
                     <option value="Amman">Amman</option>
                     <option value="Jarash">Jarash</option>
                     <option value="Irbid">Irbid</option>
@@ -97,7 +100,7 @@ export default function AddService({ postData }) {
               <div className="inputfield">
                 <label>Phone Number</label>
                 <input
-                  type="tel"
+                  type="number"
                   className="input"
                   placeholder="07"
                   maxLength={15}
@@ -116,7 +119,7 @@ export default function AddService({ postData }) {
                 <textarea
                   className="textarea"
                   placeholder="Disruption"
-                  maxLength={200}
+                  maxLength={150}
                   ref={discRef}
                   required
                 />
