@@ -27,7 +27,7 @@ const HomePage = () => {
       image: "https://i.postimg.cc/BnqnCdKB/pest.jpg",
     },
     {
-      title: "Cleaning and maid services",
+      title: "Cleaning and maid",
       caption: "We provide all type of cleaning services and we have another services ",
       image: "https://i.postimg.cc/fRTMdmGH/clean.jpg",
     },
@@ -276,7 +276,7 @@ const HomePage = () => {
               <div className="position-relative h-100">
                 <img
                   className="position-absolute img-fluid w-100 h-100"
-                  src="https://img.freepik.com/free-photo/business-people-modern-office_1262-1402.jpg?w=1800&t=st=1664874630~exp=1664875230~hmac=4db2d91b9606e5c2d990dbf99a1c9032a45d039f82d9dc37ddcac5045cd58a02"
+                  src="https://img.freepik.com/free-photo/business-man-holding-clipboard-with-why-choose-us-question_23-2148932318.jpg?w=1800&t=st=1664885617~exp=1664886217~hmac=691be53f850118ac62f7feb338e38b37398b76f2c7a152036a02e51f5bfc1277"
                   style={{ objectFit: "cover" }}
                   alt=""
                 />
