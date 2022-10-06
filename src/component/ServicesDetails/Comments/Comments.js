@@ -77,66 +77,62 @@ export default function Comments({ serviceId }) {
                 </fieldset>
               </form>
               <h3> Comments</h3>
-              {console.log(comments.filter(ele=>ele.serviceID === serviceId).length) }
-             { comments.filter(ele=>ele.serviceID === serviceId).length?<>
-                        
-                     
-              {comments
-                .filter((ele) => ele.serviceID === serviceId)
-                .map((ele) => (
-                  <>
-                    {userInfo
-                      .filter((ele_user) => ele_user.id === ele.userID)
-                      .map((elem) => (
-                        <div className="media edit_bot_com">
-                          <a className="pull-left">
-                            {!elem.image ? (
-                              <img
-                                className="media-object"
-                                src="https://bootdey.com/img/Content/avatar/avatar1.png"
-                                alt=""
-                              />
-                            ) : (
-                              <img
-                                className="media-object"
-                                src={elem.image}
-                                alt=""
-                              />
-                            )}
-                          </a>
-                          {/* <div> */}
-                          <div className="action_info">
-                            <div className="delete__comment">
-                            {ele.userID === parseInt(cookie.load('userID')) ? <ButtonAction id={ele.id}/>
-                            :null}
-                           
-                            </div>
-                          <div className="media-body">
-                            <h4 className="media-heading">{elem.username}</h4>
+              {console.log(comments.filter((ele) => ele.serviceID === serviceId).length)}
+              {comments.filter((ele) => ele.serviceID === serviceId).length ? (
+                <>
+                  {comments
+                    .filter((ele) => ele.serviceID === serviceId)
+                    .map((ele) => (
+                      <>
+                        {userInfo
+                          .filter((ele_user) => ele_user.id === ele.userID)
+                          .map((elem) => (
+                            <div className="media edit_bot_com">
+                              <a className="pull-left">
+                                {!elem.image ? (
+                                  <img
+                                    className="media-object"
+                                    src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                                    alt=""
+                                  />
+                                ) : (
+                                  <img className="media-object" src={elem.image} alt="" />
+                                )}
+                              </a>
+                              {/* <div> */}
+                              <div className="action_info">
+                                <div className="delete__comment">
+                                  {ele.userID === parseInt(cookie.load("userID")) ? (
+                                    <ButtonAction id={ele.id} />
+                                  ) : null}
+                                </div>
+                                <div className="media-body">
+                                  <h4 className="media-heading">{elem.username}</h4>
 
-                            <p className="comment_text">{ele.comment}</p>
-                            <ul className="list-unstyled list-inline media-detail pull-left">
-         
-                              <li>
-                                <i className="fa fa-thumbs-up" />
-                                
-                              </li>
-                            </ul>
-                            <ul className="list-unstyled list-inline media-detail pull-right">
-                              {/* <li className="">
+                                  <p className="comment_text">{ele.comment}</p>
+                                  <ul className="list-unstyled list-inline media-detail pull-left">
+                                    <li>
+                                      <i className="fa fa-thumbs-up" />
+                                    </li>
+                                  </ul>
+                                  <ul className="list-unstyled list-inline media-detail pull-right">
+                                    {/* <li className="">
                                 <a href="">Like</a>
                               </li> */}
-                              {/* <li className="">
+                                    {/* <li className="">
                                 <a href="">Reply</a>
                               </li> */}
-                            </ul>
-                          </div>
-                          </div>
-                        </div>
-                      ))}
-                  </>
-                ))}
-                   </>:<h2 style={{color:'gray'}}>No Comments Yet</h2>}
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                      </>
+                    ))}
+                </>
+              ) : (
+                <h2 style={{ color: "gray" }}>No Comments Yet</h2>
+              )}
             </div>
           </div>
         </div>

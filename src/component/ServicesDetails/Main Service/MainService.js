@@ -1,44 +1,47 @@
+import "./MainService.scss";
+
 import Access from "../../Access/Access";
-import Reservation from "../../Reservation/SendReservation/Reservation";
-import ServiceProviderInfo from "../ServiceProviderInfo/ProviderInfo";
-import BlockProvider from "./Block service provider/BlockProvider";
-import "./MainService.css";
-import Reports from "../../Reports/sendReports/Reports";
 import Comments from "../Comments/Comments";
+import Reports from "../../Reports/sendReports/Reports";
+import BlockProvider from "./Block service provider/BlockProvider";
+import ServiceProviderInfo from "../ServiceProviderInfo/ProviderInfo";
+import Reservation from "../../Reservation/SendReservation/Reservation";
+
 export default function MainService(props) {
   return (
     <section className="container-main-service container-com">
       {props.oneService.slice(0, 1).map((ele) => (
-        <div className="main-service-item" key={ele.id}>
-          <div className="tit-img">
-            <p className="time">{ele.createdAt}</p>
-            <img className="img-main" alt="images" src={ele.image} />
-          </div>
-
-          <div className="about-service">
-            <p className="title-main-service">{ele.title}</p>
-
-            <div className="reserve-service-pro">
-              <ServiceProviderInfo ServiceProviderId={ele.userID} />
-              <div className="Reservation-button">
-                <Reservation serviceId={ele.id} />
-              </div>
-              ;
+        <div className="main-serves-app" key={ele.id}>
+          <header className="main-service-header">
+            <img src={ele.image} alt="" />
+            <div className="main-service-header-comments">
+              <Comments serviceId={ele.id} style={{ width: "50px" }} />
             </div>
-            <div className="disc-main-service">
-              <p>
-                <strong>Description</strong>
-              </p>
-              {ele.description}
-            </div>
+          </header>
+
+          <nav className="main-service-nav">
+            <a href="#/">Created at : {ele.createdAt.substring(0, 10)}</a>
+          </nav>
+          <main>
+            <h1 className="main-service-h1">
+              <span className="main-service-span">
+                <ServiceProviderInfo ServiceProviderId={ele.userID} />
+              </span>
+              {ele.title},<br />
+              {ele.city}
+            </h1>
+            <p>{ele.description}</p>
+
             <div className="block-report">
               <Access role={"user"}>
-                <BlockProvider providerID={ele.userID} />
-                <Reports providerID={ele.id} />
+                <div className="block-report-btn">
+                  <BlockProvider providerID={ele.userID} />
+                  <Reports providerID={ele.id} />
+                </div>
+                <Reservation serviceId={ele.id} />
               </Access>
             </div>
-          </div>
-          <Comments serviceId={ele.id} />
+          </main>
         </div>
       ))}
     </section>

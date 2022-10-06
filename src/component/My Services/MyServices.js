@@ -50,7 +50,7 @@ export default function MyServices(props) {
                 </div>
 
                 <div className="container__text">
-                  <h1>{service.title}</h1>
+                  <h3>{service.title}</h3>
                   <div className="container__text__star">
                     <span className="fa fa-star checked" />
                     <span className="fa fa-star checked" />
@@ -58,14 +58,13 @@ export default function MyServices(props) {
                     <span className="fa fa-star checked" />
                     <span className="fa fa-star checked" />
                   </div>
-                  <p>{service.description}</p>
                   <div className="container__text__timing">
                     <div className="container__text__timing_time">
                       <h2>City</h2>
                       <p>{service.city}</p>
                     </div>
                     <div className="container__text__timing_time">
-                      <h2>Phone Number</h2>
+                      <h2>Phone</h2>
                       <p>{service.phoneNumber}</p>
                     </div>
                     <div className="container__text__timing_time">
@@ -73,6 +72,7 @@ export default function MyServices(props) {
                       <p>{service.department}</p>
                     </div>
                   </div>
+                  <p>{service.description}</p>
                   <button
                     className={
                       service.status === null
