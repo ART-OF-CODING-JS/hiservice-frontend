@@ -8,6 +8,15 @@ import {
   mostRatedService,
 } from "../../store/services";
 import "./search.css";
+import {
+  Dropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  UncontrolledDropdown,
+  Button
+} from 'reactstrap';
+
 
 export default function Search(props) {
   const dispatch = useDispatch();
@@ -59,7 +68,7 @@ export default function Search(props) {
       </div>
       <div className="search-city ">
         <select className="search-field1 ttt" onChange={handleChange}>
-          <option>Search By city</option>
+          <option class="list-choice-objects">Search By city</option>
           <option value="amman">Amman</option>
           <option value="jarash">Jerash</option>
           <option value="Irbid">Irbid</option>
@@ -67,9 +76,45 @@ export default function Search(props) {
           <option value="Aqaba">Aqaba</option>
           <option value="Madaba">Madaba</option>
         </select>
+
+{/* 
+<UncontrolledDropdown group>
+  <Button color="primary">
+    Primary
+  </Button>
+  <DropdownToggle
+    caret
+    color="primary"
+  />
+  <DropdownMenu dark="true">
+    <DropdownItem header>
+      Header
+    </DropdownItem>
+    <DropdownItem>
+      Some Action
+    </DropdownItem>
+    <DropdownItem text>
+      Dropdown Item Text
+    </DropdownItem>
+    <DropdownItem disabled>
+      Action (disabled)
+    </DropdownItem>
+    <DropdownItem divider />
+    <DropdownItem>
+      Foo Action
+    </DropdownItem>
+    <DropdownItem>
+      Bar Action
+    </DropdownItem>
+    <DropdownItem>
+      Quo Action
+    </DropdownItem>
+  </DropdownMenu>
+</UncontrolledDropdown> */}
+
+
       </div>
     </div>
   );
 }
-
 
