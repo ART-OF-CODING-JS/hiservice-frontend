@@ -18,7 +18,7 @@ export default function Reports(props) {
   const handleSubmit = () => {
     const sendData = {
       description: discRef.current.value,
-      serviceID: props.id,
+      serviceID: props.providerID,
       userID: cookie.load("userID"),
     };
     dispatch(sendReport(sendData));
