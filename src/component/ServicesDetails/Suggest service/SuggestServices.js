@@ -51,7 +51,7 @@ export default function SuggestServices(props) {
                   <figcaption>
                     <div className="card-info">
                       <h3>{service.title}</h3>
-                      <p>In {service.city}</p>
+                      <p style={{ color: "black" }}>In {service.city}</p>
                       <Access role={"user"}>
                         <div className="edit-delete-auth-button">
                           <div className="edit">
