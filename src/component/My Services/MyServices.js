@@ -1,15 +1,13 @@
-import AddService from "../Services/Add service/AddServices";
-import Pagination from "../pagenation/Pagination";
-import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { getMyServices } from "../../store/services";
-import { useEffect } from "react";
-import "./MyServices.css";
-
-import EditServices from "./edit-my-services/edit-my-services.component";
-import DeleteService from "./DeleteMyService/DeleteMyService";
+import { useState, useEffect } from "react";
 import { Spinner } from "react-bootstrap";
+import Pagination from "../pagenation/Pagination";
+import { useSelector, useDispatch } from "react-redux";
+import AddService from "../Services/Add service/AddServices";
+
 import Search from "../searchBar/Search";
+import { getMyServices } from "../../store/services";
+import DeleteService from "./DeleteMyService/DeleteMyService";
+import EditServices from "./edit-my-services/edit-my-services.component";
 
 export default function MyServices(props) {
   const { myServices, isLoading } = useSelector((state) => state.servicesSlice);

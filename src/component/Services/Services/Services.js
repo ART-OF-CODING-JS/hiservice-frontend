@@ -1,18 +1,19 @@
+import "./Services.scss";
+
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { Spinner } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import cookie from "react-cookies";
 
-import "./Services.scss";
-import { getAllServices } from "../../../store/services";
+import Access from "../../Access/Access";
+import Search from "../../searchBar/Search";
 import AddService from "../Add service/AddServices";
 import Pagination from "../../pagenation/Pagination";
-import Access from "../../Access/Access";
+import { addToFavorite } from "../../../store/favorite";
+import { getAllServices } from "../../../store/services";
 import DeleteService from "../../My Services/DeleteMyService/DeleteMyService";
 import EditServices from "../../My Services/edit-my-services/edit-my-services.component";
-import Search from "../../searchBar/Search";
-import cookie from "react-cookies";
-import { addToFavorite } from "../../../store/favorite";
 
 export default function Services() {
   const { allServices, isLoading } = useSelector((state) => state.servicesSlice);
@@ -63,7 +64,6 @@ export default function Services() {
             <figure className="image-block" key={service.id}>
               <Link to={`/Services/${service.id}`}>
                 <img className="img" alt="service" src={service.image} />
-
               </Link>
               <figcaption>
                 <h3>{service.title}</h3>

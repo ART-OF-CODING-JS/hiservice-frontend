@@ -1,12 +1,8 @@
-import "./edit-my-services.style.css";
-
 import React, { useState, useRef } from "react";
-
 import Modal from "react-bootstrap/Modal";
-
 import cookie from "react-cookies";
-
 import { useDispatch } from "react-redux";
+
 import { updateService } from "../../../store/services";
 
 const EditServices = ({ service }) => {
@@ -145,7 +141,7 @@ const EditServices = ({ service }) => {
                 </div>
                 <br />
                 <div className="footer">
-                  <input type="" value="Close" className="btn-submit" onClick={handleClose} />
+                  <input type="button" value="Close" className="btn-submit" onClick={handleClose} />
                   <input type="submit" value="Edit" className="btn-submit" />
                 </div>
               </div>

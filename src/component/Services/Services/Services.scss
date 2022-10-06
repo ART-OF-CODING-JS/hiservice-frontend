@@ -17,13 +17,29 @@ $lg: new-breakpoint(min-width 1024px);
   outline: none;
 }
 
+.service-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-rows: repeat(auto-fill, minmax(40rem, 1fr)); */
+  justify-items: center;
+  gap: 1rem;
+}
+
+.img {
+  width: 32.8rem;
+  height: 32.8rem;
+  align-self: center;
+
+  transition: all 0.4s ease-in-out;
+}
+
 figure {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 400px;
-  height: 540px;
+  height: 530px;
   border-radius: 10px;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   overflow: hidden;
@@ -98,8 +114,6 @@ figure {
     }
   }
 }
-
-
 
 .spinner-service {
   display: flex;

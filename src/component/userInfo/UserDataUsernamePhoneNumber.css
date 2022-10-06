@@ -1,8 +1,0 @@
-.userImg {
-  display: grid;
-  grid-template-columns: fit-content(1px) 1fr;
-  gap: 1rem;
-  width: 10rem;
-  border-radius: 50%;
-  font-size: 1rem !important;
-}

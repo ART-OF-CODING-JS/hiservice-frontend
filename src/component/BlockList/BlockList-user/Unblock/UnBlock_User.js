@@ -14,7 +14,7 @@ const handleBlock = ()=>{
 
   return (
     <>
-      <button type="button" class="btn btn-warning"onClick={handleShow}>
+      <button type="button" className="btn btn-warning"onClick={handleShow}>
        Unblock
       </button>
       <Modal
