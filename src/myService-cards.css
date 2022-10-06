@@ -217,7 +217,7 @@
   transition: 0.4s ease;
 }
 .card_img .info button:hover {
-  background: #ffca09;
+  background: #000000;
   color: rgb(0, 0, 0);
 }
 .card_img:hover:before {

@@ -21,9 +21,9 @@ export default function BlockListUser(props) {
       <section className="block-list-user-container">
         <div className="block-list-container-com">
           {blockListUser.map((ele) => (
-            <div class="block-list-container" key={ele.id}>
-              <div class="block-list-card">
-                <div class="block-list-card-header">
+            <div className="block-list-container" key={ele.id}>
+              <div className="block-list-card">
+                <div className="block-list-card-header">
                   {ele.image !== null ? (
                     <img className="block-list-img" alt="imageServiceProvider" src={ele.image} />
                   ) : (
@@ -34,17 +34,17 @@ export default function BlockListUser(props) {
                     />
                   )}
                 </div>
-                <div class="block-list-username">
-                  <span class="block-list-tag">{ele.username}</span>
+                <div className="block-list-username">
+                  <span className="block-list-tag">{ele.username}</span>
                 </div>
 
-                <div class="block-list-card-body">
+                <div className="block-list-card-body">
                   <h5 className="block-list-user-info">{ele.professions}</h5>
                   <h5 className="block-list-user-info">{ele.phoneNumber}</h5>
                   <h5 className="block-list-user-info">{ele.email}</h5>
                 </div>
 
-                <div class="unblock-list-unblock-btn">
+                <div className="unblock-list-unblock-btn">
                   <UnBlockProvider providerID={ele.id} />
                 </div>
               </div>

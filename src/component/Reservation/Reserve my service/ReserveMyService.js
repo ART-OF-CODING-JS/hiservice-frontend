@@ -1,4 +1,4 @@
-import "../../../card.css";
+import "../../../myService-cards.css";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Spinner } from "react-bootstrap";
