@@ -33,6 +33,7 @@ export default function Comments({ serviceId }) {
     commentsRef.current.value = null;
   };
   return (
+    <div className="comments-container">
     <Accordion>
       <Accordion.Item eventKey="0">
         <div className="show-all-comments">
@@ -151,5 +152,6 @@ export default function Comments({ serviceId }) {
         </Accordion.Body>
       </Accordion.Item>
     </Accordion>
+    </div>
   );
 }
