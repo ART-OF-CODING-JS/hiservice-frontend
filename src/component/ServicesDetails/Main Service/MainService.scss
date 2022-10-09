@@ -19,7 +19,6 @@
   background: #fff;
 }
 
-
 .main-service-h1 {
   margin-top: 0;
   font-weight: normal;
@@ -59,11 +58,14 @@
   background: #fff;
   font-size: 13px;
 
-  a {
+  .main-service-span {
+    margin-top: 5px;
+    background-color: #fff42a;
     display: block;
     color: #333;
     text-decoration: none;
     border-bottom: 1px solid #333;
+    border-radius: 4px;
   }
 }
 
@@ -80,6 +82,7 @@
   padding: 0.5rem;
   transition: all 0.3s ease;
   margin-left: 10px;
+  text-align: center;
 }
 
 .block-report-btn button:hover {

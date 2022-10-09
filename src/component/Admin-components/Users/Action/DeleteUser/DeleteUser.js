@@ -14,7 +14,7 @@ export default function DeleteUser({ id }) {
   };
   return (
     <>
-      <button className="btn btn-danger" onClick={handleShow}>
+      <button className="btn btn-outline-danger" onClick={handleShow}>
         Delete User
       </button>
       <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>

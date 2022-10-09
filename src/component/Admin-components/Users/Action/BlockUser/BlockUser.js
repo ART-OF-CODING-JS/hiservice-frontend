@@ -19,7 +19,7 @@ export default function BlockUser({ isBlocked, id }) {
   };
   return (
     <>
-      <button className="btn btn-warning" onClick={handleShow}>
+      <button className="btn btn-outline-warning" onClick={handleShow}>
         {isBlocked ? "UnBlock User" : "Block User"}
       </button>
       <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>

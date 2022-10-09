@@ -52,6 +52,7 @@
 .btn-main-service button:hover {
   background-color: var(--primary-color);
 }
+
 .block-report button {
   border: 0;
   font-size: 1rem;
@@ -59,10 +60,6 @@
   transition: all 0.3s ease;
 }
 
-.block-report button:hover {
-  background-color: #dc3545 !important;
-  color: aliceblue;
-}
 .block-report,
 .btn-main-service {
   display: flex;

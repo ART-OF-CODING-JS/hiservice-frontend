@@ -45,7 +45,7 @@ export default function Reports(props) {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button className="btn btn-warning" onClick={handleClose}>
+          <Button className="btn btn-outline-warning" onClick={handleClose}>
             Close
           </Button>
           <Button

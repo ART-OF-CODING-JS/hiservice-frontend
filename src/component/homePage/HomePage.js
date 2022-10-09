@@ -91,7 +91,7 @@ function onChange(value) {
           </a>
 
           <Button 
-            className="navbar-toggler navbar-toggler-right btn btn-warning"
+            className="navbar-toggler navbar-toggler-right btn btn-outline-warning"
             type="button"
             data-toggle="collapse"
             data-target="#navbarResponsive"

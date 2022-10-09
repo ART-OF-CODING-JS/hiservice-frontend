@@ -9,7 +9,6 @@ import Reports from "../../Reports/sendReports/Reports";
 import { Link } from "react-router-dom";
 import Comments from "../Comments/Comments";
 
-
 export default function MainService(props) {
   return (
     <section className="container-main-service container-com">
@@ -22,7 +21,9 @@ export default function MainService(props) {
               </div>
               <div className="info-div">
                 <nav className="main-service-nav">
-                  <a href="#/">Created at : {ele.createdAt.substring(0, 10)}</a>
+                  <span className="main-service-span">
+                    Created at : {ele.createdAt.substring(0, 10)}
+                  </span>
                 </nav>
                 <h1 className="main-service-h1">
                   <span className="main-service-span">
@@ -38,21 +39,18 @@ export default function MainService(props) {
                     <div className="block-report-btn">
                       <BlockProvider providerID={ele.userID} />
                       <Reports providerID={ele.id} />
-                  
                     </div>
                     <Reservation serviceId={ele.id} />
                     <Link
-                        className="Link btn btn-outline-secondary btn-lg"
-                        to={`/chat/${ele.userID}`}
-                      >
-                        Chat
-                      </Link>
+                      className="btn btn-warning add-btn chat-button"
+                      to={`/chat/${ele.userID}`}
+                    >
+                      Chat
+                    </Link>
                   </Access>
                 </div>
               </div>
-              
             </div>
-           
           </div>
           <div className="main-service-comments">
             <Comments serviceId={ele.id} />

@@ -41,7 +41,7 @@ const EditServices = ({ service }) => {
         variant="primary"
         size="lg"
         onClick={handleShow}
-        className="btn btn-warning btn-lg btn_services_"
+        className="btn btn-outline-warning btn-lg btn_services_"
       >
         Edit <i className="fa-regular fa-pen-to-square" />
       </button>
