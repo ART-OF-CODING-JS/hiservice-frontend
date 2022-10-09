@@ -737,6 +737,11 @@ pre code {
   /* margin-right: 100px; */
   /* margin-left: -15px; */
 }
+input,
+textarea {
+ 
+  width: 100% !important;
+}
 
 
 .no-gutters {

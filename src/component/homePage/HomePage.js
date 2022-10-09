@@ -5,19 +5,18 @@ import { Button } from "react-bootstrap";
 import "./work.scss";
 import Footer from "../footer/footer";
 import {MdOutlineMail} from 'react-icons/md'
-import { useRef } from 'react';
+import { useRef,useState } from 'react';
 import emailjs from "emailjs-com";
-
+import ReCAPTCHA from "react-google-recaptcha";
 
 
 const HomePage = () => {
-
 ////Emailjs////
   const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
-  
     emailjs.sendForm('service_i3vdjet', 'template_dba6xsh', form.current, '4IRJ7S-Zy5peQfPMN')
+
       .then((result) => {
           console.log(result.text);
       }, (error) => {
@@ -26,7 +25,15 @@ const HomePage = () => {
 
       e.target.reset();
   };
-///////
+
+  ///////captcha/////
+const [verifed,setVerifed]=useState(false);
+
+function onChange(value) {
+  console.log("Captcha value:", value);
+  setVerifed(true)
+}
+///////////////
   const portfolioLinks = [
     {
       title: "Electrical services",
@@ -830,14 +837,19 @@ const HomePage = () => {
               ></textarea>
               <p className="help-block text-danger"></p>
             </div>
-          </div>
+          </div> 
+                   
+          <ReCAPTCHA
+   sitekey="6LcaEmgiAAAAAA-N2w6u0aoJVR1aEwDFYi2CJU2t"
+    onChange={onChange}
+  />,
           <div className="clearfix"></div>
           <div className="col-lg-12 text-center">
-            <div id="success"></div>
             <button
-            
               className="btn btn-primary btn-xl text-uppercase"
               type="submit"
+              disabled={!verifed}
+              
             >
               Send Message
             </button>
