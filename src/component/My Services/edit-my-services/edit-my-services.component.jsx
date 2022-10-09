@@ -30,7 +30,7 @@ const EditServices = ({ service }) => {
       city: cityRef.current.value,
       phoneNumber: phoneRef.current.value,
       image: imageRef.current.value,
-      userID: cookie.load("userID"),
+      userID: service.userID,
     };
     dispatch(updateService(sendData));
   };
