@@ -274,7 +274,8 @@ const servicesSlice = createSlice({
     },
     ///// last new service
     [lastNewService.fulfilled]: (state, action) => {
-      state.newServices = action.payload;
+      let result = action.payload.filter(ele=>ele.status ==='confirm')
+      state.newServices = result;
       state.isLoading = false;
       state.error = null;
     },

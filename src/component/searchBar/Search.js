@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {
@@ -26,16 +26,19 @@ export default function Search(props) {
     dispatch(searchService({ title: e.target.inputs.value }));
     navigate("/search");
   }
+  useEffect(()=>{
+    
+  })
   function handleNew(e) {
     e.preventDefault();
     dispatch(lastNewService());
     navigate("/lastNew");
   }
-  function handleMostRated(e) {
-    e.preventDefault();
-    dispatch(mostRatedService());
-    navigate("/mostRated");
-  }
+  // function handleMostRated(e) {
+  //   e.preventDefault();
+  //   dispatch(mostRatedService());
+  //   navigate("/mostRated");
+  // }
 
   function handleChange(e) {
     dispatch(searchByCity({ city: e.target.value }));
@@ -69,10 +72,10 @@ export default function Search(props) {
       <div className="search-city ">
         <select className="search-field1 ttt" onChange={handleChange}>
           <option className="list-choice-objects">Search By city</option>
-          <option value="amman">Amman</option>
-          <option value="jarash">Jerash</option>
+          <option value="Amman">Amman</option>
+          <option value="Jarash">Jerash</option>
           <option value="Irbid">Irbid</option>
-          <option value="zarqa">Zarqa</option>
+          <option value="Zarqa">Zarqa</option>
           <option value="Aqaba">Aqaba</option>
           <option value="Madaba">Madaba</option>
         </select>
