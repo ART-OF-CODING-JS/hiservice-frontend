@@ -1,11 +1,14 @@
 import "./MainService.scss";
 
 import Access from "../../Access/Access";
-import Comments from "../Comments/Comments";
-import Reports from "../../Reports/sendReports/Reports";
-import BlockProvider from "./Block service provider/BlockProvider";
-import ServiceProviderInfo from "../ServiceProviderInfo/ProviderInfo";
 import Reservation from "../../Reservation/SendReservation/Reservation";
+import ServiceProviderInfo from "../ServiceProviderInfo/ProviderInfo";
+import BlockProvider from "./Block service provider/BlockProvider";
+import "./MainService.css";
+import Reports from "../../Reports/sendReports/Reports";
+import { Link } from "react-router-dom";
+import Comments from "../Comments/Comments";
+
 
 export default function MainService(props) {
   return (
@@ -35,12 +38,21 @@ export default function MainService(props) {
                     <div className="block-report-btn">
                       <BlockProvider providerID={ele.userID} />
                       <Reports providerID={ele.id} />
+                  
                     </div>
                     <Reservation serviceId={ele.id} />
+                    <Link
+                        className="Link btn btn-outline-secondary btn-lg"
+                        to={`/chat/${ele.userID}`}
+                      >
+                        Chat
+                      </Link>
                   </Access>
                 </div>
               </div>
+              
             </div>
+           
           </div>
           <div className="main-service-comments">
             <Comments serviceId={ele.id} />

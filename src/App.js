@@ -34,6 +34,7 @@ import Payment from "./component/Payment/Payment";
 import NotFoundPage from "./component/NotFound/NotFoundPage";
 import Signup from "./component/Auth/Signup/Signup";
 import Reports from "./component/Reports/sendReports/Reports";
+import Chat from './component/Chat/Chat'
 
 function App() {
   const { isSignin } = useSelector((state) => state.authSlice);
@@ -58,6 +59,7 @@ function App() {
             <Route path="/Services" element={<Services />} />
             <Route path="/Services/:id" element={<ServiceDetails />} />
             <Route path="/My-Services" element={<MyServices />} />
+            <Route path="/chat/:id" element={<Chat/>} />
 
             <Route path="/Reservation-Admin" element={<Reservation />} />
             <Route path="/My-Reservation" element={<MyReservation />} />
