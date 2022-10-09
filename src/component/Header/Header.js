@@ -6,12 +6,12 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   getAllServices,
-  searchByCity,
-  searchService,
-  lastNewService,
-  mostRatedService,
+  // searchByCity,
+  // searchService,
+  // lastNewService,
+  // mostRatedService,
 } from "../../store/services";
-
+import cookie from "react-cookies";
 import Logo from "../../assets/logo.png";
 
 import { Link } from "react-router-dom";
@@ -20,36 +20,36 @@ import Access from "../Access/Access";
 export default function Header(props) {
   const dispatch = useDispatch();
   const [search, setSearch] = useState("");
-
+  const userId= cookie.load("userID");
   const navigate = useNavigate();
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    dispatch(searchService({ title: search }));
-    setSearch("");
-    navigate("/search");
-  }
-  function handleNew(e) {
-    e.preventDefault();
-    dispatch(lastNewService());
-    navigate("/lastNew");
-  }
-  function handleMostRated(e) {
-    e.preventDefault();
-    dispatch(mostRatedService());
-    navigate("/mostRated");
-  }
+  // function handleSubmit(e) {
+  //   e.preventDefault();
+  //   dispatch(searchService({ title: search }));
+  //   setSearch("");
+  //   navigate("/search");
+  // }
+  // function handleNew(e) {
+  //   e.preventDefault();
+  //   dispatch(lastNewService());
+  //   navigate("/lastNew");
+  // }
+  // function handleMostRated(e) {
+  //   e.preventDefault();
+  //   dispatch(mostRatedService());
+  //   navigate("/mostRated");
+  // }
 
-  function handleChange(e) {
-    dispatch(searchByCity({ city: e.target.value }));
-    // setSearchCity('amman')
-    navigate("/searchCity");
-  }
+  // function handleChange(e) {
+  //   dispatch(searchByCity({ city: e.target.value }));
+  //   // setSearchCity('amman')
+  //   navigate("/searchCity");
+  // }
   useEffect(() => {
     dispatch(getAllServices());
   }, [dispatch]);
 
-  const { isSignin } = useSelector((state) => state.authSlice);
+  // const { isSignin } = useSelector((state) => state.authSlice);
 
   return (
     <>
@@ -164,7 +164,7 @@ export default function Header(props) {
                 Setting
               </a>
               <div className="dropdown-menu bg-light m-0">
-                <Link className="dropdown-item" to={"/Settings"}>
+              <Link className="dropdown-item" to={"/Settings"}>
                   <li href="#">Profile Setting</li>
                 </Link>
                 <Access role="user">
@@ -174,6 +174,9 @@ export default function Header(props) {
                   <Link className="dropdown-item" to={"/blockList-user"}>
                     <li href="#">Block List</li>
                   </Link>
+                  <Link className="dropdown-item" to={`/chat/${userId}`}>
+                  <li href="#">Chat</li>
+                </Link>
                 </Access>
               </div>
             </div>
