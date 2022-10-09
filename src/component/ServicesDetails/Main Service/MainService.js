@@ -4,6 +4,7 @@ import ServiceProviderInfo from "../ServiceProviderInfo/ProviderInfo";
 import BlockProvider from "./Block service provider/BlockProvider";
 import "./MainService.css";
 import Reports from "../../Reports/sendReports/Reports";
+import { Link } from "react-router-dom";
 import Comments from "../Comments/Comments";
 export default function MainService(props) {
   return (
@@ -35,6 +36,12 @@ export default function MainService(props) {
               <Access role={"user"}>
                 <BlockProvider providerID={ele.userID} />
                 <Reports providerID={ele.id} />
+                <Link
+                        className="Link btn btn-outline-secondary btn-lg"
+                        to={`/chat/${ele.userID}`}
+                      >
+                        Chat
+                      </Link>
               </Access>
             </div>
           </div>

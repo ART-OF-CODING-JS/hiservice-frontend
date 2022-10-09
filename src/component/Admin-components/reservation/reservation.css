@@ -270,3 +270,11 @@
   font-size: 4rem;
   font-weight: 500;
 }
+.chart{
+  width: 350px;
+  height: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+
+}
