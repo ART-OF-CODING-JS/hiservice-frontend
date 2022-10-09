@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {
@@ -25,17 +25,20 @@ export default function Search(props) {
     dispatch(searchService({ title: e.target.inputs.value }));
     navigate("/search");
   }
+  useEffect(()=>{
+    
+  })
   function handleNew(e) {
     e.preventDefault();
 
     dispatch(lastNewService());
     navigate("/lastNew");
   }
-  function handleMostRated(e) {
-    e.preventDefault();
-    dispatch(mostRatedService());
-    navigate("/mostRated");
-  }
+  // function handleMostRated(e) {
+  //   e.preventDefault();
+  //   dispatch(mostRatedService());
+  //   navigate("/mostRated");
+  // }
 
   function handleChange(e) {
     dispatch(searchByCity({ city: e.target.value }));
