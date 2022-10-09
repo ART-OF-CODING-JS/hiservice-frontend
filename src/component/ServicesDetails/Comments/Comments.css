@@ -1,10 +1,12 @@
+
+.main-service-comments {
+	margin-left: 10rem;
+}
+
 .comments-container {
 	max-width: 45rem;
 
 }
-
-
-
 
 .content-item {
     padding:30px 0;
