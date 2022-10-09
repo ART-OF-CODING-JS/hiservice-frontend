@@ -53,6 +53,7 @@
 .main-service-nav {
   display: flex;
   padding: 1.5em var(--var-padding);
+  justify-content: space-between;
   grid-row: 1;
   grid-column: 1;
   background: #fff;
