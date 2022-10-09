@@ -152,7 +152,7 @@ export const getAllFav = createAsyncThunk(
 
   const initialState = {
     fav:[],
-    favServices:[],
+    // favServices:[],
     comments:[],
     isLoading:false,
     error:null,

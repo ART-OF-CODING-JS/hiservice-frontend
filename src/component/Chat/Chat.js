@@ -16,7 +16,8 @@ function Chat() {
   console.log(id, userId, "000000000000");
   const [message, setMessage] = useState("");
   // const [user,setUser]=useState('')
-  const [messageReceived, setMessageReceived] = useState([]);
+  const [messageReceived, setMessageReceived] = useState(JSON.parse(localStorage.getItem('chats'))?
+  JSON.parse(localStorage.getItem('chats')): []);
   async function handleMessage() {
     const messageData = {
       author: username,
@@ -25,16 +26,19 @@ function Chat() {
     };
     await socket.emit("send_message", messageData);
     setMessageReceived((list) => [...list, messageData]);
+
     setMessage("");
   }
+
   console.log(messageReceived);
+  localStorage.setItem('chats', JSON.stringify(messageReceived));
   useEffect(() => {
     socket.on("received_message", (data) => {
       // socket.emit("join_room",id);
       setMessageReceived((list) => [...list, data]);
-      // setUser(data.username)
+      
     });
-  }, [socket]);
+  }, []);
   return (
     <>
       {
@@ -49,6 +53,7 @@ function Chat() {
                   <div
                     className="message"
                     id={username === messageContent.author ? "you" : "other"}
+                    key={messageContent.id}
                   >
                     <div>
                       <div className="message-content">
