@@ -22,6 +22,7 @@ export default function MainService(props) {
               </div>
               <div className="info-div">
                 <nav className="main-service-nav">
+
                   <a href="#/">Created at : {ele.createdAt.substring(0, 10)}</a>
                  {ele.userID=== parseInt(cookie.load('userID'))?<p style={{color:'red'}
                 }>Your Service</p>:null}
@@ -30,7 +31,9 @@ export default function MainService(props) {
                   <span className="main-service-span">
                     <ServiceProviderInfo ServiceProviderId={ele.userID} />
                   </span>
-                  {ele.title}, in {ele.city}
+                  <h5>
+                    {ele.title}, in {ele.city}
+                  </h5>
                 </h1>
                 <p className="text-break">{ele.description}</p>
                 {console.log(!(ele.userID=== parseInt(cookie.load('userID'))),'dddddddd')}
@@ -39,21 +42,20 @@ export default function MainService(props) {
                     <div className="block-report-btn">
                       <BlockProvider providerID={ele.userID} />
                       <Reports providerID={ele.id} />
-                  
                     </div>
                     <Reservation serviceId={ele.id} />
                     <Link
-                        className="Link btn btn-outline-secondary btn-lg"
-                        to={`/chat/${ele.userID}`}
-                      >
-                        Chat
-                      </Link>
+                      className="btn btn-warning add-btn chat-button"
+                      to={`/chat/${ele.userID}`}
+                    >
+                      Chat
+                    </Link>
+                  </Access>
+
                 </div>
                   </Access>:null}
               </div>
-              
             </div>
-           
           </div>
           <div className="main-service-comments">
             <Comments serviceId={ele.id} />

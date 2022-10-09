@@ -14,9 +14,8 @@ import {
   DropdownMenu,
   DropdownItem,
   UncontrolledDropdown,
-  Button
-} from 'reactstrap';
-
+  Button,
+} from "reactstrap";
 
 export default function Search(props) {
   const dispatch = useDispatch();
@@ -31,6 +30,7 @@ export default function Search(props) {
   })
   function handleNew(e) {
     e.preventDefault();
+
     dispatch(lastNewService());
     navigate("/lastNew");
   }
@@ -80,7 +80,7 @@ export default function Search(props) {
           <option value="Madaba">Madaba</option>
         </select>
 
-{/* 
+        {/* 
 <UncontrolledDropdown group>
   <Button color="primary">
     Primary
@@ -114,10 +114,7 @@ export default function Search(props) {
     </DropdownItem>
   </DropdownMenu>
 </UncontrolledDropdown> */}
-
-
       </div>
     </div>
   );
 }
-

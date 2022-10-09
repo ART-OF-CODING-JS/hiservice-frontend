@@ -14,7 +14,7 @@ export default function ConfirmReport({ id }) {
   };
   return (
     <>
-      <button className="btn btn-success" onClick={handleShow}>
+      <button className="btn btn-outline-success" onClick={handleShow}>
         Confirm Report
       </button>
       <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
