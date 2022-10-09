@@ -12,6 +12,7 @@ import { addToFavorite } from "../../../store/favorite";
 import DeleteService from "../../My Services/DeleteMyService/DeleteMyService";
 import EditServices from "../../My Services/edit-my-services/edit-my-services.component";
 
+import '.././ServicesDetails.css'
 export default function SuggestServices(props) {
   const dispatch = useDispatch();
   const { allServices, isLoading } = useSelector((state) => state.servicesSlice);
