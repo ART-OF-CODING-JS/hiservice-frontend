@@ -1,15 +1,13 @@
-import AddService from "../Services/Add service/AddServices";
-import Pagination from "../pagenation/Pagination";
-import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { getMyServices } from "../../store/services";
-import { useEffect } from "react";
-import "./MyServices.css";
-
-import EditServices from "./edit-my-services/edit-my-services.component";
-import DeleteService from "./DeleteMyService/DeleteMyService";
+import { useState, useEffect } from "react";
 import { Spinner } from "react-bootstrap";
+import Pagination from "../pagenation/Pagination";
+import { useSelector, useDispatch } from "react-redux";
+import AddService from "../Services/Add service/AddServices";
+
 import Search from "../searchBar/Search";
+import { getMyServices } from "../../store/services";
+import DeleteService from "./DeleteMyService/DeleteMyService";
+import EditServices from "./edit-my-services/edit-my-services.component";
 
 export default function MyServices(props) {
   const { myServices, isLoading } = useSelector((state) => state.servicesSlice);
@@ -52,7 +50,7 @@ export default function MyServices(props) {
                 </div>
 
                 <div className="container__text">
-                  <h1>{service.title}</h1>
+                  <h3>{service.title}</h3>
                   <div className="container__text__star">
                     <span className="fa fa-star checked" />
                     <span className="fa fa-star checked" />
@@ -60,14 +58,13 @@ export default function MyServices(props) {
                     <span className="fa fa-star checked" />
                     <span className="fa fa-star checked" />
                   </div>
-                  <p>{service.description}</p>
                   <div className="container__text__timing">
                     <div className="container__text__timing_time">
                       <h2>City</h2>
                       <p>{service.city}</p>
                     </div>
                     <div className="container__text__timing_time">
-                      <h2>Phone Number</h2>
+                      <h2>Phone</h2>
                       <p>{service.phoneNumber}</p>
                     </div>
                     <div className="container__text__timing_time">
@@ -75,6 +72,7 @@ export default function MyServices(props) {
                       <p>{service.department}</p>
                     </div>
                   </div>
+                  <p>{service.description}</p>
                   <button
                     className={
                       service.status === null

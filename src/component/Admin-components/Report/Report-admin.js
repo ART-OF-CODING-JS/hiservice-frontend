@@ -1,4 +1,3 @@
-import "./Report-admin.css";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -29,7 +28,7 @@ export default function ReportAdmin() {
                     <img src={ele.image} alt="" />
                   ))}
                 <div className="info">
-                  <div className="edit-myservice common-edi-del">
+                  <div className="common-edi-del">
                     <ConfirmReport id={report.id} />
                     <RejectReport id={report.id} />
                   </div>

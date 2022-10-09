@@ -1,12 +1,11 @@
-import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import "./ServicesConfirmation.css";
-import { updateStatusService, getServicesConfirmation } from "../../../store/services";
+import { useDispatch, useSelector } from "react-redux";
+
 import Pagination from "../../pagenation/Pagination";
+import { updateStatusService, getServicesConfirmation } from "../../../store/services";
+
 export default function ServicesConfirmation(props) {
   const { allServicesAdmin } = useSelector((state) => state.servicesSlice);
-  // const [show, setShow] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -16,7 +15,7 @@ export default function ServicesConfirmation(props) {
 
   ///////////pagination/////
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPerPage] = useState(9);
+  const [postsPerPage] = useState(9);
 
   const indexOfLastRecord = currentPage * postsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - postsPerPage;
@@ -64,7 +63,7 @@ export default function ServicesConfirmation(props) {
                         >
                           Confirm <i className="fa-solid fa-circle-check"></i>
                         </button>
-                      </div>{" "}
+                      </div>
                     </div>
                   </div>
                 </div>

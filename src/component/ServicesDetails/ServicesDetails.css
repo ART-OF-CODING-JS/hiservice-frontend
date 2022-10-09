@@ -1,0 +1,8 @@
+.similar-services {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin:  3rem;
+    padding: 1rem;
+    /* color: var(--primary-color); */
+    background-color: #f1f3f5;
+}

@@ -20,10 +20,10 @@ export default function Signup(props) {
     event.preventDefault();
 
     const data = {
-      username: usernameRef.current.value,
-      email: emailRef.current.value,
+      username: usernameRef.current.value.toLowerCase(),
+      email: emailRef.current.value.toLowerCase(),
       password: passwordRef.current.value,
-      city: cityRef.current.value,
+      city: cityRef.current.value.toLowerCase(),
       phoneNumber: phoneNumberRef.current.value,
       professions: professionsRef.current.value,
     };
@@ -69,7 +69,7 @@ export default function Signup(props) {
           </div>
 
           <div className="input-group">
-            <input type="tel" name="loginUser" id="loginUser" ref={phoneNumberRef} required />
+            <input type="number" name="loginUser" id="loginUser" ref={phoneNumberRef} required />
             <label>Phone number</label>
           </div>
 
@@ -79,7 +79,14 @@ export default function Signup(props) {
           </div>
 
           <div className="input-group">
-            <input type="password" name="loginUser" id="loginUser" ref={passwordRef} required />
+            <input
+              type="password"
+              name="loginUser"
+              id="loginUser"
+              minLength={8}
+              ref={passwordRef}
+              required
+            />
             <label>Password</label>
           </div>
 

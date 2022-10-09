@@ -1,4 +1,3 @@
-import "./reservation.css";
 
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
@@ -10,6 +9,7 @@ import EditReservation from "./EditReservation";
 import Pagination from "../../pagenation/Pagination";
 import { getAllReservation } from "../../../store/reservations";
 import DeleteReservation from "../../Reservation/MyReservation/DeleteReservation/DeleteReservation";
+import UserDataUsernamePhoneNumber from "../../userInfo/UserDataUsernamePhoneNumber";
 
 
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -147,48 +147,47 @@ console.log(allReservation,'1111111111')
                 </div>
 
                 <div className="container__text">
-                  {allServices
-                    .filter((service) => service.id === reservation.serviceID)
-                    .map((service) => (
-                      <h1>{service.title}</h1>
-                    ))}
+                  <div className="container__text__timing">
+                    <div className="container__text__timing_time">
+                      <h2>User</h2>
+                      {allServices
+                        .filter((service) => service.id === reservation.userID)
+                        .map((service) => (
+                          <UserDataUsernamePhoneNumber ID={service.userID} />
+                        ))}
+                    </div>
 
-                  <div className="container__text__star">
-                    <span className="fa fa-star checked" />
-                    <span className="fa fa-star checked" />
-                    <span className="fa fa-star checked" />
-                    <span className="fa fa-star checked" />
-                    <span className="fa fa-star checked" />
-                  </div>
-
-                  <div className="container__text__timing_time">
-                    <h2>description</h2>
-                    {allServices
-                      .filter((service) => service.id === reservation.serviceID)
-                      .map((service) => (
-                        <p>{service.description}</p>
-                      ))}
-                  </div>
-
-                  <div className="container__text__timing_time">
-                    <h2>department</h2>
-                    {allServices
-                      .filter((service) => service.id === reservation.serviceID)
-                      .map((service) => (
-                        <h5>{service.department}</h5>
-                      ))}
+                    <div className="container__text__timing_time">
+                      <h2>Provider</h2>
+                      {allServices
+                        .filter((service) => service.id === reservation.serviceID)
+                        .map((service) => (
+                          <UserDataUsernamePhoneNumber ID={service.userID} />
+                        ))}
+                    </div>
                   </div>
 
                   <div className="container__text__timing">
                     <div className="container__text__timing_time">
+                      <h2>Title</h2>
+                      {allServices
+                        .filter((service) => service.id === reservation.serviceID)
+                        .map((service) => (
+                          <p>{service.title}</p>
+                        ))}
+                    </div>
+                    <div className="container__text__timing_time">
                       <h2>Time</h2>
-                      <p>{reservation.time}</p>
+                      <p>{reservation.time.substring(0, 5)}</p>
                     </div>
                     <div className="container__text__timing_time">
                       <h2>Date</h2>
-                      <p>{reservation.date.substring(0, 10)}</p>
+                      <p>
+                        {reservation.date.substring(8, 10)}/{reservation.date.substring(5, 7)}
+                      </p>
                     </div>
                   </div>
+
                   <div className="container__text__timing">
                     <div className="container__text__timing_time">
                       <h2>Note</h2>

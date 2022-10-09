@@ -4,7 +4,36 @@ import Logo from "../../assets/logo.png";
 import { Button } from "react-bootstrap";
 import "./work.scss";
 import Footer from "../footer/footer";
+import {MdOutlineMail} from 'react-icons/md'
+import { useRef,useState } from 'react';
+import emailjs from "emailjs-com";
+import ReCAPTCHA from "react-google-recaptcha";
+
+
 const HomePage = () => {
+////Emailjs////
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs.sendForm('service_i3vdjet', 'template_dba6xsh', form.current, '4IRJ7S-Zy5peQfPMN')
+
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+
+      e.target.reset();
+  };
+
+  ///////captcha/////
+const [verifed,setVerifed]=useState(false);
+
+function onChange(value) {
+  console.log("Captcha value:", value);
+  setVerifed(true)
+}
+///////////////
   const portfolioLinks = [
     {
       title: "Electrical services",
@@ -736,7 +765,8 @@ const HomePage = () => {
         </div>
       </div> */}
 
-      <div className="py-5">
+
+      {/* <div className="py-5">
         <div className="container">
           <div className="row">
             <div className="col-md-3 col-sm-6">
@@ -765,74 +795,72 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+{/* <Contact/> */}
+<section className="page-section" id="contact">
+<div className="container">
+  
+    <div className="col-lg-12 text-center"> 
+      <h2 className="section-heading text-uppercase">Contact Us</h2>
+    </div>
 
-      <section className="page-section" id="contact">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12 text-center">
-              <h2 className="section-heading text-uppercase">Contact Us</h2>
-           
+  <div className="row">
+    <div className="col-lg-12">
+      <form  ref={form} onSubmit={sendEmail} novalidate="novalidate">
+        <div className="row">
+          <div className="col-md-6">
+            <div className="form-group">
+              <input
+                className="form-control"
+                name='name' placeholder="Your Full Name" required
+                type="text"
+                data-validation-required-message="Please enter your name."
+              />
+              <p className="help-block text-danger"></p>
             </div>
+            <div className="form-group">
+              <input
+                className="form-control"
+                type='email' name='email' placeholder="Your Email" required
+                data-validation-required-message="Please enter your email address."
+              />
+              <p className="help-block text-danger"></p>
+            </div>
+            <br />
           </div>
-          <div className="row">
-            <div className="col-lg-12">
-              <form id="contactForm"  novalidate="novalidate">
-                <div className="row">
-                  <div className="col-md-6">
-                    <div className="form-group">
-                      <input
-                        className="form-control"
-                        id="name"
-                        type="text"
-                        placeholder="Your Name *"
-                        required="required"
-                        data-validation-required-message="Please enter your name."
-                      />
-                      <p className="help-block text-danger"></p>
-                    </div>
-                    <div className="form-group">
-                      <input
-                        className="form-control"
-                        id="email"
-                        type="email"
-                        placeholder="Your Email *"
-                        required="required"
-                        data-validation-required-message="Please enter your email address."
-                      />
-                      <p className="help-block text-danger"></p>
-                    </div>
-                    <br />
-                  </div>
-                  <div className="col-md-6">
-                    <div className="form-group">
-                      <textarea
-                        className="form-control"
-                        id="message"
-                        placeholder="Your Message *"
-                        required="required"
-                        data-validation-required-message="Please enter a message."
-                      ></textarea>
-                      <p className="help-block text-danger"></p>
-                    </div>
-                  </div>
-                  <div className="clearfix"></div>
-                  <div className="col-lg-12 text-center">
-                    <div id="success"></div>
-                    <button
-                      id="sendMessageButton"
-                      className="btn btn-primary btn-xl text-uppercase"
-                      type="submit"
-                    >
-                      Send Message
-                    </button>
-                  </div>
-                </div>
-              </form>
+          <div className="col-md-6">
+            <div className="form-group">
+              <textarea
+                className="form-control"
+                name="message" rows="7" placeholder="Your Message" required
+                data-validation-required-message="Please enter a message."
+              ></textarea>
+              <p className="help-block text-danger"></p>
             </div>
+          </div> 
+                   
+          <ReCAPTCHA
+   sitekey="6LcaEmgiAAAAAA-N2w6u0aoJVR1aEwDFYi2CJU2t"
+    onChange={onChange}
+  />,
+          <div className="clearfix"></div>
+          <div className="col-lg-12 text-center">
+            <button
+              className="btn btn-primary btn-xl text-uppercase"
+              type="submit"
+              disabled={!verifed}
+              
+            >
+              Send Message
+            </button>
           </div>
         </div>
-      </section>
+      </form>
+    </div>
+  </div>
+</div>
+</section>
+
 
       {/* <footer className="footer">
         <div className="container">
