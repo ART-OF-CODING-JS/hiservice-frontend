@@ -14,9 +14,8 @@ import {
   DropdownMenu,
   DropdownItem,
   UncontrolledDropdown,
-  Button
-} from 'reactstrap';
-
+  Button,
+} from "reactstrap";
 
 export default function Search(props) {
   const dispatch = useDispatch();
@@ -28,6 +27,7 @@ export default function Search(props) {
   }
   function handleNew(e) {
     e.preventDefault();
+
     dispatch(lastNewService());
     navigate("/lastNew");
   }
@@ -69,15 +69,15 @@ export default function Search(props) {
       <div className="search-city ">
         <select className="search-field1 ttt" onChange={handleChange}>
           <option className="list-choice-objects">Search By city</option>
-          <option value="amman">Amman</option>
-          <option value="jarash">Jerash</option>
+          <option value="Amman">Amman</option>
+          <option value="Jarash">Jerash</option>
           <option value="Irbid">Irbid</option>
-          <option value="zarqa">Zarqa</option>
+          <option value="Zarqa">Zarqa</option>
           <option value="Aqaba">Aqaba</option>
           <option value="Madaba">Madaba</option>
         </select>
 
-{/* 
+        {/* 
 <UncontrolledDropdown group>
   <Button color="primary">
     Primary
@@ -111,10 +111,7 @@ export default function Search(props) {
     </DropdownItem>
   </DropdownMenu>
 </UncontrolledDropdown> */}
-
-
       </div>
     </div>
   );
 }
-

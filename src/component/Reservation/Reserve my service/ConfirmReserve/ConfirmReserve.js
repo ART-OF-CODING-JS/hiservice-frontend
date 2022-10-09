@@ -15,7 +15,7 @@ const handleBlock = ()=>{
 
   return (
     <>
-      <button className="del-reserve add-btn" onClick={handleShow}>
+      <button className="btn" onClick={handleShow}>
       Confirm
       </button>
       <Modal

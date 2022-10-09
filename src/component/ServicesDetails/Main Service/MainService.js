@@ -25,7 +25,9 @@ export default function MainService(props) {
                   <span className="main-service-span">
                     <ServiceProviderInfo ServiceProviderId={ele.userID} />
                   </span>
-                  {ele.title}, in {ele.city}
+                  <h5>
+                    {ele.title}, in {ele.city}
+                  </h5>
                 </h1>
                 <p className="text-break">{ele.description}</p>
                 <div className="block-report">

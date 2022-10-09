@@ -28,7 +28,7 @@ export default function ReportAdmin() {
                     <img src={ele.image} alt="" />
                   ))}
                 <div className="info">
-                  <div className="common-edi-del">
+                  <div className="edit-myservice common-edi-del">
                     <ConfirmReport id={report.id} />
                     <RejectReport id={report.id} />
                   </div>

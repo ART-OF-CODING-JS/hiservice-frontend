@@ -23,17 +23,12 @@ export default function Users(props) {
         <p>Action</p>
       </div>
       {userInfo.map((ele) => (
-        <div key={ele.id} className={ele.blocked?"user-cards  back-red":"user-cards"}>
+        <div key={ele.id} className={ele.blocked ? "user-cards  back-red" : "user-cards"}>
           <div className="img-emi-na">
             <div className="photo-id">
-                <p>{ele.id}</p>
-              {" "}
+              <p>{ele.id}</p>
               {ele.image !== null ? (
-                <img
-                  className="user-image-admin"
-                  alt="imageServiceProvider"
-                  src={ele.image}
-                />
+                <img className="user-image-admin" alt="imageServiceProvider" src={ele.image} />
               ) : (
                 <img
                   className="user-image-admin"
@@ -66,7 +61,7 @@ export default function Users(props) {
             <p>{ele.role}</p>
           </div>
           <div>
-          <Action id={ele.id} isBlocked={ele.blocked}/>
+            <Action id={ele.id} isBlocked={ele.blocked} />
           </div>
         </div>
       ))}
