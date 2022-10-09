@@ -67,7 +67,7 @@ console.log(userInfo)
   return (
 <>
 
-<h3>The user state</h3>
+<h3 className="user-state">The user state</h3>
           <div style={{ width: "100%", height: 400 }}>
       <ResponsiveContainer>
         <ComposedChart
