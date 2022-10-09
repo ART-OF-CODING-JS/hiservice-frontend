@@ -14,7 +14,7 @@ export default function ConfirmReport({ id }) {
   };
   return (
     <>
-      <button className="button-container-green " onClick={handleShow}>
+      <button className="btn btn-success" onClick={handleShow}>
         Confirm Report
       </button>
       <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
@@ -23,7 +23,6 @@ export default function ConfirmReport({ id }) {
         </Modal.Header>
         <Modal.Body className="c">
           <p>
-            {" "}
             Are you sure want <strong>Confirm</strong> Report?
           </p>
         </Modal.Body>

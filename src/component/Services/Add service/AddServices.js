@@ -10,8 +10,6 @@ import { addService } from "../../../store/services";
 export default function AddService({ postData }) {
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
-  const [city, setCity] = useState("");
-  const [department, setDepartment] = useState("");
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -20,12 +18,15 @@ export default function AddService({ postData }) {
   const imageRef = useRef(null);
   const discRef = useRef(null);
 
+  const departmentRef = useRef(null);
+  const cityRef = useRef(null);
+
   const handleSubmit = () => {
     const sendData = {
       title: titleRef.current.value,
-      department: department,
+      department: departmentRef.current.value,
       description: discRef.current.value,
-      city: city,
+      city: cityRef.current.value,
       phoneNumber: phoneRef.current.value,
       image: imageRef.current.value,
       userID: cookie.load("userID"),
@@ -66,10 +67,7 @@ export default function AddService({ postData }) {
               <div className="inputfield">
                 <label>department</label>
                 <div className="custom_select">
-                  <select
-                    defaultValue={"Electrical"}
-                    onChange={(e) => setDepartment(e.target.value)}
-                  >
+                  <select defaultValue={"Electrical"} ref={departmentRef}>
                     <option value="Electrical">Electrical</option>
                     <option value="repairing">repairing</option>
                     <option value="Plumbing">Plumbing</option>
@@ -87,7 +85,7 @@ export default function AddService({ postData }) {
               <div className="inputfield">
                 <label>city</label>
                 <div className="custom_select">
-                  <select defaultValue={"Amman"} onChange={(e) => setCity(e.target.value)}>
+                  <select defaultValue={"Amman"} ref={cityRef}>
                     <option value="Amman">Amman</option>
                     <option value="Jarash">Jarash</option>
                     <option value="Irbid">Irbid</option>
