@@ -33,12 +33,6 @@ export default function ContactUs(props) {
                     src="https://images.pexels.com/photos/9089222/pexels-photo-9089222.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                     alt="Pancake"
                   />
-                  <div className="info">
-                    <div className="edit-myservice common-edi-del">
-                      {/* <RejectReserve id={contactUs.id} /> */}
-                      {/* <ConfirmReserve id={contactUs.id} />{" "} */}
-                    </div>
-                  </div>
                 </div>
 
                 <div className="container__text">
