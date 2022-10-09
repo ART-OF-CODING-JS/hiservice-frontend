@@ -39,13 +39,12 @@ const Contact = () => {
             Call Us, Write Us, Or Knock On Our Door We Would Be Happy To Meet You And Make Your Life
             Easier.
             <br />
-            It usually takes us up to 48 hours to get back to you.{" "}
+            It usually takes us up to 48 hours to get back to you.
           </p>
 
-          <label for="checkcontact" className="contactbutton">
+          <label className="contactbutton">
             <div className="mail"></div>
           </label>
-          <input id="checkcontact" type="checkbox" />
 
           <form action="" method="post" className="contactform" onSubmit={sendMessage}>
             <p className="input_wrapper">

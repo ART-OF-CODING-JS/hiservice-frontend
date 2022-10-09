@@ -3,7 +3,7 @@ import { Accordion } from "react-bootstrap";
 import UpdateUsername from "../change-username/change-username.component";
 import UpdatePassword from "../change-password/change-password.component";
 import DeleteProfile from "../delete-profile/delete-profile";
-
+import Access from "../../Access/Access";
 export default function ChangeInfo(props) {
   return (
     <div className="container-com">

@@ -14,7 +14,7 @@ export default function UnBlockProvider({ providerID }) {
 
   return (
     <>
-      <button type="button" className="btn btn-warning" onClick={handleShow}>
+      <button type="button" className="btn btn-outline-warning" onClick={handleShow}>
         Unblock
       </button>
       <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>

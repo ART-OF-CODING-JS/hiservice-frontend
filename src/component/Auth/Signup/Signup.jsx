@@ -23,7 +23,7 @@ export default function Signup(props) {
       username: usernameRef.current.value.toLowerCase(),
       email: emailRef.current.value.toLowerCase(),
       password: passwordRef.current.value,
-      city: cityRef.current.value.toLowerCase(),
+      city: cityRef.current.value,
       phoneNumber: phoneNumberRef.current.value,
       professions: professionsRef.current.value,
     };

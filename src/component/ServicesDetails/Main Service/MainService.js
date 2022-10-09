@@ -8,7 +8,7 @@ import "./MainService.css";
 import Reports from "../../Reports/sendReports/Reports";
 import { Link } from "react-router-dom";
 import Comments from "../Comments/Comments";
-
+import cookie from "react-cookies";
 
 export default function MainService(props) {
   return (
@@ -23,6 +23,8 @@ export default function MainService(props) {
               <div className="info-div">
                 <nav className="main-service-nav">
                   <a href="#/">Created at : {ele.createdAt.substring(0, 10)}</a>
+                 {ele.userID=== parseInt(cookie.load('userID'))?<p style={{color:'red'}
+                }>Your Service</p>:null}
                 </nav>
                 <h1 className="main-service-h1">
                   <span className="main-service-span">
@@ -31,8 +33,9 @@ export default function MainService(props) {
                   {ele.title}, in {ele.city}
                 </h1>
                 <p className="text-break">{ele.description}</p>
+                {console.log(!(ele.userID=== parseInt(cookie.load('userID'))),'dddddddd')}
+          {!(ele.userID=== parseInt(cookie.load('userID')))?<Access role={"user"}>
                 <div className="block-report">
-                  <Access role={"user"}>
                     <div className="block-report-btn">
                       <BlockProvider providerID={ele.userID} />
                       <Reports providerID={ele.id} />
@@ -45,8 +48,8 @@ export default function MainService(props) {
                       >
                         Chat
                       </Link>
-                  </Access>
                 </div>
+                  </Access>:null}
               </div>
               
             </div>
