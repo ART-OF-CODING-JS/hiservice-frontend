@@ -34,27 +34,27 @@ export default function MainService(props) {
                   {ele.title}, in {ele.city}
                 </h1>
                 <p className="text-break">{ele.description}</p>
-                {console.log(!(ele.userID === parseInt(cookie.load("userID"))), "dddddddd")}
-                {!(ele.userID === parseInt(cookie.load("userID"))) ? (
-                  <Access role={"user"}>
-                    <div className="block-report">
-                      <div className="block-report-btn">
-                        <BlockProvider providerID={ele.userID} />
-                        <Reports providerID={ele.id} />
-                      </div>
-                      <Reservation serviceId={ele.id} />
-                      <Link
-                        className="btn btn-warning add-btn chat-button"
-                        style={{ fontSize: "15px", marginTop: "1px" }}
+                {console.log(!(ele.userID=== parseInt(cookie.load('userID'))),'dddddddd')}
+          {!(ele.userID=== parseInt(cookie.load('userID')))?<Access role={"user"}>
+                <div className="block-report">
+                    <div className="block-report-btn">
+                      <BlockProvider providerID={ele.userID} />
+                      <Reports providerID={ele.id} />
+                  
+                    </div>
+                    <Reservation serviceId={ele.id} />
+                    <Link
+                        className="Link btn btn-outline-secondary btn-lg"
                         to={`/chat/${ele.userID}`}
                       >
-                        Chat <i class="fa fa-comments-o" aria-hidden="true"></i>
+                        Chat
                       </Link>
-                    </div>
-                  </Access>
-                ) : null}
+                </div>
+                  </Access>:null}
               </div>
+              
             </div>
+           
           </div>
           <div className="main-service-comments">
             <Comments serviceId={ele.id} />

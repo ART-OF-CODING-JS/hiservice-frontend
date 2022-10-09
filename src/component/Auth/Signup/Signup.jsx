@@ -21,7 +21,7 @@ export default function Signup(props) {
 
     const data = {
       username: usernameRef.current.value,
-      email: emailRef.current.value.toLowerCase(),
+      email: emailRef.current.value,
       password: passwordRef.current.value,
       city: cityRef.current.value,
       phoneNumber: phoneNumberRef.current.value,
