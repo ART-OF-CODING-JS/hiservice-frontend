@@ -32,44 +32,50 @@ export default function Reservation({ serviceId }) {
 
   return (
     <>
-      <button className="btn btn-warning del-reserve add-btn" onClick={handleShow}>
-        Reserve Service
+      <button variant="primary" size="lg" onClick={handleShow} className="btn btn-warning add-btn">
+        Reserve Service <i className="fa-regular fa-pen-to-square" />
       </button>
 
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Send Reservation</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Date</Form.Label>
-              <Form.Control type="date" autoFocus ref={dateRef} />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Time</Form.Label>
-              <Form.Control type="time" ref={timeRef} />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-              <Form.Label>Add Notes</Form.Label>
-              <Form.Control as="textarea" rows={3} ref={discRef} />
-            </Form.Group>
-          </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary py-3" onClick={handleClose}>
-            Close
-          </Button>
-          <Button
-            variant="primary add-btn"
-            onClick={() => {
-              handleClose();
-              handleSubmit();
-            }}
-          >
-            Send
-          </Button>
-        </Modal.Footer>
+      <Modal show={show} onHide={handleClose} className="add-service-pop-form">
+        <form
+          action=""
+          onSubmit={() => {
+            handleClose();
+            handleSubmit();
+          }}
+        >
+          <div className="wrapper">
+            <div className="title">Send Reservation</div>
+            <div className="form">
+              <div className="inputfield">
+                <label>Date</label>
+                <input type="date" className="input" autoFocus ref={dateRef} required />
+              </div>
+
+              <div className="inputfield">
+                <label>Time</label>
+                <input type="time" className="input" ref={timeRef} required />
+              </div>
+
+              <div className="inputfield">
+                <label>Add Notes</label>
+                <textarea
+                  type="textarea"
+                  className="input"
+                  maxLength={150}
+                  placeholder="note"
+                  ref={discRef}
+                  required
+                />
+              </div>
+
+              <div className="footer">
+                <input type="button" value="Close" className="btn-submit" onClick={handleClose} />
+                <input type="submit" value="Send" className="btn-submit" />
+              </div>
+            </div>
+          </div>
+        </form>
       </Modal>
     </>
   );

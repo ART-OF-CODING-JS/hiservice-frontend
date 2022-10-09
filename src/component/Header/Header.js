@@ -74,14 +74,12 @@ export default function Header(props) {
           <div className="navbar-nav nav justify-content-center ms-auto py-3 py-lg-0">
             <Access role={"admin"}>
               <Link className="nav-item nav-link" to={"/users"}>
-               
                 <li nav-link>Users</li>
               </Link>
             </Access>
 
             <Access role="user">
               <Link className="nav-item nav-link" to={"/Services"}>
-               
                 <li nav-link>Services</li>
               </Link>
             </Access>
@@ -93,11 +91,9 @@ export default function Header(props) {
                 </a>
                 <div className="dropdown-menu bg-light m-0">
                   <Link className="dropdown-item" to={"/Services"}>
-                   
                     <li href="#">All Services</li>
                   </Link>
                   <Link className="dropdown-item" to={"/Services/confirmation"}>
-                    
                     <li href="#">Services Confirmation</li>
                   </Link>
                 </div>
@@ -107,14 +103,12 @@ export default function Header(props) {
             {/* ******************************************* */}
             <Access role="admin">
               <Link className="nav-item nav-link" to={"/reports-admin"}>
-            
                 <li nav-link>Reports</li>
               </Link>
             </Access>
             {/* ********************************** */}
             <Access role="user">
               <Link className="nav-item nav-link" to={"/My-Services"}>
-                
                 <li nav-link>My services</li>
               </Link>
             </Access>
@@ -145,10 +139,8 @@ export default function Header(props) {
             {/****************AllContactAdmin********************/}
             <div>
               <div className="nav-item dropdown">
-              
                 <Access role="user">
                   <Link className="nav-item nav-link" to={"/Contact-us"}>
-                    
                     <li nav-link>Contact us</li>
                   </Link>
                 </Access>
@@ -175,12 +167,14 @@ export default function Header(props) {
                 <Link className="dropdown-item" to={"/Settings"}>
                   <li href="#">Profile Setting</li>
                 </Link>
-                <Link className="dropdown-item" to={"/favList"}>
-                  <li href="#">Favorite List </li>
-                </Link>
-                <Link className="dropdown-item" to={"/blockList-user"}>
-                  <li href="#">Block List</li>
-                </Link>
+                <Access role="user">
+                  <Link className="dropdown-item" to={"/favList"}>
+                    <li href="#">Favorite List </li>
+                  </Link>
+                  <Link className="dropdown-item" to={"/blockList-user"}>
+                    <li href="#">Block List</li>
+                  </Link>
+                </Access>
               </div>
             </div>
           </div>

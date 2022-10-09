@@ -23,14 +23,7 @@ export const signin = createAsyncThunk("auth/signin", async (data, thunkApi) => 
     window.location.href = "/";
     return request.data;
   } catch (err) {
-    Swal.fire({
-      title: "Error!",
-      text: "User name or password wrong!",
-      icon: "error",
-      showConfirmButton: false,
-      timer: 1500,
-    });
-    return rejectWithValue(err.message);
+    return rejectWithValue(err.request.response);
   }
 });
 
@@ -109,6 +102,14 @@ const authSlice = createSlice({
     [signin.rejected]: (state, action) => {
       state.isLoadingSignIn = false;
       state.errorSignIn = action.payload;
+      console.log(action.payload)
+      Swal.fire({
+        title: "Error!",
+        text: action.payload,
+        icon: "error",
+        showConfirmButton: false,
+        timer: 3500,
+      });
     },
 
     /// Sign up  /////

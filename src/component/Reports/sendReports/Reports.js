@@ -18,9 +18,10 @@ export default function Reports(props) {
   const handleSubmit = () => {
     const sendData = {
       description: discRef.current.value,
-      serviceID: props.id,
+      serviceID: props.providerID,
       userID: cookie.load("userID"),
     };
+    console.log(sendData);
     dispatch(sendReport(sendData));
   };
 
@@ -44,7 +45,7 @@ export default function Reports(props) {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button class="btn btn-warning" onClick={handleClose}>
+          <Button className="btn btn-warning" onClick={handleClose}>
             Close
           </Button>
           <Button
