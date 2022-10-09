@@ -18,14 +18,16 @@ const EditServices = ({ service }) => {
   const discRef = useRef(null);
   const phoneRef = useRef(null);
   const imageRef = useRef(null);
+  const departmentRef = useRef(null);
+  const cityRef = useRef(null);
 
   const handleSubmit = () => {
     const sendData = {
       id: service.id,
       title: titleRef.current.value,
-      department: department,
+      department: departmentRef.current.value,
       description: discRef.current.value,
-      city: city,
+      city: cityRef.current.value,
       phoneNumber: phoneRef.current.value,
       image: imageRef.current.value,
       userID: cookie.load("userID"),
@@ -71,10 +73,7 @@ const EditServices = ({ service }) => {
               <div className="inputfield">
                 <label>department</label>
                 <div className="custom_select">
-                  <select
-                    onChange={(e) => setDepartment(e.target.value)}
-                    defaultValue={service.department}
-                  >
+                  <select ref={departmentRef} defaultValue={service.department}>
                     <option value="Electrical">Electrical</option>
                     <option value="Plumbing">Plumbing</option>
                     <option value="Cleaning">Cleaning</option>
@@ -91,7 +90,7 @@ const EditServices = ({ service }) => {
               <div className="inputfield">
                 <label>city</label>
                 <div className="custom_select">
-                  <select onChange={(e) => setCity(e.target.value)} defaultValue={service.city}>
+                  <select ref={cityRef} defaultValue={service.city}>
                     <option value="Amman">Amman</option>
                     <option value="Jarash">Jarash</option>
                     <option value="Irbid">Irbid</option>
