@@ -63,7 +63,7 @@ export default function ServicesConfirmation(props) {
                         >
                           Confirm <i className="fa-solid fa-circle-check"></i>
                         </button>
-                      </div>{" "}
+                      </div>
                     </div>
                   </div>
                 </div>
