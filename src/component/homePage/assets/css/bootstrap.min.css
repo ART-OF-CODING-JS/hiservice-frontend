@@ -734,14 +734,11 @@ pre code {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+ 
   /* margin-right: 100px; */
   /* margin-left: -15px; */
 }
-input,
-textarea {
- 
-  width: 100% !important;
-}
+
 
 
 .no-gutters {

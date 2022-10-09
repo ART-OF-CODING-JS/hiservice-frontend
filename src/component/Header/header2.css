@@ -35,7 +35,7 @@ input[type="search"] {
 
 input:not(:placeholder-shown) {
   border-radius: var(--rad) 0 0 var(--rad);
-  width: calc(100% - var(--btn-width));
+  /* width: calc(100% - var(--btn-width)); */
   color: #000000;
 }
 
