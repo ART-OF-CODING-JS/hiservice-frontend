@@ -7,7 +7,7 @@ import SuggestServices from "./Suggest service/SuggestServices";
 import { Spinner } from "react-bootstrap";
 import Comments from "./Comments/Comments";
 
-export default function ServiceDetails(props) {
+export default function  ServiceDetails(props) {
   const { oneService, isLoading } = useSelector((state) => state.servicesSlice);
   const dispatch = useDispatch();
   const { id } = useParams();
