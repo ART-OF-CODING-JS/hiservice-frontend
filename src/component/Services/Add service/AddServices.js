@@ -10,7 +10,7 @@ import { addService } from "../../../store/services";
 export default function AddService({ postData }) {
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
-  const [city, setCity] = useState("city");
+  const [city, setCity] = useState("");
   const [department, setDepartment] = useState("");
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -71,6 +71,7 @@ export default function AddService({ postData }) {
                     onChange={(e) => setDepartment(e.target.value)}
                   >
                     <option value="Electrical">Electrical</option>
+                    <option value="repairing">repairing</option>
                     <option value="Plumbing">Plumbing</option>
                     <option value="Cleaning">Cleaning</option>
                     <option value="Maid Service">Maid Service</option>

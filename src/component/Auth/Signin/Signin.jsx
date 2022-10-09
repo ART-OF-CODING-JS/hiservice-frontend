@@ -15,14 +15,13 @@ export default function Signin() {
   const handleSignin = async (event) => {
     event.preventDefault();
     const data = {
-      username: usernameRef.current.value,
+      username: usernameRef.current.value.toLowerCase(),
       password: passwordRef.current.value,
     };
 
     await dispatch(signin(data));
     usernameRef.current.value = null;
     passwordRef.current.value = null;
-    // navigate("/services");
   };
 
   const emailForgotPassRef = useRef(null);
