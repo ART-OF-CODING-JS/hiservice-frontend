@@ -4,14 +4,13 @@ import { useDispatch } from "react-redux";
 
 import { signin, sendEmailVerification } from "../../../store/auth";
 import Logo from "../../../assets/logo.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Signin() {
   const dispatch = useDispatch();
   const usernameRef = useRef(null);
   const passwordRef = useRef(null);
 
-  const navigate = useNavigate();
   const handleSignin = async (event) => {
     event.preventDefault();
     const data = {

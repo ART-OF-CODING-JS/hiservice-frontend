@@ -29,7 +29,7 @@ function UpdateUsername() {
           ref={usernameRef}
         />
       </div>
-      <button  type="submit" className="btn btn-dark" onClick={handleSubmit}>
+      <button type="submit" className="btn btn-dark" onClick={handleSubmit}>
         Save
       </button>
     </div>

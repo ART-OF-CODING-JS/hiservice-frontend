@@ -32,7 +32,13 @@ export default function Reservation({ serviceId }) {
 
   return (
     <>
-      <button variant="primary" size="lg" onClick={handleShow} className="btn btn-warning add-btn">
+      <button
+        variant="primary"
+        size="lg"
+        onClick={handleShow}
+        className="btn btn-warning add-btn"
+        style={{ fontSize: "15px" }}
+      >
         Reserve Service <i className="fa-regular fa-pen-to-square" />
       </button>
 
