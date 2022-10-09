@@ -15,7 +15,7 @@ export default function Signin() {
   const handleSignin = async (event) => {
     event.preventDefault();
     const data = {
-      username: usernameRef.current.value.toLowerCase(),
+      username: usernameRef.current.value,
       password: passwordRef.current.value,
     };
 

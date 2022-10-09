@@ -20,8 +20,8 @@ export default function Signup(props) {
     event.preventDefault();
 
     const data = {
-      username: usernameRef.current.value.toLowerCase(),
-      email: emailRef.current.value.toLowerCase(),
+      username: usernameRef.current.value,
+      email: emailRef.current.value,
       password: passwordRef.current.value,
       city: cityRef.current.value,
       phoneNumber: phoneNumberRef.current.value,
