@@ -1,16 +1,11 @@
 import React, { useState, useRef } from "react";
 import Modal from "react-bootstrap/Modal";
-import cookie from "react-cookies";
 import { useDispatch } from "react-redux";
-
 import { updateService } from "../../../store/services";
 
 const EditServices = ({ service }) => {
   const dispatch = useDispatch();
-
   const [show, setShow] = useState(false);
-  const [city, setCity] = useState("city");
-  const [department, setDepartment] = useState("");
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -29,7 +24,9 @@ const EditServices = ({ service }) => {
       description: discRef.current.value,
       city: cityRef.current.value,
       phoneNumber: phoneRef.current.value,
-      image: imageRef.current.value,
+      image: !imageRef.current.value
+        ? "https://cdn.pixabay.com/photo/2015/11/03/08/56/service-1019822_960_720.jpg"
+        : imageRef.current.value,
       userID: service.userID,
     };
     dispatch(updateService(sendData));
@@ -106,10 +103,11 @@ const EditServices = ({ service }) => {
               <div className="inputfield">
                 <label>Phone Number</label>
                 <input
-                  type="tel"
+                  type="number"
                   className="input"
                   placeholder="07"
-                  maxLength={15}
+                  min={10}
+                  max={15}
                   ref={phoneRef}
                   required
                   defaultValue={service.phoneNumber}
@@ -123,7 +121,6 @@ const EditServices = ({ service }) => {
                   className="input"
                   placeholder="http//"
                   ref={imageRef}
-                  required
                   defaultValue={service.image}
                 />
               </div>

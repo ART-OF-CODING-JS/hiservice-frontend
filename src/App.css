@@ -19,3 +19,15 @@
   padding: 1rem !important;
   font-weight: 600 !important;
 }
+
+::-webkit-scrollbar {
+  background: white;
+  width: 20px;
+  height: 8px;
+}
+
+/* Style the scrollbar handle */
+::-webkit-scrollbar-thumb {
+  background:#ffe791;
+  border-radius: 8px;
+}
