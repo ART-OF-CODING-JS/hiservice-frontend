@@ -130,7 +130,7 @@ export default function AddService({ postData }) {
 
               <div className="inputfield">
                 <label> Image</label>
-              <input type="file" onChange={(event)=>{setFile(event.target.files[0])}}/>
+              <input type="file" accept="image/*" onChange={(event)=>{setFile(event.target.files[0])}}/>
               <button type="" onClick={handleImage}>Upload</button>
               </div>
 
