@@ -78,6 +78,8 @@ const EditServices = ({ service }) => {
                     <option value="Teaching">Teaching</option>
                     <option value="ًWelding">Welding</option>
                     <option value="ًCarpentry and Furniture">Carpentry and Furniture</option>
+                    <option value="ًHealth care">Health care</option>
+                    <option value="ًOthers">Others</option>
                   </select>
                 </div>
               </div>
