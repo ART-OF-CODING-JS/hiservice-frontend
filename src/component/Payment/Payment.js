@@ -26,7 +26,7 @@ export default function Payment() {
     return(
       
       <div className='payment-container'>
-        { toast.error(`To add more services You should upgrade Your subscription`)}
+        {/* { toast.error(`To add more services You should upgrade Your subscription`)} */}
  
   <div id="wrapper">
     <div id="container">
@@ -38,8 +38,8 @@ export default function Payment() {
               <img src="https://img.icons8.com/doodle/48/000000/last-24-hours--v1.png" alt="" />
             </div>
             <div className="meta-col">
-              <h3>Blue Ocean Shirt</h3>
-              <p className="price">$60</p>
+              <h3>Our Services</h3>
+              <p className="price">24 hrs available</p>
             </div>
           </div>
           <div className="item">
@@ -47,8 +47,8 @@ export default function Payment() {
               <img src="https://img.icons8.com/officel/80/000000/card-security.png" alt="" />
             </div>
             <div className="meta-col">
-              <h3>Green Pine Shirt</h3>
-              <p className="price">$55</p>
+              <h3>Payment</h3>
+              <p className="price">Secured</p>
             </div>
           </div>
           <div className="item">
@@ -56,23 +56,11 @@ export default function Payment() {
               <img src="https://img.icons8.com/external-kmg-design-glyph-kmg-design/32/000000/external-infinity-design-thinking-kmg-design-glyph-kmg-design.png" alt="" />
             </div>
             <div className="meta-col">
-              <h3>Cow Skin Belt</h3>
-              <p className="price">$32</p>
+              <h3>Premium Subscription</h3>
+              <p className="price">$10</p>
             </div>
           </div>
-          <div className="item">
-            <div className="img-col">
-              <img src="http://emilcarlsson.se/assets/watch1.png" alt="" />
-            </div>
-            <div className="meta-col">
-              <h3>Festina Quartz Watch</h3>
-              <p className="price">$299</p>
-            </div>
-          </div>
-          <p id="total">Total</p>
-          <h4 id="total-price">
-            <span>$</span> 446
-          </h4>
+          
         </div>
       </div>
       <div id="right-col">
@@ -144,7 +132,6 @@ export default function Payment() {
       </div>
     </div>
   </div>
-  <h1 id="dailyui">002</h1>
 </div>
 
        
