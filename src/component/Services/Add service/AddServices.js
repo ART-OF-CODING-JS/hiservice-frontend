@@ -31,7 +31,7 @@ export default function AddService({ postData }) {
       description: discRef.current.value,
       city: cityRef.current.value,
       phoneNumber: phoneRef.current.value,
-      image: myImage,
+      image: !myImage?'https://cdn.pixabay.com/photo/2015/11/03/08/56/service-1019822_960_720.jpg':myImage,
       userID: cookie.load("userID"),
     };
 
@@ -123,6 +123,7 @@ export default function AddService({ postData }) {
                   placeholder="07"
                   maxLength={15}
                   ref={phoneRef}
+                  min={10}
                   required
                 />
               </div>
