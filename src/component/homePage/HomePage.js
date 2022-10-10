@@ -552,7 +552,7 @@ const HomePage = () => {
               </div>
             </div>
             <div className="card-wrapper-team">
-              <div className="card-team">
+              <div className="card-team" style={{marginLeft:"15rem"}}>
                 <div className="card-image-team">
                   <img className="card-image-team1" src="./image/heba.jpeg" alt="profile one" />
                 </div>
@@ -588,9 +588,9 @@ const HomePage = () => {
               </div>
             </div>
             <div className="card-wrapper-team">
-              <div className="card-team">
-                <div className="card-image-team">
-                  <img className="card-image-team1" src="./image/sara.jpeg" alt="profile one" />
+              <div className="card-team" style={{marginLeft:"15rem"}}>
+                <div className="card-image-team" >
+                  <img className="card-image-team1" src="./image/sara.jpeg" alt="profile one"  />
                 </div>
                 <ul className="social-icons">
                   <li>
