@@ -401,7 +401,7 @@ h2 {
 }
 
 .h3 {
-   font-size: 80px;
+  font-size: 80px;
   padding-bottom: 30px;
 
   align-content: center;
@@ -451,17 +451,6 @@ h6 {
   line-height: 1.2;
 }
 
-.testimonial-body {
-  background: linear-gradient(to bottom, #f8f9fa, #f8f9fa);
-  animation: background-color 20s;
-  min-height: 70vh;
-}
-
-.container-t .col-lg-4 {
-  display: flex;
-  justify-content: center;
-}
-
 .card-t {
   width: 300px;
   height: 300px;
@@ -498,8 +487,8 @@ h6 {
 }
 
 .card-t .face.front-face .profile {
-  width: 150px;
-  height: 150px;
+  width: 170px;
+  height: 170px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -558,9 +547,7 @@ h6 {
   padding-top: 80px;
   font-size: 40px;
   font-weight: 700;
-  }
-
-
+}
 
 hr {
   margin-top: 1rem;
@@ -729,17 +716,16 @@ pre code {
   margin-left: auto;
 }
 
-.row {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
- 
-  /* margin-right: 100px; */
-  margin-left: -15px;
+.clients-class {
+  display: grid;
 }
 
-
+.col-lg-4 {
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  margin: auto;
+}
 
 .no-gutters {
   margin-right: 0;
@@ -10969,7 +10955,6 @@ button.bg-dark:hover {
 .text-center {
   text-align: center !important;
   padding: 50px 0;
-  
 }
 
 @media (min-width: 576px) {
@@ -11281,4 +11266,33 @@ a.text-dark:hover {
     color: inherit;
     border-color: #dee2e6;
   }
+}
+
+.col-lg-4 {
+  display: flex;
+  justify-content: center;
+}
+
+.testimonial-body {
+  justify-content: center;
+  margin: auto;
+  text-align: center;
+
+  background: linear-gradient(to bottom, #f8f9fa, #f8f9fa);
+  animation: background-color 20s;
+  min-height: 20vh;
+
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.clients-class {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  margin: 20px;
+
+  font-size: 20px;
+  text-align: center;
 }

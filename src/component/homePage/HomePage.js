@@ -165,7 +165,7 @@ const HomePage = () => {
           </div>
 
           {/* <div className="section-how"> */}
-          <div className="work">
+          <div className="work" style={{ marginTop: "-9rem" }}>
             <div className="scene">
               <div className="card">
                 <div className="card__face card__face--front">
@@ -367,81 +367,71 @@ const HomePage = () => {
         </div>
       </section> */}
 
-        <div className="container-t testimonial-body">
-          <div className="row">
-            <h2 className="h3">What Our Clients Say</h2>
-            <div className="col-lg-4">
-              <div className="card-t">
-                <div className="face front-face">
-                  <img
-                    src="https://ca.slack-edge.com/TNGRRLUMA-UPRCC16QP-53e7e37645fd-512"
-                    alt=""
-                    className="profile"
-                  />
-                  <div className="pt-3 text-uppercase name">Shihab Eshtaiwi</div>
-                  <div className="designation">Instructor</div>
-                </div>
-                <div className="face back-face">
-                  <span className="fas fa-quote-left"></span>
-                  <div className="testimonial">
-                    I made bacck the purchase price in just 48 hours! Thank you for making it pain
-                    less, pleasant. The service was execellent. I will refer everyone I know.
-                  </div>
-                  <span className="fas fa-quote-right"></span>
-                </div>
-              </div>
+        <h2 className="h3">What Our Clients Say</h2>
+        <div className="container-t testimonial-body" style={{ marginTop: "-7.5rem" }}>
+          <div className="card-t clients-class">
+            <div className="face front-face">
+              <img
+                src="https://ca.slack-edge.com/TNGRRLUMA-UPRCC16QP-53e7e37645fd-512"
+                alt=""
+                className="profile"
+              />
+              <div className="pt-3 text-uppercase name">Shihab Eshtaiwi</div>
+              <div className="designation">Instructor</div>
             </div>
-            <div className="col-lg-4">
-              <div className="card-t">
-                <div className="face front-face">
-                  <img
-                    src="https://ca.slack-edge.com/TNGRRLUMA-UTE75MPJ9-282b001b930f-512"
-                    alt=""
-                    className="profile"
-                  />
-                  <div className="pt-3 text-uppercase name">Obada Tumah</div>
-                  <div className="designation">Full Stack Developer</div>
-                </div>
-                <div className="face back-face">
-                  <span className="fas fa-quote-left"></span>
-                  <div className="testimonial">
-                    Really good, you have saved our business! I made bacck the purchase price in
-                    just 48 hours! man, this thing is getting better and better as I learn more
-                    about it.
-                  </div>
-                  <span className="fas fa-quote-right"></span>
-                </div>
+            <div className="face back-face">
+              <span className="fas fa-quote-left"></span>
+              <div className="testimonial">
+                I made bacck the purchase price in just 48 hours! Thank you for making it pain less,
+                pleasant. The service was execellent. I will refer everyone I know.
               </div>
+              <span className="fas fa-quote-right"></span>
             </div>
-            <div className="col-lg-4">
-              <div className="card-t">
-                <div className="face front-face">
-                  <img
-                    src="https://ca.slack-edge.com/TNGRRLUMA-U011NPNQ9FX-537d8bf49726-512"
-                    alt=""
-                    className="profile"
-                  />
-                  <div className="pt-3 text-uppercase name">Ahmad Swedani</div>
-                  <div className="designation">Software Developer</div>
-                </div>
-                <div className="face back-face">
-                  <span className="fas fa-quote-left"></span>
-                  <div className="testimonial">
-                    Account keeper is the most valuable business research we have EVER purchased.
-                    Without electrician, we would ahave gone bankrupt by now.
-                  </div>
-                  <span className="fas fa-quote-right"></span>
-                </div>
+          </div>
+          <div className="card-t clients-class">
+            <div className="face front-face">
+              <img
+                src="https://ca.slack-edge.com/TNGRRLUMA-UTE75MPJ9-282b001b930f-512"
+                alt=""
+                className="profile"
+              />
+              <div className="pt-3 text-uppercase name">Obada Tumah</div>
+              <div className="designation">Full Stack Developer</div>
+            </div>
+            <div className="face back-face">
+              <span className="fas fa-quote-left"></span>
+              <div className="testimonial">
+                Really good, you have saved our business! I made back the purchase price in just 48
+                hours! man, this thing is getting better and better as I learn more about it.
               </div>
+              <span className="fas fa-quote-right"></span>
+            </div>
+          </div>
+
+          <div className="card-t clients-class">
+            <div className="face front-face">
+              <img
+                src="https://ca.slack-edge.com/TNGRRLUMA-U01TUDCP3HT-b7da7e18750f-512"
+                alt=""
+                className="profile"
+              />
+              <div className="pt-3 text-uppercase name">Khaled Tahat</div>
+              <div className="designation">Full Stack Developer</div>
+            </div>
+            <div className="face back-face">
+              <span className="fas fa-quote-left"></span>
+              <div className="testimonial">
+                Very good, you have control the costs of! Thank you for making live easer, And make
+                everything accessible.
+              </div>
+              <span className="fas fa-quote-right"></span>
             </div>
           </div>
         </div>
 
         <br />
-        <br />
         <h3 className="h3 team-title">Our Team member</h3>
-        <br />
-        <section className="container_team">
+        <section className="container_team" style={{ marginTop: "-10rem" }}>
           <div className="team-section">
             <div className="card-wrapper-team">
               <div className="card-team">
@@ -801,16 +791,16 @@ const HomePage = () => {
       </div> */}
         {/* <Contact/> */}
         <section className="page-section" id="contact">
-          <div className="container">
+          <div className="container" style={{ marginBottom: "-9rem" }}>
             <div className="col-lg-12 text-center">
               <h2 className="section-heading text-uppercase">Contact Us</h2>
             </div>
 
-            <div className="row">
+            <div className="clients-class">
               <div className="col-lg-12">
-                <form ref={form} onSubmit={sendEmail} novalidate="novalidate">
+                <form ref={form} onSubmit={sendEmail} noValidate="novalidate">
                   <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-md-6 clients">
                       <div className="form-group">
                         <input
                           className="form-control"
@@ -848,11 +838,13 @@ const HomePage = () => {
                         <p className="help-block text-danger"></p>
                       </div>
                     </div>
-                    <ReCAPTCHA
-                      sitekey="6LcaEmgiAAAAAA-N2w6u0aoJVR1aEwDFYi2CJU2t"
-                      onChange={onChange}
-                    />
-                    ,<div className="clearfix"></div>
+                    <div style={{ display: "flex", textAlign: "center", justifyContent: "center" }}>
+                      <ReCAPTCHA
+                        sitekey="6LcaEmgiAAAAAA-N2w6u0aoJVR1aEwDFYi2CJU2t"
+                        onChange={onChange}
+                      />
+                    </div>
+                    <div className="clearfix"></div>
                     <div className="col-lg-12 text-center">
                       <button
                         className="btn btn-primary btn-xl text-uppercase"
