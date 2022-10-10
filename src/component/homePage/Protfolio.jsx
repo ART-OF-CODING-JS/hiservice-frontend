@@ -18,7 +18,7 @@ const PortfolioLinks = ({ portfolioLinks }) => {
             </div>
             {portfolioLinks &&
               portfolioLinks.map(({ title, caption, image }, index) => (
-                <div className="col-md-4 col-sm-6 portfolio-item">
+                <div className="col-md-4 col-sm-6 portfolio-item" key={index}>
                  <div class = "container-c">
                
     <div class = "card-w">

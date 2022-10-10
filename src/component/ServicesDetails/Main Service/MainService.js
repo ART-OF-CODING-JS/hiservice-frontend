@@ -14,7 +14,7 @@ export default function MainService(props) {
   return (
     <section className="container-main-service container-com">
       {props.oneService.slice(0, 1).map((ele) => (
-        <>
+        <div key={ele.id}>
           <div className="main-serves-app" key={ele.id}>
             <div className="main-serves-main-div">
               <div className="main-service-img">
@@ -36,7 +36,6 @@ export default function MainService(props) {
                   {ele.title}, in {ele.city}
                 </h1>
                 <p className="text-break">{ele.description}</p>
-                {console.log(!(ele.userID === parseInt(cookie.load("userID"))), "dddddddd")}
                 {!(ele.userID === parseInt(cookie.load("userID"))) ? (
                   <Access role={"user"}>
                     <div className="block-report">
@@ -66,7 +65,7 @@ export default function MainService(props) {
           <div className="main-service-comments">
             <Comments serviceId={ele.id} />
           </div>
-        </>
+        </div>
       ))}
     </section>
   );

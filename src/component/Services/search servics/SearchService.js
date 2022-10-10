@@ -39,9 +39,9 @@ export default function SearchService(props) {
     <Search/>
       <AddService />
       <section className="service-container container-com">
-        {currentRecords.map((ele) => (
-          <>
-          <figure className="image-block">
+        {currentRecords.map((ele,idx) => (
+          <div key={ele.id}>
+          <figure className="image-block" >
             <Link to={`/Services/${ele.id}`}>
               <img className="img" alt="service" src={ele.image} />
             </Link>
@@ -79,7 +79,7 @@ export default function SearchService(props) {
               </Access>
             </figcaption>
           </figure>
-        </>
+        </div>
         ))}
       </section>
       <Pagination 

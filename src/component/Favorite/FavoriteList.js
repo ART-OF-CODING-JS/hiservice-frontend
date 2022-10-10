@@ -27,7 +27,7 @@ export default function FavoriteList({ favId, serviceId, userID }) {
         {allServices
           .filter((ele) => ele.id === serviceId)
           .map((ele) => (
-            <div className="my_services_body">
+            <div className="my_services_body" key={ele.id}>
               <div className="container-my-services">
                 <div className="card_img">
                   <img src={ele.image} alt="Pancake" />

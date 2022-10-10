@@ -20,7 +20,6 @@ import "./Users.css";
 export default function Users(props) {
   const dispatch = useDispatch();
   const { userInfo } = useSelector((state) => state.usersSlice);
-  console.log(userInfo);
   const num = userInfo.filter((item) => item.role === "admin");
   const num2 = userInfo.filter((item) => item.role === "user");
   const active = userInfo.filter((item) => item.blocked === false);

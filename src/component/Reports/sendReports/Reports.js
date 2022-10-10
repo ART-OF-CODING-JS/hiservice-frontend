@@ -21,7 +21,6 @@ export default function Reports(props) {
       serviceID: props.providerID,
       userID: cookie.load("userID"),
     };
-    console.log(sendData);
     dispatch(sendReport(sendData));
   };
 
