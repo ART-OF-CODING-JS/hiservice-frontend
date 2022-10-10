@@ -44,9 +44,18 @@ export default function MainService(props) {
                         <BlockProvider providerID={ele.userID} />
                         <Reports providerID={ele.id} />
                       </div>
-                      <Reservation serviceId={ele.id} />
-                      <Link className="btn btn-warning add-btn" to={`/chat/${ele.userID}`}>
-                        Chat <i class="fa fa-comments-o" aria-hidden="true"></i>
+                      <Reservation serviceId={ele.id} style={{ fontSize: "15px" }} />
+                      <Link
+                        className="btn btn-warning add-btn"
+                        to={`/chat/${ele.userID}`}
+                        style={{ fontSize: "15px" }}
+                      >
+                        Chat{" "}
+                        <i
+                          className="fa fa-comments-o"
+                          aria-hidden="true"
+                          style={{ marginTop: "10px" }}
+                        ></i>
                       </Link>
                     </div>
                   </Access>
