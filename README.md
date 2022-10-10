@@ -53,3 +53,5 @@
 ![link](./images/React%20App%20demo.gif)
 
 * This is the final demo for the project 
+
+![link](./images/ourApp.gif)
