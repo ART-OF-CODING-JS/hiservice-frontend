@@ -6,12 +6,12 @@ import cookie from "react-cookies";
 import { useDispatch } from "react-redux";
 import { Button } from "react-bootstrap";
 import { addService } from "../../../store/services";
-import axios from 'axios'
+import axios from "axios";
 export default function AddService({ postData }) {
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
-  const [file,setFile] =useState("")
-  const [myImage,setMyImage]=useState("")
+  const [file, setFile] = useState("");
+  const [myImage, setMyImage] = useState("");
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -24,33 +24,34 @@ export default function AddService({ postData }) {
   const cityRef = useRef(null);
 
   const handleSubmit = () => {
-    
     const sendData = {
       title: titleRef.current.value,
       department: departmentRef.current.value,
       description: discRef.current.value,
       city: cityRef.current.value,
       phoneNumber: phoneRef.current.value,
-      image: !myImage?'https://cdn.pixabay.com/photo/2015/11/03/08/56/service-1019822_960_720.jpg':myImage,
+      image: !myImage
+        ? "https://cdn.pixabay.com/photo/2015/11/03/08/56/service-1019822_960_720.jpg"
+        : myImage,
       userID: cookie.load("userID"),
     };
 
     dispatch(addService(sendData));
   };
-  function handleImage(e){
-   e.preventDefault()
-    const formData= new FormData()
-    formData.append('file',file)
-    formData.append('upload_preset','kpc5yviv')
-    axios.post("https://api.cloudinary.com/v1_1/dminynjzy/image/upload",formData)
-    .then((response)=>{
-        console.log(response.data.secure_url)
-        setMyImage(response.data.secure_url)
-    })
-    setFile("")
-    setMyImage("")
-
-}
+  function handleImage(e) {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", "kpc5yviv");
+    axios
+      .post("https://api.cloudinary.com/v1_1/dminynjzy/image/upload", formData)
+      .then((response) => {
+        console.log(response.data.secure_url);
+        setMyImage(response.data.secure_url);
+      });
+    setFile("");
+    setMyImage("");
+  }
 
   return (
     <>
@@ -121,17 +122,25 @@ export default function AddService({ postData }) {
                   type="number"
                   className="input"
                   placeholder="07"
-                  maxLength={15}
-                  ref={phoneRef}
                   min={10}
+                  max={15}
+                  ref={phoneRef}
                   required
                 />
               </div>
 
               <div className="inputfield">
                 <label> Image</label>
-              <input type="file" accept="image/*" onChange={(event)=>{setFile(event.target.files[0])}}/>
-              <button type="" onClick={handleImage}>Upload</button>
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={(event) => {
+                    setFile(event.target.files[0]);
+                  }}
+                />
+                <button type="" onClick={handleImage}>
+                  Upload
+                </button>
               </div>
 
               <div className="inputfield">
