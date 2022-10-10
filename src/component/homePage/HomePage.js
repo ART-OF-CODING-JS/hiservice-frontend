@@ -165,7 +165,7 @@ const HomePage = () => {
           </div>
 
           {/* <div className="section-how"> */}
-          <div className="work" style={{ marginTop: "-9rem" }}>
+          <div className="work" style={{ marginTop: "-6rem" }}>
             <div className="scene">
               <div className="card">
                 <div className="card__face card__face--front">
@@ -368,7 +368,7 @@ const HomePage = () => {
       </section> */}
 
         <h2 className="h3">What Our Clients Say</h2>
-        <div className="container-t testimonial-body" style={{ marginTop: "-7.5rem" }}>
+        <div className="container-t testimonial-body" style={{ marginTop: "-6rem" }}>
           <div className="card-t clients-class">
             <div className="face front-face">
               <img
@@ -431,7 +431,7 @@ const HomePage = () => {
 
         <br />
         <h3 className="h3 team-title">Our Team member</h3>
-        <section className="container_team" style={{ marginTop: "-10rem" }}>
+        <section className="container_team" style={{ marginTop: "-8rem" }}>
           <div className="team-section">
             <div className="card-wrapper-team">
               <div className="card-team">
