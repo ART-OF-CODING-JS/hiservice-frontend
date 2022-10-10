@@ -54,7 +54,7 @@ export default function Signup(props) {
           <h2>Create new account</h2>
 
           <div className="input-group">
-            <input type="text" name="loginUser" id="loginUser" ref={usernameRef} required />
+            <input type="text" name="loginUser" id="loginUser" maxLength={10} ref={usernameRef} required />
             <label>Username</label>
           </div>
 
@@ -69,12 +69,12 @@ export default function Signup(props) {
           </div>
 
           <div className="input-group">
-            <input type="number" name="loginUser" id="loginUser" ref={phoneNumberRef} required />
+            <input type="number" name="loginUser" id="loginUser" ref={phoneNumberRef} min={10} required />
             <label>Phone number</label>
           </div>
 
           <div className="input-group">
-            <input type="text" name="loginUser" id="loginUser" ref={professionsRef} required />
+            <input type="text" name="loginUser" id="loginUser" maxLength={8} ref={professionsRef} required />
             <label>Professions</label>
           </div>
 
@@ -84,6 +84,7 @@ export default function Signup(props) {
               name="loginUser"
               id="loginUser"
               minLength={8}
+              maxLength={16}
               ref={passwordRef}
               required
             />
