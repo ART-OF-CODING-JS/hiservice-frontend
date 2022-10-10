@@ -832,8 +832,9 @@ function onChange(value) {
             <div className="form-group">
               <textarea
                 className="form-control"
-                name="message" rows="7" placeholder="Your Message" required
+                name="message" rows="2" column='50' placeholder="Your Message" required
                 data-validation-required-message="Please enter a message."
+                style={{maxHeight:'150px'}}
               ></textarea>
               <p className="help-block text-danger"></p>
             </div>
