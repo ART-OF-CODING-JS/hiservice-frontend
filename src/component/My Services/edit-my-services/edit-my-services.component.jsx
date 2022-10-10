@@ -24,7 +24,9 @@ const EditServices = ({ service }) => {
       description: discRef.current.value,
       city: cityRef.current.value,
       phoneNumber: phoneRef.current.value,
-      image: !imageRef.current.value?'https://cdn.pixabay.com/photo/2015/11/03/08/56/service-1019822_960_720.jpg':imageRef.current.value,
+      image: !imageRef.current.value
+        ? "https://cdn.pixabay.com/photo/2015/11/03/08/56/service-1019822_960_720.jpg"
+        : imageRef.current.value,
       userID: service.userID,
     };
     dispatch(updateService(sendData));
@@ -104,8 +106,8 @@ const EditServices = ({ service }) => {
                   type="number"
                   className="input"
                   placeholder="07"
-                  maxLength={15}
                   min={10}
+                  max={15}
                   ref={phoneRef}
                   required
                   defaultValue={service.phoneNumber}
