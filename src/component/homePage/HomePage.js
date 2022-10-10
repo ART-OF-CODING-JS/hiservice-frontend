@@ -505,44 +505,9 @@ const HomePage = () => {
                 </div>
               </div>
             </div>
+
             <div className="card-wrapper-team">
               <div className="card-team">
-                <div className="card-image-team">
-                  <img className="card-image-team1" src="./image/Yasin.jpg" alt="profile one" />
-                </div>
-                <ul className="social-icons">
-                  <li>
-                    <a href="">
-                      <i className="fab fa-facebook-f" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="fab fa-instagram" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="fab fa-twitter" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="fab fa-dribbble" />
-                    </a>
-                  </li>
-                </ul>
-                <div className="details-team">
-                  <h2>
-                    Yasein Burqan
-                    <br />
-                    <p className="job-title-team">UI Developer</p>
-                  </h2>
-                </div>
-              </div>
-            </div>
-            <div className="card-wrapper-team">
-              <div className="card-team" style={{marginLeft:"15rem"}}>
                 <div className="card-image-team">
                   <img className="card-image-team1" src="./image/heba.jpeg" alt="profile one" />
                 </div>
@@ -578,9 +543,9 @@ const HomePage = () => {
               </div>
             </div>
             <div className="card-wrapper-team">
-              <div className="card-team" style={{marginLeft:"15rem"}}>
-                <div className="card-image-team" >
-                  <img className="card-image-team1" src="./image/sara.jpeg" alt="profile one"  />
+              <div className="card-team" style={{ marginLeft: "15rem" }}>
+                <div className="card-image-team">
+                  <img className="card-image-team1" src="./image/sara.jpeg" alt="profile one" />
                 </div>
                 <ul className="social-icons">
                   <li>
@@ -609,6 +574,42 @@ const HomePage = () => {
                     Sara Altayeh
                     <br />
                     <p className="job-title-team">Best designer</p>
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div className="card-wrapper-team" style={{ marginLeft: "15rem" }}>
+              <div className="card-team">
+                <div className="card-image-team">
+                  <img className="card-image-team1" src="./image/Yasin.jpg" alt="profile one" />
+                </div>
+                <ul className="social-icons">
+                  <li>
+                    <a href="">
+                      <i className="fab fa-facebook-f" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <i className="fab fa-instagram" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <i className="fab fa-twitter" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <i className="fab fa-dribbble" />
+                    </a>
+                  </li>
+                </ul>
+                <div className="details-team">
+                  <h2>
+                    Yasein Burqan
+                    <br />
+                    <p className="job-title-team">UI Developer</p>
                   </h2>
                 </div>
               </div>
@@ -791,7 +792,7 @@ const HomePage = () => {
       </div> */}
         {/* <Contact/> */}
         <section className="page-section" id="contact">
-          <div className="container" style={{ marginBottom: "-9rem" }}>
+          <div className="container" style={{ marginBottom: "-8rem" }}>
             <div className="col-lg-12 text-center">
               <h2 className="section-heading text-uppercase">Contact Us</h2>
             </div>
@@ -844,8 +845,7 @@ const HomePage = () => {
                         onChange={onChange}
                       />
                     </div>
-                    <div className="clearfix"></div>
-                    <div className="col-lg-12 text-center">
+                    <div className="col-lg-12" style={{ marginBottom: "5.7rem" }}>
                       <button
                         className="btn btn-primary btn-xl text-uppercase"
                         type="submit"

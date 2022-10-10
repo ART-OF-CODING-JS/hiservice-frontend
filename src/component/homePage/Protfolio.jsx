@@ -24,7 +24,6 @@ const PortfolioLinks = ({ portfolioLinks }) => {
                         <h3>{title}</h3>
                       </div>
                       <div class="content">
-                        {/* <h3>{title}</h3> */}
                         <p>{caption}</p>
                       </div>
                     </div>
