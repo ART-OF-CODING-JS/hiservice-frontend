@@ -28,7 +28,6 @@ export default function SearchByCity(props) {
     
   }
  
-  console.log(searchedServices,"this we I will render the searched service");
    ///////////pagination/////
   const [currentPage, setCurrentPage] = useState(1);
    const [postsPerPage,setPerPage] = useState(6);
@@ -42,8 +41,7 @@ export default function SearchByCity(props) {
       <AddService />
       <section className="service-container container-com">
         {currentRecords.map((ele) => (
-           <>
-           <figure className="image-block">
+           <figure className="image-block" key={ele.id}>
              <Link to={`/Services/${ele.id}`}>
                <img className="img" alt="service" src={ele.image} />
              </Link>
@@ -80,7 +78,6 @@ export default function SearchByCity(props) {
                </Access>
              </figcaption>
            </figure>
-         </>
         ))}
       </section>
       <Pagination 

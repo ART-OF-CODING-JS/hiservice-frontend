@@ -16,18 +16,22 @@ const PortfolioLinks = ({ portfolioLinks }) => {
             </div>
             {portfolioLinks &&
               portfolioLinks.map(({ title, caption, image }, index) => (
-                <div className="col-md-4 col-sm-6 portfolio-item">
-                  <div class="container-c">
-                    <div class="card-w">
-                      <div class="image">
-                        <img href="#" src={image} />
-                        <h3>{title}</h3>
-                      </div>
-                      <div class="content">
-                        <p>{caption}</p>
-                      </div>
-                    </div>
-                  </div>
+                <div className="col-md-4 col-sm-6 portfolio-item" key={index}>
+                 <div class = "container-c">
+               
+    <div class = "card-w">
+   
+      <div class = "image">
+     
+        <img href = "#" src ={image}/>
+        <h3>{title}</h3>
+      </div>
+      <div class = "content">
+        {/* <h3>{title}</h3> */}
+        <p>{caption}</p>
+      </div>
+    </div>    
+  </div>
                 </div>
               ))}
           </div>

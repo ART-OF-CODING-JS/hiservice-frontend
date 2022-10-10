@@ -28,7 +28,6 @@ export default function Comments({ serviceId }) {
       userID: user_comment.id,
       serviceID: serviceId,
     };
-    console.log(data);
     dispatch(addComments(data));
     commentsRef.current.value = null;
   };
@@ -94,11 +93,11 @@ export default function Comments({ serviceId }) {
                         {comments
                           .filter((ele) => ele.serviceID === serviceId)
                           .map((ele) => (
-                            <>
+                            <div key={ele.id}>
                               {userInfo
                                 .filter((ele_user) => ele_user.id === ele.userID)
                                 .map((elem) => (
-                                  <div className="media edit_bot_com">
+                                  <div className="media edit_bot_com" key={elem.id}>
                                     <a className="pull-left">
                                       {!elem.image ? (
                                         <img
@@ -127,18 +126,13 @@ export default function Comments({ serviceId }) {
                                           </li>
                                         </ul>
                                         <ul className="list-unstyled list-inline media-detail pull-right">
-                                          {/* <li className="">
-                                <a href="">Like</a>
-                              </li> */}
-                                          {/* <li className="">
-                                <a href="">Reply</a>
-                              </li> */}
+          
                                         </ul>
                                       </div>
                                     </div>
                                   </div>
                                 ))}
-                            </>
+                            </div>
                           ))}
                       </>
                     ) : (

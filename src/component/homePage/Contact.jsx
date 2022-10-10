@@ -10,10 +10,8 @@ const Contact = () => {
 
     emailjs.sendForm("service_i3vdjet", "template_dba6xsh", form.current, "4IRJ7S-Zy5peQfPMN").then(
       (result) => {
-        console.log(result.text);
       },
       (error) => {
-        console.log(error.text);
       }
     );
 

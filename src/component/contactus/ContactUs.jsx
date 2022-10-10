@@ -57,7 +57,7 @@ const Contact = () => {
                 required
                 data-validation-required-message="Please enter your name."
               />
-              <label for="contact_nom">NAME</label>
+              <label htmlFor="contact_nom">NAME</label>
             </p>
             <p className="input_wrapper">
               <input
@@ -69,7 +69,7 @@ const Contact = () => {
                 required
                 data-validation-required-message="Please enter your email address."
               />
-              <label for="contact_email">EMAIL</label>
+              <label htmlFor="contact_email">EMAIL</label>
             </p>
 
             <p className="textarea_wrapper">

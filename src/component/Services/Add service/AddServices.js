@@ -1,6 +1,6 @@
 import "./AddServices.css";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Modal from "react-bootstrap/Modal";
 import cookie from "react-cookies";
 import { useDispatch } from "react-redux";
@@ -23,7 +23,9 @@ export default function AddService({ postData }) {
   const departmentRef = useRef(null);
   const cityRef = useRef(null);
 
-  const handleSubmit = () => {
+
+
+  const handleSubmit =() => {
     const sendData = {
       title: titleRef.current.value,
       department: departmentRef.current.value,
@@ -38,20 +40,26 @@ export default function AddService({ postData }) {
 
     dispatch(addService(sendData));
   };
-  function handleImage(e) {
-    e.preventDefault();
-    const formData = new FormData();
+  useEffect(()=>{
+    if(file){
+   const formData = new FormData();
     formData.append("file", file);
     formData.append("upload_preset", "kpc5yviv");
     axios
       .post("https://api.cloudinary.com/v1_1/dminynjzy/image/upload", formData)
       .then((response) => {
-        console.log(response.data.secure_url);
         setMyImage(response.data.secure_url);
       });
     setFile("");
     setMyImage("");
-  }
+    }
+ 
+
+  },[file])
+  // function handleImage() {
+  
+   
+  // }
 
   return (
     <>
@@ -63,8 +71,8 @@ export default function AddService({ postData }) {
         <form
           action=""
           onSubmit={() => {
+            handleSubmit()
             handleClose();
-            handleSubmit();
           }}
         >
           <div className="wrapper">
@@ -122,8 +130,8 @@ export default function AddService({ postData }) {
                   type="number"
                   className="input"
                   placeholder="07"
-                  min={10}
-                  max={15}
+                  // max={15}
+                  // min={10}
                   ref={phoneRef}
                   required
                 />
@@ -138,9 +146,9 @@ export default function AddService({ postData }) {
                     setFile(event.target.files[0]);
                   }}
                 />
-                <button type="" onClick={handleImage}>
+                {/* <button type="" onClick={handleImage}>
                   Upload
-                </button>
+                </button> */}
               </div>
 
               <div className="inputfield">

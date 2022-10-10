@@ -9,7 +9,7 @@ export default function UserInfo() {
   return (
     <section className="userInfo-container container-com">
       {userArrInfo.map((ele) => (
-        <div className="profile_info">
+        <div className="profile_info" key={ele.id}>
           <div className="infocardContainer">
             <div id="main">
               {ele.image === null ? (

@@ -60,7 +60,7 @@ export default function Services() {
 
       <section className="service-container container-com">
         {currentRecords.map((service) => (
-          <>
+
             <figure className="image-block" key={service.id}>
               <Link to={`/Services/${service.id}`}>
                 <img className="img" alt="service" src={service.image} />
@@ -103,7 +103,6 @@ export default function Services() {
                 </Access>
               </figcaption>
             </figure>
-          </>
         ))}
       </section>
       <Pagination

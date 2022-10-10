@@ -19,10 +19,8 @@ const HomePage = () => {
 
       .then(
         (result) => {
-          console.log(result.text);
         },
         (error) => {
-          console.log(error.text);
         }
       );
 
@@ -33,7 +31,6 @@ const HomePage = () => {
   const [verifed, setVerifed] = useState(false);
 
   function onChange(value) {
-    console.log("Captcha value:", value);
     setVerifed(true);
   }
   ///////////////
