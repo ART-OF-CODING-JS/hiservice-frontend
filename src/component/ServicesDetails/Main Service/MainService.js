@@ -22,7 +22,9 @@ export default function MainService(props) {
               </div>
               <div className="info-div">
                 <nav className="main-service-nav">
-                  <a href="#/">Created at : {ele.createdAt.substring(0, 10)}</a>
+                  <span href="#/" className="main-service-span">
+                    Created at : {ele.createdAt.substring(0, 10)}
+                  </span>
                   {ele.userID === parseInt(cookie.load("userID")) ? (
                     <p style={{ color: "red" }}>Your Service</p>
                   ) : null}
