@@ -28,7 +28,7 @@ export default function AddService({ postData }) {
       description: discRef.current.value,
       city: cityRef.current.value,
       phoneNumber: phoneRef.current.value,
-      image: imageRef.current.value,
+      image: !imageRef.current.value?'https://cdn.pixabay.com/photo/2015/11/03/08/56/service-1019822_960_720.jpg':imageRef.current.value,
       userID: cookie.load("userID"),
     };
 
@@ -106,13 +106,14 @@ export default function AddService({ postData }) {
                   placeholder="07"
                   maxLength={15}
                   ref={phoneRef}
+                  min={10}
                   required
                 />
               </div>
 
               <div className="inputfield">
                 <label>Add Image</label>
-                <input type="text" className="input" placeholder="http//" ref={imageRef} required />
+                <input type="text" className="input" placeholder="http//" ref={imageRef} />
               </div>
 
               <div className="inputfield">
