@@ -33,10 +33,6 @@ export default function FavoriteList({ favId, serviceId, userID }) {
                   <img src={ele.image} alt="Pancake" />
                   <div className="info">
                     <div className="edit-myservice common-edi-del">
-                      <Link className="Link btn btn-warning btn-lg">
-                        Remove <i class="fa-solid fa-heart-circle-xmark"></i>{" "}
-                      </Link>
-
                       <Link className="Link btn btn-warning btn-lg" to={`/Services/${ele.id}`}>
                         More Details
                       </Link>

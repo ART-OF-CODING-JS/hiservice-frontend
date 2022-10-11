@@ -1,13 +1,16 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Modal from "react-bootstrap/Modal";
 import { useDispatch } from "react-redux";
 import { updateService } from "../../../store/services";
+import axios from "axios";
 
 const EditServices = ({ service }) => {
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [file, setFile] = useState("");
+  const [myImage, setMyImage] = useState("");
 
   const titleRef = useRef(null);
   const discRef = useRef(null);
@@ -15,6 +18,21 @@ const EditServices = ({ service }) => {
   const imageRef = useRef(null);
   const departmentRef = useRef(null);
   const cityRef = useRef(null);
+
+  useEffect(() => {
+    if (file) {
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("upload_preset", "kpc5yviv");
+      axios
+        .post("https://api.cloudinary.com/v1_1/dminynjzy/image/upload", formData)
+        .then((response) => {
+          setMyImage(response.data.secure_url);
+        });
+      setFile("");
+      setMyImage("");
+    }
+  }, [file]);
 
   const handleSubmit = () => {
     const sendData = {
@@ -24,9 +42,9 @@ const EditServices = ({ service }) => {
       description: discRef.current.value,
       city: cityRef.current.value,
       phoneNumber: phoneRef.current.value,
-      image: !imageRef.current.value
+      image: !myImage
         ? "https://cdn.pixabay.com/photo/2015/11/03/08/56/service-1019822_960_720.jpg"
-        : imageRef.current.value,
+        : myImage,
       userID: service.userID,
     };
     dispatch(updateService(sendData));
@@ -107,7 +125,6 @@ const EditServices = ({ service }) => {
                   className="input"
                   placeholder="07"
                   min={10}
-                  max={15}
                   ref={phoneRef}
                   required
                   defaultValue={service.phoneNumber}
@@ -115,14 +132,17 @@ const EditServices = ({ service }) => {
               </div>
 
               <div className="inputfield">
-                <label>Add Image</label>
+                <label> Image</label>
                 <input
-                  type="text"
-                  className="input"
-                  placeholder="http//"
-                  ref={imageRef}
-                  defaultValue={service.image}
+                  type="file"
+                  accept="image/*"
+                  onChange={(event) => {
+                    setFile(event.target.files[0]);
+                  }}
                 />
+                {/* <button type="" onClick={handleImage}>
+                  Upload
+                </button> */}
               </div>
 
               <div className="inputfield">
