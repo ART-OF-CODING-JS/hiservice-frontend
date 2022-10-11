@@ -1,6 +1,6 @@
 import React from "react";
 import Logout from "../Auth/Logout/Logout";
-import "./header.css";
+import "./Header.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
