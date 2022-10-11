@@ -33,9 +33,18 @@ export default function FavoriteList({ favId, serviceId, userID }) {
                   <img src={ele.image} alt="Pancake" />
                   <div className="info">
                     <div className="edit-myservice common-edi-del">
-                      <Link className="Link btn btn-warning btn-lg" to={`/Services/${ele.id}`}>
-                        More Details
-                      </Link>
+                      <button onClick={handleShow} className="btn btn-warning btn-lg">
+                        Remove
+                      </button>
+                      <button className="btn btn-warning btn-lg">
+                        <Link
+                          className=""
+                          to={`/Services/${ele.id}`}
+                          style={{ color: "black", fontSize: "14px", fontWeight: "700" }}
+                        >
+                          More Details
+                        </Link>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -64,7 +73,7 @@ export default function FavoriteList({ favId, serviceId, userID }) {
                       <p>{ele.department}</p>
                     </div>
                   </div>
-                  <button onClick={handleShow} className={"btn_my_services ra fiv-list"}>
+                  <button onClick={handleShow} className="btn_my_services ra fiv-list">
                     Remove
                   </button>
                   <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
