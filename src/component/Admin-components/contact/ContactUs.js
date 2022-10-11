@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
+import img from "../../contactus/contact.png";
 import { getAllContact } from "../../../store/contact";
 import Pagination from "../../pagenation/Pagination";
 
@@ -21,8 +21,12 @@ export default function ContactUs(props) {
   const currentRecords = allContact.slice(indexOfFirstRecord, indexOfLastRecord);
   return (
     <>
+    <div className="image-all-section">
+    <img alt="h" src={img} />
+    <p>Contact Us </p>
+  </div>
       <section className="myservice-container container-com">
-        <h1>Contact Us </h1>
+      
 
         {currentRecords.map((contactUs, idx) => (
           <div className="t" key={idx}>
