@@ -35,7 +35,7 @@ export default function ReportAdmin() {
                     </div>
                   </div>
 
-                  <div className="container__text" >
+                  <div className="container__text">
                     <h1>{service.title}</h1>
 
                     <div className="container__text__star">
@@ -46,26 +46,22 @@ export default function ReportAdmin() {
                       <span className="fa fa-star checked" />
                     </div>
 
-                    <p>{service.description}</p>
-
                     <div className="container__text__timing">
                       <div className="container__text__timing_time">
                         <h2>City</h2>
-
                         <p>{service.city}</p>
                       </div>
 
                       <div className="container__text__timing_time">
                         <h2>Phone Number</h2>
-
                         <p>{service.phoneNumber}</p>
                       </div>
                       <div className="container__text__timing_time">
                         <h2>department</h2>
-
                         <p>{service.department}</p>
                       </div>
                     </div>
+                    <p>{report.description}</p>
                     <button
                       className={
                         report.status === null
