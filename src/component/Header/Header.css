@@ -13,6 +13,7 @@ nav {
   display: flex;
   gap: 10rem;
   align-items: center;
+  
 }
 .logo {
   color: var(--primary-color);

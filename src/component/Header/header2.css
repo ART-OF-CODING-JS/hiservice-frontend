@@ -61,6 +61,10 @@ input:not(:placeholder-shown) {
 .navbar {
   margin-bottom: 30px;
   padding: 50px 50px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  margin: 0px;
 }
 .navbar-nav {
   float: none;
@@ -530,6 +534,4 @@ ol {
   list-style: none;
 }
 
-.logout {
-  padding-bottom: 10px;
-}
+
