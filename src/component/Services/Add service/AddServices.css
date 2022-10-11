@@ -51,6 +51,16 @@
   width: 100%;
 }
 
+.add-image {
+  color: #757575;
+  font-size: 14px;
+}
+
+.add-image-title {
+  margin-right: 8rem;
+  margin-bottom: 1.3rem;
+}
+
 .wrapper .form .inputfield {
   margin-bottom: 15px;
   display: flex;
