@@ -50,7 +50,7 @@ export default function Users(props) {
   }, [dispatch]);
   return (
     <>
-      <h3 className="user-state">The user state</h3>
+      <h3 className="user-state">Active Users</h3>
       <div style={{ width: "100%", height: 400 }}>
         <ResponsiveContainer>
           <ComposedChart
