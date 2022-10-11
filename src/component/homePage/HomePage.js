@@ -437,25 +437,16 @@ const HomePage = () => {
                 </div>
                 <ul className="social-icons">
                   <li>
-                    <a href="">
-                      <i className="fab fa-facebook-f" />
+                    <a href="https://www.linkedin.com/in/morad-azza/">
+                      <i className="fa-brands fa-linkedin-in"/>
                     </a>
                   </li>
                   <li>
-                    <a href="">
-                      <i className="fab fa-instagram" />
+                    <a href="https://github.com/Muradazzeh">
+                      <i className="fa-brands fa-github" />
                     </a>
                   </li>
-                  <li>
-                    <a href="">
-                      <i className="fab fa-twitter" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="fab fa-dribbble" />
-                    </a>
-                  </li>
+                
                 </ul>
                 <div className="details-team">
                   <h2>
@@ -473,25 +464,16 @@ const HomePage = () => {
                 </div>
                 <ul className="social-icons">
                   <li>
-                    <a href="">
-                      <i className="fab fa-facebook-f" />
+                    <a href="https://www.linkedin.com/in/mohammad-alhaj-/">
+                      <i className="fa-brands fa-linkedin-in"/>
                     </a>
                   </li>
                   <li>
-                    <a href="">
-                      <i className="fab fa-instagram" />
+                    <a href="https://github.com/Mohammad-Alhaj">
+                      <i className="fa-brands fa-github" />
                     </a>
                   </li>
-                  <li>
-                    <a href="">
-                      <i className="fab fa-twitter" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="fab fa-dribbble" />
-                    </a>
-                  </li>
+                
                 </ul>
                 <div className="details-team">
                   <h2>
@@ -510,25 +492,16 @@ const HomePage = () => {
                 </div>
                 <ul className="social-icons">
                   <li>
-                    <a href="">
-                      <i className="fab fa-facebook-f" />
+                    <a href="https://www.linkedin.com/in/heba-alhamaydh/">
+                      <i className="fa-brands fa-linkedin-in"/>
                     </a>
                   </li>
                   <li>
-                    <a href="">
-                      <i className="fab fa-instagram" />
+                    <a href="https://github.com/HebaAlhamaydh">
+                      <i className="fa-brands fa-github" />
                     </a>
                   </li>
-                  <li>
-                    <a href="">
-                      <i className="fab fa-twitter" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="fab fa-dribbble" />
-                    </a>
-                  </li>
+                
                 </ul>
                 <div className="details-team">
                   <h2>
@@ -546,25 +519,16 @@ const HomePage = () => {
                 </div>
                 <ul className="social-icons">
                   <li>
-                    <a href="">
-                      <i className="fab fa-facebook-f" />
+                    <a href="https://www.linkedin.com/in/sara-altayeh/">
+                      <i className="fa-brands fa-linkedin-in"/>
                     </a>
                   </li>
                   <li>
-                    <a href="">
-                      <i className="fab fa-instagram" />
+                    <a href="https://github.com/saraaltayeh">
+                      <i className="fa-brands fa-github" />
                     </a>
                   </li>
-                  <li>
-                    <a href="">
-                      <i className="fab fa-twitter" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="fab fa-dribbble" />
-                    </a>
-                  </li>
+                
                 </ul>
                 <div className="details-team">
                   <h2>
@@ -582,25 +546,16 @@ const HomePage = () => {
                 </div>
                 <ul className="social-icons">
                   <li>
-                    <a href="">
-                      <i className="fab fa-facebook-f" />
+                    <a href="https://www.linkedin.com/in/yaseinburqan/">
+                      <i className="fa-brands fa-linkedin-in"/>
                     </a>
                   </li>
                   <li>
-                    <a href="">
-                      <i className="fab fa-instagram" />
+                    <a href="https://github.com/YaseinBurqan">
+                      <i className="fa-brands fa-github" />
                     </a>
                   </li>
-                  <li>
-                    <a href="">
-                      <i className="fab fa-twitter" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <i className="fab fa-dribbble" />
-                    </a>
-                  </li>
+                
                 </ul>
                 <div className="details-team">
                   <h2>
@@ -836,13 +791,13 @@ const HomePage = () => {
                         <p className="help-block text-danger"></p>
                       </div>
                     </div>
-                    <div style={{ display: "flex", textAlign: "center", justifyContent: "center" }}>
+                    <div style={{ display: "flex", textAlign: "center", justifyContent: "center", marginBottom:"15px" }}>
                       <ReCAPTCHA
                         sitekey="6LcaEmgiAAAAAA-N2w6u0aoJVR1aEwDFYi2CJU2t"
                         onChange={onChange}
                       />
                     </div>
-                    <div className="col-lg-12" style={{ marginBottom: "5.7rem" }}>
+                    <div className="col-lg-12" style={{ marginBottom: "6.4rem" }}>
                       <button
                         className="btn btn-primary btn-xl text-uppercase"
                         type="submit"

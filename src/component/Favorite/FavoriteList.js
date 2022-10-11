@@ -31,6 +31,22 @@ export default function FavoriteList({ favId, serviceId, userID }) {
               <div className="container-my-services">
                 <div className="card_img">
                   <img src={ele.image} alt="Pancake" />
+                  <div className="info">
+                    <div className="edit-myservice common-edi-del">
+                      <button onClick={handleShow} className="btn btn-warning btn-lg">
+                        Remove
+                      </button>
+                      <button className="btn btn-warning btn-lg">
+                        <Link
+                          className=""
+                          to={`/Services/${ele.id}`}
+                          style={{ color: "black", fontSize: "14px", fontWeight: "700" }}
+                        >
+                          More Details
+                        </Link>
+                      </button>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="container__text">
@@ -57,9 +73,7 @@ export default function FavoriteList({ favId, serviceId, userID }) {
                       <p>{ele.department}</p>
                     </div>
                   </div>
-                  <button onClick={handleShow} className={"btn_my_services ra fiv-list"}>
-                    Remove
-                  </button>
+
                   <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
                     <Modal.Header closeButton>
                       <Modal.Title>Remove from favorite</Modal.Title>
