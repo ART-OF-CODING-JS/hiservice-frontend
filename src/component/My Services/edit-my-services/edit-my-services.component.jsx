@@ -1,16 +1,11 @@
 import React, { useState, useRef } from "react";
 import Modal from "react-bootstrap/Modal";
-import cookie from "react-cookies";
 import { useDispatch } from "react-redux";
-
 import { updateService } from "../../../store/services";
 
 const EditServices = ({ service }) => {
   const dispatch = useDispatch();
-
   const [show, setShow] = useState(false);
-  const [city, setCity] = useState("city");
-  const [department, setDepartment] = useState("");
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -29,8 +24,10 @@ const EditServices = ({ service }) => {
       description: discRef.current.value,
       city: cityRef.current.value,
       phoneNumber: phoneRef.current.value,
-      image: imageRef.current.value,
-      userID: cookie.load("userID"),
+      image: !imageRef.current.value
+        ? "https://cdn.pixabay.com/photo/2015/11/03/08/56/service-1019822_960_720.jpg"
+        : imageRef.current.value,
+      userID: service.userID,
     };
     dispatch(updateService(sendData));
   };
@@ -41,7 +38,7 @@ const EditServices = ({ service }) => {
         variant="primary"
         size="lg"
         onClick={handleShow}
-        className="btn btn-warning btn-lg btn_services_"
+        className="btn btn-outline-warning btn-lg btn_services_"
       >
         Edit <i className="fa-regular fa-pen-to-square" />
       </button>
@@ -83,6 +80,8 @@ const EditServices = ({ service }) => {
                     <option value="Teaching">Teaching</option>
                     <option value="ًWelding">Welding</option>
                     <option value="ًCarpentry and Furniture">Carpentry and Furniture</option>
+                    <option value="ًHealth care">Health care</option>
+                    <option value="ًOthers">Others</option>
                   </select>
                 </div>
               </div>
@@ -104,10 +103,11 @@ const EditServices = ({ service }) => {
               <div className="inputfield">
                 <label>Phone Number</label>
                 <input
-                  type="tel"
+                  type="number"
                   className="input"
                   placeholder="07"
-                  maxLength={15}
+                  min={10}
+                  max={15}
                   ref={phoneRef}
                   required
                   defaultValue={service.phoneNumber}
@@ -121,7 +121,6 @@ const EditServices = ({ service }) => {
                   className="input"
                   placeholder="http//"
                   ref={imageRef}
-                  required
                   defaultValue={service.image}
                 />
               </div>

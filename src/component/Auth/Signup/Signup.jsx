@@ -19,11 +19,19 @@ export default function Signup(props) {
   const handleSignup = (event) => {
     event.preventDefault();
 
+    var regex = new RegExp("^[a-zA-Z]+$");
+    if (regex.test(cityRef.current.value)) {
+      alert("true");
+    } else {
+      alert("false");
+      return false;
+    }
+
     const data = {
-      username: usernameRef.current.value.toLowerCase(),
-      email: emailRef.current.value.toLowerCase(),
+      username: usernameRef.current.value,
+      email: emailRef.current.value,
       password: passwordRef.current.value,
-      city: cityRef.current.value.toLowerCase(),
+      city: cityRef.current.value,
       phoneNumber: phoneNumberRef.current.value,
       professions: professionsRef.current.value,
     };
@@ -54,7 +62,14 @@ export default function Signup(props) {
           <h2>Create new account</h2>
 
           <div className="input-group">
-            <input type="text" name="loginUser" id="loginUser" ref={usernameRef} required />
+            <input
+              type="text"
+              name="loginUser"
+              id="loginUser"
+              maxLength={10}
+              ref={usernameRef}
+              required
+            />
             <label>Username</label>
           </div>
 
@@ -69,12 +84,28 @@ export default function Signup(props) {
           </div>
 
           <div className="input-group">
-            <input type="number" name="loginUser" id="loginUser" ref={phoneNumberRef} required />
+            <input
+              type="number"
+              name="loginUser"
+              id="loginUser"
+              ref={phoneNumberRef}
+              min={10}
+              max={15}
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+              required
+            />
             <label>Phone number</label>
           </div>
 
           <div className="input-group">
-            <input type="text" name="loginUser" id="loginUser" ref={professionsRef} required />
+            <input
+              type="text"
+              name="loginUser"
+              id="loginUser"
+              maxLength={8}
+              ref={professionsRef}
+              required
+            />
             <label>Professions</label>
           </div>
 
@@ -84,6 +115,7 @@ export default function Signup(props) {
               name="loginUser"
               id="loginUser"
               minLength={8}
+              maxLength={16}
               ref={passwordRef}
               required
             />

@@ -43,7 +43,6 @@ export default function SuggestServices(props) {
           <p className="similar-services">Similar Services</p>
           <section className="service-container container-com">
             {props.SuggestServ[1].map((service) => (
-              <>
                 <figure className="image-block" key={service.id}>
                   <Link to={`/Services/${service.id}`}>
                     <img onClick={handleReload} className="img" alt="service" src={service.image} />
@@ -87,7 +86,6 @@ export default function SuggestServices(props) {
                     </div>
                   </figcaption>
                 </figure>
-              </>
             ))}
           </section>
         </>

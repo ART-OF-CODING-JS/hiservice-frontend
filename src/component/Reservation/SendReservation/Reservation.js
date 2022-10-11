@@ -19,7 +19,8 @@ export default function Reservation({ serviceId }) {
 
   const dispatch = useDispatch();
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+e.preventDefault()
     const sendData = {
       description: discRef.current.value,
       time: timeRef.current.value,
@@ -28,21 +29,28 @@ export default function Reservation({ serviceId }) {
       userID: cookie.load("userID"),
     };
     dispatch(sendReserve(sendData));
+    handleClose()
   };
 
   return (
     <>
-      <button variant="primary" size="lg" onClick={handleShow} className="btn btn-warning add-btn">
+      <button
+        variant="primary"
+        size="lg"
+        onClick={handleShow}
+        className="btn btn-warning add-btn"
+        style={{ fontSize: "15px" }}
+      >
         Reserve Service <i className="fa-regular fa-pen-to-square" />
       </button>
 
       <Modal show={show} onHide={handleClose} className="add-service-pop-form">
         <form
           action=""
-          onSubmit={() => {
-            handleClose();
-            handleSubmit();
-          }}
+          onSubmit={ 
+
+            handleSubmit
+          }
         >
           <div className="wrapper">
             <div className="title">Send Reservation</div>
@@ -71,7 +79,7 @@ export default function Reservation({ serviceId }) {
 
               <div className="footer">
                 <input type="button" value="Close" className="btn-submit" onClick={handleClose} />
-                <input type="submit" value="Send" className="btn-submit" />
+                <button className="btn-submit">Send</button>
               </div>
             </div>
           </div>

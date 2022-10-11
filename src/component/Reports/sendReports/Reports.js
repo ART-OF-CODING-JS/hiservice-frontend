@@ -21,7 +21,6 @@ export default function Reports(props) {
       serviceID: props.providerID,
       userID: cookie.load("userID"),
     };
-    console.log(sendData);
     dispatch(sendReport(sendData));
   };
 
@@ -45,7 +44,7 @@ export default function Reports(props) {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button className="btn btn-warning" onClick={handleClose}>
+          <Button className="btn btn-outline-warning" onClick={handleClose}>
             Close
           </Button>
           <Button

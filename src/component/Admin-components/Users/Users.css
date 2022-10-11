@@ -25,6 +25,13 @@
     justify-self: center;
 }
 
+.user-state {
+    text-align: center;
+    font-size: 35px;
+    padding-bottom: 70px;
+}
+
+
 /*  */
 .user-image-admin {
     width: 5rem;
