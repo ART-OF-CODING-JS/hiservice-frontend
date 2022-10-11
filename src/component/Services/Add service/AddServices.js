@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { Button } from "react-bootstrap";
 import { addService } from "../../../store/services";
 import axios from "axios";
+
 export default function AddService({ postData }) {
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
@@ -23,9 +24,7 @@ export default function AddService({ postData }) {
   const departmentRef = useRef(null);
   const cityRef = useRef(null);
 
-
-
-  const handleSubmit =() => {
+  const handleSubmit = () => {
     const sendData = {
       title: titleRef.current.value,
       department: departmentRef.current.value,
@@ -40,25 +39,22 @@ export default function AddService({ postData }) {
 
     dispatch(addService(sendData));
   };
-  useEffect(()=>{
-    if(file){
-   const formData = new FormData();
-    formData.append("file", file);
-    formData.append("upload_preset", "kpc5yviv");
-    axios
-      .post("https://api.cloudinary.com/v1_1/dminynjzy/image/upload", formData)
-      .then((response) => {
-        setMyImage(response.data.secure_url);
-      });
-    setFile("");
-    setMyImage("");
+  useEffect(() => {
+    if (file) {
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("upload_preset", "kpc5yviv");
+      axios
+        .post("https://api.cloudinary.com/v1_1/dminynjzy/image/upload", formData)
+        .then((response) => {
+          setMyImage(response.data.secure_url);
+        });
+      setFile("");
+      setMyImage("");
     }
- 
-
-  },[file])
+  }, [file]);
   // function handleImage() {
-  
-   
+
   // }
 
   return (
@@ -71,7 +67,7 @@ export default function AddService({ postData }) {
         <form
           action=""
           onSubmit={() => {
-            handleSubmit()
+            handleSubmit();
             handleClose();
           }}
         >
@@ -130,8 +126,7 @@ export default function AddService({ postData }) {
                   type="number"
                   className="input"
                   placeholder="07"
-                  // max={15}
-                  // min={10}
+                  min={10}
                   ref={phoneRef}
                   required
                 />
