@@ -73,9 +73,7 @@ export default function FavoriteList({ favId, serviceId, userID }) {
                       <p>{ele.department}</p>
                     </div>
                   </div>
-                  <button onClick={handleShow} className="btn_my_services ra fiv-list">
-                    Remove
-                  </button>
+
                   <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
                     <Modal.Header closeButton>
                       <Modal.Title>Remove from favorite</Modal.Title>

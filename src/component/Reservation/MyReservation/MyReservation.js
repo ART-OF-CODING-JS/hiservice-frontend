@@ -4,12 +4,11 @@ import { getMyReserve } from "../../../store/reservations";
 import DeleteReservation from "./DeleteReservation/DeleteReservation";
 import { Spinner } from "react-bootstrap";
 import UserDataUsernamePhoneNumber from "../../userInfo/UserDataUsernamePhoneNumber";
+import { Link } from "react-router-dom";
 
 export default function MyReservation(props) {
   const { allServices } = useSelector((state) => state.servicesSlice);
-  const { myReservation, isLoading } = useSelector(
-    (state) => state.reserveSlice
-  );
+  const { myReservation, isLoading } = useSelector((state) => state.reserveSlice);
 
   const dispatch = useDispatch();
 
@@ -24,10 +23,7 @@ export default function MyReservation(props) {
   ) : (
     <div>
       <div className="image-all-section">
-        <img
-          alt=""
-          src="https://i.postimg.cc/mrHFFMNy/pexels-cottonbro-4065889.jpg"
-        />
+        <img alt="" src="https://i.postimg.cc/mrHFFMNy/pexels-cottonbro-4065889.jpg" />
         <p>My Reservation</p>
       </div>
       <section className="myservice-container container-com">
@@ -43,6 +39,16 @@ export default function MyReservation(props) {
                       <div className="info">
                         <div className="edit-myservice common-edi-del">
                           <DeleteReservation reserveId={reservation.id} />
+
+                          <button className="btn btn-warning btn-lg">
+                            <Link
+                              className=""
+                              to={`/Services/${service.id}`}
+                              style={{ color: "black", fontSize: "14px", fontWeight: "700" }}
+                            >
+                              More Details
+                            </Link>
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -82,8 +88,7 @@ export default function MyReservation(props) {
                         <div className="container__text__timing_time">
                           <h2>Date</h2>
                           <p>
-                            {reservation.date.substring(8, 10)}/
-                            {reservation.date.substring(5, 7)}
+                            {reservation.date.substring(8, 10)}/{reservation.date.substring(5, 7)}
                           </p>
                         </div>
                       </div>
