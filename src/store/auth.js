@@ -102,7 +102,6 @@ const authSlice = createSlice({
     [signin.rejected]: (state, action) => {
       state.isLoadingSignIn = false;
       state.errorSignIn = action.payload;
-      console.log(action.payload)
       Swal.fire({
         title: "Error!",
         text: action.payload,

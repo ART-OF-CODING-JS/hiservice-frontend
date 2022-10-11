@@ -9,7 +9,7 @@
 }
 
 .scene {
-  width: 1000px;
+  width: 1200px;
   display: flex;
 //  gap: 100px;
   justify-content: space-between;
@@ -18,7 +18,7 @@
 
   .card {
     position: relative;
-    width: 300px;
+    width:  350px;;
     height: 350px;
     border-radius: 15px;
     color: black;
@@ -44,7 +44,7 @@
         linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.4));
 
       img {
-        width: 300px;
+        width: 350px;
         height: 350px;
         object-fit: cover;
         border-radius: 15px;

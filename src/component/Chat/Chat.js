@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import io from "socket.io-client";
 import { decodeToken } from "react-jwt";
 import cookie from "react-cookies";
@@ -7,13 +7,10 @@ import "./Chat.css";
 import ScrollToBottom from "react-scroll-to-bottom";
 const socket = io.connect("https://hiservice.herokuapp.com");
 function Chat() {
-  const { id } = useParams();
-  const userId = cookie.load("userID");
+  // const { id } = useParams();
+  // const userId = cookie.load("userID");
   const { username } = decodeToken(cookie.load("token"));
 
-  console.log(username, 12121212);
-  console.log(cookie);
-  console.log(id, userId, "000000000000");
   const [message, setMessage] = useState("");
   // const [user,setUser]=useState('')
   const [messageReceived, setMessageReceived] = useState(JSON.parse(localStorage.getItem('chats'))?
@@ -30,7 +27,6 @@ function Chat() {
     setMessage("");
   }
 
-  console.log(messageReceived);
   localStorage.setItem('chats', JSON.stringify(messageReceived));
   useEffect(() => {
     socket.on("received_message", (data) => {
@@ -48,12 +44,12 @@ function Chat() {
           </div>
           <div className="chat-body">
             <ScrollToBottom className="message-container">
-              {messageReceived.map((messageContent) => {
+              {messageReceived.map((messageContent,idx) => {
                 return (
                   <div
                     className="message"
                     id={username === messageContent.author ? "you" : "other"}
-                    key={messageContent.id}
+                    key={idx}
                   >
                     <div>
                       <div className="message-content">

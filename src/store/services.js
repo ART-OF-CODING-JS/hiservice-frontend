@@ -2,7 +2,6 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import cookie from "react-cookies";
 import { toast } from "react-toastify";
-import { redirect } from "react-router-dom"; // import {Navigate} from 'react-router-dom'
 const url = process.env.REACT_APP_URL;
 
 // get all
@@ -93,7 +92,7 @@ export const deleteOneService = createAsyncThunk(
           authorization: `Bearer ${cookie.load("token")}`,
         },
       });
-      dispatch(getAllServices());
+      dispatch(getMyServices());
       return id;
     } catch (error) {
       return rejectWithValue(error.response);
