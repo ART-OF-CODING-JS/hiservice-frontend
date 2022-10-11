@@ -797,7 +797,7 @@ const HomePage = () => {
                         onChange={onChange}
                       />
                     </div>
-                    <div className="col-lg-12" style={{ marginBottom: "5.7rem" }}>
+                    <div className="col-lg-12" style={{ marginBottom: "6.4rem" }}>
                       <button
                         className="btn btn-primary btn-xl text-uppercase"
                         type="submit"
