@@ -26,7 +26,7 @@
   height: 8px;
 }
 
-/* Style the scrollbar handle */
+
 ::-webkit-scrollbar-thumb {
   background:#ffe791;
   border-radius: 8px;
