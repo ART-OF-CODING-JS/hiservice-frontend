@@ -54,7 +54,7 @@ input, textarea {
     color: white;
 }
 
-/* media queries (medium devices) */
+
 @media screen and (max-width: 1024px) {
     .container.contact__container{
         grid-template-columns: 1fr;
@@ -63,7 +63,7 @@ input, textarea {
     }
  }
  
- /* media queries (small devices) */
+
  @media screen and (max-width: 600px) {
 .container.contact__container{
          width:  90%;

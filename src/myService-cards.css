@@ -55,7 +55,7 @@
 .delete-myservice button:hover {
   color: #dc3545;
 }
-/* ***************************************************************************************** */
+
 
 .my_services_body {
   display: grid;
@@ -108,10 +108,7 @@
 .container-my-services .rej {
   background-color: #dc3545;
 }
-/* .container-my-services .btn_my_services i {
-      margin-left: 20px;
-      font-size: 1.5rem;
-    } */
+
 
 .container__text {
   padding: 20px;
