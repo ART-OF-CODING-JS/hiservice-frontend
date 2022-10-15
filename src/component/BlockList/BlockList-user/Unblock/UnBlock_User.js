@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
-import { useSelector, useDispatch } from "react-redux";
+import {  useDispatch } from "react-redux";
 import { unBlockServiceProvider } from "../../../../store/block";
 export default function UnBlockProvider({ providerID }) {
   const [show, setShow] = useState(false);
