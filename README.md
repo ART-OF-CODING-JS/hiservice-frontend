@@ -56,4 +56,4 @@
 
  * This is the deployed link for our app on vercel ***[deployed link](hiservice-frontend-j96l5ukid-art-of-coding.vercel.app)***
 
-![link](./images/ourApp.gif)
+![link](./images/ourApp.gif) 
