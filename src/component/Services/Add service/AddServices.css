@@ -33,7 +33,6 @@
 .wrapper {
   max-width: 500px;
   width: 100%;
-  background: #fff;
   margin: 20px auto;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125);
   padding: 30px;
@@ -50,6 +49,16 @@
 
 .wrapper .form {
   width: 100%;
+}
+
+.add-image {
+  color: #757575;
+  font-size: 14px;
+}
+
+.add-image-title {
+  margin-right: 8rem;
+  margin-bottom: 1.3rem;
 }
 
 .wrapper .form .inputfield {

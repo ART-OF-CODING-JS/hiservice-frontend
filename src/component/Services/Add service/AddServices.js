@@ -132,8 +132,8 @@ export default function AddService({ postData }) {
                 />
               </div>
 
-              <div className="inputfield">
-                <label> Image</label>
+              <div className="add-image">
+                <label className="add-image-title"> Image</label>
                 <input
                   type="file"
                   accept="image/*"

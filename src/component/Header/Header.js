@@ -1,15 +1,12 @@
 import React from "react";
 import Logout from "../Auth/Logout/Logout";
 import "./Header.css";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+
 import {
   getAllServices,
-  // searchByCity,
-  // searchService,
-  // lastNewService,
-  // mostRatedService,
+
 } from "../../store/services";
 import cookie from "react-cookies";
 import Logo from "../../assets/logo.png";
@@ -19,32 +16,10 @@ import Access from "../Access/Access";
 
 export default function Header(props) {
   const dispatch = useDispatch();
-  const [search, setSearch] = useState("");
   const userId= cookie.load("userID");
-  const navigate = useNavigate();
+ 
 
-  // function handleSubmit(e) {
-  //   e.preventDefault();
-  //   dispatch(searchService({ title: search }));
-  //   setSearch("");
-  //   navigate("/search");
-  // }
-  // function handleNew(e) {
-  //   e.preventDefault();
-  //   dispatch(lastNewService());
-  //   navigate("/lastNew");
-  // }
-  // function handleMostRated(e) {
-  //   e.preventDefault();
-  //   dispatch(mostRatedService());
-  //   navigate("/mostRated");
-  // }
-
-  // function handleChange(e) {
-  //   dispatch(searchByCity({ city: e.target.value }));
-  //   // setSearchCity('amman')
-  //   navigate("/searchCity");
-  // }
+  
   useEffect(() => {
     dispatch(getAllServices());
   }, [dispatch]);
@@ -58,7 +33,7 @@ export default function Header(props) {
           <h1 className="m-0">
             <i className="text-primary me-3"></i>
             <Link className="Link" to={"/"}>
-              <img src={Logo} width="150px" />
+              <img src={Logo} alt="logoImage" width="150px" />
             </Link>
           </h1>
         </a>
