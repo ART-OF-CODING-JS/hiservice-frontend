@@ -89,9 +89,6 @@ export default function Signup(props) {
               name="loginUser"
               id="loginUser"
               ref={phoneNumberRef}
-              min={10}
-              max={15}
-              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
               required
             />
             <label>Phone number</label>
