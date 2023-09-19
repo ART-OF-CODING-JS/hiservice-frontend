@@ -77,7 +77,7 @@ export default function Signup(props) {
           </div>
 
           <div className="input-group">
-            <input type="text" name="loginUser" id="loginUser" ref={phoneNumberRef} required />
+            <input type="text" name="loginUser" id="loginUser" ref={phoneNumberRef}  />
             <label>Phone number</label>
           </div>
 
